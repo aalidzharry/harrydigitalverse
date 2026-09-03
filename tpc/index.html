@@ -1,322 +1,656 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TubeProfiters Circle | Harry Digital Verse</title>
+  <title>TubeProfiters Circle | Harry Digital Verse</title>
 
-<meta name="description" content="Discover TubeProfiters Circle through Harry Digital Verse — a program for learning how to build and grow faceless YouTube content.">
+  <meta name="description"
+        content="Ketahui bagaimana TubeProfiters Circle membantu anda belajar membina channel YouTube, menghasilkan kandungan faceless dan meneroka peluang pendapatan melalui YouTube.">
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #07111f;
-    color: #f5f7fb;
-    line-height: 1.6;
-}
-
-nav {
-    padding: 20px 7%;
-    border-bottom: 1px solid #1d2b3d;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    color: #4cc2ff;
-}
-
-nav a {
-    color: #9fb0c4;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.hero-inner {
-    max-width: 850px;
-}
-
-.tag {
-    color: #4cc2ff;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
-}
-
-h1 {
-    font-size: clamp(42px, 6vw, 68px);
-    line-height: 1.08;
-    margin-bottom: 25px;
-}
-
-h1 span {
-    color: #4cc2ff;
-}
-
-.hero p {
-    color: #b9c7d8;
-    max-width: 700px;
-    margin: auto;
-    font-size: 18px;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 32px;
-    padding: 15px 28px;
-    background: #4cc2ff;
-    color: #06101c;
-    text-decoration: none;
-    font-weight: 800;
-    border-radius: 7px;
-}
-
-.small-note {
-    display: block;
-    color: #8294aa;
-    font-size: 12px;
-    margin-top: 14px;
-}
-
-.section {
-    padding: 75px 7%;
-}
-
-.section-title {
-    max-width: 750px;
-    margin: 0 auto 45px;
-    text-align: center;
-}
-
-.section-title h2 {
-    font-size: 35px;
-    margin-bottom: 12px;
-}
-
-.section-title p {
-    color: #9fb0c4;
-}
-
-.grid {
-    max-width: 1050px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-}
-
-.card {
-    background: #0b1727;
-    border: 1px solid #22344a;
-    border-radius: 10px;
-    padding: 28px;
-}
-
-.card .number {
-    color: #4cc2ff;
-    font-weight: 800;
-    font-size: 13px;
-    margin-bottom: 12px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #aebed0;
-    font-size: 15px;
-}
-
-.cta {
-    max-width: 900px;
-    margin: 20px auto 80px;
-    padding: 55px 30px;
-    background: #0b1727;
-    border: 1px solid #22344a;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.cta h2 {
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-
-.cta p {
-    max-width: 650px;
-    margin: auto;
-    color: #b9c7d8;
-}
-
-.disclosure {
-    max-width: 850px;
-    margin: 0 auto 45px;
-    color: #71849a;
-    text-align: center;
-    font-size: 12px;
-}
-
-footer {
-    border-top: 1px solid #1d2b3d;
-    text-align: center;
-    padding: 28px 20px;
-    color: #71849a;
-    font-size: 13px;
-}
-
-@media(max-width:760px) {
-    .grid {
-        grid-template-columns:1fr;
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: #f5f7fb;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: 100%;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #17263a;
+      background: #07111f;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #4fc3f7;
+    }
+
+    .home-link {
+      color: #dbe7f5;
+      font-size: 14px;
+    }
+
+    .home-link:hover {
+      color: #4fc3f7;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        radial-gradient(circle at top, #102943 0%, #07111f 55%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: #4fc3f7;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.08;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #4fc3f7;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 35px;
+      color: #c7d3e0;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #4fc3f7;
+      color: #06111e;
+      padding: 15px 28px;
+      border-radius: 7px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .small-note {
+      margin-top: 17px;
+      color: #8191a5;
+      font-size: 12px;
+    }
+
+    /* SECTIONS */
 
     .section {
-        padding:60px 5%;
+      padding: 90px 7%;
     }
-}
-</style>
+
+    .section-dark {
+      background: #091625;
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #aebdce;
+    }
+
+    /* PROBLEM */
+
+    .problem-box {
+      max-width: 850px;
+      margin: auto;
+      background: #0d1c2d;
+      border: 1px solid #1d344c;
+      border-radius: 12px;
+      padding: 40px;
+    }
+
+    .problem-box p {
+      color: #c8d4df;
+      margin-bottom: 17px;
+    }
+
+    .problem-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CARDS */
+
+    .grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #0d1c2d;
+      border: 1px solid #1d344c;
+      border-radius: 10px;
+      padding: 30px;
+    }
+
+    .card-number {
+      color: #4fc3f7;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #aebdce;
+      font-size: 15px;
+    }
+
+    /* WHO */
+
+    .who {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .who-item {
+      padding: 18px 0;
+      border-bottom: 1px solid #1d344c;
+      color: #c8d4df;
+    }
+
+    .check {
+      color: #4fc3f7;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* JOURNEY */
+
+    .journey {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .journey p {
+      color: #b9c6d4;
+      margin-bottom: 18px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 100px 20px;
+      background:
+        radial-gradient(circle at center, #12304c 0%, #07111f 65%);
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      max-width: 750px;
+      margin: 0 auto 20px;
+    }
+
+    .cta p {
+      color: #b8c7d7;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 35px 20px 70px;
+      color: #75869a;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 25px;
+      border-top: 1px solid #17263a;
+      text-align: center;
+      color: #708095;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 100px 20px;
+      }
+
+      .section {
+        padding: 70px 20px;
+      }
+
+      .problem-box {
+        padding: 27px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .cta h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">HARRY <span>DIGITAL VERSE</span></div>
-    <a href="/">Home</a>
-</nav>
+  <!-- NAVIGATION -->
 
-<section class="hero">
+  <nav>
+    <div class="logo">
+      HARRY <span>DIGITAL VERSE</span>
+    </div>
 
-<div class="hero-inner">
+    <a class="home-link" href="/">
+      Laman Utama
+    </a>
+  </nav>
 
-    <div class="tag">FACELESS YOUTUBE JOURNEY</div>
 
-    <h1>
-        What If You Could Build YouTube
-        <span>Without Being On Camera?</span>
-    </h1>
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        YOUTUBE • FACELESS CONTENT • SIDE INCOME
+      </div>
+
+      <h1>
+        Nak Mulakan YouTube,<br>
+        Tapi <span>Tak Tahu Nak Mula Dari Mana?</span>
+      </h1>
+
+      <p>
+        Membina channel YouTube bukan sekadar upload video dan berharap
+        ia mendapat tontonan. Kita perlukan ilmu, strategi dan hala tuju
+        yang lebih jelas untuk membina channel secara konsisten.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.nurazza.com/tubeprofiterscircle?sa=sa0276839020619f40697c373025bb832b4b24074f"
+        target="_blank"
+        rel="noopener noreferrer">
+        Lihat TubeProfiters Circle →
+      </a>
+
+      <div class="small-note">
+        Anda akan dibawa ke laman rasmi TubeProfiters Circle.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROBLEM -->
+
+  <section class="section">
+
+    <div class="section-title">
+
+      <h2>YouTube Nampak Mudah. Tapi...</h2>
+
+      <p>
+        Bila mula sendiri, terlalu banyak perkara yang kita perlu fikirkan.
+      </p>
+
+    </div>
+
+
+    <div class="problem-box">
+
+      <p>
+        Nak buat content apa?
+      </p>
+
+      <p>
+        Perlu tunjuk muka atau boleh bina channel secara faceless?
+      </p>
+
+      <p>
+        Macam mana nak cari idea video yang orang mahu tonton?
+      </p>
+
+      <p>
+        Macam mana nak konsisten kalau kita masih baru?
+      </p>
+
+      <p>
+        Dan yang paling penting — bagaimana sebuah channel boleh
+        dibina sebagai aset digital yang berpotensi menjana pendapatan?
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHAT IS TPC -->
+
+  <section class="section section-dark">
+
+    <div class="section-title">
+
+      <h2>Apa Itu TubeProfiters Circle?</h2>
+
+      <p>
+        Sebuah platform pembelajaran untuk mereka yang mahu memahami
+        dan membina perjalanan YouTube dengan lebih terarah.
+      </p>
+
+    </div>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="card-number">01</div>
+
+        <h3>Bina Channel</h3>
+
+        <p>
+          Pelajari asas dan strategi untuk mula membina channel
+          YouTube dengan arah yang lebih jelas.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">02</div>
+
+        <h3>Content Faceless</h3>
+
+        <p>
+          Terokai pendekatan menghasilkan content tanpa perlu
+          sentiasa berada di hadapan kamera.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">03</div>
+
+        <h3>Strategi Content</h3>
+
+        <p>
+          Fahami bagaimana idea, niche dan content boleh dirancang
+          dengan lebih sistematik.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">04</div>
+
+        <h3>Belajar Langkah Demi Langkah</h3>
+
+        <p>
+          Sesuai untuk mereka yang masih baru dan perlukan
+          panduan untuk memulakan perjalanan.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">05</div>
+
+        <h3>Bina Aset Digital</h3>
+
+        <p>
+          Lihat YouTube bukan sekadar media sosial,
+          tetapi sebagai salah satu aset digital yang boleh dibina.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-number">06</div>
+
+        <h3>Peluang Pendapatan</h3>
+
+        <p>
+          Fahami beberapa cara bagaimana ekosistem YouTube
+          boleh membuka peluang pendapatan secara online.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHO -->
+
+  <section class="section">
+
+    <div class="section-title">
+
+      <h2>Siapa Yang Sesuai?</h2>
+
+      <p>
+        TubeProfiters Circle mungkin sesuai untuk anda jika...
+      </p>
+
+    </div>
+
+
+    <div class="who">
+
+      <div class="who-item">
+        <span class="check">✓</span>
+        Anda mahu mula YouTube tetapi masih tidak tahu langkah pertama.
+      </div>
+
+      <div class="who-item">
+        <span class="check">✓</span>
+        Anda berminat menghasilkan content tanpa menunjukkan muka.
+      </div>
+
+      <div class="who-item">
+        <span class="check">✓</span>
+        Anda sedang mencari peluang side income melalui dunia digital.
+      </div>
+
+      <div class="who-item">
+        <span class="check">✓</span>
+        Anda mahu belajar membina channel dengan strategi yang lebih tersusun.
+      </div>
+
+      <div class="who-item">
+        <span class="check">✓</span>
+        Anda seorang beginner yang mahu belajar dan mencuba sesuatu yang baru.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HARRY DIGITAL -->
+
+  <section class="section section-dark">
+
+    <div class="journey">
+
+      <div class="eyebrow">
+        HARRY DIGITAL VERSE
+      </div>
+
+      <h2 style="font-size:36px; margin-bottom:25px;">
+        Kenapa Aku Kongsikan TPC?
+      </h2>
+
+      <p>
+        Harry Digital Verse dibina sebagai tempat aku berkongsi perjalanan
+        belajar tentang dunia digital — daripada content, affiliate marketing,
+        AI, digital products sehinggalah membina projek sendiri.
+      </p>
+
+      <p>
+        Aku juga masih belajar.
+      </p>
+
+      <p>
+        Jadi bila aku jumpa sesuatu yang berkaitan dengan perjalanan yang
+        sedang aku bina, aku mahu kongsikan kepada mereka yang mungkin
+        sedang bermula dari tempat yang sama.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+
+  <section class="cta">
+
+    <div class="eyebrow">
+      MULAKAN PERJALANAN ANDA
+    </div>
+
+    <h2>
+      Mungkin Ini Langkah Pertama Untuk Channel YouTube Anda.
+    </h2>
 
     <p>
-        I've been exploring different ways to build digital income,
-        including faceless content and YouTube. One of the resources
-        I've discovered along this journey is TubeProfiters Circle.
+      Jika anda mahu mengetahui dengan lebih lanjut apa yang ditawarkan
+      dalam TubeProfiters Circle, anda boleh lihat penerangan penuh
+      melalui laman rasminya.
     </p>
 
-    <a class="btn"
-       href="https://www.nurazza.com/tubeprofiterscircle?sa=sa0276839020619f40697c373025bb832b4b24074f"
-       target="_blank"
-       rel="noopener sponsored">
-       Explore TubeProfiters Circle →
+    <a
+      class="btn"
+      href="https://www.nurazza.com/tubeprofiterscircle?sa=sa0276839020619f40697c373025bb832b4b24074f"
+      target="_blank"
+      rel="noopener noreferrer">
+      Ketahui Lebih Lanjut Tentang TPC →
     </a>
 
-    <span class="small-note">
-        Opens the official TubeProfiters Circle page.
-    </span>
-
-</div>
-</section>
+  </section>
 
 
-<section class="section">
+  <!-- DISCLOSURE -->
 
-<div class="section-title">
-    <h2>Why This Caught My Attention</h2>
-    <p>
-        Faceless YouTube fits into what I'm currently exploring through
-        Harry Digital Verse: creating digital assets without needing
-        to become the face of the content.
-    </p>
-</div>
+  <div class="disclaimer">
 
-<div class="grid">
+    <strong>Pendedahan Affiliate:</strong>
+    Halaman ini mengandungi pautan affiliate. Jika anda membuat pembelian
+    melalui pautan tersebut, Harry Digital Verse mungkin menerima komisen
+    tanpa sebarang kos tambahan kepada anda.
 
-    <div class="card">
-        <div class="number">01</div>
-        <h3>Faceless Content</h3>
-        <p>
-            Explore a content model where being in front of the camera
-            isn't the main requirement.
-        </p>
-    </div>
+    <br><br>
 
-    <div class="card">
-        <div class="number">02</div>
-        <h3>YouTube</h3>
-        <p>
-            Learn more about building content around one of the world's
-            biggest video platforms.
-        </p>
-    </div>
+    Sebarang hasil atau pendapatan tidak dijamin.
+    Keputusan setiap individu bergantung kepada usaha, strategi,
+    pelaksanaan dan pelbagai faktor lain.
 
-    <div class="card">
-        <div class="number">03</div>
-        <h3>Digital Income</h3>
-        <p>
-            Explore another possible path within the wider digital
-            income and online-business ecosystem.
-        </p>
-    </div>
-
-</div>
-</section>
+  </div>
 
 
-<div class="cta">
+  <!-- FOOTER -->
 
-    <h2>Want to See What TPC Is About?</h2>
-
-    <p>
-        You can visit the official TubeProfiters Circle page below
-        to read the full program details and decide for yourself
-        whether it fits what you're looking for.
-    </p>
-
-    <a class="btn"
-       href="https://www.nurazza.com/tubeprofiterscircle?sa=sa0276839020619f40697c373025bb832b4b24074f"
-       target="_blank"
-       rel="noopener sponsored">
-       View TubeProfiters Circle →
-    </a>
-
-</div>
-
-
-<div class="disclosure">
-    Affiliate disclosure: Some links on this page are affiliate links.
-    If you make a purchase through them, Harry Digital Verse may earn
-    a commission at no additional cost to you.
-</div>
-
-
-<footer>
-    © 2026 Harry Digital Verse. Build. Learn. Create. Grow.
-</footer>
+  <footer>
+    © 2026 Harry Digital Verse. Hak cipta terpelihara.
+  </footer>
 
 </body>
 </html>
