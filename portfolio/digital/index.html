@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Creator Launch Kit | Digital Product Demo</title>
+
+  <meta
+    name="description"
+    content="Contoh landing page digital product untuk ebook, course, coaching atau affiliate offer."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f7ff;
+      color: #23213a;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid #e6e2f5;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #5a45b8;
+    }
+
+    .nav-cta {
+      background: #5a45b8;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 90px 0 80px;
+      background:
+        radial-gradient(circle at top right, #ded7ff 0, transparent 34%),
+        radial-gradient(circle at bottom left, #e8f0ff 0, transparent 32%),
+        #f8f7ff;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #e9e4ff;
+      color: #5a45b8;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+      color: #26213f;
+    }
+
+    .hero h1 span {
+      color: #6a52d6;
+    }
+
+    .hero p {
+      max-width: 640px;
+      font-size: 1.08rem;
+      color: #5f5a72;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    .primary-btn {
+      background: #5a45b8;
+      color: white;
+    }
+
+    .secondary-btn {
+      background: white;
+      border: 1px solid #5a45b8;
+      color: #5a45b8;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #e6e2f5;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 20px 50px rgba(68, 51, 143, 0.10);
+    }
+
+    .product-badge {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #eeeaff;
+      color: #5a45b8;
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .mock-cover {
+      min-height: 280px;
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background:
+        linear-gradient(145deg, #4c3ca5, #7a62df);
+      color: white;
+      margin-bottom: 22px;
+    }
+
+    .mock-cover small {
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+
+    .mock-cover h2 {
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    .product-card p {
+      color: #625d72;
+    }
+
+    .price {
+      display: block;
+      margin-top: 16px;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: #5a45b8;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading span {
+      color: #6a52d6;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .benefit-card {
+      background: white;
+      border: 1px solid #e6e2f5;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(68, 51, 143, 0.06);
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .benefit-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .inside {
+      background: #eeeaff;
+    }
+
+    .inside-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .inside-card {
+      background: white;
+      padding: 28px;
+      border-radius: 20px;
+    }
+
+    .inside-card ul {
+      margin-top: 14px;
+      padding-left: 20px;
+    }
+
+    .inside-card li {
+      margin-bottom: 8px;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .who-card {
+      background: white;
+      border: 1px solid #e6e2f5;
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .who-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 58px 30px;
+      border-radius: 28px;
+      background: #27213f;
+      color: white;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      color: #ddd7ef;
+      margin-bottom: 26px;
+    }
+
+    .cta-box .primary-btn {
+      background: white;
+      color: #27213f;
+    }
+
+    .disclaimer {
+      max-width: 850px;
+      margin: 24px auto 0;
+      font-size: 0.85rem;
+      color: #77718a;
+    }
+
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #77718a;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .inside-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .who-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .benefit-grid,
+      .who-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+
+      <a class="brand" href="#home">
+        Creator Launch Kit
+      </a>
+
+      <a
+        class="nav-cta"
+        href="#offer"
+      >
+        Lihat Offer
+      </a>
+
+    </div>
+  </nav>
+
+
+  <header class="hero" id="home">
+    <div class="container">
+
+      <div class="hero-grid">
+
+        <div>
+
+          <span class="eyebrow">
+            DIGITAL PRODUCT • BEGINNER FRIENDLY
+          </span>
+
+          <h1>
+            Dari idea kepada
+            <span>produk digital yang lebih tersusun.</span>
+          </h1>
+
+          <p>
+            Contoh landing page untuk ebook, mini course, coaching
+            atau affiliate offer. Fokus pada mesej yang jelas,
+            manfaat produk dan satu CTA utama.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              class="primary-btn"
+              href="#offer"
+            >
+              Lihat Apa Yang Anda Dapat
+            </a>
+
+            <a
+              class="secondary-btn"
+              href="#inside"
+            >
+              Kandungan Program
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <aside class="product-card">
+
+          <span class="product-badge">
+            DEMO DIGITAL OFFER
+          </span>
+
+          <div class="mock-cover">
+
+            <small>
+              CREATOR LAUNCH KIT
+            </small>
+
+            <h2>
+              Build. Package. Launch.
+            </h2>
+
+          </div>
+
+          <p>
+            Panduan contoh untuk membantu beginner menyusun idea,
+            membina offer dan menyediakan langkah pertama untuk launch.
+          </p>
+
+          <span class="price">
+            Contoh Harga: RM49
+          </span>
+
+        </aside>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <section id="offer">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>APA YANG OFFER INI BANTU</span>
+
+        <h2>
+          Bukan sekadar cantik — landing page perlu menjawab soalan pembeli
+        </h2>
+
+        <p>
+          Contoh struktur ini menunjukkan bagaimana digital product
+          boleh diterangkan dengan lebih jelas sebelum visitor
+          membuat keputusan.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-grid">
+
+        <article class="benefit-card">
+
+          <span class="benefit-icon">
+            💡
+          </span>
+
+          <h3>
+            Clarify Your Idea
+          </h3>
+
+          <p>
+            Bantu pembeli faham masalah apa yang produk cuba selesaikan.
+          </p>
+
+        </article>
+
+
+        <article class="benefit-card">
+
+          <span class="benefit-icon">
+            📦
+          </span>
+
+          <h3>
+            Package The Offer
+          </h3>
+
+          <p>
+            Terangkan apa yang termasuk dalam produk atau program.
+          </p>
+
+        </article>
+
+
+        <article class="benefit-card">
+
+          <span class="benefit-icon">
+            🚀
+          </span>
+
+          <h3>
+            Clear Next Step
+          </h3>
+
+          <p>
+            Berikan satu CTA yang jelas supaya visitor tahu apa perlu dibuat.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="inside" id="inside">
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>CONTOH KANDUNGAN</span>
+
+        <h2>
+          Apa yang boleh dimasukkan dalam digital offer
+        </h2>
+
+      </div>
+
+
+      <div class="inside-grid">
+
+        <article class="inside-card">
+
+          <h3>
+            Modul / Kandungan
+          </h3>
+
+          <ul>
+            <li>Kenal pasti idea dan target audience</li>
+            <li>Susun offer dan value proposition</li>
+            <li>Bina simple sales message</li>
+            <li>Sediakan CTA dan customer journey</li>
+            <li>Checklist sebelum launch</li>
+          </ul>
+
+        </article>
+
+
+        <article class="inside-card">
+
+          <h3>
+            Bonus Contoh
+          </h3>
+
+          <ul>
+            <li>Simple content planner</li>
+            <li>Landing page checklist</li>
+            <li>CTA writing prompts</li>
+            <li>Basic launch tracker</li>
+            <li>Quick-start guide</li>
+          </ul>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>SIAPA YANG SESUAI</span>
+
+        <h2>
+          Satu template boleh disesuaikan untuk pelbagai offer
+        </h2>
+
+      </div>
+
+
+      <div class="who-grid">
+
+        <article class="who-card">
+          <h3>📘 Ebook Seller</h3>
+          <p>
+            Untuk menjual ebook atau panduan digital.
+          </p>
+        </article>
+
+        <article class="who-card">
+          <h3>🎓 Course Creator</h3>
+          <p>
+            Untuk mini course, kelas online atau workshop.
+          </p>
+        </article>
+
+        <article class="who-card">
+          <h3>💬 Coach / Consultant</h3>
+          <p>
+            Untuk memperkenalkan servis coaching atau consultation.
+          </p>
+        </article>
+
+        <article class="who-card">
+          <h3>🔗 Affiliate Marketer</h3>
+          <p>
+            Untuk bridge page sebelum visitor dibawa ke offer utama.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="cta-section">
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>
+          Ready untuk lihat offer penuh?
+        </h2>
+
+        <p>
+          Untuk customer sebenar, button ini boleh disambungkan
+          ke checkout, WhatsApp, booking page atau affiliate link.
+        </p>
+
+        <a
+          class="primary-btn"
+          href="#home"
+        >
+          View The Offer
+        </a>
+
+      </div>
+
+      <p class="disclaimer">
+        Demo ini ialah portfolio concept sahaja.
+        Nama produk, harga dan kandungan adalah contoh dan bukan
+        representasi produk atau pendapatan sebenar.
+      </p>
+
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      Demo landing page by Harry Digital • Portfolio Concept
+    </div>
+  </footer>
+
+</body>
+</html>
