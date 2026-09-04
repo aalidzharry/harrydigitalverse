@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Landing Page Service | Harry Digital</title>
+
+  <meta
+    name="description"
+    content="Landing page service untuk bisnes kecil, servis, digital product dan affiliate. Intro price RM150."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    .nav-cta {
+      background: #111827;
+      color: #ffffff;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 90px 0 80px;
+      background:
+        radial-gradient(circle at top right, #dbeafe 0, transparent 35%),
+        radial-gradient(circle at bottom left, #ede9fe 0, transparent 35%),
+        #f8fafc;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #e0e7ff;
+      color: #4338ca;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.7rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    .hero h1 span {
+      color: #4f46e5;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.08rem;
+      color: #4b5563;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    .primary-btn {
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .secondary-btn {
+      background: #ffffff;
+      border: 1px solid #111827;
+      color: #111827;
+    }
+
+    .price-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 20px 50px rgba(17, 24, 39, 0.08);
+    }
+
+    .price-label {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .price-card h2 {
+      font-size: 2.5rem;
+      margin-bottom: 6px;
+    }
+
+    .price-card h2 span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #6b7280;
+    }
+
+    .price-card p {
+      color: #6b7280;
+      margin-bottom: 18px;
+    }
+
+    .price-card ul {
+      padding-left: 20px;
+      margin-bottom: 22px;
+    }
+
+    .price-card li {
+      margin-bottom: 8px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading span {
+      color: #4f46e5;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .benefit-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 26px;
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .benefit-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .portfolio-section {
+      background: #f1f5f9;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .portfolio-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .portfolio-icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .portfolio-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .portfolio-card p {
+      color: #6b7280;
+      margin-bottom: 18px;
+    }
+
+    .portfolio-link {
+      color: #4338ca;
+      font-weight: 700;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .step {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #111827;
+      color: #ffffff;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .note-box {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 18px;
+      padding: 24px;
+      margin-top: 30px;
+    }
+
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 58px 30px;
+      border-radius: 28px;
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      color: #d1d5db;
+      margin-bottom: 26px;
+    }
+
+    .cta-box .primary-btn {
+      background: #ffffff;
+      color: #111827;
+    }
+
+    .small-note {
+      max-width: 850px;
+      margin: 20px auto 0;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-grid,
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .benefit-grid,
+      .portfolio-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+
+      <a
+        class="brand"
+        href="https://www.harrydigitalverse.com/"
+      >
+        Harry Digital
+      </a>
+
+      <a
+        class="nav-cta"
+        href="#contact"
+      >
+        Tanya Sekarang
+      </a>
+
+    </div>
+  </nav>
+
+
+  <header class="hero">
+
+    <div class="container">
+
+      <div class="hero-grid">
+
+        <div>
+
+          <span class="eyebrow">
+            LANDING PAGE SERVICE • INTRO PRICE
+          </span>
+
+          <h1>
+            Bisnes anda perlukan
+            <span>satu page yang lebih jelas?</span>
+          </h1>
+
+          <p>
+            Saya membantu bisnes kecil, servis, personal brand
+            dan digital product membina simple landing page
+            yang mobile-friendly dengan CTA yang jelas.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              class="primary-btn"
+              href="#portfolio"
+            >
+              Lihat Contoh Landing Page
+            </a>
+
+            <a
+              class="secondary-btn"
+              href="#contact"
+            >
+              Tanya Tentang Slot
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <aside class="price-card">
+
+          <span class="price-label">
+            INTRO PACKAGE
+          </span>
+
+          <h2>
+            RM150
+            <span>/ landing page</span>
+          </h2>
+
+          <p>
+            Untuk simple 1-page website.
+          </p>
+
+          <ul>
+            <li>1-page landing page</li>
+            <li>Mobile responsive</li>
+            <li>Basic design ikut brand</li>
+            <li>Susunan content</li>
+            <li>CTA WhatsApp / booking / link</li>
+            <li>1 revision</li>
+            <li>Anggaran siap 2–3 hari</li>
+          </ul>
+
+          <a
+            class="primary-btn"
+            href="#contact"
+          >
+            Saya Berminat
+          </a>
+
+        </aside>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>APA YANG ANDA DAPAT</span>
+
+        <h2>
+          Simple, kemas dan fokus pada tindakan customer
+        </h2>
+
+        <p>
+          Landing page tidak perlu terlalu rumit.
+          Yang penting visitor faham siapa anda,
+          apa yang anda tawarkan dan apa langkah seterusnya.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-grid">
+
+        <article class="benefit-card">
+
+          <span class="benefit-icon">📱</span>
+
+          <h3>
+            Mobile Friendly
+          </h3>
+
+          <p>
+            Layout direka supaya senang dibaca
+            melalui telefon dan desktop.
+          </p>
+
+        </article>
+
+
+        <article class="benefit-card">
+
+          <span class="benefit-icon">🎯</span>
+
+          <h3>
+            Clear CTA
+          </h3>
+
+          <p>
+            Customer boleh terus WhatsApp,
+            booking atau pergi ke link utama.
+          </p>
+
+        </article>
+
+
+        <article class="benefit-card">
+
+          <span class="benefit-icon">🧩</span>
+
+          <h3>
+            Content Arrangement
+          </h3>
+
+          <p>
+            Maklumat anda disusun menjadi
+            section yang lebih mudah difahami.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section
+    class="portfolio-section"
+    id="portfolio"
+  >
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>PORTFOLIO DEMO</span>
+
+        <h2>
+          Pilih contoh mengikut jenis bisnes
+        </h2>
+
+        <p>
+          Semua contoh di bawah ialah portfolio concept
+          untuk menunjukkan gaya landing page yang boleh dibina.
+        </p>
+
+      </div>
+
+
+      <div class="portfolio-grid">
+
+        <article class="portfolio-card">
+
+          <span class="portfolio-icon">
+            🍽️
+          </span>
+
+          <h3>
+            Food Business
+          </h3>
+
+          <p>
+            Sesuai untuk home-based food,
+            cafe, catering atau menu delivery.
+          </p>
+
+          <a
+            class="portfolio-link"
+            href="/portfolio/food/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Food Demo →
+          </a>
+
+        </article>
+
+
+        <article class="portfolio-card">
+
+          <span class="portfolio-icon">
+            🔧
+          </span>
+
+          <h3>
+            Service Business
+          </h3>
+
+          <p>
+            Sesuai untuk aircond, repair,
+            cleaning, printing atau servis tempatan.
+          </p>
+
+          <a
+            class="portfolio-link"
+            href="/portfolio/service/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Service Demo →
+          </a>
+
+        </article>
+
+
+        <article class="portfolio-card">
+
+          <span class="portfolio-icon">
+            💻
+          </span>
+
+          <h3>
+            Digital Product
+          </h3>
+
+          <p>
+            Sesuai untuk ebook, course,
+            coaching atau affiliate bridge page.
+          </p>
+
+          <a
+            class="portfolio-link"
+            href="/portfolio/digital/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Digital Demo →
+          </a>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span>PROSES KERJA</span>
+
+        <h2>
+          Dari idea kepada landing page
+        </h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <article class="process-card">
+
+          <span class="step">
+            1
+          </span>
+
+          <h3>
+            Beritahu Keperluan
+          </h3>
+
+          <p>
+            Hantar jenis bisnes, produk atau servis
+            dan tujuan landing page.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="step">
+            2
+          </span>
+
+          <h3>
+            Hantar Content
+          </h3>
+
+          <p>
+            Berikan logo, gambar,
+            harga dan maklumat yang anda mahu masukkan.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="step">
+            3
+          </span>
+
+          <h3>
+            Saya Bina Page
+          </h3>
+
+          <p>
+            Content disusun dan landing page
+            dibina mengikut keperluan asas anda.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="step">
+            4
+          </span>
+
+          <h3>
+            Review & Siap
+          </h3>
+
+          <p>
+            Anda boleh minta satu revision
+            sebelum versi akhir disiapkan.
+          </p>
+
+        </article>
+
+      </div>
+
+
+      <div class="note-box">
+
+        <strong>
+          Nota:
+        </strong>
+
+        Harga RM150 ialah intro price untuk
+        simple 1-page landing page.
+
+        Domain, hosting berbayar, sistem checkout,
+        custom backend, advanced form/database
+        atau fungsi kompleks tidak termasuk
+        dan akan dibincangkan secara berasingan jika diperlukan.
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section
+    class="cta-section"
+    id="contact"
+  >
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>
+          Nak saya bina landing page untuk bisnes anda?
+        </h2>
+
+        <p>
+          Hantar jenis bisnes atau produk anda.
+          Saya akan lihat sama ada pakej RM150
+          sesuai untuk keperluan tersebut.
+        </p>
+
+        <a
+          class="primary-btn"
+          href="https://wa.me/601161245696?text=Hi%20Harry%20Digital%2C%20saya%20berminat%20dengan%20Landing%20Page%20RM150.%20Bisnes%20saya%20ialah%20..."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp Harry Digital
+        </a>
+
+      </div>
+
+      <p class="small-note">
+        Sila tukar nombor WhatsApp demo kepada nombor sebenar
+        sebelum page ini digunakan untuk mendapatkan customer.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <div class="container">
+      © 2026 Harry Digital • Explore. Build. Play. Grow.
+    </div>
+
+  </footer>
+
+</body>
+</html>
