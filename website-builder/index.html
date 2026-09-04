@@ -2,313 +2,990 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>Wix vs WordPress for Beginners | Harry Digital Verse</title>
 
   <meta name="description"
-        content="Wix vs WordPress for beginners. Compare website builders, ease of use, flexibility and features to choose the right platform for your first website.">
+        content="Wix vs WordPress for beginners. Compare ease of use, design, blogging, flexibility and website-building features to find the right platform for your first website.">
 
   <meta name="robots" content="index, follow">
 
   <link rel="canonical"
-        href="https://harrydigitalverse.com/website-builder/">
+        href="https://www.harrydigitalverse.com/website-builder/">
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #07111f;
-      color: #f5f7fb;
-      line-height: 1.6;
+      background: #ffffff;
+      color: #14213d;
+      line-height: 1.65;
+    }
+
+    a {
+      text-decoration: none;
     }
 
     .container {
-      width: min(1100px, 90%);
+      width: min(1120px, 90%);
       margin: auto;
     }
 
+
+    /* NAV */
+
     nav {
-      padding: 22px 0;
-      border-bottom: 1px solid #253247;
+      background: rgba(255,255,255,.95);
+      border-bottom: 1px solid #e8edf5;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    nav strong {
-      font-size: 21px;
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
     }
+
+    .brand {
+      color: #155eef;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .nav-link {
+      color: #475467;
+      font-weight: 600;
+    }
+
+
+    /* HERO */
 
     .hero {
+      position: relative;
+      overflow: hidden;
       text-align: center;
-      padding: 85px 0 65px;
+      padding: 100px 0 85px;
+      background:
+        radial-gradient(circle at 10% 20%,
+        rgba(67, 126, 255, .15), transparent 32%),
+
+        radial-gradient(circle at 90% 20%,
+        rgba(78, 205, 196, .16), transparent 30%),
+
+        linear-gradient(180deg,#f8fbff,#ffffff);
     }
 
-    .tag {
-      color: #72e0c2;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
+    .badge {
+      display: inline-block;
+      background: #eaf2ff;
+      color: #155eef;
+      border: 1px solid #cfe0ff;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .8px;
+      margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(38px, 7vw, 68px);
-      line-height: 1.05;
       max-width: 900px;
       margin: auto;
+      font-size: clamp(42px,7vw,72px);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      color: #101828;
     }
 
-    .hero p {
-      max-width: 720px;
-      margin: 25px auto;
-      color: #b9c5d6;
-      font-size: 19px;
+    .highlight {
+      color: #155eef;
     }
 
-    .compare {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      padding: 30px 0 70px;
+    .hero-sub {
+      max-width: 760px;
+      margin: 25px auto 0;
+      font-size: 20px;
+      color: #667085;
     }
 
-    .card {
-      background: #101c2d;
-      border: 1px solid #26364c;
-      border-radius: 18px;
-      padding: 35px;
+    .hero-note {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #98a2b3;
     }
 
-    .card h2 {
-      font-size: 32px;
-      margin-bottom: 8px;
+
+    /* CHOICE CARDS */
+
+    .choice-section {
+      padding: 30px 0 90px;
     }
 
-    .best {
-      color: #72e0c2;
-      font-weight: bold;
-      margin-bottom: 20px;
+    .section-intro {
+      text-align: center;
+      margin-bottom: 40px;
     }
 
-    .card ul {
-      padding-left: 20px;
-      margin: 20px 0 28px;
-      color: #d5deea;
-    }
-
-    .card li {
+    .section-intro h2 {
+      font-size: clamp(30px,5vw,45px);
+      color: #101828;
       margin-bottom: 10px;
     }
 
-    .button {
+    .section-intro p {
+      color: #667085;
+      font-size: 18px;
+    }
+
+    .choices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .choice-card {
+      position: relative;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 38px;
+      background: #ffffff;
+      box-shadow: 0 15px 45px rgba(16,24,40,.08);
+      transition: .25s ease;
+    }
+
+    .choice-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 55px rgba(16,24,40,.13);
+    }
+
+    .choice-card.featured {
+      border: 2px solid #155eef;
+    }
+
+    .recommended {
+      position: absolute;
+      top: -14px;
+      left: 30px;
+      background: #155eef;
+      color: white;
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .platform {
+      font-size: 35px;
+      font-weight: 800;
+      color: #101828;
+      margin-bottom: 8px;
+    }
+
+    .choice-title {
+      font-size: 21px;
+      font-weight: 800;
+      color: #155eef;
+      margin-bottom: 14px;
+    }
+
+    .choice-card p {
+      color: #667085;
+    }
+
+    .choice-card ul {
+      list-style: none;
+      margin: 25px 0 30px;
+    }
+
+    .choice-card li {
+      margin: 12px 0;
+      color: #344054;
+    }
+
+    .choice-card li::before {
+      content: "✓";
+      color: #12b76a;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      padding: 15px 22px;
+      border-radius: 11px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn-blue {
+      background: #155eef;
+      color: #ffffff;
+    }
+
+    .btn-blue:hover {
+      background: #004eeb;
+    }
+
+    .btn-outline {
+      color: #155eef;
+      border: 2px solid #155eef;
+      background: white;
+    }
+
+    .btn-outline:hover {
+      background: #f2f6ff;
+    }
+
+    .small-note {
+      text-align: center;
+      color: #98a2b3;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+
+    /* WHICH SOUNDS LIKE YOU */
+
+    .persona {
+      background: #f7faff;
+      padding: 90px 0;
+    }
+
+    .persona-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .persona-box {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      border: 1px solid #e5ebf5;
+    }
+
+    .persona-box h3 {
+      font-size: 25px;
+      margin-bottom: 18px;
+      color: #101828;
+    }
+
+    .persona-box p {
+      padding: 9px 0;
+      color: #475467;
+    }
+
+    .persona-box p::before {
+      content: "✓";
+      color: #155eef;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+
+    /* COMPARISON */
+
+    .comparison {
+      padding: 90px 0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 40px;
+      border: 1px solid #e4e7ec;
+      border-radius: 18px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 650px;
+      background: white;
+    }
+
+    th,
+    td {
+      padding: 19px 22px;
+      border-bottom: 1px solid #eaecf0;
+      text-align: center;
+    }
+
+    th:first-child,
+    td:first-child {
+      text-align: left;
+      font-weight: 700;
+    }
+
+    th {
+      background: #f8faff;
+      color: #101828;
+      font-size: 18px;
+    }
+
+    td {
+      color: #475467;
+    }
+
+
+    /* CONTENT */
+
+    .guide {
+      background: #f8fafc;
+      padding: 90px 0;
+    }
+
+    .content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .content h2 {
+      color: #101828;
+      font-size: 37px;
+      margin-bottom: 20px;
+    }
+
+    .content h3 {
+      color: #101828;
+      font-size: 25px;
+      margin: 35px 0 12px;
+    }
+
+    .content p {
+      color: #475467;
+      margin-bottom: 17px;
+      font-size: 17px;
+    }
+
+
+    /* CTA */
+
+    .final-cta {
+      padding: 95px 0;
+      text-align: center;
+    }
+
+    .cta-box {
+      background:
+        linear-gradient(135deg,#0f5cf5,#6638e8);
+      color: white;
+      padding: 60px 35px;
+      border-radius: 28px;
+      box-shadow: 0 25px 60px rgba(21,94,239,.25);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(32px,5vw,48px);
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #e8efff;
+      font-size: 18px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
       display: inline-block;
-      background: #72e0c2;
-      color: #07111f;
-      text-decoration: none;
-      padding: 13px 21px;
-      border-radius: 9px;
+      background: white;
+      color: #155eef;
+      padding: 14px 25px;
+      border-radius: 10px;
+      font-weight: 800;
+    }
+
+
+    /* SERVICE */
+
+    .service {
+      padding: 20px 0 90px;
+    }
+
+    .service-box {
+      text-align: center;
+      background: #f8faff;
+      border: 1px solid #dfe8f8;
+      border-radius: 24px;
+      padding: 50px 30px;
+    }
+
+    .service-box h2 {
+      font-size: 34px;
+      color: #101828;
+      margin-bottom: 12px;
+    }
+
+    .service-box p {
+      max-width: 670px;
+      margin: 0 auto 25px;
+      color: #667085;
+    }
+
+    .service-link {
+      display: inline-block;
+      color: white;
+      background: #101828;
+      padding: 14px 23px;
+      border-radius: 10px;
       font-weight: bold;
     }
 
-    .section {
-      padding: 70px 0;
-      border-top: 1px solid #253247;
-    }
 
-    .section h2 {
-      font-size: 36px;
-      margin-bottom: 18px;
-    }
-
-    .section p {
-      color: #c3cedd;
-      max-width: 800px;
-      margin-bottom: 18px;
-    }
-
-    .service {
-      background: #101c2d;
-      border-radius: 18px;
-      padding: 40px;
-    }
+    /* DISCLOSURE / FOOTER */
 
     .disclosure {
-      font-size: 13px;
-      color: #8f9caf;
+      border-top: 1px solid #eaecf0;
       padding: 35px 0;
+      color: #667085;
+      font-size: 13px;
     }
 
     footer {
-      border-top: 1px solid #253247;
+      background: #101828;
+      color: #98a2b3;
       text-align: center;
-      color: #8492a6;
-      padding: 30px;
+      padding: 35px 20px;
     }
 
-    @media (max-width: 720px) {
-      .compare {
+
+    @media(max-width:760px) {
+
+      .nav-link {
+        display: none;
+      }
+
+      .choices,
+      .persona-grid {
         grid-template-columns: 1fr;
       }
 
       .hero {
-        padding-top: 55px;
+        padding: 70px 0 60px;
       }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      .choice-card {
+        padding: 30px 24px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
+
 <nav>
-  <div class="container">
-    <strong>HARRY DIGITAL VERSE</strong>
+  <div class="container nav-inner">
+
+    <a href="https://www.harrydigitalverse.com/"
+       class="brand">
+      HARRY DIGITAL VERSE
+    </a>
+
+    <a href="#compare"
+       class="nav-link">
+      Wix vs WordPress
+    </a>
+
   </div>
 </nav>
 
+
 <header class="hero">
+
   <div class="container">
 
-    <div class="tag">BEGINNER WEBSITE GUIDE</div>
+    <div class="badge">
+      BEGINNER WEBSITE GUIDE
+    </div>
 
-    <h1>Build Your First Website. No Coding Needed.</h1>
+    <h1>
+      Ready to Build Your
+      <span class="highlight">First Website?</span>
+    </h1>
 
-    <p>
-      Not sure whether Wix or WordPress is right for you?
-      Compare two popular ways to build your first website
-      and choose the platform that fits your goals.
+    <p class="hero-sub">
+      Wix or WordPress? Find the option that fits what
+      you actually want to build — without getting lost
+      in technical jargon.
+    </p>
+
+    <p class="hero-note">
+      No coding experience required to start exploring your options.
     </p>
 
   </div>
+
 </header>
+
 
 <main>
 
-<section class="container compare">
 
-  <article class="card">
+<section class="choice-section" id="compare">
 
-    <h2>Wix</h2>
-
-    <div class="best">
-      Best for: Simplicity & fast setup
-    </div>
-
-    <p>
-      Wix is a visual website builder designed to make creating
-      a website approachable for beginners.
-    </p>
-
-    <ul>
-      <li>Visual drag-and-drop editing</li>
-      <li>Beginner-friendly setup</li>
-      <li>Templates for different website types</li>
-      <li>Hosting included</li>
-      <li>Useful for small businesses and portfolios</li>
-    </ul>
-
-    <!-- Replace # with Wix affiliate link after approval -->
-    <a href="#" class="button">
-      Explore Wix →
-    </a>
-
-  </article>
-
-
-  <article class="card">
-
-    <h2>WordPress.com</h2>
-
-    <div class="best">
-      Best for: Content & long-term flexibility
-    </div>
-
-    <p>
-      WordPress.com provides tools for creating blogs,
-      business websites and content-focused online projects.
-    </p>
-
-    <ul>
-      <li>Great for publishing content</li>
-      <li>Flexible website structure</li>
-      <li>Built-in hosting options</li>
-      <li>Suitable for blogs and business sites</li>
-      <li>Room to expand as your website grows</li>
-    </ul>
-
-    <!-- Replace # with WordPress affiliate link after approval -->
-    <a href="#" class="button">
-      Explore WordPress →
-    </a>
-
-  </article>
-
-</section>
-
-
-<section class="section">
   <div class="container">
 
-    <h2>Wix or WordPress: Which Should You Choose?</h2>
+    <div class="section-intro">
+
+      <h2>Which one fits you?</h2>
+
+      <p>
+        Start with the goal that sounds most like you.
+      </p>
+
+    </div>
+
+
+    <div class="choices">
+
+
+      <!-- WIX -->
+
+      <article class="choice-card featured">
+
+        <span class="recommended">
+          GREAT FOR BEGINNERS
+        </span>
+
+        <div class="platform">
+          Wix
+        </div>
+
+        <div class="choice-title">
+          ⚡ I want the easiest way to start.
+        </div>
+
+        <p>
+          A visual website-building experience for people
+          who want to design and launch without dealing
+          with lots of technical setup.
+        </p>
+
+        <ul>
+          <li>Visual drag-and-drop editing</li>
+          <li>Beginner-friendly setup</li>
+          <li>Professional website templates</li>
+          <li>Hosting included</li>
+          <li>Useful for portfolios and small businesses</li>
+        </ul>
+
+        <!-- Replace # with Wix affiliate URL after approval -->
+
+        <a href="#"
+           class="btn btn-blue">
+          Choose Wix →
+        </a>
+
+        <div class="small-note">
+          Affiliate link will be activated after approval.
+        </div>
+
+      </article>
+
+
+      <!-- WORDPRESS -->
+
+      <article class="choice-card">
+
+        <div class="platform">
+          WordPress.com
+        </div>
+
+        <div class="choice-title">
+          🚀 I want more room to grow.
+        </div>
+
+        <p>
+          A strong option for content-focused websites,
+          blogs and online projects that may expand
+          over time.
+        </p>
+
+        <ul>
+          <li>Strong content publishing tools</li>
+          <li>Good for blogs and business websites</li>
+          <li>Flexible website structure</li>
+          <li>Hosting plans available</li>
+          <li>Designed to support growing websites</li>
+        </ul>
+
+        <!-- Replace # with WordPress affiliate URL after approval -->
+
+        <a href="#"
+           class="btn btn-outline">
+          Choose WordPress →
+        </a>
+
+        <div class="small-note">
+          Affiliate link will be activated after approval.
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- PERSONA SECTION -->
+
+<section class="persona">
+
+  <div class="container">
+
+    <div class="section-intro">
+
+      <h2>Which sounds more like you?</h2>
+
+      <p>
+        Forget the technical jargon for a moment.
+        Think about how you actually want to work.
+      </p>
+
+    </div>
+
+
+    <div class="persona-grid">
+
+
+      <div class="persona-box">
+
+        <h3>Choose Wix if...</h3>
+
+        <p>I don't know how to code.</p>
+        <p>I want something simple to manage.</p>
+        <p>I care about visual design.</p>
+        <p>I want to launch relatively quickly.</p>
+        <p>I prefer an all-in-one website builder.</p>
+
+      </div>
+
+
+      <div class="persona-box">
+
+        <h3>Choose WordPress.com if...</h3>
+
+        <p>I want to publish lots of content.</p>
+        <p>Blogging is important to my website.</p>
+        <p>I expect my website to grow.</p>
+        <p>I want more structural flexibility.</p>
+        <p>I am building a longer-term content project.</p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- COMPARISON -->
+
+<section class="comparison">
+
+  <div class="container">
+
+    <div class="section-intro">
+
+      <h2>Wix vs WordPress at a glance</h2>
+
+      <p>
+        A simple beginner-focused comparison.
+      </p>
+
+    </div>
+
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>What matters?</th>
+            <th>Wix</th>
+            <th>WordPress.com</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Beginner friendliness</td>
+            <td>Excellent</td>
+            <td>Very Good</td>
+          </tr>
+
+          <tr>
+            <td>Setup speed</td>
+            <td>Fast</td>
+            <td>Moderate</td>
+          </tr>
+
+          <tr>
+            <td>Visual editing</td>
+            <td>Excellent</td>
+            <td>Good</td>
+          </tr>
+
+          <tr>
+            <td>Blogging & content</td>
+            <td>Good</td>
+            <td>Excellent</td>
+          </tr>
+
+          <tr>
+            <td>Long-term flexibility</td>
+            <td>Good</td>
+            <td>Excellent</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- SEO CONTENT -->
+
+<section class="guide">
+
+  <div class="container content">
+
+    <h2>
+      Wix vs WordPress for Beginners
+    </h2>
 
     <p>
-      If your priority is getting a visually polished website online
-      quickly with a straightforward editing experience, Wix may be
-      worth exploring.
+      Building your first website can feel complicated
+      because there are many platforms, plans and technical
+      terms to compare. Two well-known options beginners
+      often consider are Wix and WordPress.com.
+    </p>
+
+
+    <h3>
+      Is Wix good for beginners?
+    </h3>
+
+    <p>
+      Wix focuses heavily on visual website building.
+      Its editing experience can appeal to beginners who
+      want to work directly with the appearance of their
+      website rather than spend significant time dealing
+      with technical setup.
     </p>
 
     <p>
-      If your plans involve publishing lots of content, blogging,
-      or developing a website that can evolve over time,
-      WordPress.com may be a better fit.
+      This can make Wix worth considering for portfolios,
+      service websites, small businesses and other projects
+      where ease of use and visual presentation are priorities.
+    </p>
+
+
+    <h3>
+      Is WordPress.com good for beginners?
+    </h3>
+
+    <p>
+      WordPress.com combines website creation with
+      content-publishing tools. It can be particularly
+      useful for people interested in blogging, publishing
+      articles or developing a content-focused website.
     </p>
 
     <p>
-      There is no single platform that is best for everyone.
-      Your choice should depend on your goals, budget,
-      preferred workflow and the type of website you want to build.
+      Users who expect their website to expand over time
+      may also appreciate the additional flexibility
+      available across WordPress.com's different plans
+      and features.
+    </p>
+
+
+    <h3>
+      Do I need coding skills?
+    </h3>
+
+    <p>
+      You do not need to be a professional developer
+      to begin building a website with either platform.
+      However, the experience, available customization
+      and learning curve differ, so the better choice
+      depends on what you want to create.
+    </p>
+
+
+    <h3>
+      So, which should I choose?
+    </h3>
+
+    <p>
+      Choose based on your own priorities rather than
+      looking for one universal winner. If simplicity
+      and visual editing matter most, explore Wix.
+      If publishing content and long-term flexibility
+      matter more, explore WordPress.com.
     </p>
 
   </div>
+
 </section>
 
 
-<section class="section">
-  <div class="container service">
 
-    <h2>Don't Want to Build It Yourself?</h2>
+<!-- FINAL AFFILIATE CTA -->
 
-    <p>
-      Harry Digital Verse also offers simple landing-page setup
-      for individuals and small businesses who want to get online
-      without dealing with the technical setup themselves.
-    </p>
+<section class="final-cta">
 
-    <a href="mailto:hello@harrydigitalverse.com" class="button">
-      Ask About Landing Page Setup →
-    </a>
+  <div class="container">
+
+    <div class="cta-box">
+
+      <h2>
+        Know Your Choice?
+      </h2>
+
+      <p>
+        Explore the platform that best matches
+        the website you want to build.
+      </p>
+
+      <div class="cta-buttons">
+
+        <!-- Replace # after Wix approval -->
+
+        <a href="#"
+           class="cta-btn">
+          Start With Wix →
+        </a>
+
+        <!-- Replace # after WordPress approval -->
+
+        <a href="#"
+           class="cta-btn">
+          Explore WordPress →
+        </a>
+
+      </div>
+
+    </div>
 
   </div>
+
+</section>
+
+
+
+<!-- SERVICE -->
+
+<section class="service">
+
+  <div class="container">
+
+    <div class="service-box">
+
+      <h2>
+        Don't Want to Build It Yourself?
+      </h2>
+
+      <p>
+        Harry Digital Verse also provides simple
+        landing-page setup for individuals and small
+        businesses who want help getting their page online.
+      </p>
+
+      <!-- Change contact method later if needed -->
+
+      <a href="mailto:hello@harrydigitalverse.com"
+         class="service-link">
+        Ask About Landing Page Setup →
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
 
-<section class="container disclosure">
 
-  <strong>Affiliate Disclosure:</strong>
-  Some links on this page may be affiliate links.
-  If you make a purchase through one of these links,
-  Harry Digital Verse may earn a commission at no additional
-  cost to you.
+<!-- DISCLOSURE -->
+
+<section class="disclosure">
+
+  <div class="container">
+
+    <strong>Affiliate Disclosure:</strong>
+
+    Some links on this page may be affiliate links.
+    If you make a purchase through one of these links,
+    Harry Digital Verse may earn a commission at no
+    additional cost to you. Our comparisons are intended
+    to help readers evaluate which platform may suit
+    their individual needs.
+
+  </div>
 
 </section>
+
 
 </main>
 
+
 <footer>
-  © 2026 Harry Digital Verse
+
+  © 2026 Harry Digital Verse ·
+  Build. Learn. Create. Grow.
+
 </footer>
+
 
 </body>
 </html>
