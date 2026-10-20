@@ -1,622 +1,900 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CoolFix Aircond Service | Servis Aircond Rumah & Pejabat</title>
+    <title>Renovation & Home Services | Demo Landing Page</title>
 
-  <meta
-    name="description"
-    content="CoolFix Aircond Service menyediakan servis, cleaning dan troubleshooting aircond untuk rumah dan pejabat."
-  >
+    <meta
+        name="description"
+        content="Demo landing page for a small renovation and home service business offering bathroom renovation, awning, tiling, plumbing, painting and repair work.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7fbff;
-      color: #183047;
-      line-height: 1.6;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    a {
-      text-decoration: none;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f4;
+            color: #1c1c1c;
+            line-height: 1.6;
+        }
 
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
+        a {
+            text-decoration: none;
+        }
 
-    .navbar {
-      background: #ffffff;
-      border-bottom: 1px solid #dce8f0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
 
-    .nav-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+        /* NAV */
 
-    .brand {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #0f5f9c;
-    }
+        nav {
+            background: #111827;
+            color: white;
+            padding: 18px 0;
+        }
 
-    .nav-cta {
-      background: #0f5f9c;
-      color: white;
-      padding: 11px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-    }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-    .hero {
-      min-height: 78vh;
-      display: flex;
-      align-items: center;
-      padding: 70px 0;
-      background:
-        linear-gradient(
-          rgba(247, 251, 255, 0.88),
-          rgba(247, 251, 255, 0.94)
-        ),
-        url("https://images.unsplash.com/photo-1631545806609-53c2a73a4142?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
-    }
+        .brand {
+            color: white;
+            font-weight: 800;
+            font-size: 20px;
+        }
 
-    .hero-content {
-      max-width: 700px;
-    }
+        .nav-link {
+            color: #d1d5db;
+            font-size: 14px;
+        }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 16px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #dceffc;
-      color: #0f5f9c;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
+        /* HERO */
 
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4.7rem);
-      line-height: 1.05;
-      margin-bottom: 20px;
-      color: #16354c;
-    }
+        .hero {
+            background:
+                linear-gradient(rgba(17,24,39,0.88), rgba(17,24,39,0.88)),
+                linear-gradient(135deg, #374151, #111827);
+            color: white;
+            padding: 95px 0 85px;
+        }
 
-    .hero h1 span {
-      color: #0f78c9;
-    }
+        .hero-content {
+            max-width: 760px;
+        }
 
-    .hero p {
-      max-width: 620px;
-      font-size: 1.08rem;
-      margin-bottom: 28px;
-      color: #4b6274;
-    }
+        .eyebrow {
+            color: #fbbf24;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            margin-bottom: 15px;
+        }
 
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
 
-    .primary-btn,
-    .secondary-btn {
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: 700;
-      display: inline-block;
-    }
+        .hero p {
+            color: #e5e7eb;
+            font-size: 18px;
+            max-width: 650px;
+        }
 
-    .primary-btn {
-      background: #0f5f9c;
-      color: white;
-    }
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
 
-    .secondary-btn {
-      border: 1px solid #0f5f9c;
-      color: #0f5f9c;
-      background: white;
-    }
+        .primary-button,
+        .secondary-button {
+            display: inline-block;
+            padding: 14px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
 
-    section {
-      padding: 80px 0;
-    }
+        .primary-button {
+            background: #fbbf24;
+            color: #111827;
+        }
 
-    .section-heading {
-      max-width: 720px;
-      margin-bottom: 38px;
-    }
+        .secondary-button {
+            border: 1px solid rgba(255,255,255,0.35);
+            color: white;
+        }
 
-    .section-heading span {
-      color: #0f78c9;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
+        .primary-button:hover,
+        .secondary-button:hover {
+            transform: translateY(-2px);
+        }
 
-    .section-heading h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-top: 8px;
-      margin-bottom: 12px;
-    }
+        /* SECTION */
 
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
+        section {
+            padding: 80px 0;
+        }
 
-    .service-card {
-      background: white;
-      padding: 26px;
-      border-radius: 20px;
-      border: 1px solid #dce8f0;
-      box-shadow: 0 10px 28px rgba(28, 80, 119, 0.06);
-    }
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
 
-    .service-icon {
-      font-size: 2rem;
-      display: block;
-      margin-bottom: 14px;
-    }
+        .section-heading span {
+            color: #b7791f;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
 
-    .service-card h3 {
-      margin-bottom: 8px;
-      font-size: 1.3rem;
-    }
+        .section-heading h2 {
+            font-size: 34px;
+            margin-top: 8px;
+        }
 
-    .price {
-      display: inline-block;
-      margin-top: 12px;
-      color: #0f78c9;
-      font-weight: 800;
-    }
+        .section-heading p {
+            color: #6b7280;
+            max-width: 650px;
+            margin: 12px auto 0;
+        }
 
-    .why-us {
-      background: #eaf5fc;
-    }
+        /* SERVICES */
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
+        .services {
+            background: white;
+        }
 
-    .feature-card {
-      background: white;
-      padding: 24px;
-      border-radius: 18px;
-    }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
 
-    .feature-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
-      display: block;
-    }
+        .service-card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 28px;
+        }
 
-    .feature-card h3 {
-      margin-bottom: 7px;
-    }
+        .service-icon {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
 
-    .coverage {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 30px;
-      align-items: center;
-    }
+        .service-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
 
-    .coverage-box {
-      background: white;
-      border-radius: 20px;
-      padding: 28px;
-      border: 1px solid #dce8f0;
-    }
+        .service-card p {
+            color: #6b7280;
+            font-size: 15px;
+        }
 
-    .coverage-box ul {
-      margin-top: 14px;
-      padding-left: 20px;
-    }
+        /* PROJECTS */
 
-    .booking-section {
-      text-align: center;
-    }
+        .projects {
+            background: #f3f4f6;
+        }
 
-    .booking-box {
-      max-width: 820px;
-      margin: auto;
-      padding: 55px 28px;
-      border-radius: 24px;
-      background: #16354c;
-      color: white;
-    }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
 
-    .booking-box h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 14px;
-    }
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
 
-    .booking-box p {
-      margin-bottom: 26px;
-      color: #dce9f2;
-    }
+        .project-image {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #d1d5db;
+            color: #4b5563;
+            text-align: center;
+            padding: 20px;
+            font-weight: 700;
+        }
 
-    .booking-box .primary-btn {
-      background: #ffffff;
-      color: #16354c;
-    }
+        .project-content {
+            padding: 22px;
+        }
 
-    footer {
-      padding: 28px 0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #6e8290;
-    }
+        .project-content h3 {
+            margin-bottom: 8px;
+        }
 
-    @media (max-width: 900px) {
-      .service-grid,
-      .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+        .project-content p {
+            color: #6b7280;
+            font-size: 14px;
+        }
 
-      .coverage {
-        grid-template-columns: 1fr;
-      }
-    }
+        /* WHY US */
 
-    @media (max-width: 600px) {
-      .nav-inner {
-        min-height: 64px;
-      }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
 
-      .hero {
-        min-height: auto;
-        padding: 60px 0;
-      }
+        .why-card {
+            background: #111827;
+            color: white;
+            border-radius: 16px;
+            padding: 28px;
+        }
 
-      .service-grid,
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
+        .why-card h3 {
+            margin-bottom: 10px;
+        }
 
-      .hero-buttons {
-        flex-direction: column;
-      }
+        .why-card p {
+            color: #d1d5db;
+            font-size: 15px;
+        }
 
-      .hero-buttons a {
-        text-align: center;
-      }
-    }
-  </style>
+        /* PROCESS */
+
+        .process {
+            background: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            padding: 25px;
+            border-left: 4px solid #fbbf24;
+            background: #f9fafb;
+        }
+
+        .process-card strong {
+            display: block;
+            font-size: 13px;
+            color: #b7791f;
+            margin-bottom: 8px;
+        }
+
+        .process-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .process-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #d1d5db;
+        }
+
+        .cta .primary-button {
+            margin-top: 28px;
+        }
+
+        /* DEMO NOTE */
+
+        .demo-note {
+            background: #fff8dc;
+            border: 1px solid #f3d98b;
+            color: #5f4b16;
+            padding: 18px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0b1120;
+            color: #9ca3af;
+            padding: 35px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #d1d5db;
+        }
+
+        @media (max-width: 850px) {
+            .service-grid,
+            .project-grid,
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .service-grid,
+            .project-grid,
+            .why-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .nav-inner {
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <nav class="navbar">
+<nav>
     <div class="container nav-inner">
 
-      <a class="brand" href="#home">
-        CoolFix Aircond
-      </a>
+        <a class="brand" href="/portfolio/">
+            Harry Digital Demo
+        </a>
 
-      <a
-        class="nav-cta"
-        href="https://wa.me/60123456789"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Book Sekarang
-      </a>
+        <a class="nav-link" href="/portfolio/">
+            ← Back to Portfolio
+        </a>
 
     </div>
-  </nav>
+</nav>
 
 
-  <header class="hero" id="home">
+<header class="hero">
+
     <div class="container">
 
-      <div class="hero-content">
+        <div class="hero-content">
 
-        <span class="eyebrow">
-          Home • Office • Aircond Service
-        </span>
+            <p class="eyebrow">
+                RENOVATION • REPAIR • HOME SERVICES
+            </p>
 
-        <h1>
-          Aircond tak sejuk?
-          <span>Kami bantu check dan servis.</span>
-        </h1>
+            <h1>
+                Simple Renovation Work.
+                Done With Care.
+            </h1>
 
-        <p>
-          Servis aircond untuk rumah dan pejabat.
-          Dari basic cleaning hingga troubleshooting,
-          semuanya boleh terus book melalui WhatsApp.
-        </p>
+            <p>
+                From bathroom renovation and awning installation
+                to tiling, plumbing, painting and general repair work.
+                Tell us what you need and contact us directly through WhatsApp.
+            </p>
 
-        <div class="hero-buttons">
+            <div class="hero-buttons">
 
-          <a
-            class="primary-btn"
-            href="https://wa.me/60123456789?text=Hi%20CoolFix%20Aircond%2C%20saya%20nak%20buat%20booking%20servis."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book Melalui WhatsApp
-          </a>
+                <a
+                    class="primary-button"
+                    href="https://wa.me/?text=Hi%2C%20I%20would%20like%20to%20ask%20about%20your%20renovation%20services."
+                    target="_blank">
+                    WhatsApp Us
+                </a>
 
-          <a
-            class="secondary-btn"
-            href="#services"
-          >
-            Lihat Servis
-          </a>
+                <a
+                    class="secondary-button"
+                    href="#services">
+                    View Services
+                </a>
+
+            </div>
 
         </div>
 
-      </div>
-
     </div>
-  </header>
+
+</header>
 
 
-  <section id="services">
+<div class="demo-note">
+    Demo landing page — business name, WhatsApp number, service area and real project photos can be customised for the client.
+</div>
+
+
+<section class="services" id="services">
+
     <div class="container">
 
-      <div class="section-heading">
-
-        <span>SERVIS KAMI</span>
-
-        <h2>
-          Servis aircond yang simple dan terus terang
-        </h2>
-
-        <p>
-          Contoh pakej ini boleh diubah ikut servis sebenar customer.
-        </p>
-
-      </div>
-
-
-      <div class="service-grid">
-
-        <article class="service-card">
-
-          <span class="service-icon">🧼</span>
-
-          <h3>
-            Basic Aircond Cleaning
-          </h3>
-
-          <p>
-            Pembersihan filter, casing dan pemeriksaan asas.
-          </p>
-
-          <span class="price">
-            Dari RM80 / unit
-          </span>
-
-        </article>
-
-
-        <article class="service-card">
-
-          <span class="service-icon">❄️</span>
-
-          <h3>
-            Chemical Service
-          </h3>
-
-          <p>
-            Deep cleaning untuk aircond yang berbau atau kurang sejuk.
-          </p>
-
-          <span class="price">
-            Dari RM150 / unit
-          </span>
-
-        </article>
-
-
-        <article class="service-card">
-
-          <span class="service-icon">🔧</span>
-
-          <h3>
-            Troubleshooting
-          </h3>
-
-          <p>
-            Pemeriksaan masalah aircond sebelum cadangan pembaikan dibuat.
-          </p>
-
-          <span class="price">
-            Hubungi untuk quotation
-          </span>
-
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="why-us">
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>KENAPA PILIH KAMI</span>
-
-        <h2>
-          Senang book, jelas dan sesuai untuk rumah atau pejabat
-        </h2>
-
-      </div>
-
-
-      <div class="feature-grid">
-
-        <article class="feature-card">
-
-          <span class="feature-icon">📅</span>
-
-          <h3>
-            Easy Booking
-          </h3>
-
-          <p>
-            Pilih masa dan terus hubungi melalui WhatsApp.
-          </p>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <span class="feature-icon">🏠</span>
-
-          <h3>
-            Home & Office
-          </h3>
-
-          <p>
-            Sesuai untuk kediaman, pejabat dan premis kecil.
-          </p>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <span class="feature-icon">🧰</span>
-
-          <h3>
-            Practical Service
-          </h3>
-
-          <p>
-            Fokus pada masalah sebenar dan servis yang diperlukan.
-          </p>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <span class="feature-icon">💬</span>
-
-          <h3>
-            Direct Contact
-          </h3>
-
-          <p>
-            Customer boleh terus bertanya sebelum membuat booking.
-          </p>
-
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <section>
-    <div class="container">
-
-      <div class="coverage">
-
-        <div>
-
-          <div class="section-heading">
-
-            <span>KAWASAN SERVIS</span>
+        <div class="section-heading">
+
+            <span>
+                OUR SERVICES
+            </span>
 
             <h2>
-              Kami datang ke lokasi anda
+                Home Renovation & Repair Services
             </h2>
 
             <p>
-              Contoh coverage area boleh diubah mengikut lokasi customer sebenar.
+                Suitable for small renovation projects,
+                upgrades, repairs and general home improvement work.
             </p>
 
-          </div>
-
         </div>
 
 
-        <div class="coverage-box">
+        <div class="service-grid">
 
-          <h3>
-            Contoh kawasan
-          </h3>
+            <article class="service-card">
 
-          <ul>
-            <li>Shah Alam</li>
-            <li>Subang Jaya</li>
-            <li>Petaling Jaya</li>
-            <li>Klang</li>
-            <li>Kawasan berdekatan</li>
-          </ul>
+                <div class="service-icon">
+                    🚿
+                </div>
+
+                <h3>
+                    Bathroom Renovation
+                </h3>
+
+                <p>
+                    Bathroom upgrades, repairs, tiling,
+                    fittings and improvement work.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    Awning Installation
+                </h3>
+
+                <p>
+                    Awning installation for entrances,
+                    porches and suitable outdoor areas.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🧱
+                </div>
+
+                <h3>
+                    Tiling Work
+                </h3>
+
+                <p>
+                    Floor and wall tile installation,
+                    replacement and repair.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Plumbing
+                </h3>
+
+                <p>
+                    Basic plumbing work, leaking pipes,
+                    fittings and related repair jobs.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Painting
+                </h3>
+
+                <p>
+                    Interior and exterior painting
+                    for selected rooms and home areas.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Repair & Maintenance
+                </h3>
+
+                <p>
+                    General repair and maintenance work
+                    depending on project requirements.
+                </p>
+
+            </article>
 
         </div>
-
-      </div>
 
     </div>
-  </section>
+
+</section>
 
 
-  <section class="booking-section">
+<section class="projects">
+
     <div class="container">
 
-      <div class="booking-box">
+        <div class="section-heading">
+
+            <span>
+                PROJECT WORK
+            </span>
+
+            <h2>
+                Real Project Photos Can Be Added Here
+            </h2>
+
+            <p>
+                For a real client page, this section can show
+                actual completed work, before-and-after photos
+                and ongoing project examples.
+            </p>
+
+        </div>
+
+
+        <div class="project-grid">
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    CLIENT PROJECT PHOTO
+                    <br>
+                    Bathroom Renovation
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Bathroom Upgrade
+                    </h3>
+
+                    <p>
+                        Replace this placeholder with
+                        a real project photo supplied by the client.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    CLIENT PROJECT PHOTO
+                    <br>
+                    Awning Installation
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Awning Work
+                    </h3>
+
+                    <p>
+                        Show completed awning installation
+                        or before-and-after progress here.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    CLIENT PROJECT PHOTO
+                    <br>
+                    Tiling / Repair Work
+                </div>
+
+                <div class="project-content">
+
+                    <h3>
+                        Tiling & Repair
+                    </h3>
+
+                    <p>
+                        Use the company's own real work
+                        to build trust with potential customers.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                WHY CHOOSE US
+            </span>
+
+            <h2>
+                Straightforward Service
+            </h2>
+
+            <p>
+                A simple landing page like this helps customers
+                understand the services quickly and contact
+                the business without unnecessary steps.
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+            <article class="why-card">
+
+                <h3>
+                    Direct Communication
+                </h3>
+
+                <p>
+                    Customers can contact the business
+                    directly through WhatsApp.
+                </p>
+
+            </article>
+
+
+            <article class="why-card">
+
+                <h3>
+                    Clear Services
+                </h3>
+
+                <p>
+                    Services are explained clearly
+                    so customers know what type of work is available.
+                </p>
+
+            </article>
+
+
+            <article class="why-card">
+
+                <h3>
+                    Real Project Photos
+                </h3>
+
+                <p>
+                    Actual project photos can be displayed
+                    to show the company's work and experience.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="process">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                HOW IT WORKS
+            </span>
+
+            <h2>
+                Simple Enquiry Process
+            </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <article class="process-card">
+
+                <strong>
+                    STEP 01
+                </strong>
+
+                <h3>
+                    Send Enquiry
+                </h3>
+
+                <p>
+                    Contact through WhatsApp
+                    and explain the type of work needed.
+                </p>
+
+            </article>
+
+
+            <article class="process-card">
+
+                <strong>
+                    STEP 02
+                </strong>
+
+                <h3>
+                    Share Details
+                </h3>
+
+                <p>
+                    Share photos, location
+                    and relevant project information.
+                </p>
+
+            </article>
+
+
+            <article class="process-card">
+
+                <strong>
+                    STEP 03
+                </strong>
+
+                <h3>
+                    Discuss Work
+                </h3>
+
+                <p>
+                    Discuss the scope of work,
+                    site requirements and quotation.
+                </p>
+
+            </article>
+
+
+            <article class="process-card">
+
+                <strong>
+                    STEP 04
+                </strong>
+
+                <h3>
+                    Start Project
+                </h3>
+
+                <p>
+                    Once confirmed,
+                    the work can be scheduled accordingly.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="cta">
+
+    <div class="container">
 
         <h2>
-          Nak book servis aircond?
+            Need Renovation or Repair Work?
         </h2>
 
         <p>
-          Hantar lokasi, jumlah unit dan masalah aircond anda.
-          Kami akan reply untuk semak slot yang sesuai.
+            Send your project details through WhatsApp
+            and discuss what you need.
         </p>
 
         <a
-          class="primary-btn"
-          href="https://wa.me/60123456789?text=Hi%20CoolFix%20Aircond%2C%20saya%20nak%20semak%20slot%20servis."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          WhatsApp CoolFix
+            class="primary-button"
+            href="https://wa.me/?text=Hi%2C%20I%20would%20like%20to%20ask%20about%20your%20renovation%20services."
+            target="_blank">
+            Chat on WhatsApp
         </a>
 
-      </div>
-
     </div>
-  </section>
+
+</section>
 
 
-  <footer>
+<footer>
+
     <div class="container">
-      Demo landing page by Harry Digital • Portfolio Concept
+
+        Demo landing page by
+        <a href="/">
+            Harry Digital Verse
+        </a>
+
     </div>
-  </footer>
+
+</footer>
 
 </body>
 </html>
