@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Harry Digital Verse</title>
+
+    <meta
+        name="description"
+        content="Landing page portfolio by Harry Digital Verse. Demo pages for small businesses, local services and digital products.">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1020;
+            color: #f5f7ff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* NAV */
+
+        nav {
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .back-link {
+            color: #b9c3ff;
+            font-size: 14px;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 90px 0 70px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            color: #9eaaff;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 72px);
+            line-height: 1.05;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero h1 span {
+            color: #aab4ff;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 24px auto 0;
+            color: #bbc2d8;
+            font-size: 18px;
+        }
+
+        /* PORTFOLIO */
+
+        .portfolio-section {
+            padding: 30px 0 100px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading p {
+            color: #9ea6bd;
+            max-width: 650px;
+            margin: 12px auto 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: #131a30;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 22px;
+            overflow: hidden;
+            transition: 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(170,180,255,0.45);
+        }
+
+        .preview {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 62px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(111,126,255,0.28),
+                    rgba(153,92,255,0.12)
+                );
+        }
+
+        .card-content {
+            padding: 26px;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #afb8ff;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #aeb6cc;
+            font-size: 15px;
+            min-height: 75px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 12px 18px;
+            border-radius: 10px;
+            background: #eef0ff;
+            color: #11162a;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            margin-top: 70px;
+            padding: 45px;
+            border-radius: 24px;
+            background: #11172a;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .about h2 {
+            margin-bottom: 12px;
+        }
+
+        .about p {
+            color: #adb5ca;
+            max-width: 760px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 35px 0;
+            color: #8d96ae;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 60px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about {
+                padding: 30px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<nav>
+
+    <div class="container nav-inner">
+
+        <a class="brand" href="/">
+            Harry Digital
+        </a>
+
+        <a class="back-link" href="/">
+            ← Back to Harry Digital Verse
+        </a>
+
+    </div>
+
+</nav>
+
+
+<header class="hero">
+
+    <div class="container">
+
+        <p class="eyebrow">
+            HARRY DIGITAL • PORTFOLIO
+        </p>
+
+        <h1>
+            Simple Landing Pages.<br>
+            <span>Built With Purpose.</span>
+        </h1>
+
+        <p>
+            A collection of landing page concepts created for
+            small businesses, local services and digital products.
+            Each demo focuses on clear information, simple navigation
+            and an easy path for customers to take action.
+        </p>
+
+    </div>
+
+</header>
+
+
+<main class="portfolio-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>
+                Landing Page Demos
+            </h2>
+
+            <p>
+                Explore different landing page styles built around
+                real business needs.
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <!-- SERVICE -->
+
+            <article class="card">
+
+                <div class="preview">
+                    🛠️
+                </div>
+
+                <div class="card-content">
+
+                    <span class="tag">
+                        LOCAL SERVICE
+                    </span>
+
+                    <h3>
+                        Renovation & Home Services
+                    </h3>
+
+                    <p>
+                        A WhatsApp-focused landing page for a small
+                        renovation contractor offering bathroom renovation,
+                        awning, tiling, plumbing, painting and repair work.
+                    </p>
+
+                    <a
+                        class="button"
+                        href="/portfolio/service/">
+                        View Demo →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- FOOD -->
+
+            <article class="card">
+
+                <div class="preview">
+                    🍽️
+                </div>
+
+                <div class="card-content">
+
+                    <span class="tag">
+                        FOOD BUSINESS
+                    </span>
+
+                    <h3>
+                        Food & Small Business
+                    </h3>
+
+                    <p>
+                        A simple product-focused landing page concept
+                        suitable for home-based food businesses,
+                        cafés and small local brands.
+                    </p>
+
+                    <a
+                        class="button"
+                        href="/portfolio/food/">
+                        View Demo →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- DIGITAL -->
+
+            <article class="card">
+
+                <div class="preview">
+                    💻
+                </div>
+
+                <div class="card-content">
+
+                    <span class="tag">
+                        DIGITAL PRODUCT
+                    </span>
+
+                    <h3>
+                        Digital Product
+                    </h3>
+
+                    <p>
+                        A clean landing page concept for digital downloads,
+                        guides, courses, templates and online products.
+                    </p>
+
+                    <a
+                        class="button"
+                        href="/portfolio/digital/">
+                        View Demo →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <section class="about">
+
+            <h2>
+                About These Demos
+            </h2>
+
+            <p>
+                These pages are sample concepts created to demonstrate
+                layout, structure, copywriting and landing page design.
+                A real client page can be customised using the company's
+                own branding, services, project photos, contact details
+                and WhatsApp number.
+            </p>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Harry Digital.
+        Explore. Build. Play. Grow.
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
