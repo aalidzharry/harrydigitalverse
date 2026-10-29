@@ -1,441 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Harry Digital's landing page portfolio: sample concepts for home services, food businesses and digital products.">
+  <meta name="theme-color" content="#f7f1e7">
+  <title>Portfolio | HarryVerse — Harry Digital</title>
+  <link rel="canonical" href="https://www.harrydigitalverse.com/portfolio/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f7f1e7;
+      --paper: #fffdf8;
+      --ink: #272720;
+      --muted: #706d63;
+      --terracotta: #b8543b;
+      --terracotta-dark: #94422f;
+      --olive: #59664d;
+      --sage: #e3e6d9;
+      --sand: #e8dccb;
+      --line: #e1d6c7;
+      --forest: #28372e;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --shadow: 0 18px 44px rgba(56, 43, 29, .08);
+    }
 
-    <title>Portfolio | Harry Digital Verse</title>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; }
+    .container { width: min(1160px, 90%); margin: 0 auto; }
 
-    <meta
-        name="description"
-        content="Landing page portfolio by Harry Digital Verse. Demo pages for small businesses, local services and digital products.">
+    /* Shared HarryVerse warm editorial navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 253, 248, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+    }
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: var(--forest);
+      color: var(--cream);
+      border-radius: 12px 12px 12px 3px;
+      font-weight: 800;
+      font-size: .94rem;
+      position: relative;
+    }
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 7px;
+      height: 7px;
+      border: 1px solid #c5a66a;
+      border-radius: 50%;
+    }
+    .brand strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      line-height: 1.15;
+    }
+    .brand small {
+      display: block;
+      font-size: .59rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+    .nav-links a {
+      color: #48473f;
+      font-size: .79rem;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: color .2s;
+    }
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--terracotta);
+    }
+    .menu-button {
+      display: none;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+    }
 
-    <style>
+    /* Intro */
+    .portfolio-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 70px 0 48px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 92% 18%, rgba(197, 166, 106, .16), transparent 24%),
+        var(--cream);
+    }
+    .portfolio-hero::after {
+      content: "HD";
+      position: absolute;
+      z-index: 0;
+      right: 5%;
+      bottom: -105px;
+      color: rgba(89, 102, 77, .055);
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(11rem, 24vw, 22rem);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--terracotta);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 830px;
+      margin-bottom: 16px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6.8vw, 5.9rem);
+      font-weight: 600;
+      letter-spacing: -.055em;
+      line-height: 1.02;
+    }
+    h1 em {
+      color: var(--terracotta);
+      font-weight: 500;
+    }
+    .hero-description {
+      max-width: 660px;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 11px 17px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      font-size: .84rem;
+      font-weight: 800;
+      transition: transform .2s, background .2s, border-color .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #fffdf8; background: var(--forest); }
+    .button-primary:hover { background: var(--olive); }
+    .button-outline { border-color: #bdb2a2; color: var(--ink); background: transparent; }
+    .button-outline:hover { border-color: var(--terracotta); }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    /* Portfolio list */
+    .portfolio-section { padding: 52px 0 84px; }
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 27px;
+    }
+    .section-top h2 {
+      margin: 6px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: -.045em;
+      line-height: 1.12;
+    }
+    .section-top > p {
+      max-width: 365px;
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .portfolio-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--paper);
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-4px);
+      border-color: #cdb7a1;
+      box-shadow: var(--shadow);
+    }
+    .preview {
+      position: relative;
+      min-height: 245px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #e8dfd0;
+      border-bottom: 1px solid var(--line);
+    }
+    .preview-label {
+      position: absolute;
+      top: 14px;
+      left: 15px;
+      z-index: 2;
+      padding: 5px 9px;
+      border-radius: 4px;
+      background: rgba(255, 253, 248, .94);
+      color: var(--ink);
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .mini-browser {
+      width: min(390px, 100%);
+      overflow: hidden;
+      border: 1px solid rgba(49, 48, 40, .14);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 12px 28px rgba(56, 43, 29, .12);
+      transform: rotate(-1deg);
+    }
+    .mini-bar {
+      height: 20px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0 8px;
+      border-bottom: 1px solid #e7ded0;
+      background: #f6f0e5;
+    }
+    .mini-bar span {
+      width: 5px; height: 5px; border-radius: 50%; background: #c6b9a6;
+    }
+    .mini-page { display: grid; grid-template-columns: 1fr .75fr; min-height: 180px; }
+    .mini-copy { padding: 22px 15px; display: flex; flex-direction: column; justify-content: center; }
+    .mini-kicker { color: var(--terracotta); font-size: .48rem; font-weight: 800; letter-spacing: .12em; }
+    .mini-title { margin: 7px 0; font-family: var(--serif); font-size: clamp(1rem, 2vw, 1.42rem); font-weight: 700; line-height: 1.05; }
+    .mini-lines { display: grid; gap: 5px; margin-top: 6px; }
+    .mini-lines i { display: block; width: 100%; height: 4px; border-radius: 4px; background: #ddd6c9; }
+    .mini-lines i:nth-child(2) { width: 78%; }
+    .mini-lines i:nth-child(3) { width: 56%; }
+    .mini-cta { align-self: flex-start; margin-top: 12px; padding: 5px 8px; border-radius: 3px; background: var(--forest); color: white; font-size: .48rem; font-weight: 800; }
+    .mini-photo { min-height: 180px; background-size: cover; background-position: center; }
+    .service-photo { background-image: linear-gradient(0deg,rgba(39,47,36,.1),rgba(39,47,36,.1)),url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80"); }
+    .food-photo { background-image: linear-gradient(0deg,rgba(39,47,36,.08),rgba(39,47,36,.08)),url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80"); }
+    .digital-photo { background-image: linear-gradient(0deg,rgba(39,47,36,.08),rgba(39,47,36,.08)),url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80"); }
+    .preview-food { background: #eee0cb; }
+    .preview-service { background: #dfe3d6; }
+    .preview-digital { background: #e8d6c7; }
+    .card-content { padding: 24px 25px 25px; }
+    .card-meta {
+      margin-bottom: 8px;
+      color: var(--terracotta);
+      font-size: .67rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .card-content h3 {
+      margin-bottom: 10px;
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+      font-weight: 600;
+      letter-spacing: -.025em;
+      line-height: 1.2;
+    }
+    .card-content p { margin-bottom: 17px; color: var(--muted); font-size: .9rem; }
+    .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+    }
+    .card-bottom small { color: var(--muted); font-size: .72rem; }
+    .text-link { color: var(--terracotta); font-size: .84rem; font-weight: 800; }
+    .text-link:hover { color: var(--terracotta-dark); text-decoration: underline; text-underline-offset: 4px; }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b1020;
-            color: #f5f7ff;
-            line-height: 1.6;
-        }
+    /* About note and contact */
+    .about-panel {
+      margin-top: 28px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 32px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #efe6d8;
+    }
+    .about-panel h2 {
+      margin: 4px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -.04em;
+    }
+    .about-panel p { margin: 0 0 11px; color: #625e54; font-size: .9rem; }
+    .about-panel p:last-child { margin-bottom: 0; }
+    .contact-strip {
+      margin-top: 25px;
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      border-radius: 12px;
+      background: var(--forest);
+      color: var(--cream);
+    }
+    .contact-strip h2 { margin: 0 0 4px; font-family: var(--serif); font-size: clamp(1.45rem, 3vw, 2rem); line-height: 1.15; }
+    .contact-strip p { margin: 0; color: #d7d9d0; font-size: .84rem; }
+    .contact-strip .button { flex-shrink: 0; color: var(--forest); background: var(--cream); }
 
-        a {
-            text-decoration: none;
-        }
+    footer { padding: 28px 0 22px; border-top: 1px solid var(--line); background: var(--paper); }
+    .footer-main { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .footer-main p { margin: 7px 0 0; color: var(--muted); font-size: .78rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 15px; }
+    .footer-links a { color: #5b594f; font-size: .78rem; font-weight: 700; }
+    .footer-links a:hover { color: var(--terracotta); }
+    .copyright { margin: 20px 0 0; padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-size: .72rem; }
 
-        .container {
-            width: min(1120px, 90%);
-            margin: auto;
-        }
-
-        /* NAV */
-
-        nav {
-            padding: 22px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .brand {
-            font-size: 22px;
-            font-weight: 800;
-            color: white;
-        }
-
-        .back-link {
-            color: #b9c3ff;
-            font-size: 14px;
-        }
-
-        /* HERO */
-
-        .hero {
-            padding: 90px 0 70px;
-            text-align: center;
-        }
-
-        .eyebrow {
-            color: #9eaaff;
-            font-size: 13px;
-            letter-spacing: 2px;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 7vw, 72px);
-            line-height: 1.05;
-            max-width: 850px;
-            margin: auto;
-        }
-
-        .hero h1 span {
-            color: #aab4ff;
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: 24px auto 0;
-            color: #bbc2d8;
-            font-size: 18px;
-        }
-
-        /* PORTFOLIO */
-
-        .portfolio-section {
-            padding: 30px 0 100px;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-heading p {
-            color: #9ea6bd;
-            max-width: 650px;
-            margin: 12px auto 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .card {
-            background: #131a30;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 22px;
-            overflow: hidden;
-            transition: 0.25s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(170,180,255,0.45);
-        }
-
-        .preview {
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 62px;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(111,126,255,0.28),
-                    rgba(153,92,255,0.12)
-                );
-        }
-
-        .card-content {
-            padding: 26px;
-        }
-
-        .tag {
-            display: inline-block;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #afb8ff;
-            margin-bottom: 10px;
-        }
-
-        .card h3 {
-            font-size: 23px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #aeb6cc;
-            font-size: 15px;
-            min-height: 75px;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 22px;
-            padding: 12px 18px;
-            border-radius: 10px;
-            background: #eef0ff;
-            color: #11162a;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        /* ABOUT */
-
-        .about {
-            margin-top: 70px;
-            padding: 45px;
-            border-radius: 24px;
-            background: #11172a;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .about h2 {
-            margin-bottom: 12px;
-        }
-
-        .about p {
-            color: #adb5ca;
-            max-width: 760px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding: 35px 0;
-            color: #8d96ae;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        @media (max-width: 800px) {
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding-top: 60px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .about {
-                padding: 30px;
-            }
-
-        }
-
-    </style>
+    @media (max-width: 960px) {
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: .72rem; }
+      .preview { min-height: 220px; }
+      .about-panel { grid-template-columns: 1fr; gap: 16px; }
+    }
+    @media (max-width: 760px) {
+      .nav { min-height: 68px; }
+      .menu-button { display: block; }
+      .nav-links {
+        display: none; position: absolute; top: 68px; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0;
+        padding: 12px 5% 18px; background: var(--paper);
+        border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 0; font-size: .9rem; }
+      .portfolio-hero { padding: 52px 0 37px; }
+      .section-top { display: block; }
+      .section-top > p { margin-top: 12px; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .preview { min-height: 245px; }
+      .contact-strip { align-items: flex-start; flex-direction: column; }
+      .footer-main { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 460px) {
+      .container { width: 91%; }
+      h1 { font-size: 3rem; }
+      .hero-actions .button { width: 100%; }
+      .preview { padding: 18px; min-height: 210px; }
+      .mini-page { min-height: 158px; }
+      .mini-photo { min-height: 158px; }
+      .card-content { padding: 21px; }
+      .about-panel { padding: 24px; }
+      .contact-strip { padding: 23px; }
+      .footer-links { gap: 11px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
 </head>
-
-
 <body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="HarryVerse home">
+        <span class="brand-mark">HV</span>
+        <span><strong>HarryVerse</strong><small>One world of ideas</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-label="Toggle navigation">☰ Menu</button>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/games.html">Games</a>
+        <a href="/#products">Products</a>
+        <a href="/landing-page-service/">Services</a>
+        <a href="/portfolio/" aria-current="page">Portfolio</a>
+        <a href="/yenzi285.html">Creators</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#silent-success">Stories</a>
+        <a href="/#resources">Resources</a>
+      </div>
+    </nav>
+  </header>
 
-
-<nav>
-
-    <div class="container nav-inner">
-
-        <a class="brand" href="/">
-            Harry Digital
-        </a>
-
-        <a class="back-link" href="/">
-            ← Back to Harry Digital Verse
-        </a>
-
-    </div>
-
-</nav>
-
-
-<header class="hero">
-
-    <div class="container">
-
-        <p class="eyebrow">
-            HARRY DIGITAL • PORTFOLIO
+  <main>
+    <section class="portfolio-hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Harry Digital · Selected work</p>
+        <h1>Thoughtful pages.<br><em>Built for real businesses.</em></h1>
+        <p class="hero-description">
+          A small collection of landing page concepts for local services,
+          food businesses and digital products. Each concept is shaped around
+          one goal: make the offer easier to understand and the next step easier to take.
         </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/landing-page-service/">Discuss a landing page ↗</a>
+          <a class="button button-outline" href="#demos">Explore the demos ↓</a>
+        </div>
+      </div>
+    </section>
 
-        <h1>
-            Simple Landing Pages.<br>
-            <span>Built With Purpose.</span>
-        </h1>
-
-        <p>
-            A collection of landing page concepts created for
-            small businesses, local services and digital products.
-            Each demo focuses on clear information, simple navigation
-            and an easy path for customers to take action.
-        </p>
-
-    </div>
-
-</header>
-
-
-<main class="portfolio-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <h2>
-                Landing Page Demos
-            </h2>
-
-            <p>
-                Explore different landing page styles built around
-                real business needs.
-            </p>
-
+    <section class="portfolio-section" id="demos">
+      <div class="container">
+        <div class="section-top">
+          <div>
+            <p class="eyebrow">Portfolio · 01—03</p>
+            <h2>Demo pages, different purposes.</h2>
+          </div>
+          <p>These are concept projects to demonstrate possible layouts and content structure. They can be adapted to a client's real brand and needs.</p>
         </div>
 
-
-        <div class="grid">
-
-
-            <!-- SERVICE -->
-
-            <article class="card">
-
-                <div class="preview">
-                    🛠️
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="preview preview-service">
+              <span class="preview-label">Local service</span>
+              <div class="mini-browser">
+                <div class="mini-bar"><span></span><span></span><span></span></div>
+                <div class="mini-page">
+                  <div class="mini-copy">
+                    <span class="mini-kicker">HOME IMPROVEMENT</span>
+                    <div class="mini-title">Make your space work better.</div>
+                    <div class="mini-lines"><i></i><i></i><i></i></div>
+                    <span class="mini-cta">ASK FOR A QUOTE ↗</span>
+                  </div>
+                  <div class="mini-photo service-photo" role="img" aria-label="Modern renovated home exterior"></div>
                 </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="card-meta">01 · Renovation & home services</p>
+              <h3>A clearer way to present your services.</h3>
+              <p>A WhatsApp-focused concept for contractors offering renovation, awnings, tiling, plumbing, painting and home repairs.</p>
+              <div class="card-bottom">
+                <small>Service business · WhatsApp enquiries</small>
+                <a class="text-link" href="/portfolio/service/">View demo ↗</a>
+              </div>
+            </div>
+          </article>
 
-                <div class="card-content">
-
-                    <span class="tag">
-                        LOCAL SERVICE
-                    </span>
-
-                    <h3>
-                        Renovation & Home Services
-                    </h3>
-
-                    <p>
-                        A WhatsApp-focused landing page for a small
-                        renovation contractor offering bathroom renovation,
-                        awning, tiling, plumbing, painting and repair work.
-                    </p>
-
-                    <a
-                        class="button"
-                        href="/portfolio/service/">
-                        View Demo →
-                    </a>
-
+          <article class="portfolio-card">
+            <div class="preview preview-food">
+              <span class="preview-label">Food business</span>
+              <div class="mini-browser">
+                <div class="mini-bar"><span></span><span></span><span></span></div>
+                <div class="mini-page">
+                  <div class="mini-copy">
+                    <span class="mini-kicker">FRESH · MADE WITH CARE</span>
+                    <div class="mini-title">Good food, made for sharing.</div>
+                    <div class="mini-lines"><i></i><i></i><i></i></div>
+                    <span class="mini-cta">SEE THE MENU ↗</span>
+                  </div>
+                  <div class="mini-photo food-photo" role="img" aria-label="Warm restaurant dining setting"></div>
                 </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="card-meta">02 · Food & small business</p>
+              <h3>Let the offer speak for itself.</h3>
+              <p>A product-focused concept suitable for home-based food sellers, cafés, catering services and small local brands.</p>
+              <div class="card-bottom">
+                <small>Food business · Menu or order CTA</small>
+                <a class="text-link" href="/portfolio/food/">View demo ↗</a>
+              </div>
+            </div>
+          </article>
 
-            </article>
-
-
-            <!-- FOOD -->
-
-            <article class="card">
-
-                <div class="preview">
-                    🍽️
+          <article class="portfolio-card">
+            <div class="preview preview-digital">
+              <span class="preview-label">Digital product</span>
+              <div class="mini-browser">
+                <div class="mini-bar"><span></span><span></span><span></span></div>
+                <div class="mini-page">
+                  <div class="mini-copy">
+                    <span class="mini-kicker">A PRACTICAL DIGITAL GUIDE</span>
+                    <div class="mini-title">A little more clarity, one step at a time.</div>
+                    <div class="mini-lines"><i></i><i></i><i></i></div>
+                    <span class="mini-cta">EXPLORE THE GUIDE ↗</span>
+                  </div>
+                  <div class="mini-photo digital-photo" role="img" aria-label="Laptop and creative workspace"></div>
                 </div>
-
-                <div class="card-content">
-
-                    <span class="tag">
-                        FOOD BUSINESS
-                    </span>
-
-                    <h3>
-                        Food & Small Business
-                    </h3>
-
-                    <p>
-                        A simple product-focused landing page concept
-                        suitable for home-based food businesses,
-                        cafés and small local brands.
-                    </p>
-
-                    <a
-                        class="button"
-                        href="/portfolio/food/">
-                        View Demo →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- DIGITAL -->
-
-            <article class="card">
-
-                <div class="preview">
-                    💻
-                </div>
-
-                <div class="card-content">
-
-                    <span class="tag">
-                        DIGITAL PRODUCT
-                    </span>
-
-                    <h3>
-                        Digital Product
-                    </h3>
-
-                    <p>
-                        A clean landing page concept for digital downloads,
-                        guides, courses, templates and online products.
-                    </p>
-
-                    <a
-                        class="button"
-                        href="/portfolio/digital/">
-                        View Demo →
-                    </a>
-
-                </div>
-
-            </article>
-
-
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="card-meta">03 · Digital products</p>
+              <h3>Give digital products a focused home.</h3>
+              <p>A clean concept for downloadable guides, e-books, courses, templates and online offers.</p>
+              <div class="card-bottom">
+                <small>Digital offer · Product information</small>
+                <a class="text-link" href="/portfolio/digital/">View demo ↗</a>
+              </div>
+            </div>
+          </article>
         </div>
 
-
-        <section class="about">
-
-            <h2>
-                About These Demos
-            </h2>
-
-            <p>
-                These pages are sample concepts created to demonstrate
-                layout, structure, copywriting and landing page design.
-                A real client page can be customised using the company's
-                own branding, services, project photos, contact details
-                and WhatsApp number.
-            </p>
-
+        <section class="about-panel" aria-labelledby="about-title">
+          <div>
+            <p class="eyebrow">A note about the work</p>
+            <h2 id="about-title">Made to be adapted, not copied from a template.</h2>
+          </div>
+          <div>
+            <p>These portfolio pages are concept demos created to show layout, content structure and possible calls to action. They are not presented as completed client projects.</p>
+            <p>For a real project, the page can be customised using the business's own branding, services, photos, contact details and enquiry route. The agreed scope, timeline and inclusions are confirmed before work begins.</p>
+          </div>
         </section>
 
+        <section class="contact-strip" aria-label="Start a project">
+          <div>
+            <h2>Have a business in mind?</h2>
+            <p>Tell us what you do and what you want your page to help visitors do.</p>
+          </div>
+          <a class="button" href="/landing-page-service/">Explore the service ↗</a>
+        </section>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    <div class="container footer-main">
+      <div>
+        <a class="brand" href="/" aria-label="HarryVerse home">
+          <span class="brand-mark">HV</span>
+          <span><strong>HarryVerse</strong><small>One world of ideas</small></span>
+        </a>
+        <p>Thoughtful digital work, built one idea at a time.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/landing-page-service/">Services</a>
+        <a href="/portfolio/">Portfolio</a>
+        <a href="/games.html">Games</a>
+        <a href="/yenzi285.html">Creators</a>
+        <a href="/#resources">Resources</a>
+      </nav>
     </div>
-
-</main>
-
-
-<footer>
-
     <div class="container">
-
-        © 2026 Harry Digital.
-        Explore. Build. Play. Grow.
-
+      <p class="copyright">© <span id="year">2026</span> HarryVerse · Harry Digital</p>
     </div>
+  </footer>
 
-</footer>
-
-
+  <script>
+    (function () {
+      const menuButton = document.querySelector(".menu-button");
+      const navLinks = document.querySelector(".nav-links");
+      if (menuButton && navLinks) {
+        menuButton.addEventListener("click", function () {
+          const isOpen = navLinks.classList.toggle("open");
+          menuButton.setAttribute("aria-expanded", String(isOpen));
+          menuButton.textContent = isOpen ? "✕ Close" : "☰ Menu";
+        });
+        navLinks.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            navLinks.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.textContent = "☰ Menu";
+          });
+        });
+      }
+      const year = document.getElementById("year");
+      if (year) year.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
