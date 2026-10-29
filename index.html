@@ -1,1252 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="impact-site-verification" value="873c12aa-8ca3-4b12-99c9-326badbfba02">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="impact-site-verification" value="873c12aa-8ca3-4b12-99c9-326badbfba02">
+<meta name="description" content="HarryVerse is a creative digital hub for landing page services, original games, digital products, stories and independent creator projects.">
+<meta name="theme-color" content="#292822">
+<title>HarryVerse | One Universe. Many Things to Discover.</title>
+<link rel="canonical" href="https://www.harrydigitalverse.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f4f0e6;--paper:#fbf9f3;--forest:#24332d;--green:#315b50;--sage:#dce4d7;--gold:#c5a66a;--ink:#222923;--muted:#68716a;--line:#dcded4;--shadow:0 16px 45px #24332d14}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button{font:inherit}img,iframe{max-width:100%;display:block}.eyebrow,.section-label{color:var(--green);font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 18px;border:1px solid transparent;border-radius:8px;font-size:.87rem;font-weight:800;transition:.2s}.btn:hover,.hero-actions a:hover,.hero-buttons a:hover{transform:translateY(-2px)}.btn-primary,.primary-button{background:var(--forest);color:white}.btn-outline{border-color:#aeb8ac;color:var(--forest);background:transparent}
+.navbar{position:sticky;top:0;z-index:100;background:#fbf9f3f5;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-container{width:min(1160px,90%);min-height:74px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}.brand-mark{position:relative;width:40px;height:40px;display:grid;place-items:center;border-radius:12px 12px 12px 3px;background:var(--forest);color:var(--cream);font-family:Manrope,sans-serif;font-weight:800}.brand-mark:after{content:"";position:absolute;top:5px;right:5px;width:8px;height:8px;border:1px solid var(--gold);border-radius:50%}.brand strong{display:block;font-family:Manrope,sans-serif;letter-spacing:-.05em;color:var(--forest)}.brand small{display:block;font-size:.61rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.nav-links{display:flex;align-items:center;gap:14px}.nav-links a{font-size:.77rem;font-weight:700;color:#4f5a52}.nav-links a:hover,.nav-links a.active-page{color:var(--green)}.menu-button{display:none;border:1px solid var(--line);background:transparent;color:var(--forest);border-radius:8px;padding:8px 12px;cursor:pointer}
+.hero{position:relative;overflow:hidden;padding:68px 0 64px;background:radial-gradient(ellipse at 82% 12%,#c5a66a38,transparent 30%),var(--cream)}.hero:before{content:"";position:absolute;width:460px;height:460px;border:1px solid #315b5026;border-radius:50%;top:-240px;right:-100px}.hero-container{position:relative;z-index:1;width:min(1160px,90%);margin:auto;display:grid;grid-template-columns:1.03fr .97fr;gap:34px;align-items:center}.hero-copy{max-width:640px}.hero .eyebrow{display:inline-flex;padding:7px 12px;border:1px solid #315b5038;border-radius:50px;background:#fbf9f399;letter-spacing:.1em}.hero h1{margin:20px 0;font-family:Manrope,sans-serif;font-size:clamp(3.2rem,6.2vw,5.5rem);font-weight:800;letter-spacing:-.085em;line-height:.99;color:var(--forest)}.hero h1 span{display:block;color:var(--green)}.hero-description{max-width:510px;margin:22px 0 24px;color:#5f685f;font-size:1.04rem}.hero-actions{display:flex;flex-wrap:wrap;gap:10px}.hero-actions .primary-button,.hero-actions .secondary-button,.hero-buttons .primary-button,.hero-buttons .secondary-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 16px;border-radius:8px;font-size:.84rem;font-weight:800;transition:.2s}.hero-actions .primary-button,.hero-buttons .primary-button{background:var(--forest);color:white}.hero-actions .secondary-button,.hero-buttons .secondary-button{border:1px solid #24332d40;color:var(--forest);background:#fbf9f380}.hero-points{display:grid;gap:6px;margin-top:21px;color:var(--muted);font-size:.79rem}.hero-note{max-width:260px;padding:17px;border:1px solid #d3d7cb;border-radius:13px;background:#fbf9f3e6;box-shadow:var(--shadow);margin-top:20px}.note-label{font-size:.68rem;font-weight:800;letter-spacing:.12em;color:var(--green)}.hero-note blockquote{margin:8px 0;font:800 1.15rem/1.3 Manrope,sans-serif;color:var(--forest);letter-spacing:-.04em}.hero-note p:last-child{font-size:.78rem;color:var(--muted);margin-bottom:0}
+.hv-art{position:relative;min-height:400px;display:grid;place-items:center;isolation:isolate}.hv-art-grid{position:absolute;inset:5%;background-image:linear-gradient(#315b5014 1px,transparent 1px),linear-gradient(90deg,#315b5014 1px,transparent 1px);background-size:25px 25px;border-radius:50%;mask-image:radial-gradient(ellipse,black 20%,transparent 73%)}.hv-orbit{position:absolute;width:320px;height:320px;border:1px solid #315b5055;border-radius:50%;transform:rotate(-25deg) scaleY(.72)}.hv-orbit.two{width:390px;height:390px;border-color:#c5a66ab3;transform:rotate(35deg) scaleY(.65)}.hv-orbit.three{width:245px;height:245px;border-style:dashed;transform:rotate(70deg) scaleY(.85)}.hv-core{width:185px;height:185px;display:grid;place-items:center;border-radius:30% 70% 62% 38%/39% 38% 62% 61%;background:var(--forest);box-shadow:0 30px 60px #24332d33;transform:rotate(-12deg)}.hv-core-inner{width:125px;height:125px;border:1px solid #f4f0e6aa;border-radius:50%;display:grid;place-items:center;color:var(--cream);font:800 2.5rem Manrope,sans-serif;letter-spacing:-.1em;transform:rotate(12deg)}.hv-core-inner b{color:var(--gold)}.hv-art-dot{position:absolute;top:17%;right:18%;width:16px;height:16px;background:var(--gold);border:4px solid var(--cream);border-radius:50%}.hv-art-tag{position:absolute;padding:10px 13px;background:#fbf9f3f2;border:1px solid #24332d20;border-radius:9px;box-shadow:0 10px 30px #24332d12;font-size:.76rem;font-weight:800;color:var(--forest)}.hv-art-tag small{display:block;color:var(--muted);font-size:.65rem;font-weight:500}.hv-tag-top{top:9%;left:0}.hv-tag-side{bottom:16%;left:0}.hv-tag-bottom{right:0;bottom:9%}
+.quick-strip{background:var(--forest);color:var(--cream)}.quick-grid{width:min(1160px,90%);margin:auto;display:grid;grid-template-columns:repeat(4,1fr)}.quick-link{min-height:88px;padding:17px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;border-right:1px solid #ffffff20}.quick-link:first-child{border-left:1px solid #ffffff20}.quick-link:hover{background:#ffffff0d}.quick-link strong{display:block;font-size:.83rem}.quick-link small{display:block;color:#c5d0c6;font-size:.7rem}.quick-icon{color:var(--gold);font-size:1.2rem}
+.continue-playing-section{padding:24px 5%;background:var(--paper)}.continue-playing-card{width:min(1160px,100%);margin:auto;padding:18px 22px;display:flex;align-items:center;gap:18px;border:1px solid var(--line);border-radius:15px;background:white}.continue-playing-icon{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:var(--sage);font-size:1.3rem}.continue-playing-copy{flex:1}.continue-playing-copy .section-label{margin:0;font-size:.65rem}.continue-playing-copy h2{margin:2px 0;font:700 1.1rem Manrope,sans-serif}.continue-playing-copy p:last-child{margin:0;color:var(--muted);font-size:.8rem}.continue-playing-progress{display:grid;color:var(--muted);font-size:.7rem}.continue-playing-progress strong{color:var(--forest);font-size:1rem}.continue-playing-card .primary-button{background:var(--forest);color:white;border-radius:7px;padding:10px 14px;font-weight:800;font-size:.82rem}
+.section{padding:78px 0}.section-heading{width:min(1160px,90%);margin:0 auto 28px}.section-heading h2{font:800 clamp(2rem,4vw,3.1rem)/1.12 Manrope,sans-serif;letter-spacing:-.065em;color:var(--forest);margin:8px 0}.section-heading>p:last-child{max-width:680px;color:var(--muted);margin:0}.portal-grid,.blog-grid,.project-grid{width:min(1160px,90%);margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.portal-card,.blog-card,.project-card{display:flex;flex-direction:column;align-items:flex-start;padding:24px;border:1px solid var(--line);border-radius:16px;background:white;color:var(--ink);transition:transform .2s,box-shadow .2s}.portal-card:hover,.blog-card:hover,.project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.portal-icon{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:var(--sage);font-size:1.3rem;margin-bottom:17px}.portal-card h3,.blog-card h3,.project-card h3{font:700 1.12rem Manrope,sans-serif;color:var(--forest);letter-spacing:-.035em;margin:0 0 8px}.portal-card p,.blog-card p,.project-card p{margin:0;color:var(--muted);font-size:.85rem}.portal-link,.blog-card>a,.project-card>a{margin-top:15px;color:var(--green);font-size:.82rem;font-weight:800}.explore-section{background:var(--paper)}.services-section{background:#e8ede3}.blog-section{background:#f0eee5}.blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.blog-card .blog-category{color:var(--green);font-size:.67rem;font-weight:800;letter-spacing:.12em;margin:0 0 10px}.text-button{margin-top:15px;padding:0;border:0;background:transparent;color:var(--green);font-weight:800;cursor:pointer}.article-panel{position:relative;width:min(900px,90%);margin:25px auto 0;padding:28px;border:1px solid var(--line);border-radius:16px;background:white}.article-close{position:absolute;top:10px;right:14px;border:0;background:transparent;font-size:1.7rem;cursor:pointer}.article-panel h3{color:var(--forest)}.article-panel p{color:var(--muted)}.journey-section{background:var(--paper)}.timeline{width:min(850px,90%);margin:auto;display:grid;gap:13px}.timeline-item{display:flex;gap:15px;padding:18px;border:1px solid var(--line);border-radius:13px;background:white}.timeline-number{width:40px;height:40px;flex-shrink:0;display:grid;place-items:center;border-radius:11px;background:var(--sage);font-weight:800;color:var(--forest)}.timeline-item h3{font:700 1rem Manrope,sans-serif;color:var(--forest);margin:0 0 4px}.timeline-item p{color:var(--muted);font-size:.85rem;margin:0}.projects-section{background:var(--cream)}.project-tag,.resource-badge{display:inline-block;color:var(--green);background:var(--sage);border-radius:5px;padding:5px 8px;font-size:.66rem;font-weight:800;letter-spacing:.1em;margin-bottom:14px}.resources-section{background:#e8ede3}.resource-layout{width:min(1160px,90%);margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}.resource-copy h2{font:800 clamp(2rem,4vw,3rem)/1.1 Manrope,sans-serif;color:var(--forest);letter-spacing:-.06em;margin:8px 0 14px}.resource-copy p{color:var(--muted)}.disclosure{padding:13px;margin:18px 0;background:#ffffff90;border-left:3px solid var(--gold);font-size:.8rem;color:var(--muted)}.resource-card{padding:25px;border:1px solid #24332d20;border-radius:16px;background:var(--paper)}.resource-card h3{font-family:Manrope,sans-serif;color:var(--forest)}.resource-card li{margin:8px 0;color:var(--muted);font-size:.85rem}.final-cta{padding:72px 5%;background:var(--forest);color:var(--cream);text-align:center}.final-cta>div{max-width:850px;margin:auto}.final-cta .section-label{color:var(--gold)}.final-cta h2{font:800 clamp(2rem,4.5vw,3.3rem)/1.1 Manrope,sans-serif;letter-spacing:-.06em;margin:12px 0}.final-cta p:not(.section-label){color:#c7d0c7;max-width:600px;margin:0 auto 22px}.hero-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.hero-buttons a{padding:11px 15px;border:1px solid #ffffff40;border-radius:8px;font-size:.83rem;font-weight:800}.hero-buttons .primary-button{background:var(--gold);color:var(--forest);border-color:var(--gold)}.hero-buttons .secondary-button{border-color:#ffffff40;color:var(--cream);background:transparent}.footer{padding:30px 5% 18px;background:#19251f;color:var(--cream)}.footer-container{width:min(1160px,100%);margin:auto;display:flex;justify-content:space-between;gap:25px}.footer h2{font:800 1.2rem Manrope,sans-serif;margin:0}.footer p{color:#c4cec5;font-size:.8rem}.footer-links{display:flex;flex-wrap:wrap;gap:14px}.footer-links a{color:#d8dfd7;font-size:.78rem}.footer-links a:hover{color:var(--gold)}.copyright{width:min(1160px,100%);margin:18px auto 0;padding-top:14px;border-top:1px solid #ffffff22;color:#c4cec5;font-size:.72rem}
+@media(max-width:1050px){.nav-links{gap:8px}.nav-links a{font-size:.69rem}.hero-container{gap:14px}.hv-art{transform:scale(.9)}.portal-grid,.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.nav-container{min-height:67px}.menu-button{display:block}.nav-links{display:none;position:absolute;top:67px;left:0;right:0;padding:12px 5% 20px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 0;font-size:.9rem}.hero{padding:44px 0 30px}.hero-container,.resource-layout{grid-template-columns:1fr}.hero h1{font-size:clamp(3rem,12vw,4.4rem)}.hv-art{min-height:310px;transform:scale(.8);margin:-5px -15px}.hero-note{max-width:none;margin-top:0}.quick-grid{grid-template-columns:repeat(2,1fr)}.quick-link{min-height:75px;border-bottom:1px solid #ffffff20;padding:14px 10px}.section{padding:60px 0}.continue-playing-card{flex-wrap:wrap;padding:16px}.continue-playing-copy{min-width:calc(100% - 70px)}.continue-playing-progress{margin-left:62px}.portal-grid,.project-grid,.blog-grid{grid-template-columns:1fr}.footer-container{flex-direction:column}}
+@media(max-width:460px){.nav-container,.hero-container,.quick-grid,.section-heading,.portal-grid,.blog-grid,.project-grid,.resource-layout{width:91%}.hv-art{min-height:250px;transform:scale(.66);margin:-15px -30px}.hero-actions a{width:100%}.continue-playing-card .primary-button{margin-left:62px}.hero-buttons a{width:100%}.timeline-item{padding:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 
-    <meta
-        name="description"
-        content="Harry Digital Verse — a growing creative universe for stories, games, digital projects, content creation, learning and ideas.">
 
-    <title>Harry Digital Verse | Explore. Build. Play. Grow.</title>
+/* =====================================
+   WARM EDITORIAL THEME — HARRYVERSE
+   These styles only affect the homepage.
+===================================== */
+:root {
+  --cream: #f2e8d9;
+  --paper: #fbf7ef;
+  --forest: #292822;
+  --green: #b56349;
+  --sage: #e9dfd0;
+  --gold: #b99b6c;
+  --ink: #302d27;
+  --muted: #756d62;
+  --line: #e3d8c8;
+  --shadow: 0 16px 40px rgba(65, 48, 34, .09);
+}
+body { background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; }
+.navbar { background: rgba(251,247,239,.96); border-bottom-color: #e3d8c8; }
+.brand strong, .nav-links a { color: var(--forest); }
+.brand-mark { background: var(--forest); }
+.nav-links a:hover, .nav-links a.active-page { color: var(--green); }
+.hero {
+  padding: 60px 0 54px;
+  background:
+    radial-gradient(ellipse at 84% 12%, rgba(185,155,108,.18), transparent 31%),
+    linear-gradient(125deg, #f7f0e5 0%, #f2e8d9 100%);
+}
+.hero:before { border-color: rgba(181,99,73,.17); }
+.hero-container { grid-template-columns: 1.08fr .92fr; gap: 28px; }
+.hero .eyebrow { background: rgba(255,255,255,.42); border-color: #d9c7b4; color: #9f5039; }
+.hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3.05rem, 5.2vw, 4.65rem);
+  font-weight: 600;
+  letter-spacing: -.055em;
+  line-height: 1.04;
+  color: #292822;
+  margin: 21px 0 17px;
+}
+.hero h1 span { color: #ad5c44; font-style: italic; font-weight: 500; }
+.hero-description { font-size: 1rem; line-height: 1.8; color: #665f55; }
+.hero-actions .primary-button, .hero-buttons .primary-button, .continue-playing-card .primary-button { background: #292822; color: #fffaf3; }
+.hero-actions .primary-button:hover, .hero-buttons .primary-button:hover { background: #ad5c44; }
+.hero-actions .secondary-button { border-color: #cdbfae; color: #38342d; background: rgba(255,255,255,.35); }
+.hero-points { color: #71685e; }
+.hero-note { border-color: #dfd1bf; background: rgba(255,252,246,.85); box-shadow: 0 12px 32px rgba(65,48,34,.07); }
+.note-label, .section-label, .eyebrow { color: #ad5c44; }
+.hero-note blockquote { font-family: "Playfair Display", Georgia, serif; font-weight: 600; font-size: 1.22rem; letter-spacing: -.02em; }
+/* Softer orbit artwork: same abstract concept, warmer archive palette. */
+.hv-art-grid { background-image: linear-gradient(rgba(173,92,68,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(173,92,68,.075) 1px,transparent 1px); }
+.hv-orbit { border-color: rgba(173,92,68,.32); }
+.hv-orbit.two { border-color: rgba(185,155,108,.7); }
+.hv-core { background: #292822; box-shadow: 0 28px 55px rgba(65,48,34,.2); }
+.hv-core-inner { display:flex; align-items:center; justify-content:center; gap:2px; font-family: "Playfair Display", Georgia, serif; font-size: 2.55rem; font-weight: 600; letter-spacing: -.08em; }
+.hv-core-inner b { margin-left:1px; }
+.hv-core-inner b { color: #c0785d; }
+.hv-art-dot { background: #b99b6c; border-color: #f2e8d9; }
+.hv-art-tag { background: rgba(255,251,244,.96); border-color: #e0d2c0; box-shadow: 0 10px 28px rgba(65,48,34,.08); color: #302d27; }
+.hv-art-tag small { color: #756d62; }
+.quick-strip { background: #292822; }
+.quick-link:hover { background: rgba(255,255,255,.07); }
+.quick-link span:last-child { color: #c9a775; }
+.section-heading h2, .hv-heading h2, .hero-note blockquote, .resource-copy h2, .resource-card h3, .portal-card h3, .blog-card h3, .project-card h3, .timeline-item h3, .continue-playing-copy h2, .footer h2, .final-cta h2, .brand strong {
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -.035em !important;
+}
+.section-heading h2 { font-size: clamp(2.15rem, 3.8vw, 3rem); }
+.portal-card, .blog-card, .project-card { border-color: #e4d9ca; border-radius: 14px; box-shadow: 0 5px 18px rgba(65,48,34,.025); }
+.portal-card:hover, .blog-card:hover, .project-card:hover { box-shadow: 0 15px 38px rgba(65,48,34,.095); }
+.portal-card { position: relative; overflow: hidden; padding-top: 148px; }
+.portal-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 125px; background-position: center; background-size: cover; background-repeat: no-repeat; background-color: #e9dfd0; }
+.portal-card:nth-child(1)::before { background-image: linear-gradient(0deg, rgba(251,247,239,.08), rgba(41,40,34,.02)), url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80"); }
+.portal-card:nth-child(2)::before { background-image: linear-gradient(0deg, rgba(251,247,239,.05), rgba(41,40,34,.02)), url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"); }
+.portal-card:nth-child(3)::before { background-image: linear-gradient(0deg, rgba(251,247,239,.05), rgba(41,40,34,.02)), url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80"); }
+.portal-card:nth-child(4)::before { background-image: linear-gradient(0deg, rgba(251,247,239,.05), rgba(41,40,34,.02)), url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=80"); }
+.portal-card:nth-child(5)::before { background-image: linear-gradient(0deg, rgba(251,247,239,.04), rgba(41,40,34,.02)), url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=80"); }
+.portal-card:nth-child(6)::before { background-image: linear-gradient(0deg, rgba(251,247,239,.05), rgba(41,40,34,.02)), url("https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80"); }
+.portal-icon { position: relative; z-index: 1; margin-top: -37px; border: 3px solid #fffaf2; background: #e9dfd0; color: #ad5c44; }
+.portal-link, .blog-card a, .project-card a, .text-link { color: #ad5c44; }
+.blog-section { background: #f6efe4; }
+.services-section, .resources-section { background: #e9e0d2 !important; }
+.projects-section { background: #f2e8d9; }
+.timeline-item { border-color: #e4d9ca; }
+.timeline-number { background: #e9dfd0; color: #ad5c44; }
+.resource-card { background: #fbf7ef; border-color: #e0d4c3; }
+.disclosure { border-left-color: #b99b6c; background: rgba(255,252,246,.65); }
+.final-cta { background: #292822; }
+.final-cta .section-label { color: #d2b58b; }
+.hero-buttons .secondary-button { border-color: rgba(255,250,243,.35); color: #fff7eb; background: transparent; }
+.hero-buttons .primary-button { background: #b56349; color: #fffaf3; border-color: #b56349; }
+.footer { background: #211f1b; }
+.footer-links a:hover { color: #d2b58b; }
+@media (max-width: 760px) {
+  .hero { padding: 43px 0 32px; }
+  .hero-container { grid-template-columns: 1fr; }
+  .hero h1 { font-size: clamp(2.9rem, 11.6vw, 4.15rem); }
+  .portal-card { padding-top: 148px; }
+  .section-heading { margin-bottom: 24px; }
+}
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://www.harrydigitalverse.com/">
+</style>
 </head>
-
 <body>
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<nav class="navbar">
-
-    <div class="nav-container">
-
-        <a class="brand" href="#home" aria-label="Harry Digital">
-
-            <span class="brand-mark">
-                HV
-            </span>
-
-            <span>
-                <strong>HarryVerse</strong>
-                <small>Explore. Build. Play. Grow.</small>
-            </span>
-
-        </a>
-
-
-        <button
-            class="menu-button"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false">
-            ☰
-        </button>
-
-
-        <div class="nav-links">
-
-            <a href="#home" class="active-page">
-                Home
-            </a>
-
-            <a href="#silent-success">
-                Stories
-            </a>
-
-            <a href="#journey">
-                Journey
-            </a>
-
-            <a href="#blog">
-                Blog
-            </a>
-
-            <a href="/portfolio/">
-                Portfolio
-            </a>
-
-            <a href="games.html">
-                Harry Games
-            </a>
-
-            <a href="yenzi285.html">
-                Yenzi285
-            </a>
-
-            <a
-                href="https://klikjer.com/members/go.php?id=29127"
-                target="_blank"
-                rel="noopener noreferrer sponsored">
-                Resources
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<header class="hero" id="home">
-
-    <div class="hero-shade"></div>
-
-    <div class="hero-container">
-
-        <div class="hero-copy">
-
-            <p class="eyebrow">
-                🌙 CREATE • EXPLORE • BUILD • GROW
-            </p>
-
-            <h1>
-                A Universe Built
-                <span>
-                    One Idea at a Time.<br>
-                    Stories. Games. Digital Creations.
-                </span>
-            </h1>
-
-            <p class="hero-description">
-                Harry Digital Verse is a growing creative space for stories,
-                games, ideas and digital projects — built from curiosity,
-                creativity and the courage to keep creating.
-            </p>
-
-            <div class="hero-actions">
-
-                <a class="primary-button" href="#explore">
-                    Explore the Verse
-                </a>
-
-                <a class="secondary-button" href="#silent-success">
-                    Watch Stories
-                </a>
-
-                <a class="secondary-button" href="games.html">
-                    Play Harry Games
-                </a>
-
-                <a class="secondary-button" href="yenzi285.html">
-                    Yenzi285
-                </a>
-
-            </div>
-
-            <div class="hero-points">
-
-                <span>
-                    ✓ Stories and ideas that make you think
-                </span>
-
-                <span>
-                    ✓ Digital projects built through real experience
-                </span>
-
-                <span>
-                    ✓ Games, creativity and room to explore
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <aside class="hero-note">
-
-            <p class="note-label">
-                HARRY DIGITAL
-            </p>
-
-            <blockquote>
-                “From small ideas, we build something real.”
-            </blockquote>
-
-            <p>
-                Explore. Build. Play. Grow.
-            </p>
-
-        </aside>
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     MAIN
-========================= -->
-
+<nav class="navbar" aria-label="Main navigation"><div class="nav-container">
+  <a class="brand" href="#home" aria-label="HarryVerse home"><span class="brand-mark">HV</span><span><strong>HarryVerse</strong><small>One world of ideas</small></span></a>
+  <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+  <div class="nav-links"><a href="#home" class="active-page">Home</a><a href="games.html">Games</a><a href="#products">Products</a><a href="/landing-page-service/">Services</a><a href="/portfolio/">Portfolio</a><a href="#creators">Creators</a><a href="#blog">Blog</a><a href="#silent-success">Stories</a><a href="#resources">Resources</a></div>
+</div></nav>
+<header class="hero" id="home"><div class="hero-container">
+  <div class="hero-copy"><p class="eyebrow">✳ CREATE · EXPLORE · BUILD · GROW</p><h1>One Universe.<span>Many Things<br>to Discover.</span></h1><p class="hero-description">HarryVerse is a growing creative hub for digital services, original games, useful products and stories that make you think.</p>
+    <div class="hero-actions"><a class="primary-button" href="/landing-page-service/">Need a Landing Page? ↗</a><a class="secondary-button" href="#explore">Explore HarryVerse</a></div>
+    <div class="hero-points"><span>✓ Digital services for small businesses</span><span>✓ Original games and learning ideas</span><span>✓ Stories, creators and digital discoveries</span></div>
+    <aside class="hero-note"><p class="note-label">HARRYVERSE</p><blockquote>“From small ideas, we build something real.”</blockquote><p>Explore. Build. Play. Grow.</p></aside>
+  </div>
+  <div class="hv-art" role="img" aria-label="Abstract geometric artwork representing HarryVerse"><div class="hv-art-grid"></div><div class="hv-orbit two"></div><div class="hv-orbit"></div><div class="hv-orbit three"></div><div class="hv-art-dot"></div><div class="hv-core"><div class="hv-core-inner">H<b>V</b></div></div><div class="hv-art-tag hv-tag-top">A space to create<small>Ideas into experiences</small></div><div class="hv-art-tag hv-tag-side">Digital worlds<small>Build · Learn · Grow</small></div><div class="hv-art-tag hv-tag-bottom">Always exploring ↗<small>New worlds ahead</small></div></div>
+</div></header>
+<section class="quick-strip" aria-label="Quick access"><div class="quick-grid">
+  <a class="quick-link" href="/landing-page-service/"><span><strong>Landing Page Service</strong><small>Build your online presence</small></span><span class="quick-icon">↗</span></a>
+  <a class="quick-link" href="/portfolio/"><span><strong>Portfolio</strong><small>Explore our demos</small></span><span class="quick-icon">↗</span></a>
+  <a class="quick-link" href="games.html"><span><strong>Harry Games</strong><small>Play and explore</small></span><span class="quick-icon">↗</span></a>
+  <a class="quick-link" href="#silent-success"><span><strong>Stories & Ideas</strong><small>Go beyond the obvious</small></span><span class="quick-icon">↗</span></a>
+</div></section>
 <main>
+<section class="continue-playing-section" id="continue-playing"><div class="continue-playing-card"><div class="continue-playing-icon">🎯</div><div class="continue-playing-copy"><p class="section-label">CONTINUE PLAYING</p><h2>Tap Tap Relax</h2><p>Continue from the latest progress saved in this browser.</p></div><div class="continue-playing-progress"><span>Current Level</span><strong><span id="homepage-tap-level">1</span> / 100</strong></div><a class="primary-button" href="games.html#tap-game" id="continue-tap-button">Continue →</a></div></section>
+<section class="section explore-section" id="explore"><div class="section-heading"><p class="section-label">FIND YOUR NEXT DISCOVERY</p><h2>Explore HarryVerse.</h2><p>Different interests, one creative home. Choose a world and see where it takes you.</p></div><div class="portal-grid">
+  <a class="portal-card" href="/landing-page-service/"><span class="portal-icon">↗</span><h3>Landing Page Service</h3><p>Simple, mobile-friendly landing pages for small businesses and service providers.</p><span class="portal-link">Discuss your project →</span></a>
+  <a class="portal-card" href="/portfolio/"><span class="portal-icon">▧</span><h3>Portfolio</h3><p>Explore demo landing pages for food businesses, local services and digital products.</p><span class="portal-link">View the demos →</span></a>
+  <a class="portal-card" href="games.html"><span class="portal-icon">🎮</span><h3>Harry Games</h3><p>Original games, interactive experiments and future educational adventures.</p><span class="portal-link">Play now →</span></a>
+  <a class="portal-card" href="#silent-success"><span class="portal-icon">✦</span><h3>Stories & Mysteries</h3><p>Life lessons, philosophy, history and intriguing mysteries for curious minds.</p><span class="portal-link">Explore stories →</span></a>
+  <a class="portal-card" href="yenzi285.html"><span class="portal-icon">☾</span><h3>Yenzi285</h3><p>Visual stories, quiet thoughts and creative projects built with feeling.</p><span class="portal-link">Explore Yenzi285 →</span></a>
+  <a class="portal-card" href="#products"><span class="portal-icon">✳</span><h3>Digital Products</h3><p>Explore practical downloadable resources and future digital releases.</p><span class="portal-link">Explore products →</span></a>
+</div></section>
+<section class="section services-section" id="services"><div class="section-heading"><p class="section-label">HARRY DIGITAL · WEB SOLUTIONS</p><h2>Give your business a clearer online presence.</h2><p>A focused landing page helps visitors understand what you offer and how to contact you.</p></div><div class="project-grid">
+  <article class="project-card"><span class="project-tag">01 · DESIGN</span><h3>Made for your business</h3><p>A clear page organised around your service, product and key information.</p></article>
+  <article class="project-card"><span class="project-tag">02 · MOBILE</span><h3>Works on small screens</h3><p>A responsive layout designed for visitors browsing on phones and tablets.</p></article>
+  <article class="project-card"><span class="project-tag">03 · ENQUIRIES</span><h3>A clear next step</h3><p>Prominent contact options, including WhatsApp enquiries when appropriate.</p></article>
+</div><p style="text-align:center;margin:25px 0 0"><a class="btn btn-primary" href="/landing-page-service/">Explore Landing Page Service ↗</a></p></section>
+<section class="section products-section" id="products" style="background:var(--cream)"><div class="section-heading"><p class="section-label">DIGITAL PRODUCTS</p><h2>Useful ideas, made tangible.</h2><p>A growing space for downloadable resources and digital creations. Product listings will be added as they are ready to buy.</p></div><div class="project-grid">
+  <article class="project-card"><span class="project-tag">PLANNERS & TEMPLATES</span><h3>Organise your next step.</h3><p>Digital planners, habit trackers and practical templates for everyday routines.</p><span class="project-tag" style="margin-top:15px">In development</span></article>
+  <article class="project-card"><span class="project-tag">CREATIVE DOWNLOADS</span><h3>Resources for creators.</h3><p>Visual resources and downloadable materials for creative projects and personal use.</p><span class="project-tag" style="margin-top:15px">In development</span></article>
+  <article class="project-card"><span class="project-tag">BUSINESS TOOLS</span><h3>Build with more clarity.</h3><p>Simple resources for people developing their online presence and independent projects.</p><span class="project-tag" style="margin-top:15px">Planned collection</span></article>
+</div></section>
 
-
-<!-- =========================
-     CONTINUE PLAYING
-========================= -->
-
-<section
-    class="continue-playing-section"
-    id="continue-playing">
-
-    <div class="continue-playing-card">
-
-        <div class="continue-playing-icon">
-            🎯
-        </div>
-
-
-        <div class="continue-playing-copy">
-
-            <p class="section-label">
-                CONTINUE PLAYING
-            </p>
-
-            <h2>
-                Tap Tap Relax
-            </h2>
-
-            <p>
-                Continue from the latest progress
-                saved in this browser.
-            </p>
-
-        </div>
-
-
-        <div class="continue-playing-progress">
-
-            <span>
-                Current Level
-            </span>
-
-            <strong>
-                <span id="homepage-tap-level">1</span>
-                / 100
-            </strong>
-
-        </div>
-
-
-        <a
-            class="primary-button"
-            href="games.html#tap-game"
-            id="continue-tap-button">
-            Continue →
-        </a>
-
-    </div>
-
+<section class="section blog-section" id="silent-success"><div class="section-heading"><p class="section-label">STORIES FOR CURIOUS MINDS</p><h2>Look a little deeper.</h2><p>From life lessons and philosophy to history and mysteries — stories that invite us to think.</p></div><div class="blog-grid">
+  <article class="blog-card"><p class="blog-category">FEATURED STORY · YOUTUBE</p><div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-bottom:18px"><iframe src="https://www.youtube.com/embed/EGlQZY2-p2Y" title="Maya Couldn't Stop Overthinking — Until She Learned This" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><h3>Maya Couldn't Stop Overthinking — Until She Learned This</h3><p>Maya thought she needed control to find peace. A painful experience led her toward a Stoic lesson about what belongs to us — and what does not.</p><a href="https://youtu.be/EGlQZY2-p2Y" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></article>
+  <article class="blog-card"><p class="blog-category">LIFE & PHILOSOPHY</p><h3>Quiet Stories. Meaningful Ideas.</h3><p>Visual stories about comparison, growth, resilience, perspective and learning to move through life at your own pace.</p><a href="yenzi285.html">Explore creator stories →</a></article>
+  <article class="blog-card"><p class="blog-category">HISTORY & MYSTERY</p><img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=900&q=85" alt="Quiet desert landscape under a wide open sky" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;margin-bottom:16px"><h3>Questions Worth Exploring.</h3><p>Stories in development can explore unusual places, intriguing historical events and the difference between evidence and speculation.</p><span class="project-tag" style="margin-top:15px">Story collection growing</span></article>
+  <article class="blog-card"><p class="blog-category">MINDSET</p><h3>Psychology Meets Storytelling.</h3><p>Ideas inspired by philosophy, psychology and everyday experiences — without turning every lesson into a lecture.</p><a href="yenzi285.html">Visit Yenzi285 →</a></article>
+</div></section>
+<section class="section journey-section" id="journey"><div class="section-heading"><p class="section-label">THE JOURNEY</p><h2>Built one idea at a time.</h2><p>HarryVerse grows through learning, experimentation and practical projects — not overnight success.</p></div><div class="timeline">
+  <article class="timeline-item"><span class="timeline-number">01</span><div><h3>Learning to Build</h3><p>Turning ideas into real projects through HTML, CSS, JavaScript, Git and GitHub.</p></div></article>
+  <article class="timeline-item"><span class="timeline-number">02</span><div><h3>Creating Useful Websites</h3><p>Building web pages and landing page concepts for small businesses and digital projects.</p></div></article>
+  <article class="timeline-item"><span class="timeline-number">03</span><div><h3>Making Games</h3><p>Developing original games and exploring educational experiences that combine play and learning.</p></div></article>
+  <article class="timeline-item"><span class="timeline-number">04</span><div><h3>Sharing Stories</h3><p>Growing creator projects around mindset, philosophy, history and mysteries.</p></div></article>
+</div></section>
+<section class="section blog-section" id="blog"><div class="section-heading"><p class="section-label">HARRYVERSE NOTES</p><h2>Notes from the building process.</h2><p>Short, practical notes about creating, learning and building in the digital world.</p></div><div class="blog-grid">
+  <article class="blog-card"><p class="blog-category">CODING</p><h3>From an Idea to a Live Website</h3><p>A practical journey from learning Git and GitHub to publishing a real website.</p><button class="text-button" data-article="article-1">Read summary →</button></article>
+  <article class="blog-card"><p class="blog-category">COPYWRITING</p><h3>A Landing Page Is More Than Good Design</h3><p>A strong landing page connects its message, audience and destination with clarity.</p><button class="text-button" data-article="article-2">Read summary →</button></article>
+  <article class="blog-card"><p class="blog-category">BRANDING</p><h3>Building a Brand Before It Becomes Big</h3><p>A brand begins with identity, story and the feeling people remember.</p><button class="text-button" data-article="article-3">Read summary →</button></article>
+  <article class="blog-card"><p class="blog-category">GAME DEVELOPMENT</p><h3>Learning to Code by Creating Games</h3><p>Small games can be powerful practice for understanding logic, progression and interaction.</p><button class="text-button" data-article="article-4">Read summary →</button></article>
+</div><div class="article-panel" id="article-panel" hidden><button class="article-close" type="button" aria-label="Close article">×</button><div id="article-content"></div></div></section>
+<section class="section projects-section" id="projects"><div class="section-heading"><p class="section-label">OUR CREATIVE WORLDS</p><h2>Different projects. One growing universe.</h2><p>Each project has its own purpose, audience and identity.</p></div><div class="project-grid">
+  <article class="project-card"><span class="project-tag">DIGITAL SERVICES</span><h3>Harry Digital</h3><p>Landing pages and digital solutions for people building their online presence.</p><a href="/landing-page-service/">View services →</a></article>
+  <article class="project-card"><span class="project-tag">GAMES</span><h3>Harry Games</h3><p>A growing collection of original games and interactive ideas.</p><a href="games.html">Explore games →</a></article>
+  <article class="project-card"><span class="project-tag">CREATOR BRAND</span><h3>Yenzi285</h3><p>Visual stories, thoughtful reflections and creative content.</p><a href="yenzi285.html">Explore Yenzi285 →</a></article>
+</div></section>
+<section class="section creators-section" id="creators" style="background:var(--paper)">
+  <div class="section-heading">
+    <p class="section-label">CREATOR WORLDS</p>
+    <h2>Meet the stories and creators of HarryVerse.</h2>
+    <p>Explore the independent projects behind our visual stories, reflections and creative ideas.</p>
+  </div>
+  <div class="project-grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+    <article class="project-card">
+      <span class="project-tag">CREATOR BRAND</span>
+      <h3>Yenzi285</h3>
+      <p>Visual stories, quiet thoughts, illustrated diary moments and creative content made with feeling.</p>
+      <a href="yenzi285.html">Explore Yenzi285 →</a>
+    </article>
+    <article class="project-card">
+      <span class="project-tag">YOUTUBE STORIES</span>
+      <h3>Silent Success Mindset</h3>
+      <p>Faceless visual stories about mindset, philosophy and meaningful lessons from everyday life.</p>
+      <a href="#silent-success">Explore the stories →</a>
+    </article>
+  </div>
 </section>
 
-
-<!-- =========================
-     EXPLORE
-========================= -->
-
-<section
-    class="section explore-section"
-    id="explore">
-
-    <div class="section-heading">
-
-        <p class="section-label">
-            START HERE
-        </p>
-
-        <h2>
-            Choose Your Path Through the Verse
-        </h2>
-
-        <p>
-            Explore stories, games, creative projects and digital ideas —
-            each with its own purpose and personality.
-        </p>
-
-    </div>
-
-
-    <div class="portal-grid">
-
-
-        <!-- SILENT SUCCESS MINDSET -->
-
-        <a
-            class="portal-card portal-blue"
-            href="#silent-success">
-
-            <span class="portal-icon">
-                🎬
-            </span>
-
-            <h3>
-                Silent Success Mindset
-            </h3>
-
-            <p>
-                Animated stories about life, mindset,
-                psychology and philosophy — with quiet
-                lessons for becoming stronger.
-            </p>
-
-            <span class="portal-link">
-                Explore the stories →
-            </span>
-
-        </a>
-
-
-        <!-- JOURNEY -->
-
-        <a
-            class="portal-card portal-blue"
-            href="#journey">
-
-            <span class="portal-icon">
-                🧭
-            </span>
-
-            <h3>
-                The Digital Journey
-            </h3>
-
-            <p>
-                Follow the process of learning,
-                experimenting and building one step at a time.
-            </p>
-
-            <span class="portal-link">
-                Explore the journey →
-            </span>
-
-        </a>
-
-
-        <!-- BLOG -->
-
-        <a
-            class="portal-card portal-purple"
-            href="#blog">
-
-            <span class="portal-icon">
-                ✍️
-            </span>
-
-            <h3>
-                Blog & Notes
-            </h3>
-
-            <p>
-                Notes on coding, content,
-                digital creation and lessons from building in public.
-            </p>
-
-            <span class="portal-link">
-                Read the blog →
-            </span>
-
-        </a>
-
-
-        <!-- PORTFOLIO -->
-
-        <a
-            class="portal-card portal-purple"
-            href="/portfolio/">
-
-            <span class="portal-icon">
-                🧩
-            </span>
-
-            <h3>
-                Portfolio
-            </h3>
-
-            <p>
-                Demo landing pages for small businesses,
-                local services and digital products.
-            </p>
-
-            <span class="portal-link">
-                View landing page demos →
-            </span>
-
-        </a>
-
-
-        <!-- HARRY GAMES -->
-
-        <a
-            class="portal-card portal-game"
-            href="games.html">
-
-            <span class="portal-icon">
-                🎮
-            </span>
-
-            <h3>
-                Harry Games
-            </h3>
-
-            <p>
-                Simple games built to play, focus,
-                experiment and keep learning through creation.
-            </p>
-
-            <span class="portal-link">
-                Play now →
-            </span>
-
-        </a>
-
-
-        <!-- YENZI285 -->
-
-        <a
-            class="portal-card portal-yenzi"
-            href="yenzi285.html">
-
-            <span class="portal-icon">
-                🌙
-            </span>
-
-            <h3>
-                Yenzi285
-            </h3>
-
-            <p>
-                Visual stories, quiet thoughts
-                and creative ideas built with feeling.
-            </p>
-
-            <span class="portal-link">
-                Explore Yenzi285 →
-            </span>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SILENT SUCCESS MINDSET
-========================= -->
-
-<section
-    class="section blog-section"
-    id="silent-success">
-
-    <div class="section-heading">
-
-        <p class="section-label">
-            SILENT SUCCESS MINDSET
-        </p>
-
-        <h2>
-            Stories for the Mind. Lessons for Life.
-        </h2>
-
-        <p>
-            Faceless animated stories exploring life,
-            mindset, psychology and philosophy —
-            created to turn quiet moments into meaningful lessons.
-        </p>
-
-    </div>
-
-
-    <div class="blog-grid">
-
-
-        <article class="blog-card">
-
-            <p class="blog-category">
-                FEATURED STORY
-            </p>
-
-            <div style="
-                position: relative;
-                width: 100%;
-                padding-bottom: 56.25%;
-                height: 0;
-                overflow: hidden;
-                border-radius: 14px;
-                margin-bottom: 20px;
-            ">
-                <iframe
-                    src="https://www.youtube.com/embed/EGlQZY2-p2Y"
-                    title="Maya Couldn't Stop Overthinking — Until She Learned This"
-                    style="
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        border: 0;
-                    "
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <h3>
-                Maya Couldn't Stop Overthinking —
-                Until She Learned This
-            </h3>
-
-            <p>
-                Maya thought she needed control to find peace.
-                A painful experience led her toward a Stoic lesson
-                about what belongs to us — and what does not.
-            </p>
-
-            <a
-                href="https://youtu.be/EGlQZY2-p2Y"
-                target="_blank"
-                rel="noopener noreferrer">
-                Watch on YouTube →
-            </a>
-
-        </article>
-
-
-        <article class="blog-card">
-
-            <p class="blog-category">
-                LIFE LESSONS
-            </p>
-
-            <h3>
-                Quiet Stories. Meaningful Ideas.
-            </h3>
-
-            <p>
-                Short visual stories about comparison,
-                growth, resilience, perspective and learning
-                to move through life at your own pace.
-            </p>
-
-        </article>
-
-
-        <article class="blog-card">
-
-            <p class="blog-category">
-                MINDSET
-            </p>
-
-            <h3>
-                Psychology Meets Storytelling
-            </h3>
-
-            <p>
-                Stories inspired by psychology, philosophy
-                and everyday experiences — without turning
-                every lesson into a lecture.
-            </p>
-
-        </article>
-
-
-        <article class="blog-card">
-
-            <p class="blog-category">
-                COMING NEXT
-            </p>
-
-            <h3>
-                More Stories Are Being Built
-            </h3>
-
-            <p>
-                New stories will continue exploring
-                ambition, happiness, relationships,
-                resilience and the way we see our lives.
-            </p>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     JOURNEY
-========================= -->
-
-<section
-    class="section journey-section"
-    id="journey">
-
-    <div class="section-heading">
-
-        <p class="section-label">
-            THE JOURNEY
-        </p>
-
-        <h2>
-            Built Through Curiosity, Practice and Progress
-        </h2>
-
-        <p>
-            Harry Digital Verse is not built around overnight success.
-            It is a record of ideas becoming real through learning,
-            mistakes, experimentation and consistent creation.
-        </p>
-
-    </div>
-
-
-    <div class="timeline">
-
-
-        <article class="timeline-item">
-
-            <span class="timeline-number">
-                01
-            </span>
-
-            <div>
-
-                <h3>
-                    Learning to Build
-                </h3>
-
-                <p>
-                    HTML, CSS, JavaScript, VS Code,
-                    Git and GitHub — learned by turning
-                    ideas into real projects.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="timeline-item">
-
-            <span class="timeline-number">
-                02
-            </span>
-
-            <div>
-
-                <h3>
-                    Writing & Digital Communication
-                </h3>
-
-                <p>
-                    Learning to communicate ideas clearly
-                    through websites, stories, content
-                    and digital experiences.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="timeline-item">
-
-            <span class="timeline-number">
-                03
-            </span>
-
-            <div>
-
-                <h3>
-                    Building Creative Identities
-                </h3>
-
-                <p>
-                    Developing Harry Digital, Harry Games,
-                    Yenzi285 and Silent Success Mindset
-                    with their own identities.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="timeline-item">
-
-            <span class="timeline-number">
-                04
-            </span>
-
-            <div>
-
-                <h3>
-                    Creating Games
-                </h3>
-
-                <p>
-                    Turning simple game ideas into
-                    interactive experiences while learning
-                    through every new version.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="timeline-item">
-
-            <span class="timeline-number">
-                05
-            </span>
-
-            <div>
-
-                <h3>
-                    Creating Stories
-                </h3>
-
-                <p>
-                    Exploring faceless storytelling through
-                    animation, psychology, philosophy
-                    and meaningful life lessons.
-                </p>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     BLOG
-========================= -->
-
-<section
-    class="section blog-section"
-    id="blog">
-
-    <div class="section-heading">
-
-        <p class="section-label">
-            HARRY DIGITAL BLOG
-        </p>
-
-        <h2>
-            Notes From the Building Process
-        </h2>
-
-        <p>
-            Short, practical notes about creating,
-            learning and building in the digital world —
-            written without unnecessary complexity.
-        </p>
-
-    </div>
-
-
-    <div class="blog-grid">
-
-
-        <article class="blog-card">
-
-            <p class="blog-category">
-                CODING
-            </p>
-
-            <h3>
-                From an Idea to a Live Website
-            </h3>
-
-            <p>
-                A practical journey from learning Git
-                and GitHub to publishing a real website
-                on the web.
-            </p>
-
-            <button
-                class="text-button"
-                data-article="article-1">
-                Read summary →
-            </button>
-
-        </article>
-
-
-        <article class="blog-card">
-
-            <p class="blog-category">
-                COPYWRITING
-            </p>
-
-            <h3>
-                A Landing Page Is More Than Good Design
-            </h3>
-
-            <p>
-                A strong landing page connects its message,
-                audience and destination with clarity.
-            </p>
-
-            <button
-                class="text-button"
-                data-article="article-2">
-                Read summary →
-            </button>
-
-        </article>
-
-
-        <article class="blog-card">
-
-            <p class="blog-category">
-                BRANDING
-            </p>
-
-            <h3>
-                Building a Brand Before It Becomes Big
-            </h3>
-
-            <p>
-                A brand begins with identity,
-                story and the feeling people remember.
-            </p>
-
-            <button
-                class="text-button"
-                data-article="article-3">
-                Read summary →
-            </button>
-
-        </article>
-
-
-        <article class="blog-card">
-
-            <p class="blog-category">
-                GAME DEV
-            </p>
-
-            <h3>
-                Learning to Code by Creating Games
-            </h3>
-
-            <p>
-                Small games can be powerful practice
-                for understanding logic, progression
-                and user interaction.
-            </p>
-
-            <button
-                class="text-button"
-                data-article="article-4">
-                Read summary →
-            </button>
-
-        </article>
-
-
-    </div>
-
-
-    <div
-        class="article-panel"
-        id="article-panel"
-        hidden>
-
-        <button
-            class="article-close"
-            type="button"
-            aria-label="Close article">
-            ×
-        </button>
-
-        <div id="article-content"></div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FEATURED PROJECTS
-========================= -->
-
-<section class="section projects-section">
-
-    <div class="section-heading">
-
-        <p class="section-label">
-            FEATURED PROJECTS
-        </p>
-
-        <h2>
-            Different Projects. One Growing Universe.
-        </h2>
-
-    </div>
-
-
-    <div class="project-grid">
-
-
-        <!-- HARRY DIGITAL -->
-
-        <article class="project-card">
-
-            <span class="project-tag">
-                DIGITAL
-            </span>
-
-            <h3>
-                Harry Digital
-            </h3>
-
-            <p>
-                The home of the Verse —
-                connecting stories, games,
-                learning and digital creation.
-            </p>
-
-            <a href="#home">
-                You are here
-            </a>
-
-        </article>
-
-
-        <!-- SILENT SUCCESS MINDSET -->
-
-        <article class="project-card">
-
-            <span class="project-tag">
-                STORIES
-            </span>
-
-            <h3>
-                Silent Success Mindset
-            </h3>
-
-            <p>
-                Animated life stories exploring mindset,
-                psychology, philosophy and personal growth.
-            </p>
-
-            <a href="#silent-success">
-                Explore the stories →
-            </a>
-
-        </article>
-
-
-        <!-- HARRY GAMES -->
-
-        <article class="project-card">
-
-            <span class="project-tag">
-                GAME
-            </span>
-
-            <h3>
-                Harry Games
-            </h3>
-
-            <p>
-                A growing game space built through
-                experimentation, coding and
-                the joy of creating.
-            </p>
-
-            <a href="games.html">
-                Explore Harry Games →
-            </a>
-
-        </article>
-
-
-        <!-- YENZI285 -->
-
-        <article class="project-card">
-
-            <span class="project-tag">
-                BRAND
-            </span>
-
-            <h3>
-                Yenzi285
-            </h3>
-
-            <p>
-                Visual stories, quiet thoughts
-                and creative work created
-                with emotion and meaning.
-            </p>
-
-            <a href="yenzi285.html">
-                Explore Yenzi285 →
-            </a>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     RESOURCES
-========================= -->
-
-<section
-    class="section resources-section"
-    id="resources">
-
-    <div class="resource-layout">
-
-
-        <div class="resource-copy">
-
-            <p class="section-label">
-                RESOURCES & AFFILIATE
-            </p>
-
-            <h2>
-                Digital Resources Worth Exploring
-            </h2>
-
-            <p>
-                Klikjer is one of the platforms I explore
-                for digital products across different categories,
-                including learning, marketing, personal finance
-                and practical skills.
-            </p>
-
-            <p>
-                Review each product carefully and choose only
-                what genuinely fits your needs and goals.
-            </p>
-
-
-            <div class="disclosure">
-
-                <strong>
-                    Affiliate disclosure:
-                </strong>
-
-                I may earn a commission if you purchase
-                through this link, at no additional cost to you.
-
-            </div>
-
-
-            <a
-                class="primary-button"
-                href="https://klikjer.com/members/go.php?id=29127"
-                target="_blank"
-                rel="noopener noreferrer sponsored">
-                Explore Products on Klikjer
-            </a>
-
-        </div>
-
-
-        <div class="resource-card">
-
-            <span class="resource-badge">
-                REVIEW BEFORE BUYING
-            </span>
-
-            <h3>
-                Choose Thoughtfully
-            </h3>
-
-            <ul>
-
-                <li>
-                    Read the product title and description
-                </li>
-
-                <li>
-                    Consider whether the product
-                    fits your goals
-                </li>
-
-                <li>
-                    Be cautious of unrealistic
-                    promises of instant results
-                </li>
-
-                <li>
-                    Start with one useful resource
-                    instead of too many at once
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FINAL CTA
-========================= -->
-
-<section class="final-cta">
-
-    <div>
-
-        <p class="section-label">
-            EXPLORE • BUILD • PLAY • GROW
-        </p>
-
-        <h2>
-            You Do Not Need to Have Everything
-            Figured Out to Start Creating.
-        </h2>
-
-        <p>
-            Explore the part of the Verse that speaks to you —
-            then take the next step from there.
-        </p>
-
-
-        <div class="final-buttons">
-
-            <div class="hero-buttons">
-
-                <a
-                    class="primary-button"
-                    href="#explore">
-                    Explore the Verse
-                </a>
-
-                <a
-                    class="secondary-button"
-                    href="#silent-success">
-                    Explore Stories
-                </a>
-
-                <a
-                    class="secondary-button"
-                    href="games.html">
-                    Play Harry Games
-                </a>
-
-                <a
-                    class="secondary-button"
-                    href="yenzi285.html">
-                    Explore Yenzi285
-                </a>
-
-                <a
-                    class="secondary-button"
-                    href="/portfolio/">
-                    Portfolio
-                </a>
-
-                <a
-                    class="secondary-button"
-                    href="https://klikjer.com/members/go.php?id=29127"
-                    target="_blank"
-                    rel="noopener noreferrer sponsored">
-                    Affiliate Resources
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
+<section class="section resources-section" id="resources"><div class="resource-layout"><div class="resource-copy"><p class="section-label">RESOURCES & AFFILIATE</p><h2>Digital resources worth exploring.</h2><p>Discover digital products across categories including learning, marketing, personal finance and practical skills.</p><p>Review each product carefully and choose only what genuinely fits your needs and goals.</p><div class="disclosure"><strong>Affiliate disclosure:</strong> I may earn a commission if you purchase through this link, at no additional cost to you.</div><a class="btn btn-primary" href="https://klikjer.com/members/go.php?id=29127" target="_blank" rel="noopener noreferrer sponsored">Explore Products on Klikjer ↗</a></div><div class="resource-card"><span class="resource-badge">REVIEW BEFORE BUYING</span><h3>Choose thoughtfully.</h3><ul><li>Read the product title and description.</li><li>Consider whether it fits your goals.</li><li>Be cautious of unrealistic promises of instant results.</li><li>Start with one useful resource instead of too many at once.</li></ul></div></div></section>
+<section class="final-cta"><div><p class="section-label">EXPLORE · BUILD · PLAY · GROW</p><h2>Have an idea? Let's turn it into something real.</h2><p>Whether you need a landing page, want to explore our games or simply follow a story, there is a place for you in HarryVerse.</p><div class="hero-buttons"><a class="primary-button" href="/landing-page-service/">Discuss a Landing Page ↗</a><a class="secondary-button" href="/portfolio/">View Portfolio</a><a class="secondary-button" href="games.html">Play Harry Games</a><a class="secondary-button" href="yenzi285.html">Explore Yenzi285</a></div></div></section>
 </main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="footer">
-
-    <div class="footer-container">
-
-        <div>
-
-            <h2>
-                Harry Digital
-            </h2>
-
-            <p>
-                Explore. Build. Play. Grow.
-            </p>
-
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="#silent-success">
-                Stories
-            </a>
-
-            <a href="#journey">
-                Journey
-            </a>
-
-            <a href="#blog">
-                Blog
-            </a>
-
-            <a href="/portfolio/">
-                Portfolio
-            </a>
-
-            <a href="games.html">
-                Harry Games
-            </a>
-
-            <a href="yenzi285.html">
-                Yenzi285
-            </a>
-
-            <a href="#resources">
-                Resources
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <p class="copyright">
-        © 2026 Harry Digital.
-        Built one idea at a time.
-    </p>
-
-</footer>
-
-
+<footer class="footer"><div class="footer-container"><div><h2>HarryVerse</h2><p>One universe. Many things to discover.</p></div><div class="footer-links"><a href="#home">Home</a><a href="games.html">Games</a><a href="#products">Products</a><a href="/landing-page-service/">Services</a><a href="/portfolio/">Portfolio</a><a href="#creators">Creators</a><a href="#blog">Blog</a><a href="#silent-success">Stories</a><a href="#resources">Resources</a></div></div><p class="copyright">© <span id="hv-year">2026</span> HarryVerse. Built one idea at a time.</p></footer>
 <script src="script.js"></script>
-
+<script>
+/* Only update the copyright year here. Navigation, saved game progress and blog summaries remain connected to the existing script.js. */
+const hvYear = document.getElementById('hv-year');
+if (hvYear) hvYear.textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
