@@ -21,35 +21,38 @@ const closeArticle = document.querySelector(".article-close");
 
 const articles = {
   "article-1": {
-    title: "Website pertama saya berjaya live",
+    title: "My First Website Went Live",
     body: [
-      "Saya bermula tanpa memahami beza Git dan GitHub. Langkah pertama bukan terus membina website besar, tetapi memahami fail index.html, style.css dan script.js.",
-      "Selepas website boleh dibuka melalui Live Server, saya belajar bahawa perubahan di laptop belum sama dengan website yang sudah live. Fail perlu dihantar ke GitHub sebelum orang lain boleh melihat versi terbaru.",
-      "Pelajaran terbesar: sesuatu yang nampak rumit boleh menjadi lebih mudah apabila dipecahkan kepada langkah kecil."
+      "I started without fully understanding the difference between Git and GitHub. My first step was not to build a large website, but to understand the roles of index.html, style.css and script.js.",
+      "After learning to run a website using Live Server, I discovered that changes on my laptop are not automatically reflected on a live website. The updated files must be pushed to GitHub before visitors can see the latest version.",
+      "The biggest lesson: something that looks complicated becomes easier when it is broken down into smaller steps."
     ]
   },
+
   "article-2": {
-    title: "Landing page bukan sekadar cantik",
+    title: "A Landing Page Is More Than Good Design",
     body: [
-      "Design yang menarik boleh membuat orang berhenti dan melihat, tetapi mesej yang jelas membuat mereka memahami apa yang perlu dilakukan.",
-      "Jika landing page bercakap tentang belajar website tetapi butangnya membawa ke marketplace dengan pelbagai kategori, pembaca boleh keliru. Sebab itu saya menukar Harry Digital menjadi rumah utama yang menerangkan keseluruhan perjalanan dan menjadikan affiliate hanya salah satu bahagian.",
-      "Pelajaran terbesar: janji di halaman pertama mesti sepadan dengan pengalaman selepas orang menekan butang."
+      "An attractive design can make people stop and look, but a clear message helps them understand what to do next.",
+      "If a landing page promises to teach website building but its button leads to a marketplace filled with unrelated categories, visitors may become confused. That is why I reshaped Harry Digital into a central hub that explains the wider creative journey, with affiliate resources as just one part of it.",
+      "The biggest lesson: the promise made on the first page should match the experience visitors receive after clicking a button."
     ]
   },
+
   "article-3": {
-    title: "Membina jenama sebelum menjadi besar",
+    title: "Building a Brand Before It Becomes Big",
     body: [
-      "Jenama bukan sekadar logo. Ia ialah rasa, cerita, pilihan warna, cara bercakap dan pengalaman yang orang ingat.",
-      "Harry Digital membawa semangat belajar dan membina. Harry Games membawa keseronokan dan perkembangan level. Yenzi285 membawa rasa tenang, visual dan makna.",
-      "Walaupun ketiga-tiganya berbeza, semuanya datang daripada perjalanan yang sama: bermula kecil dan membina dengan konsisten."
+      "A brand is more than a logo. It is the feeling, story, colours, communication style and experience that people remember.",
+      "Harry Digital represents learning and building. Harry Games represents fun and progression. Yenzi285 represents calm, visual storytelling and meaning.",
+      "Although each brand has its own identity, they all come from the same journey: starting small and building consistently."
     ]
   },
+
   "article-4": {
-    title: "Mencipta game sambil belajar coding",
+    title: "Learning to Code by Creating Games",
     body: [
-      "Game memberi latihan yang sangat baik untuk memahami pemboleh ubah, fungsi, masa, skor dan perubahan level.",
-      "Harry Games bermula dengan game klik sasaran yang ringkas. Setiap level mengubah masa dan jumlah sasaran yang perlu diklik.",
-      "Ini bukan versi akhir. Ia ialah asas yang boleh dikembangkan kepada animasi, karakter, bunyi, sistem kredit dan cabaran yang lebih besar."
+      "Games provide a practical way to learn about variables, functions, timers, scores and level progression.",
+      "Harry Games began with a simple target-clicking game. Each level introduces changes to the timer and the number of targets players need to hit.",
+      "This is not the final version. It is a foundation that can grow with animations, characters, sound effects, a credit system and more challenging gameplay."
     ]
   }
 };
