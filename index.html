@@ -1236,11 +1236,7 @@ try{localStorage.setItem("harryverse-language",lang)}catch(e){}
 const select=document.getElementById("language-select");
 
 if(select){
-/* BM is ready. Indonesian and Spanish will be enabled later. */
-const idOption=select.querySelector('option[value="id"]');
-const esOption=select.querySelector('option[value="es"]');
-if(idOption){idOption.disabled=true;idOption.textContent="ID — Coming soon"}
-if(esOption){esOption.disabled=true;esOption.textContent="ES — Coming soon"}
+
 
 select.addEventListener("change",function(){
 setLanguage(this.value);
