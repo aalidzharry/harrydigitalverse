@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Small Business Finance Tracker | Harry Digital Verse</title>
+<meta name="description" content="A simple Excel and Google Sheets finance tracker for small business owners and solo entrepreneurs.">
+<style>
+:root {
+  --cream: #f7f4ed;
+  --paper: #fffefa;
+  --ink: #292c27;
+  --muted: #77786f;
+  --green: #526b55;
+  --light-green: #e9eee5;
+  --line: #e5e1d7;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.65;
+}
+a { color: inherit; }
+header {
+  max-width: 1160px;
+  margin: auto;
+  padding: 25px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+.brand span {
+  display: block;
+  font: italic 11px Arial, sans-serif;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+nav a {
+  text-decoration: none;
+  font: 13px Arial, sans-serif;
+  margin-left: 24px;
+}
+.hero {
+  max-width: 1160px;
+  margin: auto;
+  padding: 90px 7% 75px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 55px;
+  align-items: center;
+}
+.eyebrow {
+  font: bold 11px Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+}
+h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.08;
+  font-weight: normal;
+  margin: 20px 0;
+  letter-spacing: -1.8px;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 490px;
+}
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  font: 13px Arial, sans-serif;
+  border: 1px solid var(--green);
+}
+.btn.secondary {
+  background: transparent;
+  color: var(--green);
+}
+.preview {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 25px;
+  box-shadow: 12px 12px 0 #e8e3d8;
+  transform: rotate(1deg);
+}
+.preview-top {
+  display: flex;
+  justify-content: space-between;
+  font: 11px Arial, sans-serif;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 15px;
+}
+.preview h3 {
+  font-size: 23px;
+  font-weight: normal;
+  margin: 20px 0;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.metric {
+  background: var(--light-green);
+  padding: 15px;
+}
+.metric small {
+  display: block;
+  font: 10px Arial, sans-serif;
+  color: var(--muted);
+}
+.metric strong {
+  display: block;
+  font-size: 21px;
+  margin-top: 5px;
+  color: var(--green);
+}
+.chart {
+  height: 95px;
+  display: flex;
+  align-items: end;
+  gap: 9px;
+  padding: 15px 5px 0;
+  border-bottom: 1px solid var(--line);
+}
+.chart span {
+  flex: 1;
+  background: #91a58d;
+  min-height: 15px;
+}
+.chart span:nth-child(1) { height: 35%; }
+.chart span:nth-child(2) { height: 60%; }
+.chart span:nth-child(3) { height: 45%; }
+.chart span:nth-child(4) { height: 80%; }
+.chart span:nth-child(5) { height: 55%; }
+.chart span:nth-child(6) { height: 95%; }
+.chart span:nth-child(7) { height: 70%; }
+section {
+  padding: 75px 7%;
+}
+.inner {
+  max-width: 1050px;
+  margin: auto;
+}
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+  font-weight: normal;
+  margin: 12px 0;
+}
+.section-heading p {
+  color: var(--muted);
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.feature {
+  background: var(--paper);
+  padding: 25px;
+  border: 1px solid var(--line);
+}
+.feature .number {
+  color: var(--green);
+  font: 12px Arial, sans-serif;
+}
+.feature h3 {
+  font-size: 21px;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+.feature p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.soft {
+  background: #eeece3;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.step {
+  border-top: 1px solid #c9c6bb;
+  padding-top: 15px;
+}
+.step strong {
+  color: var(--green);
+  font: 12px Arial, sans-serif;
+}
+.step h3 {
+  font-size: 21px;
+  font-weight: normal;
+}
+.step p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.cta {
+  text-align: center;
+  background: var(--green);
+  color: white;
+}
+.cta p {
+  color: #e3e9df;
+  max-width: 570px;
+  margin: 15px auto 25px;
+}
+.cta .eyebrow { color: #d6e0d2; }
+.cta .btn {
+  background: var(--paper);
+  color: var(--green);
+  border-color: var(--paper);
+}
+footer {
+  padding: 30px 7%;
+  text-align: center;
+  color: var(--muted);
+  font: 12px Arial, sans-serif;
+}
+@media(max-width: 760px) {
+  header { padding: 20px 6%; }
+  nav a { margin-left: 10px; font-size: 11px; }
+  .hero { grid-template-columns: 1fr; padding-top: 60px; }
+  .features, .steps { grid-template-columns: 1fr; }
+  section { padding: 55px 7%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    HARRY DIGITAL VERSE
+    <span>TOOLS FOR EVERYDAY BUSINESS</span>
+  </div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#how">How It Works</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div>
+      <div class="eyebrow">A simpler way to manage your money</div>
+      <h1>Know your numbers. Grow your business.</h1>
+      <p>
+        Running a small business is already a lot of work.
+        Keep track of your income, expenses and profit with
+        one simple finance tracker.
+      </p>
+      <div class="buttons">
+        <a class="btn" href="#coming-soon">Coming Soon</a>
+        <a class="btn secondary" href="#features">Explore Features</a>
+      </div>
+    </div>
+
+    <div class="preview">
+      <div class="preview-top">
+        <span>BUSINESS FINANCE TRACKER</span>
+        <span>2026</span>
+      </div>
+      <h3>Your business at a glance</h3>
+      <div class="metrics">
+        <div class="metric">
+          <small>TOTAL INCOME</small>
+          <strong>$4,850</strong>
+        </div>
+        <div class="metric">
+          <small>TOTAL EXPENSES</small>
+          <strong>$1,920</strong>
+        </div>
+        <div class="metric">
+          <small>NET PROFIT</small>
+          <strong>$2,930</strong>
+        </div>
+        <div class="metric">
+          <small>TRACKING</small>
+          <strong>Monthly</strong>
+        </div>
+      </div>
+      <h3 style="font-size:17px;margin-bottom:0;">Monthly overview</h3>
+      <div class="chart">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <p style="font:10px Arial,sans-serif;color:#888;">
+        Illustrative preview — not actual customer data.
+      </p>
+    </div>
+  </div>
+
+  <section class="soft" id="features">
+    <div class="inner">
+      <div class="section-heading">
+        <div class="eyebrow">What's inside</div>
+        <h2>Everything you need. Nothing too complicated.</h2>
+        <p>
+          Designed for small business owners, freelancers
+          and solo entrepreneurs who want a clearer picture
+          of their business finances.
+        </p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="number">01 / INCOME</div>
+          <h3>Sales & Income</h3>
+          <p>Record your sales and other business income in one organised place.</p>
+        </div>
+        <div class="feature">
+          <div class="number">02 / EXPENSES</div>
+          <h3>Business Expenses</h3>
+          <p>Keep track of business spending and understand where your money goes.</p>
+        </div>
+        <div class="feature">
+          <div class="number">03 / PROFIT</div>
+          <h3>Profit & Loss</h3>
+          <p>See the difference between what your business earns and spends.</p>
+        </div>
+        <div class="feature">
+          <div class="number">04 / SUMMARY</div>
+          <h3>Monthly Summary</h3>
+          <p>Review your monthly financial activity with an organised summary.</p>
+        </div>
+        <div class="feature">
+          <div class="number">05 / CASH FLOW</div>
+          <h3>Cash Flow Overview</h3>
+          <p>Get a clearer view of money coming into and going out of your business.</p>
+        </div>
+        <div class="feature">
+          <div class="number">06 / DASHBOARD</div>
+          <h3>Simple Dashboard</h3>
+          <p>Bring your key numbers together in one easy-to-read overview.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="inner">
+      <div class="section-heading">
+        <div class="eyebrow">Simple workflow</div>
+        <h2>Start organising your finances in three steps.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <strong>STEP 01</strong>
+          <h3>Enter your transactions</h3>
+          <p>Add your income and expenses as your business operates.</p>
+        </div>
+        <div class="step">
+          <strong>STEP 02</strong>
+          <h3>Keep everything organised</h3>
+          <p>Use categories and payment methods to organise your records.</p>
+        </div>
+        <div class="step">
+          <strong>STEP 03</strong>
+          <h3>Review your numbers</h3>
+          <p>Use the dashboard and monthly summary to understand your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="coming-soon">
+    <div class="inner">
+      <div class="eyebrow">Coming soon</div>
+      <h2>Make your business finances easier to manage.</h2>
+      <p>
+        The Small Business Finance Tracker is being prepared
+        for release in Excel and Google Sheets.
+        Stay tuned for the launch.
+      </p>
+      <a class="btn" href="https://www.harrydigitalverse.com/">
+        Explore Harry Digital Verse
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Harry Digital Verse. Tools for everyday business.
+</footer>
+
+</body>
+</html>
