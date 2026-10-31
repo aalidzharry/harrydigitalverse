@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Take control of your money with the Paycheck-to-Paycheck Tracker. A practical Excel budgeting spreadsheet designed to help you plan every paycheck.">
+  <title>Paycheck-to-Paycheck Tracker | Harry Digital Verse</title>
+  <style>
+    :root {
+      --cream: #f7f3eb;
+      --paper: #fffdf8;
+      --ink: #292c27;
+      --muted: #77776e;
+      --green: #526b57;
+      --line: #e5dfd3;
+      --gold: #b28b52;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      padding: 20px 7%;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: Arial, sans-serif;
+    }
+
+    .brand {
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+    }
+
+    .back {
+      color: var(--muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: auto;
+      padding: 65px 24px 80px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font: bold 11px Arial, sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.08;
+      font-weight: normal;
+      margin: 18px 0;
+    }
+
+    .intro {
+      color: var(--muted);
+      font: 16px/1.8 Arial, sans-serif;
+      max-width: 510px;
+    }
+
+    .price {
+      font-size: 32px;
+      margin: 24px 0 5px;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font: 12px Arial, sans-serif;
+    }
+
+    .buy-button {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 15px 28px;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      font: bold 13px Arial, sans-serif;
+      letter-spacing: .5px;
+      border-radius: 3px;
+    }
+
+    .buy-button:hover { background: #3e5543; }
+
+    .mockup {
+      background: #e8e1d4;
+      padding: 35px;
+      border-radius: 5px;
+      box-shadow: 0 15px 40px #39352b18;
+    }
+
+    .sheet {
+      background: white;
+      padding: 25px;
+      min-height: 310px;
+      box-shadow: 0 5px 15px #00000010;
+      transform: rotate(1deg);
+      font-family: Arial, sans-serif;
+    }
+
+    .sheet-title {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .sheet-sub {
+      font-size: 10px;
+      color: #777;
+      margin-bottom: 22px;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .metric {
+      background: #f1f4ef;
+      padding: 13px;
+      font-size: 10px;
+      color: #667267;
+    }
+
+    .metric strong {
+      display: block;
+      color: #344a38;
+      font-size: 19px;
+      margin-top: 5px;
+    }
+
+    .fake-table {
+      margin-top: 18px;
+      border-top: 1px solid #ddd;
+      font-size: 10px;
+    }
+
+    .fake-table div {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px 2px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .section {
+      margin-top: 85px;
+      border-top: 1px solid var(--line);
+      padding-top: 42px;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: normal;
+      margin: 0 0 18px;
+    }
+
+    .description {
+      font: 15px/1.8 Arial, sans-serif;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      background: var(--paper);
+      padding: 24px;
+      border: 1px solid var(--line);
+    }
+
+    .feature h3 {
+      font-size: 19px;
+      font-weight: normal;
+      margin: 0 0 8px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font: 13px/1.7 Arial, sans-serif;
+      margin: 0;
+    }
+
+    .note {
+      margin-top: 35px;
+      padding: 22px;
+      background: #eee9dd;
+      font: 13px/1.8 Arial, sans-serif;
+      color: #66665d;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 20px;
+      text-align: center;
+      color: var(--muted);
+      font: 12px Arial, sans-serif;
+    }
+
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; gap: 35px; }
+      .container { padding-top: 42px; }
+      .features { grid-template-columns: 1fr; }
+      .mockup { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">HARRY DIGITAL VERSE</a>
+    <a class="back" href="/">← Back to Home</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Personal Finance · Excel Template</div>
+
+        <h1>Make Every Paycheck Count.</h1>
+
+        <p class="intro">
+          A practical paycheck budgeting spreadsheet designed to help you
+          organise your income, track expenses, plan upcoming bills and
+          understand where your money goes.
+        </p>
+
+        <div class="price">US$5.99</div>
+        <div class="price-note">One-time purchase · Digital Excel product</div>
+
+        <a class="buy-button" href="#purchase">
+          GET THE TRACKER →
+        </a>
+      </div>
+
+      <div class="mockup">
+        <div class="sheet">
+          <div class="sheet-title">Paycheck Tracker</div>
+          <div class="sheet-sub">YOUR PERSONAL MONEY PLANNER</div>
+
+          <div class="metric-row">
+            <div class="metric">TOTAL INCOME<strong>$0.00</strong></div>
+            <div class="metric">TOTAL EXPENSES<strong>$0.00</strong></div>
+            <div class="metric">BILLS<strong>$0.00</strong></div>
+            <div class="metric">REMAINING<strong>$0.00</strong></div>
+          </div>
+
+          <div class="fake-table">
+            <div><strong>PAYCHECK OVERVIEW</strong><strong>AMOUNT</strong></div>
+            <div><span>Income</span><span>—</span></div>
+            <div><span>Expenses</span><span>—</span></div>
+            <div><span>Bills</span><span>—</span></div>
+            <div><span>Available Balance</span><span>—</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">Why this tracker?</div>
+      <h2>A clearer picture of your money.</h2>
+
+      <p class="description">
+        When payday comes and bills are waiting, managing money can feel
+        overwhelming. This tracker gives you one organised place to plan
+        each pay period and keep track of your financial commitments.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <h3>01 · Paycheck Planning</h3>
+          <p>Organise income and expenses by individual pay periods.</p>
+        </div>
+
+        <div class="feature">
+          <h3>02 · Expense Tracking</h3>
+          <p>Record everyday spending and monitor where your money goes.</p>
+        </div>
+
+        <div class="feature">
+          <h3>03 · Bill Management</h3>
+          <p>Keep upcoming bills and payment information organised.</p>
+        </div>
+
+        <div class="feature">
+          <h3>04 · Dashboard Overview</h3>
+          <p>See your income, expenses and remaining balance in one place.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">Product details</div>
+      <h2>What you'll receive</h2>
+
+      <p class="description">
+        A downloadable Excel workbook with a dashboard, paycheck planner,
+        transaction tracker, bill manager and user guide. Designed for
+        personal budgeting and everyday financial organisation.
+      </p>
+
+      <div class="note">
+        <strong>PLEASE NOTE</strong><br>
+        This is a digital product. No physical item will be shipped.
+        You will need Microsoft Excel or a compatible spreadsheet
+        application. This tracker is a budgeting tool and does not
+        provide financial advice.
+      </div>
+    </section>
+
+    <section class="section" id="purchase">
+      <div class="eyebrow">Ready to get organised?</div>
+      <h2>Start planning your next paycheck.</h2>
+
+      <p class="description">
+        Secure checkout and instant digital delivery will be available here
+        once our payment link is connected.
+      </p>
+
+      <a class="buy-button" href="mailto:hello@harrydigitalverse.com?subject=Paycheck%20Tracker%20Purchase%20Enquiry">
+        ENQUIRE ABOUT THIS PRODUCT →
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Harry Digital Verse · Digital tools for everyday life.
+  </footer>
+</body>
+</html>
