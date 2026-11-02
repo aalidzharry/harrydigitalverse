@@ -16,6 +16,7 @@
 :root{
 --cream:#f7f1e7;--paper:#fffdf8;--ink:#272720;
 --muted:#706d63;--terracotta:#b8543b;--terracotta-dark:#94422f;
+
 --olive:#59664d;--sage:#e3e6d9;--line:#e1d6c7;
 --forest:#28372e;--serif:"Playfair Display",Georgia,serif;
 --sans:"DM Sans",Arial,sans-serif;
@@ -532,61 +533,6 @@ html{scroll-behavior:auto}
   
 /* ===== HARRY DIGITAL VERSE NAVBAR ===== */
 
-.hv-new-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255, 250, 245, 0.98);
-  border-bottom: 1px solid #ead9ca;
-}
-
-.hv-navbar {
-  width: min(100%, 1200px);
-  min-height: 66px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-}
-
-/* BRAND / HOUSE LOGO */
-
-.hv-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  color: #2b170f;
-  text-decoration: none;
-}
-
-.hv-home-logo {
-  width: 40px;
-  height: 36px;
-  fill: none;
-  stroke: #482819;
-  stroke-width: 2.2;
-  stroke-linecap: square;
-  stroke-linejoin: miter;
-}
-
-.hv-brand-divider {
-  height: 34px;
-  width: 1px;
-  background: #9d7964;
-}
-
-.hv-brand-name {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size
-</style>
-</head>
-
-<body>
-
-
 <header class="site-header hv-new-header">
   <nav class="nav container hv-navbar" aria-label="Main navigation">
 
@@ -634,34 +580,40 @@ html{scroll-behavior:auto}
 
       <a href="#resources">Resources</a>
 
-      <!-- LANGUAGE -->
-      <label class="language-picker hv-language-picker">
-        <span class="sr-only">Choose language</span>
-
-        <span class="hv-globe" aria-hidden="true">◎</span>
-
-        <select id="language-select" aria-label="Choose language">
-          <option value="en">🇬🇧 English</option>
-          <option value="ms">🇲🇾 Bahasa Melayu</option>
-          <option value="id">🇮🇩 Bahasa Indonesia</option>
-          <option value="es">🇪🇸 Español</option>
-        </select>
-      </label>
+      <!-- CUSTOM LANGUAGE PICKER -->
+      <div class="custom-lang-picker">
+        <button class="lang-trigger" type="button" aria-haspopup="true" aria-expanded="false">
+          <!-- Ikon Bumi (SVG) -->
+          <svg class="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span class="current-lang-text">EN</span>
+          <span class="arrow-down">⌄</span>
+        </button>
+        <ul class="lang-dropdown">
+          <li><a href="?lang=en" data-lang="en">🇬🇧 English</a></li>
+          <li><a href="?lang=ms" data-lang="ms">🇲🇾 Bahasa Melayu</a></li>
+          <li><a href="?lang=id" data-lang="id">🇮🇩 Bahasa Indonesia</a></li>
+          <li><a href="?lang=es" data-lang="es">Español</a></li>
+        </ul>
+      </div>
 
       <!-- SEARCH -->
       <button class="hv-icon-button" type="button" aria-label="Search">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="10.8" cy="10.8" r="7.2"/>
-          <path d="m16.2 16.2 5 5"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       </button>
 
       <!-- CART -->
       <a class="hv-cart-button" href="#products" aria-label="Shopping cart">
-        <svg viewBox="0 0 28 28" aria-hidden="true">
-          <path d="M2 3h3l3.2 15.2h14.2l3-11.5H7"/>
-          <circle cx="10.5" cy="23" r="1.8"/>
-          <circle cx="21" cy="23" r="1.8"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
         </svg>
         <span class="hv-cart-count">0</span>
       </a>
@@ -669,7 +621,6 @@ html{scroll-behavior:auto}
     </div>
   </nav>
 </header>
-
 
 <!-- HARRY DIGITAL VERSE HERO -->
 <header class="hero hv-hero" id="home">
