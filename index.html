@@ -4,588 +4,500 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Harry Digital Verse | One World of Ideas</title>
-<meta name="description" content="Discover original games, digital products, creative projects, stories and ideas from Harry Digital Verse.">
+<meta name="description" content="Discover games, digital products, creators and stories at Harry Digital Verse.">
 
 <style>
 :root {
-  --cream: #f8f3e9;
-  --paper: #fffaf2;
-  --ink: #28251f;
-  --muted: #716d65;
-  --terracotta: #b94e32;
-  --green: #20352d;
-  --line: #ded4c5;
+  --cream:#f8f3e9;
+  --paper:#fffaf2;
+  --ink:#28251f;
+  --muted:#716d65;
+  --terracotta:#b94e32;
+  --green:#20352d;
+  --line:#ded4c5;
 }
-
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
 }
-
-html {
-  scroll-behavior: smooth;
+header{
+  min-height:70px;
+  padding:12px 4.5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
 }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+.logo{
+  text-decoration:none;
+  color:var(--ink);
+  display:flex;
+  flex-direction:column;
+  min-width:190px;
 }
-
-/* HEADER */
-
-header {
-  min-height: 70px;
-  padding: 10px 4.5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  background: rgba(255,250,242,0.96);
-  border-bottom: 1px solid var(--line);
+.logo-name{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:25px;
+  font-weight:bold;
+  letter-spacing:-1px;
 }
-
-.logo {
-  text-decoration: none;
-  color: var(--ink);
-  display: flex;
-  flex-direction: column;
-  min-width: 190px;
+.logo-tagline{
+  margin-top:4px;
+  font-size:9px;
+  letter-spacing:2px;
+  text-align:center;
 }
-
-.logo-name {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: -1px;
-  line-height: 1;
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:20px;
 }
-
-.logo-tagline {
-  margin-top: 5px;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-align: center;
+nav a{
+  color:var(--ink);
+  font-size:12px;
+  font-weight:600;
+  text-decoration:none;
 }
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 21px;
-  flex-wrap: wrap;
+nav a:hover{color:var(--terracotta)}
+.language{
+  padding:9px 10px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:transparent;
+  color:var(--ink);
+  font-size:11px;
+  cursor:pointer;
 }
-
-nav a {
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color .2s;
+.hero{
+  min-height:440px;
+  padding:42px 4.5%;
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  align-items:center;
+  gap:35px;
+  background:radial-gradient(circle at 80% 35%,#f3e5d3 0,transparent 38%),var(--cream);
 }
-
-nav a:hover {
-  color: var(--terracotta);
+.hero-content{max-width:600px}
+.eyebrow{
+  color:var(--terracotta);
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
 }
-
-.language {
-  padding: 9px 10px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: transparent;
-  color: var(--ink);
-  font-size: 11px;
+h1{
+  margin:18px 0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(42px,5.4vw,68px);
+  font-weight:normal;
+  line-height:.99;
+  letter-spacing:-2.5px;
 }
-
-/* HERO */
-
-.hero {
-  min-height: 440px;
-  padding: 42px 4.5% 35px;
-  display: grid;
-  grid-template-columns: 1.08fr .92fr;
-  align-items: center;
-  gap: 35px;
-  background:
-    radial-gradient(circle at 80% 35%, #f3e5d3 0, transparent 38%),
-    var(--cream);
+h1 em{
+  display:block;
+  color:var(--terracotta);
+  font-weight:normal;
 }
-
-.hero-content {
-  max-width: 600px;
+.hero-description{
+  max-width:460px;
+  margin:20px 0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
 }
-
-.eyebrow {
-  color: var(--terracotta);
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:25px;
 }
-
-h1 {
-  margin: 18px 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(42px, 5.4vw, 68px);
-  font-weight: normal;
-  line-height: .99;
-  letter-spacing: -2.5px;
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:12px 15px;
+  border-radius:8px;
+  border:1px solid var(--terracotta);
+  background:var(--terracotta);
+  color:white;
+  font-size:11px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:transform .2s;
 }
-
-h1 em {
-  display: block;
-  color: var(--terracotta);
-  font-weight: normal;
+.button:hover{transform:translateY(-2px)}
+.button.secondary{
+  background:transparent;
+  color:var(--ink);
+  border-color:#c8a995;
 }
-
-.hero-description {
-  max-width: 460px;
-  margin: 20px 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
+.button.purple{
+  background:#86516d;
+  border-color:#86516d;
 }
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin-top: 25px;
+.hero-cards{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  max-width:440px;
+  width:100%;
+  margin:auto;
 }
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 12px 15px;
-  border-radius: 8px;
-  border: 1px solid var(--terracotta);
-  background: var(--terracotta);
-  color: white;
-  font-size: 11px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform .2s, opacity .2s;
+.selector-card{
+  min-height:155px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-radius:17px;
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 12px 25px rgba(80,55,35,.12);
+  color:var(--ink);
+  text-decoration:none;
+  transition:transform .25s;
 }
-
-.button:hover {
-  transform: translateY(-2px);
-  opacity: .92;
+.selector-card:hover{transform:translateY(-5px) rotate(0deg)}
+.selector-card:nth-child(1){background:#dce8f3;transform:rotate(-7deg)}
+.selector-card:nth-child(2){background:#e7ead9;transform:rotate(5deg)}
+.selector-card:nth-child(3){background:#f8dfce;transform:rotate(5deg)}
+.selector-card:nth-child(4){background:#e8dce9;transform:rotate(-5deg)}
+.card-icon{font-size:27px;margin-bottom:13px}
+.card-label{font-size:9px;font-weight:bold;letter-spacing:2px;margin-bottom:7px}
+.card-title{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:23px;
+  line-height:1.05;
+  font-weight:bold;
 }
-
-.button.secondary {
-  background: transparent;
-  color: var(--ink);
-  border-color: #c8a995;
+.project-cta{
+  padding:30px 4.5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  background:#f4eadb;
+  border-top:1px solid #eee1d1;
 }
-
-.button.purple {
-  background: #86516d;
-  border-color: #86516d;
+.project-cta h2{
+  margin:12px 0 8px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(24px,3vw,36px);
+  font-weight:normal;
+  letter-spacing:-1px;
 }
-
-/* HERO CARDS */
-
-.hero-cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  max-width: 440px;
-  width: 100%;
-  margin: auto;
+.project-cta p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
 }
-
-.selector-card {
-  min-height: 155px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 17px;
-  border: 1px solid rgba(255,255,255,.9);
-  box-shadow: 0 12px 25px rgba(80,55,35,.12);
-  color: var(--ink);
-  text-decoration: none;
-  transition: transform .25s, box-shadow .25s;
+footer{
+  padding:25px 4.5% 20px;
+  background:var(--green);
+  color:#f7f3e9;
 }
-
-.selector-card:hover {
-  transform: translateY(-5px) rotate(0deg);
-  box-shadow: 0 16px 30px rgba(80,55,35,.17);
+.footer-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  padding-bottom:20px;
 }
-
-.selector-card:nth-child(1) {
-  background: #dce8f3;
-  transform: rotate(-7deg);
+.footer-brand{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:23px;
+  font-weight:bold;
 }
-
-.selector-card:nth-child(2) {
-  background: #e7ead9;
-  transform: rotate(5deg);
+.footer-tagline{margin-top:5px;font-size:9px;letter-spacing:2px}
+.footer-nav{display:flex;gap:18px;flex-wrap:wrap}
+.footer-nav a{color:#f7f3e9;font-size:10px;text-decoration:none}
+.footer-bottom{
+  padding-top:15px;
+  border-top:1px solid rgba(255,255,255,.25);
+  font-size:10px;
+  color:#d7ded7;
 }
-
-.selector-card:nth-child(3) {
-  background: #f8dfce;
-  transform: rotate(5deg);
+@media(max-width:850px){
+  header{flex-wrap:wrap;justify-content:center;padding:15px 4%}
+  .logo{align-items:center}
+  nav{justify-content:center;gap:13px;flex-wrap:wrap}
+  .hero{grid-template-columns:1fr;padding:40px 6%;text-align:center}
+  .hero-content{margin:auto}
+  .hero-description{margin-left:auto;margin-right:auto}
+  .hero-buttons{justify-content:center}
+  .hero-cards{max-width:400px;margin-top:15px}
+  .project-cta{flex-direction:column;align-items:flex-start}
+  .footer-top{flex-direction:column;align-items:flex-start}
 }
-
-.selector-card:nth-child(4) {
-  background: #e8dce9;
-  transform: rotate(-5deg);
-}
-
-.card-icon {
-  font-size: 27px;
-  margin-bottom: 13px;
-}
-
-.card-label {
-  font-size: 9px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: 7px;
-}
-
-.card-title {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 23px;
-  line-height: 1.05;
-  font-weight: bold;
-}
-
-/* FOOTER CTA */
-
-.project-cta {
-  padding: 30px 4.5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-  background: #f4eadb;
-  border-top: 1px solid #eee1d1;
-}
-
-.project-cta h2 {
-  margin: 12px 0 8px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: normal;
-  letter-spacing: -1px;
-}
-
-.project-cta p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.6;
-}
-
-.project-cta .button {
-  white-space: nowrap;
-}
-
-/* FOOTER */
-
-footer {
-  padding: 25px 4.5% 20px;
-  background: var(--green);
-  color: #f7f3e9;
-}
-
-.footer-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  padding-bottom: 20px;
-}
-
-.footer-brand {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 23px;
-  font-weight: bold;
-}
-
-.footer-tagline {
-  margin-top: 5px;
-  font-size: 9px;
-  letter-spacing: 2px;
-}
-
-.footer-nav {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.footer-nav a {
-  color: #f7f3e9;
-  font-size: 10px;
-  text-decoration: none;
-}
-
-.footer-nav a:hover {
-  color: #e8b29b;
-}
-
-.footer-bottom {
-  padding-top: 15px;
-  border-top: 1px solid rgba(255,255,255,.25);
-  font-size: 10px;
-  color: #d7ded7;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 850px) {
-  header {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 15px 4%;
-  }
-
-  .logo {
-    align-items: center;
-  }
-
-  nav {
-    justify-content: center;
-    gap: 13px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 45px 6%;
-    text-align: center;
-  }
-
-  .hero-content {
-    margin: auto;
-  }
-
-  .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-cards {
-    max-width: 400px;
-    margin-top: 15px;
-  }
-
-  .project-cta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    gap: 12px;
-  }
-
-  .logo-name {
-    font-size: 23px;
-  }
-
-  nav {
-    gap: 10px 13px;
-  }
-
-  nav a {
-    font-size: 11px;
-  }
-
-  .hero {
-    padding: 35px 5% 40px;
-  }
-
-  h1 {
-    font-size: 43px;
-    letter-spacing: -1.5px;
-  }
-
-  .hero-description {
-    font-size: 12px;
-  }
-
-  .hero-buttons {
-    gap: 8px;
-  }
-
-  .button {
-    padding: 11px 12px;
-    font-size: 10px;
-  }
-
-  .hero-cards {
-    gap: 12px;
-  }
-
-  .selector-card {
-    min-height: 135px;
-    padding: 15px;
-  }
-
-  .card-title {
-    font-size: 19px;
-  }
-
-  .card-icon {
-    font-size: 23px;
-  }
-
-  .project-cta {
-    padding: 30px 6%;
-  }
-
-  .footer-nav {
-    gap: 12px;
-  }
+@media(max-width:480px){
+  nav{gap:10px 13px}
+  nav a{font-size:11px}
+  h1{font-size:43px;letter-spacing:-1.5px}
+  .hero{padding:35px 5% 40px}
+  .hero-buttons{gap:8px}
+  .button{padding:11px 12px;font-size:10px}
+  .hero-cards{gap:12px}
+  .selector-card{min-height:135px;padding:15px}
+  .card-title{font-size:19px}
+  .card-icon{font-size:23px}
+  .project-cta{padding:30px 6%}
+  .footer-nav{gap:12px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
   <a class="logo" href="index.html">
     <span class="logo-name">Harry Digital Verse</span>
-    <span class="logo-tagline">ONE WORLD OF IDEAS</span>
+    <span class="logo-tagline" data-i18n="tagline">ONE WORLD OF IDEAS</span>
   </a>
 
   <nav aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="products/">Digital Products</a>
-    <a href="games.html">Games</a>
-    <a href="#creators">Creators</a>
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="products/" data-i18n="products">Digital Products</a>
+    <a href="games.html" data-i18n="games">Games</a>
+    <a href="#creators" data-i18n="creators">Creators</a>
     <a href="yenzi285.html">Yenzi285</a>
-    <a href="#stories">Stories/Blog</a>
-    <span class="language">EN</span>
+    <a href="#stories" data-i18n="stories">Stories/Blog</a>
+
+    <select id="languageSelect" class="language" aria-label="Select language">
+      <option value="en">EN</option>
+      <option value="ms">MY</option>
+      <option value="id">ID</option>
+      <option value="es">ES</option>
+    </select>
   </nav>
 </header>
 
-<!-- HERO -->
 <main>
 <section class="hero">
 
   <div class="hero-content">
-    <div class="eyebrow">A Creative Digital Hub</div>
+    <div class="eyebrow" data-i18n="eyebrow">A CREATIVE DIGITAL HUB</div>
 
     <h1>
-      One Universe.
-      <em>Many Things to Discover.</em>
+      <span data-i18n="hero1">One Universe.</span>
+      <em data-i18n="hero2">Many Things to Discover.</em>
     </h1>
 
-    <p class="hero-description">
-      Harry Digital Verse brings together digital services,
-      original games, useful products and stories that make
-      you think — all in one creative home.
+    <p class="hero-description" data-i18n="description">
+      Harry Digital Verse brings together digital services, original games,
+      useful products and stories that make you think — all in one creative home.
     </p>
 
     <div class="hero-buttons">
-      <a class="button" href="games.html">
-        🎮 Explore Games ↗
-      </a>
-
-      <a class="button secondary" href="products/">
-        ▤ Discover Digital Products ↗
-      </a>
-
-      <a class="button purple" href="yenzi285.html">
-        ♧ Yenzi285 Coming Soon ↗
-      </a>
+      <a class="button" href="games.html" data-i18n="buttonGames">🎮 Explore Games ↗</a>
+      <a class="button secondary" href="products/" data-i18n="buttonProducts">▤ Discover Digital Products ↗</a>
+      <a class="button purple" href="yenzi285.html" data-i18n="buttonYenzi">♧ Yenzi285 Coming Soon ↗</a>
     </div>
   </div>
 
-  <!-- FOUR MAIN SELECTOR CARDS -->
   <div class="hero-cards">
 
     <a class="selector-card" href="games.html">
       <div class="card-icon">🎮</div>
-      <div class="card-label">PLAY</div>
-      <div class="card-title">Games &<br>Learning</div>
+      <div class="card-label" data-i18n="play">PLAY</div>
+      <div class="card-title" data-i18n="cardGames">Games &<br>Learning</div>
     </a>
 
     <a class="selector-card" href="products/">
       <div class="card-icon">💻</div>
-      <div class="card-label">CREATE</div>
-      <div class="card-title">Digital<br>Products</div>
+      <div class="card-label" data-i18n="create">CREATE</div>
+      <div class="card-title" data-i18n="cardProducts">Digital<br>Products</div>
     </a>
 
     <a class="selector-card" href="#stories">
       <div class="card-icon">📖</div>
-      <div class="card-label">DISCOVER</div>
-      <div class="card-title">Stories &<br>Blog</div>
+      <div class="card-label" data-i18n="discover">DISCOVER</div>
+      <div class="card-title" data-i18n="cardStories">Stories &<br>Blog</div>
     </a>
 
     <a class="selector-card" href="yenzi285.html">
       <div class="card-icon">👜</div>
-      <div class="card-label">COMING SOON</div>
-      <div class="card-title">Yenzi285<br>Creative World</div>
+      <div class="card-label" data-i18n="coming">COMING SOON</div>
+      <div class="card-title" data-i18n="cardYenzi">Yenzi285<br>Creative World</div>
     </a>
 
   </div>
-
 </section>
 
-<!-- PROJECT CTA -->
 <section class="project-cta" id="creators">
   <div>
-    <div class="eyebrow">Have a Project in Mind?</div>
-    <h2>Let’s build something useful.</h2>
-    <p>
+    <div class="eyebrow" data-i18n="projectEyebrow">HAVE A PROJECT IN MIND?</div>
+    <h2 data-i18n="projectTitle">Let’s build something useful.</h2>
+    <p data-i18n="projectDescription">
       Start with a landing page enquiry or explore our creative projects.
     </p>
   </div>
 
-  <a class="button" href="landing-page-service/">
+  <a class="button" href="landing-page-service/" data-i18n="projectButton">
     ▣ Discuss a Project ↗
   </a>
 </section>
-
 </main>
 
-<!-- FOOTER -->
-<footer>
+<footer id="stories">
   <div class="footer-top">
     <div>
       <div class="footer-brand">Harry Digital Verse</div>
-      <div class="footer-tagline">ONE WORLD OF IDEAS</div>
-      <p style="font-size:11px;margin-top:12px;">
+      <div class="footer-tagline" data-i18n="tagline">ONE WORLD OF IDEAS</div>
+      <p style="font-size:11px;margin-top:12px" data-i18n="footerDescription">
         Creative work, built one idea at a time.
       </p>
     </div>
 
     <div class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="games.html">Games</a>
-      <a href="products/">Digital Products</a>
-      <a href="#stories">Stories/Blog</a>
-      <a href="#creators">Creators</a>
-      <a href="landing-page-service/">Services</a>
+      <a href="index.html" data-i18n="home">Home</a>
+      <a href="products/" data-i18n="products">Digital Products</a>
+      <a href="games.html" data-i18n="games">Games</a>
+      <a href="#stories" data-i18n="stories">Stories/Blog</a>
+      <a href="#creators" data-i18n="creators">Creators</a>
       <a href="yenzi285.html">Yenzi285</a>
     </div>
   </div>
 
-  <div class="footer-bottom">
+  <div class="footer-bottom" data-i18n="copyright">
     © 2026 Harry Digital Verse. Built one idea at a time.
   </div>
 </footer>
+
+<script>
+const translations = {
+  en: {
+    tagline:"ONE WORLD OF IDEAS",
+    home:"Home", products:"Digital Products", games:"Games",
+    creators:"Creators", stories:"Stories/Blog",
+    eyebrow:"A CREATIVE DIGITAL HUB",
+    hero1:"One Universe.",
+    hero2:"Many Things to Discover.",
+    description:"Harry Digital Verse brings together digital services, original games, useful products and stories that make you think — all in one creative home.",
+    buttonGames:"🎮 Explore Games ↗",
+    buttonProducts:"▤ Discover Digital Products ↗",
+    buttonYenzi:"♧ Yenzi285 Coming Soon ↗",
+    play:"PLAY", create:"CREATE", discover:"DISCOVER", coming:"COMING SOON",
+    cardGames:"Games &<br>Learning",
+    cardProducts:"Digital<br>Products",
+    cardStories:"Stories &<br>Blog",
+    cardYenzi:"Yenzi285<br>Creative World",
+    projectEyebrow:"HAVE A PROJECT IN MIND?",
+    projectTitle:"Let’s build something useful.",
+    projectDescription:"Start with a landing page enquiry or explore our creative projects.",
+    projectButton:"▣ Discuss a Project ↗",
+    footerDescription:"Creative work, built one idea at a time.",
+    copyright:"© 2026 Harry Digital Verse. Built one idea at a time."
+  },
+
+  ms: {
+    tagline:"SATU DUNIA IDEA",
+    home:"Utama", products:"Produk Digital", games:"Permainan",
+    creators:"Kreator", stories:"Cerita/Blog",
+    eyebrow:"HAB DIGITAL KREATIF",
+    hero1:"Satu Universe.",
+    hero2:"Pelbagai Perkara untuk Diterokai.",
+    description:"Harry Digital Verse menghimpunkan servis digital, permainan asli, produk berguna dan cerita yang membuka minda — semuanya dalam satu ruang kreatif.",
+    buttonGames:"🎮 Terokai Permainan ↗",
+    buttonProducts:"▤ Terokai Produk Digital ↗",
+    buttonYenzi:"♧ Yenzi285 Akan Datang ↗",
+    play:"MAIN", create:"CIPTA", discover:"TEROKAI", coming:"AKAN DATANG",
+    cardGames:"Permainan &<br>Pembelajaran",
+    cardProducts:"Produk<br>Digital",
+    cardStories:"Cerita &<br>Blog",
+    cardYenzi:"Yenzi285<br>Dunia Kreatif",
+    projectEyebrow:"ADA PROJEK DALAM FIKIRAN?",
+    projectTitle:"Mari bina sesuatu yang berguna.",
+    projectDescription:"Mulakan dengan pertanyaan landing page atau terokai projek kreatif kami.",
+    projectButton:"▣ Bincang Projek ↗",
+    footerDescription:"Karya kreatif, dibina satu idea pada satu masa.",
+    copyright:"© 2026 Harry Digital Verse. Dibina satu idea pada satu masa."
+  },
+
+  id: {
+    tagline:"SATU DUNIA IDE",
+    home:"Beranda", products:"Produk Digital", games:"Game",
+    creators:"Kreator", stories:"Cerita/Blog",
+    eyebrow:"HUB DIGITAL KREATIF",
+    hero1:"Satu Universe.",
+    hero2:"Banyak Hal untuk Dijelajahi.",
+    description:"Harry Digital Verse menghadirkan layanan digital, game orisinal, produk bermanfaat dan cerita yang menginspirasi — semuanya dalam satu ruang kreatif.",
+    buttonGames:"🎮 Jelajahi Game ↗",
+    buttonProducts:"▤ Jelajahi Produk Digital ↗",
+    buttonYenzi:"♧ Yenzi285 Segera Hadir ↗",
+    play:"MAIN", create:"KREASI", discover:"JELAJAHI", coming:"SEGERA HADIR",
+    cardGames:"Game &<br>Pembelajaran",
+    cardProducts:"Produk<br>Digital",
+    cardStories:"Cerita &<br>Blog",
+    cardYenzi:"Yenzi285<br>Dunia Kreatif",
+    projectEyebrow:"PUNYA IDE PROYEK?",
+    projectTitle:"Mari membangun sesuatu yang bermanfaat.",
+    projectDescription:"Mulai dengan pertanyaan tentang landing page atau jelajahi proyek kreatif kami.",
+    projectButton:"▣ Diskusikan Proyek ↗",
+    footerDescription:"Karya kreatif, dibangun satu ide pada satu waktu.",
+    copyright:"© 2026 Harry Digital Verse. Dibangun satu ide pada satu waktu."
+  },
+
+  es: {
+    tagline:"UN MUNDO DE IDEAS",
+    home:"Inicio", products:"Productos Digitales", games:"Juegos",
+    creators:"Creadores", stories:"Historias/Blog",
+    eyebrow:"UN CENTRO DIGITAL CREATIVO",
+    hero1:"Un Universo.",
+    hero2:"Muchas Cosas por Descubrir.",
+    description:"Harry Digital Verse reúne servicios digitales, juegos originales, productos útiles e historias que invitan a pensar — todo en un espacio creativo.",
+    buttonGames:"🎮 Explorar Juegos ↗",
+    buttonProducts:"▤ Descubrir Productos Digitales ↗",
+    buttonYenzi:"♧ Yenzi285 Próximamente ↗",
+    play:"JUGAR", create:"CREAR", discover:"DESCUBRIR", coming:"PRÓXIMAMENTE",
+    cardGames:"Juegos y<br>Aprendizaje",
+    cardProducts:"Productos<br>Digitales",
+    cardStories:"Historias y<br>Blog",
+    cardYenzi:"Yenzi285<br>Mundo Creativo",
+    projectEyebrow:"¿TIENES UN PROYECTO EN MENTE?",
+    projectTitle:"Construyamos algo útil.",
+    projectDescription:"Comienza con una consulta sobre una landing page o explora nuestros proyectos creativos.",
+    projectButton:"▣ Hablar sobre un Proyecto ↗",
+    footerDescription:"Creatividad construida idea por idea.",
+    copyright:"© 2026 Harry Digital Verse. Construido idea por idea."
+  }
+};
+
+function setLanguage(lang) {
+  const dictionary = translations[lang] || translations.en;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.getAttribute("data-i18n");
+    if (dictionary[key] !== undefined) {
+      element.innerHTML = dictionary[key];
+    }
+  });
+
+  localStorage.setItem("hdv-language", lang);
+
+  const selector = document.getElementById("languageSelect");
+  if (selector) selector.value = lang;
+}
+
+const languageSelect = document.getElementById("languageSelect");
+
+languageSelect.addEventListener("change", function() {
+  setLanguage(this.value);
+});
+
+const savedLanguage = localStorage.getItem("hdv-language") || "en";
+setLanguage(savedLanguage);
+</script>
 
 </body>
 </html>
