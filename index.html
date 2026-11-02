@@ -16,7 +16,6 @@
 :root{
 --cream:#f7f1e7;--paper:#fffdf8;--ink:#272720;
 --muted:#706d63;--terracotta:#b8543b;--terracotta-dark:#94422f;
-
 --olive:#59664d;--sage:#e3e6d9;--line:#e1d6c7;
 --forest:#28372e;--serif:"Playfair Display",Georgia,serif;
 --sans:"DM Sans",Arial,sans-serif;
@@ -47,122 +46,15 @@ color:var(--cream);font-size:.95rem;font-weight:800
 }
 .brand strong{display:block;font-family:var(--serif);font-size:1.08rem;line-height:1.15}
 .brand small{display:block;color:var(--muted);font-size:.59rem;letter-spacing:.11em;text-transform:uppercase}
-.nav-links{display:flex;align-items:center;gap:16px}
+.nav-links{display:flex;align-items:center;gap:12px}
 .nav-links a{color:#48473f;font-size:.77rem;font-weight:700;white-space:nowrap}
 .nav-links a:hover{color:var(--terracotta)}
 .menu-button{display:none;padding:8px 11px;border:1px solid var(--line);border-radius:8px;background:transparent;cursor:pointer}
+.language-picker select{
+padding:7px 9px;border:1px solid var(--line);border-radius:7px;
+background:var(--paper);color:var(--ink);font:700 .72rem var(--sans);cursor:pointer
+}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
-
-/* TAMBAHAN GAYA KOD KEMAS KINI (IKON & LANGUAGE PICKER) */
-.hv-icon-button, .lang-trigger {
-background: transparent;
-border: none;
-padding: 6px;
-cursor: pointer;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-color: var(--ink);
-transition: color 0.2s;
-}
-.hv-icon-button:hover, .lang-trigger:hover {
-color: var(--terracotta);
-}
-.hv-icon-button svg {
-width: 20px;
-height: 20px;
-}
-.hv-cart-button {
-display: inline-flex;
-align-items: center;
-gap: 4px;
-position: relative;
-color: var(--ink);
-padding: 6px;
-}
-.hv-cart-button:hover {
-color: var(--terracotta) !important;
-}
-.hv-cart-button svg {
-width: 20px;
-height: 20px;
-}
-.hv-cart-count {
-background: var(--terracotta);
-color: white;
-font-size: 0.65rem;
-font-weight: 700;
-min-width: 16px;
-height: 16px;
-padding: 0 4px;
-border-radius: 10px;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-position: absolute;
-top: -2px;
-right: -4px;
-}
-
-/* CUSTOM LANGUAGE PICKER DESIGN */
-.custom-lang-picker {
-position: relative;
-display: inline-block;
-}
-.lang-trigger {
-border: 1px solid var(--line);
-background: var(--paper);
-border-radius: 20px;
-padding: 6px 14px;
-gap: 6px;
-font-size: 0.75rem;
-font-weight: 700;
-font-family: var(--sans);
-}
-.lang-trigger svg {
-width: 15px;
-height: 15px;
-color: var(--ink);
-}
-.arrow-down {
-font-size: 0.6rem;
-color: var(--muted);
-margin-left: 2px;
-}
-.lang-dropdown {
-position: absolute;
-top: 105%;
-left: 0;
-background: var(--paper);
-border: 1px solid var(--line);
-border-radius: 12px;
-box-shadow: var(--shadow);
-padding: 6px 0;
-margin: 0;
-list-style: none;
-min-width: 160px;
-display: none;
-z-index: 100;
-}
-.lang-dropdown.show {
-display: block;
-}
-.lang-dropdown li a {
-display: flex;
-align-items: center;
-gap: 10px;
-padding: 10px 16px;
-color: var(--ink) !important;
-font-size: 0.8rem !important;
-font-weight: 500 !important;
-transition: background 0.2s;
-width: 100%;
-text-align: left;
-}
-.lang-dropdown li a:hover {
-background: var(--cream);
-color: var(--terracotta) !important;
-}
 
 /* HERO */
 .hero{
@@ -282,3 +174,953 @@ box-shadow:0 8px 20px #28372e15
 }
 .mini-copy{padding:14px;display:flex;flex-direction:column;justify-content:center}
 .mini-copy small{color:var(--terracotta);font-size:.48rem;font-weight:800;letter-spacing:.1em}
+.mini-copy strong{margin:5px 0;font:700 1rem/1.08 var(--serif)}
+.mini-lines{display:grid;gap:4px}
+.mini-lines i{display:block;width:100%;height:3px;background:#e2d9cc;border-radius:4px}
+.mini-lines i:nth-child(2){width:75%}
+.mini-photo{background-size:cover;background-position:center}
+.photo-service{background-image:url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=80");background-size:cover;background-position:center}
+.photo-food{background-image:url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=75")}
+.photo-digital{background-image:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=75")}
+
+/* STORIES */
+.feature-embed{
+width:min(620px,100%);overflow:hidden;border:1px solid var(--line);
+border-radius:13px;background:#fffdf8;box-shadow:var(--shadow)
+}
+.feature-embed iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.feature-copy{padding:22px}
+.feature-copy h3{font:600 1.45rem var(--serif);margin:0 0 8px}
+.feature-copy p{color:var(--muted);font-size:.88rem}
+.feature-copy a{color:var(--terracotta);font-weight:800;font-size:.85rem}
+.story-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:start}
+.story-side{display:grid;gap:15px}
+.story-note{padding:22px;border:1px solid var(--line);border-radius:13px;background:var(--paper)}
+.story-note h3{margin:0 0 8px;font:600 1.25rem var(--serif)}
+.story-note p{margin:0;color:var(--muted);font-size:.85rem}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.blog-card{padding:23px;border:1px solid var(--line);border-radius:13px;background:var(--paper)}
+.blog-category{margin:0 0 9px;color:var(--terracotta);font-size:.66rem;font-weight:800;letter-spacing:.13em}
+.blog-card h3{margin:0 0 8px;font:600 1.28rem/1.2 var(--serif)}
+.blog-card>p:not(.blog-category){margin:0;color:var(--muted);font-size:.85rem}
+.text-button{margin-top:14px;padding:0;border:0;background:transparent;color:var(--terracotta);font-weight:800;cursor:pointer}
+.article-panel{
+position:relative;width:min(850px,90%);margin:24px auto 0;padding:28px;
+border:1px solid var(--line);border-radius:14px;background:var(--paper)
+}
+.article-panel h3{font:600 1.5rem var(--serif)}
+.article-panel p{color:var(--muted)}
+.article-close{position:absolute;top:8px;right:14px;border:0;background:transparent;font-size:1.5rem;cursor:pointer}
+
+/* CREATORS */
+.creator-panel{
+display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:center;
+padding:29px;border:1px solid var(--line);border-radius:15px;background:var(--paper)
+}
+.creator-panel h2{margin:0 0 10px;font:600 clamp(2rem,4vw,2.8rem)/1.1 var(--serif)}
+.creator-panel p{margin:0;color:var(--muted);font-size:.9rem}
+.creator-links{display:grid;gap:10px}
+.creator-link{
+display:flex;align-items:center;justify-content:space-between;gap:15px;
+padding:15px 17px;border:1px solid var(--line);border-radius:9px;background:#fff
+}
+.creator-link strong{display:block;font-size:.9rem}
+.creator-link small{display:block;color:var(--muted);font-size:.76rem}
+.creator-link span:last-child{color:var(--terracotta)}
+
+/* RESOURCES */
+.resources-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:25px;align-items:center}
+.resources-grid h2{margin:6px 0 12px;font:600 clamp(2rem,4vw,3rem)/1.1 var(--serif);letter-spacing:-.04em}
+.resources-grid p{color:var(--muted);font-size:.89rem}
+.disclosure{margin:18px 0;padding:13px;border-left:3px solid #c5a66a;background:#fffdf8a8;color:var(--muted);font-size:.8rem}
+.resource-card{padding:24px;border:1px solid var(--line);border-radius:13px;background:var(--paper)}
+.resource-card h3{font:600 1.35rem var(--serif)}
+.resource-card ul{padding-left:20px;color:var(--muted);font-size:.85rem}
+.resource-card li{margin:8px 0}
+
+/* FOOTER */
+.footer{padding:28px 0 18px;background:var(--forest);color:var(--cream)}
+.footer-main{display:flex;justify-content:space-between;align-items:flex-start;gap:25px}
+.footer .brand strong{color:var(--cream)}
+.footer .brand small,.footer p{color:#d1d5ca}
+.footer p{font-size:.8rem}
+.footer-links{display:flex;flex-wrap:wrap;gap:13px}
+.footer-links a{color:#ebe6da;font-size:.77rem;font-weight:700}
+.footer-links a:hover{color:#d7ac87}
+.copyright{margin:18px 0 0;padding-top:13px;border-top:1px solid #ffffff25;color:#d1d5ca;font-size:.71rem}
+
+/* MOBILE */
+@media(max-width:1000px){
+.nav-links{gap:9px}
+.nav-links a{font-size:.7rem}
+}
+@media(max-width:760px){
+.nav{min-height:67px}
+.menu-button{display:block}
+.nav-links{
+display:none;position:absolute;top:67px;left:0;right:0;
+flex-direction:column;align-items:stretch;gap:0;padding:12px 5% 18px;
+background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow)
+}
+.nav-links.open{display:flex}
+.nav-links a{padding:10px 0;font-size:.9rem}
+.language-picker{padding:9px 0}
+.hero{padding:44px 0 30px}
+.hero-grid,.story-layout,.resources-grid,.creator-panel{grid-template-columns:1fr}
+.hero h1{font-size:clamp(3rem,12vw,4.4rem)}
+.hero-art{min-height:260px;margin-top:10px;overflow:hidden}
+.hero-art-stack{height:225px;gap:7px}
+.art-tile{min-height:145px;padding:11px 9px}
+.art-tile strong{font-size:.91rem}
+.art-tile small{font-size:.5rem}
+.tile-icon{font-size:1.3rem}
+.hero-art-stamp{width:43px;height:43px;font-size:.9rem}
+.section{padding:56px 0}
+.section-heading{display:block}
+.section-heading>p{margin-top:12px}
+.game-feature{grid-template-columns:1fr}
+.game-progress{display:flex;gap:7px;align-items:center}
+.cards,.blog-grid{grid-template-columns:1fr}
+.footer-main{flex-direction:column}
+.creator-panel{padding:23px}
+}
+@media(max-width:460px){
+.container{width:91%}
+.hero-actions .button{width:100%}
+.hero-art{min-height:225px}
+.hero-art-stack{height:195px;gap:5px}
+.art-tile{min-height:125px;padding:9px 7px}
+.art-tile strong{font-size:.78rem}
+.mini-site{width:92%}
+.section{padding:49px 0}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*:before,*:after{transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+<nav class="nav container" aria-label="Main navigation">
+<a class="brand" href="#home" aria-label="HarryVerse home">
+<span class="brand-mark">HV</span>
+<span><strong>HarryVerse</strong><small>One world of ideas</small></span>
+</a>
+
+<button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
+
+<div class="nav-links">
+<a href="#home" aria-current="page" data-i18n="navHome">Home</a>
+<a href="#games" data-i18n="navGames">Games</a>
+<a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
+<a href="#services" data-i18n="navServices">Services</a>
+<a href="#products" data-i18n="navProducts">Products</a>
+<a href="#stories" data-i18n="navStories">Stories</a>
+<a href="#blog" data-i18n="navBlog">Blog</a>
+<a href="#creators" data-i18n="navCreators">Creators</a>
+<a href="#resources" data-i18n="navResources">Resources</a>
+<label class="language-picker">
+<span class="sr-only">Choose language</span>
+<select id="language-select" aria-label="Choose language">
+<option value="en">EN</option>
+<option value="ms">BM</option>
+<option value="id">ID</option>
+<option value="es">ES</option>
+</select>
+</label>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<header class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<p class="eyebrow">A CREATIVE DIGITAL HUB</p>
+<h1>One Universe.<br><em>Many Things to Discover.</em></h1>
+<p class="hero-description">HarryVerse brings together digital services, original games, useful products and stories that make you think — all in one creative home.</p>
+<div class="hero-actions">
+<a class="button button-primary" href="#games">Explore HarryVerse ↗</a>
+<a class="button button-secondary" href="#services">Need a Landing Page?</a>
+</div>
+<div class="hero-points">
+<span>✓ Digital services for small businesses</span>
+<span>✓ Original games and learning ideas</span>
+<span>✓ Stories, creators and digital discoveries</span>
+</div>
+</div>
+
+<div class="hero-art" role="img" aria-label="HarryVerse creative projects">
+<div class="hero-art-stack">
+<div class="art-tile art-tile-game">
+<span class="tile-icon">✦</span>
+<small>PLAY</small>
+<strong>Games<br>& learning</strong>
+</div>
+<div class="art-tile art-tile-create">
+<span class="tile-icon">✎</span>
+<small>CREATE</small>
+<strong>Digital<br>experiences</strong>
+</div>
+<div class="art-tile art-tile-story">
+<span class="tile-icon">❝</span>
+<small>DISCOVER</small>
+<strong>Stories<br>& ideas</strong>
+</div>
+</div>
+<span class="hero-art-stamp">HV</span>
+</div>
+</div>
+</header>
+
+<main>
+
+<!-- 1 GAMES -->
+<section class="section" id="games">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="eyebrow">01 · PLAY & LEARN</p>
+<h2>Games built from curiosity.</h2>
+</div>
+<p>Explore the current Harry Games collection and follow the journey towards more playful learning experiences.</p>
+</div>
+
+<div class="game-feature">
+<div class="game-feature-copy">
+<p class="card-meta">CONTINUE PLAYING</p>
+<h3>Tap Tap Relax</h3>
+<p>Continue from the progress saved in this browser.</p>
+</div>
+<div class="game-progress">
+<span>Current level</span>
+<strong><span id="homepage-tap-level">1</span> / 100</strong>
+</div>
+<a class="button button-primary" href="games.html#tap-game" id="continue-tap-button">Continue →</a>
+</div>
+
+<div class="cards">
+<article class="card">
+<span class="card-symbol">🎮</span>
+<p class="card-meta">HARRY GAMES</p>
+<h3>Original game ideas</h3>
+<p>Small games developed through experimentation, focus, progression and play.</p>
+<a class="text-link" href="games.html">Explore Harry Games ↗</a>
+</article>
+
+<article class="card">
+<span class="card-symbol">✦</span>
+<p class="card-meta">GAME EDU</p>
+<h3>Learning through play</h3>
+<p>Future educational games designed to make practice and problem-solving more engaging.</p>
+<a class="text-link" href="#contact">Follow upcoming projects ↗</a>
+</article>
+</div>
+</div>
+</section>
+
+<!-- 02 · LANDING PAGE SERVICE + PORTFOLIO -->
+<section class="section section-alt" id="services">
+<div id="portfolio" class="container">
+<div class="section-heading">
+<div><p class="eyebrow">02 · LANDING PAGE SERVICE</p><h2>A clearer online presence for your business.</h2></div>
+<p>Simple, mobile-friendly landing pages that introduce your business, explain your offer and guide customers to contact you.</p>
+</div>
+<div class="cards service-cards">
+<article class="card"><span class="card-symbol">01</span><h3>Made
+  for your business</h3><p>A page structured around your actual services, prices, service area and key information.</p></article>
+<article class="card"><span class="card-symbol">02</span><h3>Easy to use on mobile</h3><p>A responsive layout designed for visitors using phones as well as desktop screens.</p></article>
+<article class="card"><span class="card-symbol">03</span><h3>A clear next step</h3><p>Prominent contact options, including WhatsApp enquiries where they fit your business.</p></article>
+</div>
+<div class="portfolio-intro" style="margin:42px 0 20px">
+<p class="eyebrow">SELECTED CONCEPTS</p>
+<h3 style="font:600 clamp(1.6rem,3vw,2.15rem)/1.15 var(--serif);margin:0 0 8px">See what your landing page could look like.</h3>
+<p style="max-width:650px;color:var(--muted);font-size:.88rem;margin:0">A few sample concepts for different business types. These examples show the direction and layout we can create for your brand.</p>
+</div>
+<div class="cards portfolio-cards">
+<article class="card"><div class="preview"><div class="mini-site"><div class="mini-copy"><small>HOME SERVICES</small><strong>Make your space work better.</strong><div class="mini-lines"><i></i><i></i></div></div><div class="mini-photo photo-service"></div></div></div><p class="card-meta">LOCAL SERVICE</p><h3>Renovation &amp; home services</h3><p>A WhatsApp-focused page for contractors and local service providers.</p><a class="text-link" href="/portfolio/service/">View demo ↗</a></article>
+<article class="card"><div class="preview" style="background:#efe0ce"><div class="mini-site"><div class="mini-copy"><small>MADE WITH CARE</small><strong>Good food, made for sharing.</strong><div class="mini-lines"><i></i><i></i></div></div><div class="mini-photo photo-food"></div></div></div><p class="card-meta">FOOD BUSINESS</p><h3>Food &amp; catering</h3><p>A clear concept for menu highlights, order details and customer enquiries.</p><a class="text-link" href="/portfolio/food/">View demo ↗</a></article>
+<article class="card"><div class="preview" style="background:#e9d8c9"><div class="mini-site"><div class="mini-copy"><small>DIGITAL GUIDE</small><strong>Small steps. Clear progress.</strong><div class="mini-lines"><i></i><i></i></div></div><div class="mini-photo photo-digital"></div></div></div><p class="card-meta">DIGITAL PRODUCT</p><h3>E-books &amp; downloads</h3><p>A focused page for digital guides, templates, e-books and online offers.</p><a class="text-link" href="/portfolio/digital/">View demo ↗</a></article>
+</div>
+<div class="portfolio-actions" style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:25px 0 0"><a class="button button-secondary" href="/portfolio/">View full portfolio ↗</a><a class="button button-primary" href="/landing-page-service/">Explore Landing Page Service ↗</a></div>
+</div>
+</section>
+
+<!-- 03 · DIGITAL DOWNLOADS -->
+<section class="section" id="products">
+<div class="container">
+<div class="section-heading"><div><p class="eyebrow">03 · DIGITAL DOWNLOADS</p><h2>Useful tools for everyday finances.</h2></div><p>Practical digital tools designed to help you manage your personal and small business finances with more clarity.</p></div>
+<div class="cards product-cards">
+<article class="card"><span class="card-symbol">▤</span><p class="card-meta">PERSONAL FINANCE · EXCEL</p><h3>Paycheck-to-Paycheck Tracker</h3><p>A practical tracker to help you organize your paychecks, plan expenses and keep a clearer view of your personal money.</p><a class="text-link" href="/products/paycheck-to-paycheck-tracker/">View Product · USD 5.99 ↗</a></article>
+<article class="card"><span class="card-symbol">▥</span><p class="card-meta">SMALL BUSINESS · EXCEL</p><h3>Small Business Finance Tracker</h3><p>Track sales, expenses, invoices and monthly profit in one organized Excel workbook. Made for small business owners and freelancers.</p><a class="text-link" href="/products/small-business-finance-tracker/">View Product · USD 9.99 ↗</a></article>
+</div>
+</div>
+</section>
+
+<!-- 5 STORIES -->
+<section class="section section-alt" id="stories">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="eyebrow">04 · STORIES FOR CURIOUS MINDS</p>
+<h2>Look a little deeper.</h2>
+</div>
+<p>From life lessons and philosophy to history and mysteries — stories that invite us to think.</p>
+</div>
+<div class="story-layout">
+<article class="feature-embed">
+<iframe src="https://www.youtube.com/embed/EGlQZY2-p2Y" title="Maya Couldn't Stop Overthinking — Until She Learned This" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="feature-copy">
+<p class="card-meta">FEATURED STORY · SILENT SUCCESS MINDSET</p>
+<h3>Maya Couldn't Stop Overthinking — Until She Learned This</h3>
+<p>A story about control, overthinking and a Stoic lesson about what belongs to us — and what does not.</p>
+<a href="https://youtu.be/EGlQZY2-p2Y" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+</div>
+</article>
+<div class="story-side">
+<article class="story-note">
+<p class="card-meta">HISTORY & MYSTERY</p>
+<h3>Questions worth exploring.</h3>
+<p>Future stories can explore strange events, intriguing places and historical mysteries while separating evidence from speculation.</p>
+</article>
+<article class="story-note">
+<p class="card-meta">PHILOSOPHY & LIFE</p>
+<h3>Quiet stories. Meaningful ideas.</h3>
+<p>Visual storytelling about perspective, resilience, relationships and finding room to grow.</p>
+<a class="text-link" href="#creators">Meet the creators ↗</a>
+</article>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 6 BLOG -->
+<section class="section" id="blog">
+<div class="container">
+<div class="section-heading">
+<div>
+<p class="eyebrow">05 · HARRYVERSE NOTES</p>
+<h2>Notes from the building process.</h2>
+</div>
+<p>Short, practical notes about creating, learning and building in the digital world.</p>
+</div>
+<div class="blog-grid">
+<article class="blog-card">
+<p class="blog-category">CODING</p>
+<h3>From an Idea to a Live Website</h3>
+<p>A practical journey from learning Git and GitHub to publishing a real website.</p>
+<button class="text-button" data-article="article-1">Read summary →</button>
+</article>
+<article class="blog-card">
+<p class="blog-category">COPYWRITING</p>
+<h3>A Landing Page Is More Than Good Design</h3>
+<p>A strong landing page connects its message, audience and destination with clarity.</p>
+<button class="text-button" data-article="article-2">Read summary →</button>
+</article>
+<article class="blog-card">
+<p class="blog-category">BRANDING</p>
+<h3>Building a Brand Before It Becomes Big</h3>
+<p>A brand begins with identity, story and the feeling people remember.</p>
+<button class="text-button" data-article="article-3">Read summary →</button>
+</article>
+<article class="blog-card">
+<p class="blog-category">GAME DEVELOPMENT</p>
+<h3>Learning to Code by Creating Games</h3>
+<p>Small games can be powerful practice for understanding logic, progression and interaction.</p>
+<button class="text-button" data-article="article-4">Read summary →</button>
+</article>
+</div>
+<div class="article-panel" id="article-panel" hidden>
+<button class="article-close" type="button" aria-label="Close article">×</button>
+<div id="article-content"></div>
+</div>
+</div>
+</section>
+
+<!-- 7 CREATORS -->
+<section class="section section-sage" id="creators">
+<div class="container">
+<div class="creator-panel">
+<div>
+<p class="eyebrow">06 · CREATOR WORLDS</p>
+<h2>Different voices.<br>Different worlds.</h2>
+<p>Meet the independent creator projects behind the reflections, visual stories and ideas shared through HarryVerse.</p>
+</div>
+<div class="creator-links">
+<a class="creator-link" href="yenzi285.html">
+<span><strong>Yenzi285</strong><small>Visual stories, quiet thoughts and creative life</small></span><span>↗</span>
+</a>
+<a class="creator-link" href="#stories">
+<span><strong>Silent Success Mindset</strong><small>Self-growth, philosophy and thoughtful stories</small></span><span>↗</span>
+</a>
+<a class="creator-link" href="#stories">
+<span><strong>Senja Ada Cerita</strong><small>Mystery and intriguing storytelling project</small></span><span>↗</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 8 RESOURCES -->
+<section class="section" id="resources">
+<div class="container resources-grid">
+<div>
+<p class="eyebrow">07 · RESOURCES & AFFILIATE</p>
+<h2>Digital resources worth exploring.</h2>
+<p>Discover digital products across categories including learning, marketing, personal finance and practical skills. Review each offer carefully and choose only what genuinely fits your needs.</p>
+<div class="disclosure">
+<strong>Affiliate disclosure:</strong> I may earn a commission if you purchase through this link, at no additional cost to you.
+</div>
+<a class="button button-primary" href="https://klikjer.com/members/go.php?id=29127" target="_blank" rel="noopener noreferrer sponsored">Explore Products on Klikjer ↗</a>
+</div>
+<aside class="resource-card">
+<p class="card-meta">A SIMPLE REMINDER</p>
+<h3>Choose thoughtfully.</h3>
+<ul>
+<li>Read the product title and description.</li>
+<li>Consider whether it fits your goals.</li>
+<li>Be cautious of unrealistic promises of instant results.</li>
+<li>Start with one useful resource instead of too many at once.</li>
+</ul>
+</aside>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-alt" id="contact">
+<div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+<div>
+<p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+<h2 style="font:600 clamp(1.8rem,4vw,2.7rem)/1.1 var(--serif);margin:0 0 8px">Let's build something useful.</h2>
+<p style="color:var(--muted);margin:0">Start with a landing page enquiry or explore one of our creative projects.</p>
+</div>
+<a class="button button-primary" href="/landing-page-service/">Discuss a Landing Page ↗</a>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div class="container footer-main">
+<div>
+<a class="brand" href="#home">
+<span class="brand-mark">HV</span>
+<span><strong>HarryVerse</strong><small>One world of ideas</small></span>
+</a>
+<p>Creative work, built one idea at a time.</p>
+</div>
+<nav class="footer-links" aria-label="Footer navigation">
+<a href="#home">Home</a><a href="#games">Games</a>
+<a href="#portfolio">Portfolio</a><a href="#services">Services</a>
+<a href="#products">Products</a><a href="#stories">Stories</a>
+<a href="#blog">Blog</a><a href="#creators">Creators</a>
+<a href="#resources">Resources</a>
+</nav>
+</div>
+<div class="container">
+<p class="copyright">© <span id="year">2026</span> HarryVerse. Built one idea at a time.</p>
+</div>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+const yearEl=document.getElementById("year");
+if(yearEl)yearEl.textContent=new Date().getFullYear();
+</script>
+
+<!-- HARRYVERSE FULL PAGE LANGUAGE SYSTEM -->
+<script>
+(function(){
+
+const translations = {
+
+en: {
+title: "HarryVerse | One Universe. Many Things to Discover.",
+description: "HarryVerse is a creative home for games, landing page services, digital products, stories and creators.",
+
+".nav-links a": [
+"Home","Games","Portfolio","Services","Products",
+"Stories","Blog","Creators","Resources"
+],
+".menu-button": "☰ Menu",
+
+".hero .eyebrow": "A CREATIVE DIGITAL HUB",
+".hero h1": 'One Universe.<br><em>Many Things to Discover.</em>',
+".hero-description": "HarryVerse brings together digital services, original games, useful products and stories that make you think — all in one creative home.",
+".hero-actions a:nth-child(1)": "Explore HarryVerse ↗",
+".hero-actions a:nth-child(2)": "Need a Landing Page?",
+".hero-points span": [
+"✓ Digital services for small businesses",
+"✓ Original games and learning ideas",
+"✓ Stories, creators and digital discoveries"
+],
+
+"#games .section-heading .eyebrow": "01 · PLAY & LEARN",
+"#games .section-heading h2": "Games built from curiosity.",
+"#games .section-heading>p": "Explore the current Harry Games collection and follow the journey towards more playful learning experiences.",
+"#games .game-feature .card-meta": "CONTINUE PLAYING",
+"#games .game-feature h3": "Tap Tap Relax",
+"#games .game-feature-copy>p:last-child": "Continue from the progress saved in this browser.",
+"#games .game-progress>span": "Current level",
+"#continue-tap-button": "Continue →",
+"#games .card:nth-child(1) .card-meta": "HARRY GAMES",
+"#games .card:nth-child(1) h3": "Original game ideas",
+"#games .card:nth-child(1)>p:not(.card-meta)": "Small games developed through experimentation, focus, progression and play.",
+"#games .card:nth-child(1) .text-link": "Explore Harry Games ↗",
+"#games .card:nth-child(2) .card-meta": "GAME EDU",
+"#games .card:nth-child(2) h3": "Learning through play",
+"#games .card:nth-child(2)>p:not(.card-meta)": "Future educational games designed to make practice and problem-solving more engaging.",
+"#games .card:nth-child(2) .text-link": "Follow upcoming projects ↗",
+
+"#services .section-heading .eyebrow": "02 · LANDING PAGE SERVICE",
+"#services .section-heading h2": "A clearer online presence for your business.",
+"#services .section-heading>p": "Simple, mobile-friendly landing pages that introduce your business, explain your offer and guide customers to contact you.",
+"#services .service-cards .card:nth-child(1) h3": "Made for your business",
+"#services .service-cards .card:nth-child(1)>p": "A page structured around your actual services, prices, service area and key information.",
+"#services .service-cards .card:nth-child(2) h3": "Easy to use on mobile",
+"#services .service-cards .card:nth-child(2)>p": "A responsive layout designed for visitors using phones as well as desktop screens.",
+"#services .service-cards .card:nth-child(3) h3": "A clear next step",
+"#services .service-cards .card:nth-child(3)>p": "Prominent contact options, including WhatsApp enquiries where they fit your business.",
+"#services .portfolio-intro .eyebrow": "SELECTED CONCEPTS",
+"#services .portfolio-intro h3": "See what your landing page could look like.",
+"#services .portfolio-intro>p:last-child": "A few sample concepts for different business types. These examples show the direction and layout we can create for your brand.",
+"#services .portfolio-cards .card:nth-child(1) .card-meta": "LOCAL SERVICE",
+"#services .portfolio-cards .card:nth-child(1) h3": "Renovation & home services",
+"#services .portfolio-cards .card:nth-child(1)>p:not(.card-meta)": "A WhatsApp-focused page for contractors and local service providers.",
+"#services .portfolio-cards .card:nth-child(1) .text-link": "View demo ↗",
+"#services .portfolio-cards .card:nth-child(2) .card-meta": "FOOD BUSINESS",
+"#services .portfolio-cards .card:nth-child(2) h3": "Food & catering",
+"#services .portfolio-cards .card:nth-child(2)>p:not(.card-meta)": "A clear concept for menu highlights, order details and customer enquiries.",
+"#services .portfolio-cards .card:nth-child(2) .text-link": "View demo ↗",
+"#services .portfolio-cards .card:nth-child(3) .card-meta": "DIGITAL PRODUCT",
+"#services .portfolio-cards .card:nth-child(3) h3": "E-books & downloads",
+"#services .portfolio-cards .card:nth-child(3)>p:not(.card-meta)": "A focused page for digital guides, templates, e-books and online offers.",
+"#services .portfolio-cards .card:nth-child(3) .text-link": "View demo ↗",
+"#services .portfolio-actions a:nth-child(1)": "View full portfolio ↗",
+"#services .portfolio-actions a:nth-child(2)": "Explore Landing Page Service ↗",
+
+"#products .section-heading .eyebrow": "03 · DIGITAL DOWNLOADS",
+"#products .section-heading h2": "Useful tools for everyday finances.",
+"#products .section-heading>p": "Practical digital tools designed to help you manage your personal and small business finances with more clarity.",
+"#products .product-cards .card:nth-child(1) .card-meta": "PERSONAL FINANCE · EXCEL",
+"#products .product-cards .card:nth-child(1) h3": "Paycheck-to-Paycheck Tracker",
+"#products .product-cards .card:nth-child(1)>p:not(.card-meta)": "A practical tracker to help you organize your paychecks, plan expenses and keep a clearer view of your personal money.",
+"#products .product-cards .card:nth-child(1) .text-link": "View Product ↗",
+"#products .product-cards .card:nth-child(2) .card-meta": "SMALL BUSINESS · EXCEL",
+"#products .product-cards .card:nth-child(2) h3": "Small Business Finance Tracker",
+"#products .product-cards .card:nth-child(2)>p:not(.card-meta)": "Track sales, expenses, invoices and monthly profit in one organized Excel workbook. Made for small business owners and freelancers.",
+"#products .product-cards .card:nth-child(2) .text-link": "View Product · USD 9.99 ↗",
+
+"#stories .section-heading .eyebrow": "04 · STORIES FOR CURIOUS MINDS",
+"#stories .section-heading h2": "Look a little deeper.",
+"#stories .section-heading>p": "From life lessons and philosophy to history and mysteries — stories that invite us to think.",
+"#stories .feature-copy .card-meta": "FEATURED STORY · SILENT SUCCESS MINDSET",
+"#stories .feature-copy h3": "Maya Couldn't Stop Overthinking — Until She Learned This",
+"#stories .feature-copy>p:not(.card-meta)": "A story about control, overthinking and a Stoic lesson about what belongs to us — and what does not.",
+"#stories .feature-copy a": "Watch on YouTube ↗",
+"#stories .story-note:nth-child(1) .card-meta": "HISTORY & MYSTERY",
+"#stories .story-note:nth-child(1) h3": "Questions worth exploring.",
+"#stories .story-note:nth-child(1)>p:not(.card-meta)": "Future stories can explore strange events, intriguing places and historical mysteries while separating evidence from speculation.",
+"#stories .story-note:nth-child(2) .card-meta": "PHILOSOPHY & LIFE",
+"#stories .story-note:nth-child(2) h3": "Quiet stories. Meaningful ideas.",
+"#stories .story-note:nth-child(2)>p:not(.card-meta)": "Visual storytelling about perspective, resilience, relationships and finding room to grow.",
+"#stories .story-note:nth-child(2) a": "Meet the creators ↗",
+
+"#blog .section-heading .eyebrow": "05 · HARRYVERSE NOTES",
+"#blog .section-heading h2": "Notes from the building process.",
+"#blog .section-heading>p": "Short, practical notes about creating, learning and building in the digital world.",
+"#blog .blog-card:nth-child(1) .blog-category": "CODING",
+"#blog .blog-card:nth-child(1) h3": "From an Idea to a Live Website",
+"#blog .blog-card:nth-child(1)>p:not(.blog-category)": "A practical journey from learning Git and GitHub to publishing a real website.",
+"#blog .blog-card:nth-child(2) .blog-category": "COPYWRITING",
+"#blog .blog-card:nth-child(2) h3": "A Landing Page Is More Than Good Design"
+  "#blog .blog-card:nth-child(2)>p:not(.blog-category)": "A strong landing page connects its message, audience and destination with clarity.",
+"#blog .blog-card:nth-child(3) .blog-category": "BRANDING",
+"#blog .blog-card:nth-child(3) h3": "Building a Brand Before It Becomes Big",
+"#blog .blog-card:nth-child(3)>p:not(.blog-category)": "A brand begins with identity, story and the feeling people remember.",
+"#blog .blog-card:nth-child(4) .blog-category": "GAME DEVELOPMENT",
+"#blog .blog-card:nth-child(4) h3": "Learning to Code by Creating Games",
+"#blog .blog-card:nth-child(4)>p:not(.blog-category)": "Small games can be powerful practice for understanding logic, progression and interaction.",
+
+"#creators .eyebrow": "06 · CREATOR WORLDS",
+"#creators h2": "Different voices.<br>Different worlds.",
+"#creators>p": "Meet the independent creator projects behind the reflections, visual stories and ideas shared through HarryVerse.",
+
+"#resources .eyebrow": "07 · RESOURCES & AFFILIATE",
+"#resources h2": "Digital resources worth exploring.",
+"#resources>p": "Discover digital products across categories including learning, marketing, personal finance and practical skills. Review each offer carefully and choose only what genuinely fits your needs.",
+
+"#contact .eyebrow": "HAVE A PROJECT IN MIND?",
+"#contact h2": "Let's build something useful.",
+"#contact p": "Start with a landing page enquiry or explore one of our creative projects."
+},
+
+bm: {
+title: "HarryVerse | Satu Dunia. Banyak Perkara untuk Diterokai.",
+description: "HarryVerse ialah ruang kreatif untuk permainan, servis landing page, produk digital, cerita dan pencipta.",
+
+".nav-links a": [
+"Utama","Permainan","Portfolio","Servis","Produk",
+"Cerita","Blog","Pencipta","Sumber"
+],
+".menu-button": "☰ Menu",
+
+".hero .eyebrow": "HUB DIGITAL KREATIF",
+".hero h1": 'Satu Dunia.<br><em>Banyak Perkara untuk Diterokai.</em>',
+".hero-description": "HarryVerse menghimpunkan servis digital, permainan asli, produk berguna dan cerita yang mengajak kita berfikir — semuanya dalam satu ruang kreatif.",
+".hero-actions a:nth-child(1)": "Terokai HarryVerse ↗",
+".hero-actions a:nth-child(2)": "Perlukan Landing Page?",
+".hero-points span": [
+"✓ Servis digital untuk perniagaan kecil",
+"✓ Permainan asli dan idea pembelajaran",
+"✓ Cerita, pencipta dan penemuan digital"
+],
+
+"#games .section-heading .eyebrow": "01 · MAIN & BELAJAR",
+"#games .section-heading h2": "Permainan yang lahir daripada rasa ingin tahu.",
+"#games .section-heading>p": "Terokai koleksi Harry Games dan ikuti perjalanan ke arah pengalaman pembelajaran yang lebih menyeronokkan.",
+"#games .game-feature .card-meta": "SAMBUNG BERMAIN",
+"#games .game-feature h3": "Tap Tap Relax",
+"#games .game-feature-copy>p:last-child": "Sambung daripada kemajuan yang disimpan dalam pelayar ini.",
+"#games .game-progress>span": "Tahap semasa",
+"#continue-tap-button": "Sambung →",
+"#games .card:nth-child(1) .card-meta": "HARRY GAMES",
+"#games .card:nth-child(1) h3": "Idea permainan asli",
+"#games .card:nth-child(1)>p:not(.card-meta)": "Permainan kecil yang dibangunkan melalui eksperimen, fokus, kemajuan dan permainan.",
+"#games .card:nth-child(1) .text-link": "Terokai Harry Games ↗",
+"#games .card:nth-child(2) .card-meta": "GAME EDU",
+"#games .card:nth-child(2) h3": "Belajar melalui permainan",
+"#games .card:nth-child(2)>p:not(.card-meta)": "Permainan pendidikan masa depan yang menjadikan latihan dan penyelesaian masalah lebih menarik.",
+"#games .card:nth-child(2) .text-link": "Ikuti projek akan datang ↗",
+
+"#services .section-heading .eyebrow": "02 · SERVIS LANDING PAGE",
+"#services .section-heading h2": "Kehadiran online yang lebih jelas untuk perniagaan anda.",
+"#services .section-heading>p": "Landing page ringkas dan mesra telefon yang memperkenalkan perniagaan anda, menerangkan tawaran dan memudahkan pelanggan menghubungi anda.",
+"#services .service-cards .card:nth-child(1) h3": "Direka untuk perniagaan anda",
+"#services .service-cards .card:nth-child(1)>p": "Halaman yang disusun berdasarkan servis, harga, kawasan dan maklumat penting perniagaan anda.",
+"#services .service-cards .card:nth-child(2) h3": "Mudah digunakan di telefon",
+"#services .service-cards .card:nth-child(2)>p": "Reka bentuk responsif untuk pengunjung menggunakan telefon atau komputer.",
+"#services .service-cards .card:nth-child(3) h3": "Langkah seterusnya yang jelas",
+"#services .service-cards .card:nth-child(3)>p": "Pilihan hubungan yang mudah dilihat, termasuk pertanyaan WhatsApp jika sesuai.",
+"#services .portfolio-intro .eyebrow": "KONSEP PILIHAN",
+"#services .portfolio-intro h3": "Lihat bagaimana landing page anda boleh kelihatan.",
+"#services .portfolio-intro>p:last-child": "Beberapa contoh konsep untuk jenis perniagaan berbeza. Contoh ini menunjukkan arah dan susun atur yang boleh dibuat untuk jenama anda.",
+"#services .portfolio-cards .card:nth-child(1) .card-meta": "SERVIS TEMPATAN",
+"#services .portfolio-cards .card:nth-child(1) h3": "Renovasi & servis rumah",
+"#services .portfolio-cards .card:nth-child(1)>p:not(.card-meta)": "Halaman berfokus WhatsApp untuk kontraktor dan penyedia servis tempatan.",
+"#services .portfolio-cards .card:nth-child(1) .text-link": "Lihat demo ↗",
+"#services .portfolio-cards .card:nth-child(2) .card-meta": "PERNIAGAAN MAKANAN",
+"#services .portfolio-cards .card:nth-child(2) h3": "Makanan & katering",
+"#services .portfolio-cards .card:nth-child(2)>p:not(.card-meta)": "Konsep jelas untuk menu, maklumat pesanan dan pertanyaan pelanggan.",
+"#services .portfolio-cards .card:nth-child(2) .text-link": "Lihat demo ↗",
+"#services .portfolio-cards .card:nth-child(3) .card-meta": "PRODUK DIGITAL",
+"#services .portfolio-cards .card:nth-child(3) h3": "E-book & muat turun",
+"#services .portfolio-cards .card:nth-child(3)>p:not(.card-meta)": "Halaman khusus untuk panduan digital, templat, e-book dan tawaran online.",
+"#services .portfolio-cards .card:nth-child(3) .text-link": "Lihat demo ↗",
+"#services .portfolio-actions a:nth-child(1)": "Lihat portfolio penuh ↗",
+"#services .portfolio-actions a:nth-child(2)": "Terokai Servis Landing Page ↗",
+
+"#products .section-heading .eyebrow": "03 · MUAT TURUN DIGITAL",
+"#products .section-heading h2": "Alat berguna untuk kewangan harian.",
+"#products .section-heading>p": "Alat digital praktikal untuk membantu mengurus kewangan peribadi dan perniagaan kecil dengan lebih jelas.",
+"#products .product-cards .card:nth-child(1) .card-meta": "KEWANGAN PERIBADI · EXCEL",
+"#products .product-cards .card:nth-child(1) h3": "Paycheck-to-Paycheck Tracker",
+"#products .product-cards .card:nth-child(1)>p:not(.card-meta)": "Tracker praktikal untuk menyusun gaji, merancang perbelanjaan dan melihat kewangan peribadi dengan lebih jelas.",
+"#products .product-cards .card:nth-child(1) .text-link": "Lihat Produk · USD 5.99 ↗",
+"#products .product-cards .card:nth-child(2) .card-meta": "PERNIAGAAN KECIL · EXCEL",
+"#products .product-cards .card:nth-child(2) h3": "Small Business Finance Tracker",
+"#products .product-cards .card:nth-child(2)>p:not(.card-meta)": "Jejak jualan, perbelanjaan, invois dan keuntungan bulanan dalam satu fail Excel tersusun.",
+"#products .product-cards .card:nth-child(2) .text-link": "Lihat Produk · USD 9.99 ↗",
+
+"#stories .section-heading .eyebrow": "04 · CERITA UNTUK MINDA INGIN TAHU",
+"#stories .section-heading h2": "Lihat dengan lebih mendalam.",
+"#stories .section-heading>p": "Daripada pengajaran hidup dan falsafah hingga sejarah dan misteri — cerita yang mengajak kita berfikir.",
+"#stories .feature-copy .card-meta": "CERITA PILIHAN · SILENT SUCCESS MINDSET",
+"#stories .feature-copy h3": "Maya Tidak Dapat Berhenti Berfikir Berlebihan — Sehingga Dia Belajar Ini",
+"#stories .feature-copy>p:not(.card-meta)": "Cerita tentang kawalan, overthinking dan pengajaran Stoik tentang perkara yang berada dalam kawalan kita.",
+"#stories .feature-copy a": "Tonton di YouTube ↗",
+"#stories .story-note:nth-child(1) .card-meta": "SEJARAH & MISTERI",
+"#stories .story-note:nth-child(1) h3": "Persoalan yang menarik untuk diterokai.",
+"#stories .story-note:nth-child(1)>p:not(.card-meta)": "Cerita akan datang boleh meneroka kejadian pelik, tempat menarik dan misteri sejarah sambil membezakan fakta daripada spekulasi.",
+"#stories .story-note:nth-child(2) .card-meta": "FALSAFAH & KEHIDUPAN",
+"#stories .story-note:nth-child(2) h3": "Cerita tenang. Idea bermakna.",
+"#stories .story-note:nth-child(2)>p:not(.card-meta)": "Penceritaan visual tentang perspektif, ketabahan, hubungan dan ruang untuk berkembang.",
+"#stories .story-note:nth-child(2) a": "Kenali pencipta ↗",
+
+"#blog .section-heading .eyebrow": "05 · NOTA HARRYVERSE",
+"#blog .section-heading h2": "Catatan daripada proses membina.",
+"#blog .section-heading>p": "Catatan ringkas dan praktikal tentang mencipta, belajar dan membina dalam dunia digital.",
+"#blog .blog-card:nth-child(1) .blog-category": "PENGATURCARAAN",
+"#blog .blog-card:nth-child(1) h3": "Daripada Idea kepada Website Live",
+"#blog .blog-card:nth-child(1)>p:not(.blog-category)": "Perjalanan praktikal daripada belajar Git dan GitHub hingga menerbitkan website sebenar.",
+"#blog .blog-card:nth-child(2) .blog-category": "COPYWRITING",
+"#blog .blog-card:nth-child(2) h3": "Landing Page Lebih daripada Reka Bentuk Cantik",
+"#blog .blog-card:nth-child(2)>p:not(.blog-category)": "Landing page yang baik menghubungkan mesej, audiens dan tindakan dengan jelas.",
+"#blog .blog-card:nth-child(3) .blog-category": "JENAMA",
+"#blog .blog-card:nth-child(3) h3": "Membina Jenama Sebelum Ia Menjadi Besar",
+"#blog .blog-card:nth-child(3)>p:not(.blog-category)": "Jenama bermula dengan identiti, cerita dan perasaan yang diingati orang.",
+"#blog .blog-card:nth-child(4) .blog-category": "PEMBANGUNAN GAME",
+"#blog .blog-card:nth-child(4) h3": "Belajar Coding dengan Membina Game",
+"#blog .blog-card:nth-child(4)>p:not(.blog-category)": "Game kecil boleh membantu memahami logik, perkembangan dan interaksi.",
+
+"#creators .eyebrow": "06 · DUNIA PENCIPTA",
+"#creators h2": "Suara berbeza.<br>Dunia berbeza.",
+"#creators>p": "Kenali projek pencipta bebas di sebalik refleksi, cerita visual dan idea yang dikongsi melalui HarryVerse.",
+
+"#resources .eyebrow": "07 · SUMBER & AFFILIATE",
+"#resources h2": "Sumber digital untuk diterokai.",
+"#resources>p": "Temui produk digital dalam kategori pembelajaran, pemasaran, kewangan peribadi dan kemahiran praktikal. Semak setiap tawaran dengan teliti dan pilih yang sesuai dengan keperluan anda.",
+
+"#contact .eyebrow": "ADA PROJEK DALAM FIKIRAN?",
+"#contact h2": "Mari bina sesuatu yang berguna.",
+"#contact p": "Mulakan dengan pertanyaan landing page atau terokai projek kreatif kami."
+},
+
+id: {
+title: "HarryVerse | Satu Dunia. Banyak Hal untuk Dijelajahi.",
+description: "HarryVerse adalah rumah kreatif untuk game, layanan landing page, produk digital, cerita dan kreator.",
+
+".nav-links a": [
+"Beranda","Game","Portofolio","Layanan","Produk",
+"Cerita","Blog","Kreator","Sumber"
+],
+".menu-button": "☰ Menu",
+
+".hero .eyebrow": "HUB DIGITAL KREATIF",
+".hero h1": 'Satu Dunia.<br><em>Banyak Hal untuk Dijelajahi.</em>',
+".hero-description": "HarryVerse menyatukan layanan digital, game original, produk bermanfaat dan cerita yang mengajak berpikir — semuanya dalam satu rumah kreatif.",
+".hero-actions a:nth-child(1)": "Jelajahi HarryVerse ↗",
+".hero-actions a:nth-child(2)": "Butuh Landing Page?",
+".hero-points span": [
+"✓ Layanan digital untuk bisnis kecil",
+"✓ Game original dan ide belajar",
+"✓ Cerita, kreator dan penemuan digital"
+],
+
+"#games .section-heading .eyebrow": "01 · MAIN & BELAJAR",
+"#games .section-heading h2": "Game yang lahir dari rasa ingin tahu.",
+"#games .section-heading>p": "Jelajahi koleksi Harry Games dan ikuti perjalanan menuju pengalaman belajar yang lebih menyenangkan.",
+"#games .game-feature .card-meta": "LANJUTKAN BERMAIN",
+"#games .game-feature h3": "Tap Tap Relax",
+"#games .game-feature-copy>p:last-child": "Lanjutkan dari progres yang tersimpan di browser ini.",
+"#games .game-progress>span": "Level saat ini",
+"#continue-tap-button": "Lanjut →",
+"#games .card:nth-child(1) .card-meta": "HARRY GAMES",
+"#games .card:nth-child(1) h3": "Ide game original",
+"#games .card:nth-child(1)>p:not(.card-meta)": "Game kecil yang dikembangkan melalui eksperimen, fokus, progres dan permainan.",
+"#games .card:nth-child(1) .text-link": "Jelajahi Harry Games ↗",
+"#games .card:nth-child(2) .card-meta": "GAME EDU",
+"#games .card:nth-child(2) h3": "Belajar melalui permainan",
+"#games .card:nth-child(2)>p:not(.card-meta)": "Game edukasi mendatang yang dirancang agar latihan dan pemecahan masalah lebih menarik.",
+"#games .card:nth-child(2) .text-link": "Ikuti proyek berikutnya ↗",
+
+"#services .section-heading .eyebrow": "02 · LAYANAN LANDING PAGE",
+"#services .section-heading h2": "Kehadiran online yang lebih jelas untuk bisnismu.",
+"#services .section-heading>p": "Landing page sederhana dan ramah mobile yang memperkenalkan bisnis, menjelaskan penawaran dan membantu pelanggan menghubungi kamu.",
+"#services .service-cards .card:nth-child(1) h3": "Dibuat untuk bisnismu",
+"#services .service-cards .card:nth-child(1)>p": "Halaman yang disusun berdasarkan layanan, harga, area dan informasi penting bisnis.",
+"#services .service-cards .card:nth-child(2) h3": "Mudah digunakan di ponsel",
+"#services .service-cards .card:nth-child(2)>p": "Tampilan responsif untuk pengunjung dari ponsel maupun komputer.",
+"#services .service-cards .card:nth-child(3) h3": "Langkah selanjutnya yang jelas",
+"#services .service-cards .card:nth-child(3)>p": "Pilihan kontak yang mudah terlihat, termasuk WhatsApp jika sesuai.",
+"#services .portfolio-intro .eyebrow": "KONSEP PILIHAN",
+"#services .portfolio-intro h3": "Lihat seperti apa landing page bisnismu.",
+"#services .portfolio-intro>p:last-child": "Beberapa contoh konsep untuk jenis bisnis berbeda. Contoh ini menunjukkan arah dan layout yang bisa dibuat untuk brand kamu.",
+"#services .portfolio-cards .card:nth-child(1) .card-meta": "LAYANAN LOKAL",
+"#services .portfolio-cards .card:nth-child(1) h3": "Renovasi & layanan rumah",
+"#services .portfolio-cards .card:nth-child(1)>p:not(.card-meta)": "Halaman fokus WhatsApp untuk kontraktor dan penyedia layanan lokal.",
+"#services .portfolio-cards .card:nth-child(1) .text-link": "Lihat demo ↗",
+"#services .portfolio-cards .card:nth-child(2) .card-meta": "BISNIS MAKANAN",
+"#services .portfolio-cards .card:nth-child(2) h3": "Makanan & katering",
+"#services .portfolio-cards .card:nth-child(2)>p:not(.card-meta)": "Konsep jelas untuk menu, detail pesanan dan pertanyaan pelanggan.",
+"#services .portfolio-cards .card:nth-child(2) .text-link": "Lihat demo ↗",
+"#services .portfolio-cards .card:nth-child(3) .card-meta": "PRODUK DIGITAL",
+"#services .portfolio-cards .card:nth-child(3) h3": "E-book & unduhan",
+"#services .portfolio-cards .card:nth-child(3)>p:not(.card-meta)": "Halaman khusus untuk panduan digital, template, e-book dan penawaran online.",
+"#services .portfolio-cards .card:nth-child(3) .text-link": "Lihat demo ↗",
+"#services .portfolio-actions a:nth-child(1)": "Lihat portofolio lengkap ↗",
+"#services .portfolio-actions a:nth-child(2)": "Jelajahi Layanan Landing Page ↗",
+
+"#products .section-heading .eyebrow": "03 · DOWNLOAD DIGITAL",
+"#products .section-heading h2": "Alat praktis untuk keuangan sehari-hari.",
+"#products .section-heading>p": "Alat digital praktis untuk membantu mengelola keuangan pribadi dan bisnis kecil dengan lebih jelas.",
+"#products .product-cards .card:nth-child(1) .card-meta": "KEUANGAN PRIBADI · EXCEL",
+"#products .product-cards .card:nth-child(1) h3": "Paycheck-to-Paycheck Tracker",
+"#products .product-cards .card:nth-child(1)>p:not(.card-meta)": "Tracker praktis untuk mengatur gaji, merencanakan pengeluaran dan melihat keuangan pribadi dengan lebih jelas.",
+"#products .product-cards .card:nth-child(1) .text-link": "Lihat Produk · USD 5.99 ↗",
+"#products .product-cards .card:nth-child(2) .card-meta": "BISNIS KECIL · EXCEL",
+"#products .product-cards .card:nth-child(2) h3": "Small Business Finance Tracker",
+"#products .product-cards .card:nth-child(2)>p:not(.card-meta)": "Lacak penjualan, pengeluaran, invoice dan profit bulanan dalam satu workbook Excel yang rapi.",
+"#products .product-cards .card:nth-child(2) .text-link": "Lihat Produk · USD 9.99 ↗",
+
+"#stories .section-heading .eyebrow": "04 · CERITA UNTUK MINDA PENASARAN",
+"#stories .section-heading h2": "Lihat lebih dalam.",
+"#stories .section-heading>p": "Dari pelajaran hidup dan filosofi hingga sejarah dan misteri — cerita yang mengajak kita berpikir.",
+"#stories .feature-copy .card-meta": "CERITA PILIHAN · SILENT SUCCESS MINDSET",
+"#stories .feature-copy h3": "Maya Tidak Bisa Berhenti Overthinking — Sampai Dia Belajar Ini",
+"#stories .feature-copy>p:not(.card-meta)": "Cerita tentang kendali, overthinking dan pelajaran Stoik tentang apa yang berada dalam kendali kita.",
+"#stories .feature-copy a": "Tonton di YouTube ↗",
+"#stories .story-note:nth-child(1) .card-meta": "SEJARAH & MISTERI",
+"#stories .story-note:nth-child(1) h3": "Pertanyaan yang layak dijelajahi.",
+"#stories .story-note:nth-child(1)>p:not(.card-meta)": "Cerita mendatang bisa mengeksplorasi kejadian aneh, tempat menarik dan misteri sejarah sambil memisahkan fakta dari spekulasi.",
+"#stories .story-note:nth-child(2) .card-meta": "FILOSOFI & KEHIDUPAN",
+"#stories .story-note:nth-child(2) h3": "Cerita tenang. Ide bermakna.",
+"#stories .story-note:nth-child(2)>p:not(.card-meta)": "Penceritaan visual tentang perspektif, ketahanan, hubungan dan ruang untuk berkembang.",
+"#stories .story-note:nth-child(2) a": "Kenali kreator ↗",
+
+"#blog .section-heading .eyebrow": "05 · CATATAN HARRYVERSE",
+"#blog .section-heading h2": "Catatan dari proses membangun.",
+"#blog .section-heading>p": "Catatan singkat dan praktis tentang membuat, belajar dan membangun di dunia digital.",
+"#blog .blog-card:nth-child(1) .blog-category": "CODING",
+"#blog .blog-card:nth-child(1) h3": "Dari Ide Menjadi Website Live",
+"#blog .blog-card:nth-child(1)>p:not(.blog-category)": "Perjalanan praktis dari belajar Git dan GitHub hingga menerbitkan website sungguhan.",
+"#blog .blog-card:nth-child(2) .blog-category": "COPYWRITING",
+"#blog .blog-card:nth-child(2) h3": "Landing Page Lebih dari Sekadar Desain Bagus",
+"#blog .blog-card:nth-child(2)>p:not(.blog-category)": "Landing page yang baik menghubungkan pesan, audiens dan tujuan dengan jelas.",
+"#blog .blog-card:nth-child(3) .blog-category": "BRANDING",
+"#blog .blog-card:nth-child(3) h3": "Membangun Brand Sebelum Menjadi Besar",
+"#blog .blog-card:nth-child(3)>p:not(.blog-category)": "Brand dimulai dari identitas, cerita dan kesan yang diingat orang.",
+"#blog .blog-card:nth-child(4) .blog-category": "PENGEMBANGAN GAME",
+"#blog .blog-card:nth-child(4) h3": "Belajar Coding dengan Membuat Game",
+"#blog .blog-card:nth-child(4)>p:not(.blog-category)": "Game kecil bisa menjadi latihan memahami logika, progres dan interaksi.",
+
+"#creators .eyebrow": "06 · DUNIA KREATOR",
+"#creators h2": "Suara berbeda.<br>Dunia berbeda.",
+"#creators>p": "Kenali proyek kreator independen di balik refleksi, cerita visual dan ide yang dibagikan melalui HarryVerse.",
+
+"#resources .eyebrow": "07 · SUMBER & AFFILIATE",
+"#resources h2": "Sumber digital untuk dijelajahi.",
+"#resources>p": "Temukan produk digital untuk belajar, pemasaran, keuangan pribadi dan keterampilan praktis. Tinjau setiap penawaran dengan cermat dan pilih yang sesuai dengan kebutuhanmu.",
+
+"#contact .eyebrow": "PUNYA PROYEK?",
+"#contact h2": "Mari membangun sesuatu yang bermanfaat.",
+"#contact p": "Mulai dengan pertanyaan landing page atau jelajahi proyek kreatif kami."
+},
+
+es: {
+title: "HarryVerse | Un universo. Muchas cosas por descubrir.",
+description: "HarryVerse es un espacio creativo para juegos, servicios de landing pages, productos digitales, historias y creadores.",
+
+".nav-links a": [
+"Inicio","Juegos","Portafolio","Servicios","Productos",
+"Historias","Blog","Creadores","Recursos"
+],
+".menu-button": "☰ Menú",
+
+".hero .eyebrow": "CENTRO DIGITAL CREATIVO",
+".hero h1": 'Un universo.<br><em>Muchas cosas por descubrir.</em>',
+".hero-description": "HarryVerse reúne servicios digitales, juegos originales, productos útiles e historias que invitan a pensar, todo en un mismo espacio creativo.",
+".hero-actions a:nth-child(1)": "Explorar HarryVerse ↗",
+".hero-actions a:nth-child(2)": "¿Necesitas una landing page?",
+".hero-points span": [
+"✓ Servicios digitales para pequeñas empresas",
+"✓ Juegos originales e ideas educativas",
+"✓ Historias, creadores y descubrimientos digitales"
+],
+
+"#games .section-heading .eyebrow": "01 · JUGAR Y APRENDER",
+"#games .section-heading h2": "Juegos nacidos de la curiosidad.",
+"#games .section-heading>p": "Explora la colección actual de Harry Games y acompaña el camino hacia experiencias de aprendizaje más divertidas.",
+"#games .game-feature .card-meta": "CONTINUAR JUGANDO",
+"#games .game-feature h3": "Tap Tap Relax",
+"#games .game-feature-copy>p:last-child": "Continúa desde el progreso guardado en este navegador.",
+"#games .game-progress>span": "Nivel actual",
+"#continue-tap-button": "Continuar →",
+"#games .card:nth-child(1) .card-meta": "HARRY GAMES",
+"#games .card:nth-child(1) h3": "Ideas de juegos originales",
+"#games .card:nth-child(1)>p:not(.card-meta)": "Pequeños juegos creados mediante experimentación, concentración, progreso y diversión.",
+"#games .card:nth-child(1) .text-link": "Explorar Harry Games ↗",
+"#games .card:nth-child(2) .card-meta": "GAME EDU",
+"#games .card:nth-child(2) h3": "Aprender jugando",
+"#games .card:nth-child(2)>p:not(.card-meta)": "Próximos juegos educativos diseñados para hacer más atractivos la práctica y la resolución de problemas.",
+"#games .card:nth-child(2) .text-link": "Descubrir próximos proyectos ↗",
+
+"#services .section-heading .eyebrow": "02 · SERVICIO DE LANDING PAGE",
+"#services .section-heading h2": "Una presencia online más clara para tu negocio.",
+"#services .section-heading>p": "Landing pages sencillas y adaptadas a móviles que presentan tu negocio, explican tu oferta y facilitan el contacto.",
+"#services .service-cards .card:nth-child(1) h3": "Diseñada para tu negocio",
+"#services .service-cards .card:nth-child(1)>p": "Una página organizada según tus servicios, precios, zona de atención e información importante.",
+"#services .service-cards .card:nth-child(2) h3": "Fácil de usar en móviles",
+"#services .service-cards .card:nth-child(2)>p": "Diseño adaptable para visitantes desde teléfonos y computadoras.",
+"#services .service-cards .card:nth-child(3) h3": "Un siguiente paso claro",
+"#services .service-cards .card:nth-child(3)>p": "Opciones de contacto visibles, incluido WhatsApp cuando sea adecuado.",
+"#services .portfolio-intro .eyebrow": "CONCEPTOS SELECCIONADOS",
+"#services .portfolio-intro h3": "Mira cómo podría verse tu landing page.",
+"#services .portfolio-intro>p:last-child": "Algunos conceptos de ejemplo para distintos tipos de negocio. Muestran la dirección y el diseño que podemos crear para tu marca.",
+"#services .portfolio-cards .card:nth-child(1) .card-meta": "SERVICIO LOCAL",
+"#services .portfolio-cards .card:nth-child(1) h3": "Renovación y servicios del hogar",
+"#services .portfolio-cards .card:nth-child(1)>p:not(.card-meta)": "Una página enfocada en WhatsApp para contratistas y proveedores locales.",
+"#services .portfolio-cards .card:nth-child(1) .text-link": "Ver demo ↗",
+"#services .portfolio-cards .card:nth-child(2) .card-meta": "NEGOCIO DE COMIDA",
+"#services .portfolio-cards .card:nth-child(2) h3": "Comida y catering",
+"#services .portfolio-cards .card:nth-child(2)>p:not(.card-meta)": "Un concepto claro para destacar menús, pedidos y consultas de clientes.",
+"#services .portfolio-cards .card:nth-child(2) .text-link": "Ver demo ↗",
+"#services .portfolio-cards .card:nth-child(3) .card-meta": "PRODUCTO DIGITAL",
+"#services .portfolio-cards .card:nth-child(3) h3": "E-books y descargas",
+"#services .portfolio-cards .card:nth-child(3)>p:not(.card-meta)": "Una página enfocada en guías digitales, plantillas, e-books y ofertas online.",
+"#services .portfolio-cards .card:nth-child(3) .text-link": "Ver demo ↗",
+"#services .portfolio-actions a:nth-child(1)": "Ver portafolio completo ↗",
+"#services .portfolio-actions a:nth-child(2)": "Explorar servicio de landing page ↗",
+
+"#products .section-heading .eyebrow": "03 · DESCARGAS DIGITALES",
+"#products .section-heading h2": "Herramientas útiles para las finanzas diarias.",
+"#products .section-heading>p": "Herramientas digitales prácticas para gestionar las finanzas personales y de pequeños negocios con mayor claridad.",
+"#products .product-cards .card:nth-child(1) .card-meta": "FINANZAS PERSONALES · EXCEL",
+"#products .product-cards .card:nth-child(1) h3": "Paycheck-to-Paycheck Tracker",
+"#products .product-cards .card:nth-child(1)>p:not(.card-meta)": "Un tracker práctico para organizar ingresos, planificar gastos y tener una visión más clara de tu dinero.",
+"#products .product-cards .card:nth-child(1) .text-link": "Ver producto · USD 5.99 ↗",
+"#products .product-cards .card:nth-child(2) .card-meta": "PEQUEÑOS NEGOCIOS · EXCEL",
+"#products .product-cards .card:nth-child(2) h3": "Small Business Finance Tracker",
+"#products .product-cards .card:nth-child(2)>p:not(.card-meta)": "Registra ventas, gastos, facturas y ganancias mensuales en un solo archivo Excel organizado.",
+"#products .product-cards .card:nth-child(2) .text-link": "Ver producto · USD 9.99 ↗",
+
+"#stories .section-heading .eyebrow": "04 · HISTORIAS PARA MENTES CURIOSAS",
+"#stories .section-heading h2": "Mira un poco más profundo.",
+"#stories .section-heading>p": "Desde lecciones de vida y filosofía hasta historia y misterios: historias que invitan a pensar.",
+"#stories .feature-copy .card-meta": "HISTORIA DESTACADA · SILENT SUCCESS MINDSET",
+"#stories .feature-copy h3": "Maya no podía dejar de pensar demasiado — hasta que aprendió esto",
+"#stories .feature-copy>p:not(.card-meta)": "Una historia sobre el control, el exceso de pensamientos y una lección estoica sobre lo que depende de nosotros.",
+"#stories .feature-copy a": "Ver en YouTube ↗",
+"#stories .story-note:nth-child(1) .card-meta": "HISTORIA Y MISTERIO",
+"#stories .story-note:nth-child(1) h3": "Preguntas que vale la pena explorar.",
+"#stories .story-note:nth-child(1)>p:not(.card-meta)": "Las próximas historias pueden explorar sucesos extraños, lugares intrigantes y misterios históricos, separando hechos de especulación.",
+"#stories .story-note:nth-child(2) .card-meta": "FILOSOFÍA Y VIDA",
+"#stories .story-note:nth-child(2) h3": "Historias tranquilas. Ideas significativas.",
+"#stories .story-note:nth-child(2)>p:not(.card-meta)": "Narración visual sobre perspectiva, resiliencia, relaciones y espacio para crecer.",
+"#stories .story-note:nth-child(2) a": "Conoce a los creadores ↗",
+
+"#blog .section-heading .eyebrow": "05 · NOTAS HARRYVERSE",
+"#blog .section-heading h2": "Notas del proceso de creación.",
+"#blog .section-heading>p": "Notas breves y prácticas sobre crear, aprender y construir en el mundo digital.",
+"#blog .blog-card:nth-child(1) .blog-category": "PROGRAMACIÓN",
+"#blog .blog-card:nth-child(1) h3": "De una idea a una web publicada",
+"#blog .blog-card:nth-child(1)>p:not(.blog-category)": "Un recorrido práctico desde aprender Git y GitHub hasta publicar una web real.",
+"#blog .blog-card:nth-child(2) .blog-category": "COPYWRITING",
+"#blog .blog-card:nth-child(2) h3": "Una landing page es más que un buen diseño",
+"#blog .blog-card:nth-child(2)>p:not(.blog-category)": "Una buena landing page conecta claramente el mensaje, la audiencia y el objetivo.",
+"#blog .blog-card:nth-child(3) .blog-category": "MARCA",
+"#blog .blog-card:nth-child(3) h3": "Construir una marca antes de que crezca",
+"#blog .blog-card:nth-child(3)>p:not(.blog-category)": "Una marca comienza con identidad, historia y una sensación que la gente recuerda.",
+"#blog .blog-card:nth-child(4) .blog-category": "DESARROLLO DE JUEGOS",
+"#blog .blog-card:nth-child(4) h3": "Aprender a programar creando juegos",
+"#blog .blog-card:nth-child(4)>p:not(.blog-category)": "Los juegos pequeños ayudan a practicar lógica, progresión e interacción.",
+
+"#creators .eyebrow": "06 · MUNDOS CREATIVOS",
+"#creators h2": "Voces diferentes.<br>Mundos diferentes.",
+"#creators>p": "Conoce los proyectos independientes detrás de las reflexiones, historias visuales e ideas de HarryVerse.",
+
+"#resources .eyebrow": "07 · RECURSOS Y AFILIADOS",
+"#resources h2": "Recursos digitales para explorar.",
+"#resources>p": "Descubre productos digitales sobre aprendizaje, marketing, finanzas personales y habilidades prácticas. Revisa cada oferta y elige lo que realmente se ajuste a tus necesidades.",
+
+"#contact .eyebrow": "¿TIENES UN PROYECTO EN MENTE?",
+"#contact h2": "Construyamos algo útil.",
+"#contact p": "Empieza con una consulta de landing page o explora nuestros proyectos creativos."
+}
+};
