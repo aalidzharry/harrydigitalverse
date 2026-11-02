@@ -335,12 +335,13 @@ html{scroll-behavior:auto}
 
 .hv-hero-copy h1 {
   font-family: var(--serif);
-  font-size: clamp(2.8rem, 4.3vw, 4.25rem);
-  line-height: 0.98;
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  line-height: 1.02;
   letter-spacing: -0.045em;
   font-weight: 700;
   color: #29170f;
   margin: 0;
+  white-space: nowrap;
 }
 
 .hv-hero-copy h1 em {
@@ -393,8 +394,10 @@ html{scroll-behavior:auto}
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
-  gap: 8px;
-  padding: 12px 4px;
+  gap: 7px;
+  padding: 10px 4px;
+  max-width: 560px;
+  margin-left: auto;
 }
 
 .hv-hero-card {
