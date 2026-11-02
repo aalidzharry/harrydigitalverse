@@ -529,42 +529,147 @@ html{scroll-behavior:auto}
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+  
+/* ===== HARRY DIGITAL VERSE NAVBAR ===== */
+
+.hv-new-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 250, 245, 0.98);
+  border-bottom: 1px solid #ead9ca;
+}
+
+.hv-navbar {
+  width: min(100%, 1200px);
+  min-height: 66px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+/* BRAND / HOUSE LOGO */
+
+.hv-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #2b170f;
+  text-decoration: none;
+}
+
+.hv-home-logo {
+  width: 40px;
+  height: 36px;
+  fill: none;
+  stroke: #482819;
+  stroke-width: 2.2;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.hv-brand-divider {
+  height: 34px;
+  width: 1px;
+  background: #9d7964;
+}
+
+.hv-brand-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size
 </style>
 </head>
 
 <body>
 
-<header class="site-header">
-<nav class="nav container" aria-label="Main navigation">
-<a class="brand" href="#home" aria-label="HarryVerse home">
-<span class="brand-mark">HV</span>
-<span><strong>HarryVerse</strong><small>One world of ideas</small></span>
-</a>
 
-<button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
+<header class="site-header hv-new-header">
+  <nav class="nav container hv-navbar" aria-label="Main navigation">
 
-<div class="nav-links">
-<a href="#home" aria-current="page" data-i18n="navHome">Home</a>
-<a href="#games" data-i18n="navGames">Games</a>
-<a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
-<a href="#services" data-i18n="navServices">Services</a>
-<a href="#products" data-i18n="navProducts">Products</a>
-<a href="#stories" data-i18n="navStories">Stories</a>
-<a href="#blog" data-i18n="navBlog">Blog</a>
-<a href="#creators" data-i18n="navCreators">Creators</a>
-<a href="#resources" data-i18n="navResources">Resources</a>
-<label class="language-picker">
-<span class="sr-only">Choose language</span>
-<select id="language-select" aria-label="Choose language">
-<option value="en">EN</option>
-<option value="ms">BM</option>
-<option value="id">ID</option>
-<option value="es">ES</option>
-</select>
-</label>
-</div>
-</nav>
+    <!-- LOGO -->
+    <a class="hv-brand" href="#home" aria-label="Harry Digital Verse home">
+      <svg class="hv-home-logo" viewBox="0 0 48 42" aria-hidden="true">
+        <path d="M4 19 24 3 44 19" />
+        <path d="M9 17v22h30V17" />
+        <path d="M19 39V24h10v15" />
+      </svg>
+
+      <span class="hv-brand-divider"></span>
+
+      <span class="hv-brand-name">
+        HARRY
+        <br>
+        DIGITAL VERSE
+      </span>
+    </a>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button class="menu-button hv-menu-button"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <!-- NAVIGATION -->
+    <div class="nav-links hv-nav-links">
+
+      <a class="hv-nav-active" href="#home">Home</a>
+
+      <a href="#products" class="hv-nav-arrow">
+        Products <span>⌄</span>
+      </a>
+
+      <a href="#games">Games</a>
+
+      <a href="#stories" class="hv-nav-arrow">
+        Book Hub <span>⌄</span>
+      </a>
+
+      <a href="#creators">Creators</a>
+
+      <a href="#resources">Resources</a>
+
+      <!-- LANGUAGE -->
+      <label class="language-picker hv-language-picker">
+        <span class="sr-only">Choose language</span>
+
+        <span class="hv-globe" aria-hidden="true">◎</span>
+
+        <select id="language-select" aria-label="Choose language">
+          <option value="en">🇬🇧 English</option>
+          <option value="ms">🇲🇾 Bahasa Melayu</option>
+          <option value="id">🇮🇩 Bahasa Indonesia</option>
+          <option value="es">🇪🇸 Español</option>
+        </select>
+      </label>
+
+      <!-- SEARCH -->
+      <button class="hv-icon-button" type="button" aria-label="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="10.8" cy="10.8" r="7.2"/>
+          <path d="m16.2 16.2 5 5"/>
+        </svg>
+      </button>
+
+      <!-- CART -->
+      <a class="hv-cart-button" href="#products" aria-label="Shopping cart">
+        <svg viewBox="0 0 28 28" aria-hidden="true">
+          <path d="M2 3h3l3.2 15.2h14.2l3-11.5H7"/>
+          <circle cx="10.5" cy="23" r="1.8"/>
+          <circle cx="21" cy="23" r="1.8"/>
+        </svg>
+        <span class="hv-cart-count">0</span>
+      </a>
+
+    </div>
+  </nav>
 </header>
+
 
 <!-- HARRY DIGITAL VERSE HERO -->
 <header class="hero hv-hero" id="home">
