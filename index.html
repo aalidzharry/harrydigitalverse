@@ -300,6 +300,213 @@ background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--sha
 html{scroll-behavior:auto}
 *,*:before,*:after{transition:none!important}
 }
+  /* =====================================
+   HARRY DIGITAL VERSE - HERO DESIGN
+===================================== */
+
+.hv-hero {
+  background: linear-gradient(
+    110deg,
+    #fff8f0 0%,
+    #f8eadb 55%,
+    #efd0b1 100%
+  );
+  padding: 28px 0 35px;
+  overflow: hidden;
+}
+
+.hv-hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  align-items: center;
+  gap: 28px;
+  min-height: 280px;
+}
+
+/* LEFT TEXT */
+
+.hv-hero-copy .eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #8d4528;
+}
+
+.hv-hero-copy h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 4.3vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+  color: #29170f;
+  margin: 0;
+}
+
+.hv-hero-copy h1 em {
+  display: block;
+  font-weight: 600;
+  font-style: italic;
+  color: #a94725;
+  margin-top: 4px;
+}
+
+.hv-hero-underline {
+  width: 55px;
+  height: 3px;
+  background: #a94725;
+  margin: 13px 0 17px;
+}
+
+/* BUTTONS */
+
+.hv-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hv-hero-actions .button {
+  min-height: 42px;
+  padding: 10px 15px;
+  font-size: 0.82rem;
+  border-radius: 7px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hv-btn-primary {
+  background: #91451f !important;
+  border-color: #91451f !important;
+  color: #fff !important;
+}
+
+.hv-btn-secondary {
+  background: #fffaf5 !important;
+  border: 1px solid #9b7964 !important;
+  color: #452819 !important;
+}
+
+/* FOUR FLOATING CARDS */
+
+.hv-hero-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 8px;
+  padding: 12px 4px;
+}
+
+.hv-hero-card {
+  min-height: 165px;
+  padding: 16px 9px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #3d2113;
+  box-shadow: 0 12px 22px rgba(83, 48, 25, .12);
+  transition: transform .2s ease;
+}
+
+.hv-hero-card:hover {
+  transform: translateY(-8px) rotate(0deg);
+}
+
+.hv-card-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.hv-hero-card strong {
+  font-family: var(--serif);
+  font-size: clamp(.78rem, 1.15vw, 1.05rem);
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+.hv-hero-card strong small {
+  font: inherit;
+}
+
+/* CARD COLORS AND ANGLES */
+
+.hv-card-digital {
+  background: #f4ddcd;
+  transform: rotate(-7deg) translateY(10px);
+}
+
+.hv-card-games {
+  background: #dce8f1;
+  transform: rotate(-3deg) translateY(-4px);
+}
+
+.hv-card-books {
+  background: #f7e8c9;
+  transform: rotate(-5deg) translateY(-12px);
+}
+
+.hv-card-physical {
+  background: #f3d8bd;
+  transform: rotate(5deg) translateY(4px);
+}
+
+/* TABLET / MOBILE */
+
+@media (max-width: 850px) {
+  .hv-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .hv-hero-copy h1 {
+    font-size: clamp(2.7rem, 8vw, 4rem);
+  }
+
+  .hv-hero-cards {
+    max-width: 650px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hv-hero-card {
+    min-height: 145px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hv-hero {
+    padding: 25px 0;
+  }
+
+  .hv-hero-cards {
+    gap: 6px;
+  }
+
+  .hv-hero-card {
+    min-height: 120px;
+    padding: 10px 5px;
+    border-radius: 10px;
+  }
+
+  .hv-card-icon {
+    font-size: 1.4rem;
+  }
+
+  .hv-hero-card strong {
+    font-size: .68rem;
+  }
+
+  .hv-hero-actions .button {
+    font-size: .72rem;
+    padding: 9px 10px;
+  }
+}
 </style>
 </head>
 
@@ -337,45 +544,64 @@ html{scroll-behavior:auto}
 </nav>
 </header>
 
-<!-- HERO -->
-<header class="hero" id="home">
-<div class="container hero-grid">
-<div>
-<p class="eyebrow">A CREATIVE DIGITAL HUB</p>
-<h1>One Universe.<br><em>Many Things to Discover.</em></h1>
-<p class="hero-description">HarryVerse brings together digital services, original games, useful products and stories that make you think — all in one creative home.</p>
-<div class="hero-actions">
-<a class="button button-primary" href="#games">Explore HarryVerse ↗</a>
-<a class="button button-secondary" href="#services">Need a Landing Page?</a>
-</div>
-<div class="hero-points">
-<span>✓ Digital services for small businesses</span>
-<span>✓ Original games and learning ideas</span>
-<span>✓ Stories, creators and digital discoveries</span>
-</div>
-</div>
+<!-- HARRY DIGITAL VERSE HERO -->
+<header class="hero hv-hero" id="home">
+  <div class="container hv-hero-grid">
 
-<div class="hero-art" role="img" aria-label="HarryVerse creative projects">
-<div class="hero-art-stack">
-<div class="art-tile art-tile-game">
-<span class="tile-icon">✦</span>
-<small>PLAY</small>
-<strong>Games<br>& learning</strong>
-</div>
-<div class="art-tile art-tile-create">
-<span class="tile-icon">✎</span>
-<small>CREATE</small>
-<strong>Digital<br>experiences</strong>
-</div>
-<div class="art-tile art-tile-story">
-<span class="tile-icon">❝</span>
-<small>DISCOVER</small>
-<strong>Stories<br>& ideas</strong>
-</div>
-</div>
-<span class="hero-art-stamp">HV</span>
-</div>
-</div>
+    <!-- LEFT: TEXT + BUTTONS -->
+    <div class="hv-hero-copy">
+      <p class="eyebrow">WELCOME TO</p>
+
+      <h1>
+        Harry Digital Verse
+        <em>All In One Place.</em>
+      </h1>
+
+      <div class="hv-hero-underline"></div>
+
+      <div class="hv-hero-actions">
+        <a class="button button-primary hv-btn-primary" href="#products">
+          <span aria-hidden="true">♧</span>
+          Explore Products
+        </a>
+
+        <a class="button button-secondary hv-btn-secondary" href="#games">
+          <span aria-hidden="true">🎮</span>
+          Games
+        </a>
+
+        <a class="button button-secondary hv-btn-secondary" href="#stories">
+          <span aria-hidden="true">▷</span>
+          Discover Books
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: FOUR CARDS -->
+    <div class="hv-hero-cards">
+
+      <a href="#products" class="hv-hero-card hv-card-digital">
+        <span class="hv-card-icon" aria-hidden="true">▱</span>
+        <strong>Digital<br>Products</strong>
+      </a>
+
+      <a href="#games" class="hv-hero-card hv-card-games">
+        <span class="hv-card-icon" aria-hidden="true">🎮</span>
+        <strong>Games<br><small>&amp; Learning</small></strong>
+      </a>
+
+      <a href="#stories" class="hv-hero-card hv-card-books">
+        <span class="hv-card-icon" aria-hidden="true">▤</span>
+        <strong>Books<br><small>&amp; E-Books</small></strong>
+      </a>
+
+      <a href="#products" class="hv-hero-card hv-card-physical">
+        <span class="hv-card-icon" aria-hidden="true">♧</span>
+        <strong>Physical<br>Products</strong>
+      </a>
+
+    </div>
+  </div>
 </header>
 
 <main>
