@@ -4,231 +4,480 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Digital Products | Harry Digital Verse</title>
-<meta name="description" content="Explore practical digital products, portfolio concepts and landing page services from Harry Digital Verse.">
+<meta name="description" content="Explore digital products, business services and creative portfolio projects from Harry Digital Verse.">
 
 <style>
-:root{
-  --cream:#f8f3e9;
-  --paper:#fffaf2;
-  --ink:#28251f;
-  --muted:#716d65;
-  --rust:#b94e32;
-  --green:#20352d;
-  --line:#ded4c5;
+:root {
+  --navy: #183650;
+  --blue: #28658e;
+  --blue-light: #dcebf5;
+  --blue-pale: #edf4f8;
+  --sky: #78afd0;
+  --ink: #243541;
+  --muted: #687987;
+  --paper: #ffffff;
+  --page: #f2f6f9;
+  --line: #d6e2ea;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--cream);
-  color:var(--ink);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.6;
+
+* {
+  box-sizing: border-box;
 }
-a{color:inherit}
-header{
-  min-height:72px;
-  padding:12px 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  background:var(--paper);
-  border-bottom:1px solid var(--line);
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 25px;
 }
-.logo{
-  text-decoration:none;
-  display:flex;
-  flex-direction:column;
-  color:var(--ink);
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
 }
-.logo strong{
-  font-family:Georgia,serif;
-  font-size:23px;
-  line-height:1.1;
+
+a {
+  color: inherit;
 }
-.logo small{
-  margin-top:4px;
-  font-size:9px;
-  letter-spacing:2px;
-  text-align:center;
+
+/* HEADER */
+
+header {
+  min-height: 72px;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
 }
-nav{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:17px;
-  flex-wrap:wrap;
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  color: var(--navy);
 }
-nav a{
-  font-size:11px;
-  font-weight:bold;
-  text-decoration:none;
+
+.logo strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  line-height: 1.1;
 }
-nav a:hover{color:var(--rust)}
-.language{
-  padding:8px 10px;
-  border:1px solid var(--line);
-  border-radius:7px;
-  color:var(--ink);
-  background:transparent;
-  cursor:pointer;
+
+.logo small {
+  margin-top: 4px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-align: center;
 }
-.hero{
-  padding:65px 7% 55px;
-  background:radial-gradient(circle at 85% 20%,#f0e1cf,transparent 36%),var(--cream);
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 17px;
+  flex-wrap: wrap;
 }
-.container{
-  width:min(1080px,100%);
-  margin:auto;
+
+nav a {
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color .2s;
 }
-.eyebrow{
-  color:var(--rust);
-  font-size:10px;
-  font-weight:bold;
-  letter-spacing:2.3px;
-  text-transform:uppercase;
+
+nav a:hover,
+nav a.active {
+  color: var(--blue);
 }
-h1,h2,h3{
-  font-family:Georgia,"Times New Roman",serif;
-  font-weight:normal;
+
+.language {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--navy);
+  background: white;
+  cursor: pointer;
 }
-h1{
-  max-width:750px;
-  margin:15px 0;
-  font-size:clamp(39px,5vw,60px);
-  line-height:1.08;
-  letter-spacing:-1.8px;
+
+/* CATEGORY SELECTORS */
+
+.selector-section {
+  padding: 27px 6% 30px;
+  background: linear-gradient(135deg, #e6f0f6, #f5f8fb);
+  border-bottom: 1px solid var(--line);
 }
-.hero p{
-  max-width:690px;
-  color:var(--muted);
-  font-size:14px;
+
+.selector-container {
+  width: min(1080px, 100%);
+  margin: auto;
 }
-.section{
-  padding:55px 7% 65px;
+
+.selector-label {
+  margin: 0 0 15px;
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-.section.alt{background:#f0e9dd}
-.heading{
-  margin-bottom:28px;
+
+.selector-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
 }
-.heading h2{
-  margin:9px 0;
-  font-size:clamp(30px,4vw,42px);
-  line-height:1.15;
+
+.choice-card {
+  min-height: 145px;
+  padding: 22px 25px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 11px;
+  background: var(--navy);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(24, 54, 80, .10);
+  transition: transform .2s, box-shadow .2s;
 }
-.heading p{
-  max-width:680px;
-  color:var(--muted);
-  font-size:13px;
+
+.choice-card:nth-child(2) {
+  background: var(--blue);
 }
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:20px;
+
+.choice-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 13px 25px rgba(24, 54, 80, .17);
 }
-.card{
-  padding:26px;
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:13px;
-  box-shadow:0 8px 22px rgba(70,50,30,.04);
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
+
+.choice-card::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  right: -48px;
+  bottom: -105px;
+  border: 1px solid rgba(255,255,255,.19);
+  border-radius: 50%;
 }
-.card-icon{
-  width:45px;
-  height:45px;
-  display:grid;
-  place-items:center;
-  border-radius:12px;
-  background:#e8e9dd;
-  font-size:22px;
+
+.choice-number {
+  color: #a9d1e9;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
-.card-meta{
-  margin:19px 0 5px;
-  color:var(--rust);
-  font-size:9px;
-  font-weight:bold;
-  letter-spacing:1.7px;
+
+.choice-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
 }
-.card h3{
-  margin:5px 0 8px;
-  font-size:25px;
-  line-height:1.2;
+
+.choice-title {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(20px, 2.5vw, 27px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.6px;
 }
-.card p{
-  margin:5px 0 18px;
-  color:var(--muted);
-  font-size:13px;
+
+.choice-description {
+  display: block;
+  margin-top: 6px;
+  color: #d5e7f2;
+  font-size: 11px;
 }
-.card .link{
-  display:inline-block;
-  margin-top:auto;
-  padding-top:12px;
-  color:var(--rust);
-  font-size:12px;
-  font-weight:bold;
-  text-decoration:none;
+
+.choice-arrow {
+  font-size: 25px;
+  color: #c5e2f4;
+  flex-shrink: 0;
 }
-.card .link:hover{text-decoration:underline}
-.card.service{background:#f4eadb}
-.card.portfolio{background:#edf0e8}
-.product-grid .card:first-child .card-icon{background:#e9e2d8}
-.product-grid .card:last-child .card-icon{background:#e4eadf}
-footer{
-  padding:27px 5% 20px;
-  background:var(--green);
-  color:#f7f3e9;
+
+/* SHARED SECTIONS */
+
+.container {
+  width: min(1080px, 100%);
+  margin: auto;
 }
-.footer-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:25px;
-  padding-bottom:20px;
+
+.content-section {
+  padding: 38px 6% 42px;
 }
-.footer-brand{
-  font-family:Georgia,serif;
-  font-size:22px;
+
+.content-section.digital {
+  background: #e8f0f5;
 }
-.footer-tagline{
-  font-size:9px;
-  letter-spacing:2px;
+
+.section-heading {
+  margin-bottom: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
 }
-.footer-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:17px;
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-.footer-links a{
-  color:#f7f3e9;
-  font-size:10px;
-  text-decoration:none;
+
+.section-heading h2 {
+  margin: 6px 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
-.copyright{
-  padding-top:15px;
-  border-top:1px solid rgba(255,255,255,.25);
-  color:#d7ded7;
-  font-size:10px;
+
+.section-heading p {
+  max-width: 440px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
 }
-@media(max-width:850px){
-  header{flex-direction:column}
-  nav{justify-content:center;gap:12px}
-  .footer-top{align-items:flex-start;flex-direction:column}
+
+/* CONTENT CARDS */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
 }
-@media(max-width:600px){
-  .hero{padding:45px 6% 40px}
-  .section{padding:42px 6% 50px}
-  .grid{grid-template-columns:1fr}
-  .card{padding:22px}
-  .card h3{font-size:23px}
+
+.card {
+  min-height: 205px;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(24, 54, 80, .045);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 23px rgba(24, 54, 80, .08);
+}
+
+.card-icon {
+  width: 41px;
+  height: 41px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--blue-pale);
+  color: var(--blue);
+  font-size: 20px;
+}
+
+.card-meta {
+  margin: 15px 0 5px;
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.card h3 {
+  margin: 4px 0 7px;
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.card p {
+  margin: 5px 0 16px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.card .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 9px;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.card .link:hover {
+  text-decoration: underline;
+}
+
+/* PORTFOLIO AND SERVICE CARDS */
+
+.card.portfolio {
+  background: #e7f0f5;
+}
+
+.card.service {
+  background: #e4edf3;
+}
+
+/* DIGITAL PRODUCT CARDS */
+
+.product-grid .card {
+  border-top: 3px solid var(--blue);
+}
+
+.product-grid .card:first-child .card-icon {
+  background: #e4edf5;
+}
+
+.product-grid .card:last-child .card-icon {
+  background: #dcecf3;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 24px 5% 18px;
+  background: var(--navy);
+  color: white;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  padding-bottom: 16px;
+}
+
+.footer-brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+}
+
+.footer-tagline {
+  color: #b9d2e1;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #e4eff5;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #9fd0ed;
+}
+
+.copyright {
+  padding-top: 13px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  color: #c8d9e3;
+  font-size: 10px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .footer-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media(max-width:650px) {
+  .selector-section {
+    padding: 22px 5% 24px;
+  }
+
+  .selector-grid,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-card {
+    min-height: 125px;
+    padding: 19px;
+  }
+
+  .content-section {
+    padding: 30px 5% 34px;
+  }
+
+  .section-heading {
+    display: block;
+    margin-bottom: 17px;
+  }
+
+  .section-heading p {
+    margin-top: 9px;
+  }
+
+  .card {
+    min-height: 180px;
+    padding: 20px;
+  }
+}
+
+@media(max-width:420px) {
+  nav {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  .choice-title {
+    font-size: 21px;
+  }
 }
 </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 
 <header>
   <a class="logo" href="/">
@@ -238,7 +487,7 @@ footer{
 
   <nav aria-label="Main navigation">
     <a href="/" data-i18n="home">Home</a>
-    <a href="/products/" data-i18n="products">Digital Products</a>
+    <a href="/products/" class="active" data-i18n="products">Digital Products</a>
     <a href="/games.html" data-i18n="games">Games</a>
     <a href="/#creators" data-i18n="creators">Creators</a>
     <a href="/yenzi285.html">Yenzi285</a>
@@ -255,26 +504,75 @@ footer{
 
 <main>
 
-<section class="hero">
-  <div class="container">
-    <div class="eyebrow" data-i18n="eyebrow">EXPLORE · CREATE · GROW</div>
-    <h1 data-i18n="heroTitle">Useful ideas, made tangible.</h1>
-    <p data-i18n="heroText">
-      Explore practical digital tools, creative portfolio concepts
-      and services designed to help ideas become something useful.
+<!-- TWO MAIN CATEGORY CHOICES -->
+
+<section class="selector-section">
+  <div class="selector-container">
+
+    <p class="selector-label" data-i18n="selectorLabel">
+      CHOOSE A CATEGORY
     </p>
+
+    <div class="selector-grid">
+
+      <a class="choice-card" href="#portfolio-services">
+        <span class="choice-number" data-i18n="choice01">
+          01 · PORTFOLIO & SERVICES
+        </span>
+
+        <span class="choice-bottom">
+          <span>
+            <span class="choice-title" data-i18n="choice01Title">
+              Portfolio & Services
+            </span>
+            <span class="choice-description" data-i18n="choice01Text">
+              Explore our work and business services
+            </span>
+          </span>
+          <span class="choice-arrow">↘</span>
+        </span>
+      </a>
+
+      <a class="choice-card" href="#digital-downloads">
+        <span class="choice-number" data-i18n="choice02">
+          02 · DIGITAL DOWNLOADS
+        </span>
+
+        <span class="choice-bottom">
+          <span>
+            <span class="choice-title" data-i18n="choice02Title">
+              Digital Downloads
+            </span>
+            <span class="choice-description" data-i18n="choice02Text">
+              Practical tools for everyday use
+            </span>
+          </span>
+          <span class="choice-arrow">↘</span>
+        </span>
+      </a>
+
+    </div>
   </div>
 </section>
 
-<!-- PORTFOLIO AND SERVICE -->
-<section class="section">
+<!-- 01 PORTFOLIO & SERVICES -->
+
+<section class="content-section" id="portfolio-services">
   <div class="container">
-    <div class="heading">
-      <div class="eyebrow" data-i18n="workLabel">01 · PORTFOLIO & SERVICES</div>
-      <h2 data-i18n="workTitle">Explore what we create.</h2>
+
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow" data-i18n="workLabel">
+          01 · PORTFOLIO & SERVICES
+        </div>
+        <h2 data-i18n="workTitle">
+          Explore our work and services.
+        </h2>
+      </div>
+
       <p data-i18n="workText">
-        From landing page concepts to practical online services,
-        discover how ideas can be presented clearly.
+        From creative landing page concepts to practical
+        online services for small businesses.
       </p>
     </div>
 
@@ -282,12 +580,18 @@ footer{
 
       <article class="card portfolio">
         <div class="card-icon">▧</div>
-        <div class="card-meta" data-i18n="portfolioMeta">SELECTED CONCEPTS</div>
+
+        <div class="card-meta" data-i18n="portfolioMeta">
+          SELECTED CONCEPTS
+        </div>
+
         <h3 data-i18n="portfolioTitle">Portfolio</h3>
+
         <p data-i18n="portfolioText">
           Explore three landing page concepts for home services,
           food businesses and digital products.
         </p>
+
         <a class="link" href="/portfolio/" data-i18n="portfolioLink">
           Explore Portfolio ↗
         </a>
@@ -295,12 +599,18 @@ footer{
 
       <article class="card service">
         <div class="card-icon">✳</div>
-        <div class="card-meta" data-i18n="serviceMeta">FOR SMALL BUSINESSES</div>
+
+        <div class="card-meta" data-i18n="serviceMeta">
+          FOR SMALL BUSINESSES
+        </div>
+
         <h3 data-i18n="serviceTitle">Landing Page Service</h3>
+
         <p data-i18n="serviceText">
           Simple, mobile-friendly landing pages with clear information
           and contact options for your business.
         </p>
+
         <a class="link" href="/landing-page-service/" data-i18n="serviceLink">
           Explore Landing Page Service ↗
         </a>
@@ -310,12 +620,22 @@ footer{
   </div>
 </section>
 
-<!-- DIGITAL PRODUCTS -->
-<section class="section alt">
+<!-- 02 DIGITAL DOWNLOADS -->
+
+<section class="content-section digital" id="digital-downloads">
   <div class="container">
-    <div class="heading">
-      <div class="eyebrow" data-i18n="productsLabel">02 · DIGITAL DOWNLOADS</div>
-      <h2 data-i18n="productsTitle">Tools for everyday life and business.</h2>
+
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow" data-i18n="productsLabel">
+          02 · DIGITAL DOWNLOADS
+        </div>
+
+        <h2 data-i18n="productsTitle">
+          Tools for everyday life and business.
+        </h2>
+      </div>
+
       <p data-i18n="productsText">
         Practical spreadsheet tools designed to help you organise
         your finances and make clearer decisions.
@@ -326,26 +646,42 @@ footer{
 
       <article class="card">
         <div class="card-icon">▤</div>
-        <div class="card-meta" data-i18n="paycheckMeta">PERSONAL FINANCE · EXCEL</div>
+
+        <div class="card-meta" data-i18n="paycheckMeta">
+          PERSONAL FINANCE · EXCEL
+        </div>
+
         <h3>Paycheck-to-Paycheck Tracker</h3>
+
         <p data-i18n="paycheckText">
           Organise your paychecks, plan expenses and keep a clearer
           view of your personal money.
         </p>
-        <a class="link" href="/products/paycheck-to-paycheck-tracker/" data-i18n="viewProduct">
+
+        <a class="link"
+           href="/products/paycheck-to-paycheck-tracker/"
+           data-i18n="viewProduct">
           View Product ↗
         </a>
       </article>
 
       <article class="card">
         <div class="card-icon">▥</div>
-        <div class="card-meta" data-i18n="businessMeta">SMALL BUSINESS · EXCEL</div>
+
+        <div class="card-meta" data-i18n="businessMeta">
+          SMALL BUSINESS · EXCEL
+        </div>
+
         <h3>Small Business Finance Tracker</h3>
+
         <p data-i18n="businessText">
           Track sales, expenses, invoices and monthly profit
           in one organised workbook.
         </p>
-        <a class="link" href="/products/small-business-finance-tracker/" data-i18n="viewProduct">
+
+        <a class="link"
+           href="/products/small-business-finance-tracker/"
+           data-i18n="viewProduct">
           View Product ↗
         </a>
       </article>
@@ -356,12 +692,17 @@ footer{
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
   <div class="container">
+
     <div class="footer-top">
       <div>
         <div class="footer-brand">Harry Digital Verse</div>
-        <div class="footer-tagline" data-i18n="tagline">ONE WORLD OF IDEAS</div>
+        <div class="footer-tagline" data-i18n="tagline">
+          ONE WORLD OF IDEAS
+        </div>
       </div>
 
       <div class="footer-links">
@@ -375,148 +716,220 @@ footer{
     <div class="copyright" data-i18n="copyright">
       © 2026 Harry Digital Verse. Built one idea at a time.
     </div>
+
   </div>
 </footer>
 
 <script>
 const translations = {
-  en:{
-    tagline:"ONE WORLD OF IDEAS",
-    home:"Home",products:"Digital Products",games:"Games",
-    creators:"Creators",stories:"Stories/Blog",
-    eyebrow:"EXPLORE · CREATE · GROW",
-    heroTitle:"Useful ideas, made tangible.",
-    heroText:"Explore practical digital tools, creative portfolio concepts and services designed to help ideas become something useful.",
-    workLabel:"01 · PORTFOLIO & SERVICES",
-    workTitle:"Explore what we create.",
-    workText:"From landing page concepts to practical online services, discover how ideas can be presented clearly.",
-    portfolioMeta:"SELECTED CONCEPTS",
-    portfolioTitle:"Portfolio",
-    portfolioText:"Explore three landing page concepts for home services, food businesses and digital products.",
-    portfolioLink:"Explore Portfolio ↗",
-    serviceMeta:"FOR SMALL BUSINESSES",
-    serviceTitle:"Landing Page Service",
-    serviceText:"Simple, mobile-friendly landing pages with clear information and contact options for your business.",
-    serviceLink:"Explore Landing Page Service ↗",
-    productsLabel:"02 · DIGITAL DOWNLOADS",
-    productsTitle:"Tools for everyday life and business.",
-    productsText:"Practical spreadsheet tools designed to help you organise your finances and make clearer decisions.",
-    paycheckMeta:"PERSONAL FINANCE · EXCEL",
-    paycheckText:"Organise your paychecks, plan expenses and keep a clearer view of your personal money.",
-    businessMeta:"SMALL BUSINESS · EXCEL",
-    businessText:"Track sales, expenses, invoices and monthly profit in one organised workbook.",
-    viewProduct:"View Product ↗",
-    portfolio:"Portfolio",serviceNav:"Services",
-    copyright:"© 2026 Harry Digital Verse. Built one idea at a time."
+
+  en: {
+    tagline: "ONE WORLD OF IDEAS",
+    home: "Home",
+    products: "Digital Products",
+    games: "Games",
+    creators: "Creators",
+    stories: "Stories/Blog",
+
+    selectorLabel: "CHOOSE A CATEGORY",
+    choice01: "01 · PORTFOLIO & SERVICES",
+    choice01Title: "Portfolio & Services",
+    choice01Text: "Explore our work and business services",
+    choice02: "02 · DIGITAL DOWNLOADS",
+    choice02Title: "Digital Downloads",
+    choice02Text: "Practical tools for everyday use",
+
+    workLabel: "01 · PORTFOLIO & SERVICES",
+    workTitle: "Explore our work and services.",
+    workText: "From creative landing page concepts to practical online services for small businesses.",
+
+    portfolioMeta: "SELECTED CONCEPTS",
+    portfolioTitle: "Portfolio",
+    portfolioText: "Explore three landing page concepts for home services, food businesses and digital products.",
+    portfolioLink: "Explore Portfolio ↗",
+
+    serviceMeta: "FOR SMALL BUSINESSES",
+    serviceTitle: "Landing Page Service",
+    serviceText: "Simple, mobile-friendly landing pages with clear information and contact options for your business.",
+    serviceLink: "Explore Landing Page Service ↗",
+
+    productsLabel: "02 · DIGITAL DOWNLOADS",
+    productsTitle: "Tools for everyday life and business.",
+    productsText: "Practical spreadsheet tools designed to help you organise your finances and make clearer decisions.",
+
+    paycheckMeta: "PERSONAL FINANCE · EXCEL",
+    paycheckText: "Organise your paychecks, plan expenses and keep a clearer view of your personal money.",
+
+    businessMeta: "SMALL BUSINESS · EXCEL",
+    businessText: "Track sales, expenses, invoices and monthly profit in one organised workbook.",
+
+    viewProduct: "View Product ↗",
+    serviceNav: "Services",
+    copyright: "© 2026 Harry Digital Verse. Built one idea at a time."
   },
-  ms:{
-    tagline:"SATU DUNIA IDEA",
-    home:"Utama",products:"Produk Digital",games:"Permainan",
-    creators:"Kreator",stories:"Cerita/Blog",
-    eyebrow:"TEROKAI · CIPTA · BERKEMBANG",
-    heroTitle:"Idea berguna, direalisasikan.",
-    heroText:"Terokai alat digital praktikal, konsep portfolio kreatif dan servis yang membantu mengubah idea menjadi sesuatu yang berguna.",
-    workLabel:"01 · PORTFOLIO & SERVIS",
-    workTitle:"Terokai hasil kerja kami.",
-    workText:"Daripada konsep landing page hingga servis dalam talian, lihat bagaimana sesuatu idea boleh dipersembahkan dengan jelas.",
-    portfolioMeta:"KONSEP PILIHAN",
-    portfolioTitle:"Portfolio",
-    portfolioText:"Terokai tiga konsep landing page untuk servis rumah, perniagaan makanan dan produk digital.",
-    portfolioLink:"Terokai Portfolio ↗",
-    serviceMeta:"UNTUK PERNIAGAAN KECIL",
-    serviceTitle:"Servis Landing Page",
-    serviceText:"Landing page ringkas dan mesra telefon dengan maklumat jelas serta pilihan hubungan untuk perniagaan anda.",
-    serviceLink:"Terokai Servis Landing Page ↗",
-    productsLabel:"02 · MUAT TURUN DIGITAL",
-    productsTitle:"Alat untuk kehidupan dan perniagaan.",
-    productsText:"Alat spreadsheet praktikal untuk membantu menyusun kewangan dan membuat keputusan dengan lebih jelas.",
-    paycheckMeta:"KEWANGAN PERIBADI · EXCEL",
-    paycheckText:"Susun gaji, rancang perbelanjaan dan lihat kedudukan kewangan peribadi dengan lebih jelas.",
-    businessMeta:"PERNIAGAAN KECIL · EXCEL",
-    businessText:"Rekod jualan, perbelanjaan, invois dan keuntungan bulanan dalam satu workbook yang tersusun.",
-    viewProduct:"Lihat Produk ↗",
-    portfolio:"Portfolio",serviceNav:"Servis",
-    copyright:"© 2026 Harry Digital Verse. Dibina satu idea pada satu masa."
+
+  ms: {
+    tagline: "SATU DUNIA IDEA",
+    home: "Utama",
+    products: "Produk Digital",
+    games: "Permainan",
+    creators: "Kreator",
+    stories: "Cerita/Blog",
+
+    selectorLabel: "PILIH KATEGORI",
+    choice01: "01 · PORTFOLIO & SERVIS",
+    choice01Title: "Portfolio & Servis",
+    choice01Text: "Terokai hasil kerja dan servis perniagaan kami",
+    choice02: "02 · MUAT TURUN DIGITAL",
+    choice02Title: "Muat Turun Digital",
+    choice02Text: "Alat praktikal untuk kegunaan harian",
+
+    workLabel: "01 · PORTFOLIO & SERVIS",
+    workTitle: "Terokai hasil kerja dan servis kami.",
+    workText: "Daripada konsep landing page kreatif kepada servis dalam talian untuk perniagaan kecil.",
+
+    portfolioMeta: "KONSEP PILIHAN",
+    portfolioTitle: "Portfolio",
+    portfolioText: "Terokai tiga konsep landing page untuk servis rumah, perniagaan makanan dan produk digital.",
+    portfolioLink: "Terokai Portfolio ↗",
+
+    serviceMeta: "UNTUK PERNIAGAAN KECIL",
+    serviceTitle: "Servis Landing Page",
+    serviceText: "Landing page ringkas dan mesra telefon dengan maklumat jelas serta pilihan hubungan untuk perniagaan anda.",
+    serviceLink: "Terokai Servis Landing Page ↗",
+
+    productsLabel: "02 · MUAT TURUN DIGITAL",
+    productsTitle: "Alat untuk kehidupan dan perniagaan.",
+    productsText: "Alat spreadsheet praktikal untuk membantu menyusun kewangan dan membuat keputusan dengan lebih jelas.",
+
+    paycheckMeta: "KEWANGAN PERIBADI · EXCEL",
+    paycheckText: "Susun gaji, rancang perbelanjaan dan lihat kedudukan kewangan peribadi dengan lebih jelas.",
+
+    businessMeta: "PERNIAGAAN KECIL · EXCEL",
+    businessText: "Rekod jualan, perbelanjaan, invois dan keuntungan bulanan dalam satu workbook yang tersusun.",
+
+    viewProduct: "Lihat Produk ↗",
+    serviceNav: "Servis",
+    copyright: "© 2026 Harry Digital Verse. Dibina satu idea pada satu masa."
   },
-  id:{
-    tagline:"SATU DUNIA IDE",
-    home:"Beranda",products:"Produk Digital",games:"Game",
-    creators:"Kreator",stories:"Cerita/Blog",
-    eyebrow:"JELAJAHI · KREASIKAN · BERKEMBANG",
-    heroTitle:"Ide bermanfaat, diwujudkan.",
-    heroText:"Jelajahi alat digital praktis, konsep portofolio kreatif dan layanan yang membantu mengubah ide menjadi sesuatu yang bermanfaat.",
-    workLabel:"01 · PORTOFOLIO & LAYANAN",
-    workTitle:"Jelajahi karya kami.",
-    workText:"Dari konsep landing page hingga layanan online praktis, lihat bagaimana ide dapat disampaikan dengan jelas.",
-    portfolioMeta:"KONSEP PILIHAN",
-    portfolioTitle:"Portofolio",
-    portfolioText:"Jelajahi tiga konsep landing page untuk layanan rumah, bisnis makanan dan produk digital.",
-    portfolioLink:"Jelajahi Portofolio ↗",
-    serviceMeta:"UNTUK BISNIS KECIL",
-    serviceTitle:"Layanan Landing Page",
-    serviceText:"Landing page sederhana dan ramah ponsel dengan informasi jelas serta pilihan kontak untuk bisnis Anda.",
-    serviceLink:"Jelajahi Layanan Landing Page ↗",
-    productsLabel:"02 · UNDUHAN DIGITAL",
-    productsTitle:"Alat untuk kehidupan dan bisnis.",
-    productsText:"Alat spreadsheet praktis untuk membantu mengatur keuangan dan mengambil keputusan dengan lebih jelas.",
-    paycheckMeta:"KEUANGAN PRIBADI · EXCEL",
-    paycheckText:"Atur gaji, rencanakan pengeluaran dan pantau keuangan pribadi dengan lebih jelas.",
-    businessMeta:"BISNIS KECIL · EXCEL",
-    businessText:"Catat penjualan, pengeluaran, invoice dan keuntungan bulanan dalam satu workbook terorganisir.",
-    viewProduct:"Lihat Produk ↗",
-    portfolio:"Portofolio",serviceNav:"Layanan",
-    copyright:"© 2026 Harry Digital Verse. Dibangun satu ide pada satu waktu."
+
+  id: {
+    tagline: "SATU DUNIA IDE",
+    home: "Beranda",
+    products: "Produk Digital",
+    games: "Game",
+    creators: "Kreator",
+    stories: "Cerita/Blog",
+
+    selectorLabel: "PILIH KATEGORI",
+    choice01: "01 · PORTOFOLIO & LAYANAN",
+    choice01Title: "Portofolio & Layanan",
+    choice01Text: "Jelajahi karya dan layanan bisnis kami",
+    choice02: "02 · UNDUHAN DIGITAL",
+    choice02Title: "Unduhan Digital",
+    choice02Text: "Alat praktis untuk kebutuhan sehari-hari",
+
+    workLabel: "01 · PORTOFOLIO & LAYANAN",
+    workTitle: "Jelajahi karya dan layanan kami.",
+    workText: "Dari konsep landing page kreatif hingga layanan online praktis untuk bisnis kecil.",
+
+    portfolioMeta: "KONSEP PILIHAN",
+    portfolioTitle: "Portofolio",
+    portfolioText: "Jelajahi tiga konsep landing page untuk layanan rumah, bisnis makanan dan produk digital.",
+    portfolioLink: "Jelajahi Portofolio ↗",
+
+    serviceMeta: "UNTUK BISNIS KECIL",
+    serviceTitle: "Layanan Landing Page",
+    serviceText: "Landing page sederhana dan ramah ponsel dengan informasi jelas serta pilihan kontak untuk bisnis Anda.",
+    serviceLink: "Jelajahi Layanan Landing Page ↗",
+
+    productsLabel: "02 · UNDUHAN DIGITAL",
+    productsTitle: "Alat untuk kehidupan dan bisnis.",
+    productsText: "Alat spreadsheet praktis untuk membantu mengatur keuangan dan mengambil keputusan dengan lebih jelas.",
+
+    paycheckMeta: "KEUANGAN PRIBADI · EXCEL",
+    paycheckText: "Atur gaji, rencanakan pengeluaran dan pantau keuangan pribadi dengan lebih jelas.",
+
+    businessMeta: "BISNIS KECIL · EXCEL",
+    businessText: "Catat penjualan, pengeluaran, invoice dan keuntungan bulanan dalam satu workbook terorganisir.",
+
+    viewProduct: "Lihat Produk ↗",
+    serviceNav: "Layanan",
+    copyright: "© 2026 Harry Digital Verse. Dibangun satu ide pada satu waktu."
   },
-  es:{
-    tagline:"UN MUNDO DE IDEAS",
-    home:"Inicio",products:"Productos Digitales",games:"Juegos",
-    creators:"Creadores",stories:"Historias/Blog",
-    eyebrow:"EXPLORAR · CREAR · CRECER",
-    heroTitle:"Ideas útiles, hechas realidad.",
-    heroText:"Descubre herramientas digitales prácticas, conceptos de portafolio creativo y servicios diseñados para convertir ideas en algo útil.",
-    workLabel:"01 · PORTAFOLIO Y SERVICIOS",
-    workTitle:"Descubre lo que creamos.",
-    workText:"Desde conceptos de landing pages hasta servicios en línea prácticos, descubre cómo presentar ideas con claridad.",
-    portfolioMeta:"CONCEPTOS SELECCIONADOS",
-    portfolioTitle:"Portafolio",
-    portfolioText:"Explora tres conceptos de landing pages para servicios del hogar, negocios de comida y productos digitales.",
-    portfolioLink:"Explorar Portafolio ↗",
-    serviceMeta:"PARA PEQUEÑAS EMPRESAS",
-    serviceTitle:"Servicio de Landing Page",
-    serviceText:"Páginas sencillas y adaptables a móviles, con información clara y opciones de contacto para tu negocio.",
-    serviceLink:"Explorar Servicio de Landing Page ↗",
-    productsLabel:"02 · DESCARGAS DIGITALES",
-    productsTitle:"Herramientas para la vida y los negocios.",
-    productsText:"Herramientas prácticas de hojas de cálculo para organizar tus finanzas y tomar decisiones con mayor claridad.",
-    paycheckMeta:"FINANZAS PERSONALES · EXCEL",
-    paycheckText:"Organiza tus ingresos, planifica gastos y mantén una visión más clara de tus finanzas personales.",
-    businessMeta:"PEQUEÑAS EMPRESAS · EXCEL",
-    businessText:"Registra ventas, gastos, facturas y beneficios mensuales en un solo archivo organizado.",
-    viewProduct:"Ver Producto ↗",
-    portfolio:"Portafolio",serviceNav:"Servicios",
-    copyright:"© 2026 Harry Digital Verse. Construido idea por idea."
+
+  es: {
+    tagline: "UN MUNDO DE IDEAS",
+    home: "Inicio",
+    products: "Productos Digitales",
+    games: "Juegos",
+    creators: "Creadores",
+    stories: "Historias/Blog",
+
+    selectorLabel: "ELIGE UNA CATEGORÍA",
+    choice01: "01 · PORTAFOLIO Y SERVICIOS",
+    choice01Title: "Portafolio y Servicios",
+    choice01Text: "Explora nuestros trabajos y servicios",
+    choice02: "02 · DESCARGAS DIGITALES",
+    choice02Title: "Descargas Digitales",
+    choice02Text: "Herramientas prácticas para cada día",
+
+    workLabel: "01 · PORTAFOLIO Y SERVICIOS",
+    workTitle: "Explora nuestros trabajos y servicios.",
+    workText: "Desde conceptos creativos de landing pages hasta servicios online prácticos para pequeñas empresas.",
+
+    portfolioMeta: "CONCEPTOS SELECCIONADOS",
+    portfolioTitle: "Portafolio",
+    portfolioText: "Explora tres conceptos de landing pages para servicios del hogar, negocios de comida y productos digitales.",
+    portfolioLink: "Explorar Portafolio ↗",
+
+    serviceMeta: "PARA PEQUEÑAS EMPRESAS",
+    serviceTitle: "Servicio de Landing Page",
+    serviceText: "Páginas sencillas y adaptables a móviles, con información clara y opciones de contacto para tu negocio.",
+    serviceLink: "Explorar Servicio de Landing Page ↗",
+
+    productsLabel: "02 · DESCARGAS DIGITALES",
+    productsTitle: "Herramientas para la vida y los negocios.",
+    productsText: "Herramientas prácticas de hojas de cálculo para organizar tus finanzas y tomar decisiones con mayor claridad.",
+
+    paycheckMeta: "FINANZAS PERSONALES · EXCEL",
+    paycheckText: "Organiza tus ingresos, planifica gastos y mantén una visión más clara de tus finanzas personales.",
+
+    businessMeta: "PEQUEÑAS EMPRESAS · EXCEL",
+    businessText: "Registra ventas, gastos, facturas y beneficios mensuales en un solo archivo organizado.",
+
+    viewProduct: "Ver Producto ↗",
+    serviceNav: "Servicios",
+    copyright: "© 2026 Harry Digital Verse. Construido idea por idea."
   }
 };
 
-function applyLanguage(language){
-  const dict=translations[language]||translations.en;
-  document.documentElement.lang=language;
+function applyLanguage(language) {
+  const dictionary = translations[language] || translations.en;
 
-  document.querySelectorAll("[data-i18n]").forEach(element=>{
-    const key=element.dataset.i18n;
-    if(dict[key]!==undefined){
-      element.textContent=dict[key];
+  document.documentElement.lang = language;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+
+    if (dictionary[key] !== undefined) {
+      element.textContent = dictionary[key];
     }
   });
 
-  localStorage.setItem("hdv-language",language);
-  document.getElementById("languageSelect").value=language;
+  localStorage.setItem("hdv-language", language);
+
+  const selector = document.getElementById("languageSelect");
+  if (selector) selector.value = language;
 }
 
-const selector=document.getElementById("languageSelect");
-selector.addEventListener("change",()=>applyLanguage(selector.value));
+const languageSelect = document.getElementById("languageSelect");
 
-applyLanguage(localStorage.getItem("hdv-language")||"en");
+languageSelect.addEventListener("change", function() {
+  applyLanguage(this.value);
+});
+
+applyLanguage(localStorage.getItem("hdv-language") || "en");
 </script>
 
 </body>
