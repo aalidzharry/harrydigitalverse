@@ -252,6 +252,71 @@ footer{
   .project-cta{padding:30px 6%}
   .footer-nav{gap:12px}
 }
+  
+/* =====================================
+   HOMEPAGE FINAL ALIGNMENT & ART
+===================================== */
+
+/* Remove empty space below footer */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Tighter hero spacing */
+.hero {
+  padding-top: 38px;
+  padding-bottom: 38px;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    linear-gradient(
+      rgba(247,241,231,.84),
+      rgba(247,241,231,.84)
+    ),
+    url("homepage-creative-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Bring selector cards closer to the text */
+.hero-cards {
+  gap: 10px;
+  transform: translateX(-35px);
+}
+
+.selector-card {
+  min-height: 138px;
+}
+
+/* Keep background illustration soft */
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-position: center;
+    background-size: auto 100%;
+  }
+
+  .hero-cards {
+    transform: none;
+  }
+
+  .selector-card {
+    min-height: 125px;
+  }
+}
+
 </style>
 </head>
 
