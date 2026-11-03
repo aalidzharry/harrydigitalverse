@@ -474,20 +474,27 @@ a {
 }
 
 .mock-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(145deg,#b0b9a3,#7e8b78);
-  color: white;
-  font-size: 38px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.food .mock-visual {
-  background: linear-gradient(145deg,#d8a27d,#a65e42);
+.mock-visual.mock-service {
+  background-image:
+    linear-gradient(rgba(50,35,25,.05),rgba(50,35,25,.05)),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=85");
 }
 
-.digital .mock-visual {
-  background: linear-gradient(145deg,#b5a08c,#776052);
+.mock-visual.mock-food {
+  background-image:
+    linear-gradient(rgba(50,35,25,.04),rgba(50,35,25,.04)),
+    url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=85");
+}
+
+.mock-visual.mock-digital {
+  background-image:
+    linear-gradient(rgba(50,35,25,.04),rgba(50,35,25,.04)),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=85");
 }
 
 .preview-tag {
