@@ -435,6 +435,33 @@ footer {
   }
 }
 
+/* =====================================
+   BALANCED HOMEPAGE HERO ALIGNMENT
+===================================== */
+
+/* Move text block inward, keep cards in place */
+.hero-grid > div:first-child {
+  padding-left: clamp(36px, 5.5vw, 95px);
+  padding-right: 18px;
+}
+
+/* Keep the right-side cards exactly where they are */
+.hero-art {
+  transform: translateX(-45px);
+}
+
+/* Tablet and mobile adjustment */
+@media (max-width: 760px) {
+  .hero-grid > div:first-child {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-art {
+    transform: none;
+  }
+}
+
 </style>
 </head>
 
