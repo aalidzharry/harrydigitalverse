@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creators | Harry Digital Verse</title>
+<meta name="description" content="Explore the creator channels and creative communities connected to Harry Digital Verse.">
+
+<style>
+:root{
+  --cream:#f8f3e9;
+  --paper:#fffaf2;
+  --ink:#28251f;
+  --muted:#716d65;
+  --terracotta:#b94e32;
+  --green:#20352d;
+  --line:#ded4c5;
+  --shadow:0 15px 35px rgba(72,53,34,.08);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+a{color:inherit}
+
+.site-header{
+  min-height:70px;
+  padding:12px 4.5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+
+.logo{
+  text-decoration:none;
+  color:var(--ink);
+  display:flex;
+  flex-direction:column;
+  min-width:190px;
+}
+
+.logo-name{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:25px;
+  font-weight:bold;
+  letter-spacing:-1px;
+}
+
+.logo-tagline{
+  margin-top:4px;
+  font-size:9px;
+  letter-spacing:2px;
+  text-align:center;
+}
+
+.main-nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:20px;
+}
+
+.main-nav a{
+  color:var(--ink);
+  font-size:12px;
+  font-weight:600;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+  color:var(--terracotta);
+}
+
+.language{
+  padding:9px 10px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:transparent;
+  color:var(--ink);
+  font-size:11px;
+  cursor:pointer;
+}
+
+main{flex:1}
+
+.page-hero{
+  position:relative;
+  overflow:hidden;
+  padding:76px 5% 58px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 15% 24%,rgba(232,213,190,.45),transparent 27%),
+    radial-gradient(circle at 86% 18%,rgba(224,229,214,.7),transparent 25%),
+    var(--cream);
+}
+
+.page-hero:before,
+.page-hero:after{
+  content:'';
+  position:absolute;
+  border:1px solid rgba(185,78,50,.12);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.page-hero:before{
+  width:310px;
+  height:310px;
+  left:-170px;
+  top:-160px;
+}
+
+.page-hero:after{
+  width:390px;
+  height:390px;
+  right:-225px;
+  bottom:-270px;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:1;
+  max-width:850px;
+  margin:0 auto;
+}
+
+.eyebrow{
+  margin:0 0 15px;
+  color:var(--terracotta);
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:2.6px;
+  text-transform:uppercase;
+}
+
+h1{
+  margin:0;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(42px,6vw,68px);
+  line-height:1.03;
+  font-weight:normal;
+  letter-spacing:-2px;
+}
+
+h1 em{
+  color:var(--terracotta);
+  font-weight:normal;
+}
+
+.hero-copy{
+  max-width:620px;
+  margin:22px auto 0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+}
+
+.creator-section{
+  max-width:1200px;
+  margin:0 auto;
+  padding:58px 5% 76px;
+}
+
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+  margin-bottom:27px;
+}
+
+.section-heading h2{
+  margin:0;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:30px;
+  font-weight:normal;
+  letter-spacing:-.7px;
+}
+
+.section-heading p{
+  max-width:420px;
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.65;
+}
+
+.creator-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+
+.creator-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:270px;
+  padding:27px 28px 25px;
+  background:var(--paper);
+  border:1px solid rgba(222,212,197,.9);
+  border-radius:17px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  transition:transform .2s,box-shadow .2s;
+}
+
+.creator-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 42px rgba(72,53,34,.12);
+}
+
+.card-top{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:21px;
+}
+
+.platform-mark{
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  font-size:25px;
+  font-weight:bold;
+  color:white;
+}
+
+.mark-yenzi{background:#3a3431}
+
+.mark-instagram{
+  background:linear-gradient(135deg,#7e5b8d,#c76c63 58%,#e3a65d);
+}
+
+.mark-facebook{background:#4267a9}
+
+.platform-label{
+  margin:0 0 5px;
+  color:var(--terracotta);
+  font-size:9px;
+  font-weight:bold;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.creator-name{
+  margin:0;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:27px;
+  line-height:1.1;
+  font-weight:normal;
+}
+
+.creator-description{
+  max-width:480px;
+  margin:0 0 21px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.75;
+}
+
+.card-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:auto;
+}
+
+.social-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:39px;
+  padding:10px 14px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:transparent;
+  color:var(--ink);
+  font-size:11px;
+  font-weight:bold;
+  text-decoration:none;
+  transition:background .2s,border-color .2s,transform .2s;
+}
+
+.social-link:hover{
+  background:#f5e8da;
+  border-color:#c9a994;
+  transform:translateY(-1px);
+}
+
+.social-link.primary{
+  background:var(--terracotta);
+  border-color:var(--terracotta);
+  color:#fff;
+}
+
+.social-link.primary:hover{background:#a9442c}
+
+.link-note{
+  display:inline-flex;
+  align-items:center;
+  padding:9px 0;
+  color:#8b8278;
+  font-size:10px;
+  font-style:italic;
+}
+
+.card-yenzi{
+  background:linear-gradient(135deg,#fffaf2 0%,#f6eee4 100%);
+}
+
+.card-ig{
+  background:linear-gradient(135deg,#fffaf2 0%,#f0e9ef 100%);
+}
+
+.card-mindset{
+  background:linear-gradient(135deg,#fffaf2 0%,#e9eee5 100%);
+}
+
+.card-stories{
+  background:linear-gradient(135deg,#fffaf2 0%,#f5e7dc 100%);
+}
+
+.note-strip{
+  margin-top:28px;
+  padding:18px 20px;
+  border-left:3px solid var(--terracotta);
+  background:#f2e9dc;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.7;
+}
+
+.note-strip strong{color:var(--ink)}
+
+.footer{
+  padding:25px 4.5% 20px;
+  background:var(--green);
+  color:#f7f3e9;
+}
+
+.footer-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  padding-bottom:20px;
+}
+
+.footer-brand{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:23px;
+  font-weight:bold;
+}
+
+.footer-tagline{
+  margin-top:5px;
+  font-size:9px;
+  letter-spacing:2px;
+}
+
+.footer-description{
+  font-size:11px;
+  margin:12px 0 0;
+}
+
+.footer-nav{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.footer-nav a{
+  color:#f7f3e9;
+  font-size:10px;
+  text-decoration:none;
+}
+
+.footer-nav a:hover{text-decoration:underline}
+
+.footer-bottom{
+  padding-top:15px;
+  border-top:1px solid rgba(255,255,255,.25);
+  font-size:10px;
+  color:#d7ded7;
+}
+
+@media(max-width:850px){
+  .site-header{
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:15px 4%;
+  }
+
+  .logo{align-items:center}
+
+  .main-nav{
+    justify-content:center;
+    gap:13px;
+    flex-wrap:wrap;
+  }
+
+  .page-hero{padding:58px 6% 45px}
+
+  .creator-section{padding:45px 5% 58px}
+
+  .section-heading{display:block}
+
+  .section-heading p{margin-top:10px}
+
+  .footer-top{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:620px){
+  .creator-grid{grid-template-columns:1fr}
+
+  .creator-card{
+    min-height:245px;
+    padding:23px;
+  }
+
+  .section-heading h2{font-size:27px}
+
+  .hero-copy{font-size:13px}
+
+  .footer-nav{gap:12px}
+}
+
+@media(max-width:480px){
+  .main-nav{gap:10px 13px}
+
+  .main-nav a{font-size:11px}
+
+  .logo-name{font-size:23px}
+
+  h1{
+    font-size:43px;
+    letter-spacing:-1.4px;
+  }
+
+  .page-hero{padding:48px 5% 38px}
+
+  .creator-section{padding:38px 5% 48px}
+
+  .creator-name{font-size:25px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <a class="logo" href="index.html" aria-label="Harry Digital Verse home">
+    <span class="logo-name">Harry Digital Verse</span>
+    <span class="logo-tagline" data-i18n="tagline">ONE WORLD OF IDEAS</span>
+  </a>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="index.html" data-i18n="home">Home</a>
+    <a href="products/" data-i18n="products">Digital Products</a>
+    <a href="games.html" data-i18n="games">Games</a>
+    <a href="creators.html" class="active" aria-current="page" data-i18n="creators">Creators</a>
+    <a href="yenzi285.html">Yenzi285</a>
+    <a href="index.html#stories" data-i18n="stories">Stories/Blog</a>
+
+    <select id="languageSelect" class="language" aria-label="Select language">
+      <option value="en">EN</option>
+      <option value="ms">MY</option>
+      <option value="id">ID</option>
+      <option value="es">ES</option>
+    </select>
+  </nav>
+
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="hero-inner">
+
+      <p class="eyebrow" data-i18n="eyebrow">
+        MEET OUR CREATIVE SPACES
+      </p>
+
+      <h1 data-i18n="heading">
+        Create, share <em>& connect.</em>
+      </h1>
+
+      <p class="hero-copy" data-i18n="intro">
+        A home for the channels, stories and communities growing around Harry Digital Verse. Explore what we make, follow along and find the space that speaks to you.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="creator-section">
+
+    <div class="section-heading">
+      <h2 data-i18n="sectionTitle">Find us across the platforms</h2>
+
+      <p data-i18n="sectionCopy">
+        Different spaces, different stories — all connected by creativity.
+      </p>
+    </div>
+
+    <div class="creator-grid">
+
+      <!-- YENZI285 -->
+      <article class="creator-card card-yenzi">
+
+        <div class="card-top">
+          <div class="platform-mark mark-yenzi" aria-hidden="true">▶</div>
+
+          <div>
+            <p class="platform-label" data-i18n="videoChannels">VIDEO CHANNELS</p>
+            <h3 class="creator-name">Yenzi285</h3>
+          </div>
+        </div>
+
+        <p class="creator-description" data-i18n="yenziDescription">
+          Video stories, short-form ideas and creative moments from the Yenzi285 world.
+        </p>
+
+        <div class="card-links">
+          <a class="social-link primary"
+             href="https://www.youtube.com/@Yenzi285"
+             target="_blank"
+             rel="noopener noreferrer">
+            ▶ <span data-i18n="youtube">YouTube</span> ↗
+          </a>
+
+          <a class="social-link"
+             href="https://www.tiktok.com/@yenzi285"
+             target="_blank"
+             rel="noopener noreferrer">
+            ♪ <span data-i18n="tiktok">TikTok</span> ↗
+          </a>
+        </div>
+
+      </article>
+
+      <!-- HARRY DIGITAL INSTAGRAM -->
+      <article class="creator-card card-ig">
+
+        <div class="card-top">
+          <div class="platform-mark mark-instagram" aria-hidden="true">◎</div>
+
+          <div>
+            <p class="platform-label" data-i18n="visualUpdates">VISUAL UPDATES</p>
+            <h3 class="creator-name">HarryDigital</h3>
+          </div>
+        </div>
+
+        <p class="creator-description" data-i18n="instagramDescription">
+          A visual space for digital projects, creative updates and behind-the-scenes moments.
+        </p>
+
+        <div class="card-links">
+          <a class="social-link primary"
+             href="https://www.instagram.com/harrydigital/"
+             target="_blank"
+             rel="noopener noreferrer">
+            ◎ <span data-i18n="instagram">Instagram</span> ↗
+          </a>
+        </div>
+
+      </article>
+
+      <!-- SILENT SUCCESS MINDSET -->
+      <article class="creator-card card-mindset">
+
+        <div class="card-top">
+          <div class="platform-mark mark-facebook" aria-hidden="true">f</div>
+
+          <div>
+            <p class="platform-label" data-i18n="facebookPage">FACEBOOK PAGE</p>
+            <h3 class="creator-name">Silent Success Mindset</h3>
+          </div>
+        </div>
+
+        <p class="creator-description" data-i18n="mindsetDescription">
+          Gentle reminders, self-healing reflections and motivation for quiet personal growth.
+        </p>
+
+        <div class="card-links">
+          <span class="link-note" data-i18n="facebookLinkPending">
+            Facebook page link to be added
+          </span>
+        </div>
+
+      </article>
+
+      <!-- SENJA ADA CERITA -->
+      <article class="creator-card card-stories">
+
+        <div class="card-top">
+          <div class="platform-mark mark-facebook" aria-hidden="true">f</div>
+
+          <div>
+            <p class="platform-label" data-i18n="facebookPage">FACEBOOK PAGE</p>
+            <h3 class="creator-name">Senja Ada Cerita</h3>
+          </div>
+        </div>
+
+        <p class="creator-description" data-i18n="senjaDescription">
+          True stories, mysteries, history and intriguing tales told with a little sunset atmosphere.
+        </p>
+
+        <div class="card-links">
+          <span class="link-note" data-i18n="nameMayChange">
+            Current page name · may be updated
+          </span>
+
+          <span class="link-note" data-i18n="facebookLinkPending">
+            Facebook page link to be added
+          </span>
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="note-strip">
+      <strong data-i18n="noteTitle">A small note:</strong>
+
+      <span data-i18n="noteText">
+        The YouTube, TikTok and Instagram buttons use the handles provided. Facebook page links can be connected once the exact page URLs are ready; the Senja Ada Cerita name can also be updated later.
+      </span>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="footer-top">
+
+    <div>
+      <div class="footer-brand">Harry Digital Verse</div>
+
+      <div class="footer-tagline" data-i18n="tagline">
+        ONE WORLD OF IDEAS
+      </div>
+
+      <p class="footer-description" data-i18n="footerDescription">
+        Creative work, built one idea at a time.
+      </p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html" data-i18n="home">Home</a>
+      <a href="products/" data-i18n="products">Digital Products</a>
+      <a href="games.html" data-i18n="games">Games</a>
+      <a href="creators.html" data-i18n="creators">Creators</a>
+      <a href="index.html#stories" data-i18n="stories">Stories/Blog</a>
+      <a href="yenzi285.html">Yenzi285</a>
+    </nav>
+
+  </div>
+
+  <div class="footer-bottom" data-i18n="copyright">
+    © 2026 Harry Digital Verse. Built one idea at a time.
+  </div>
+
+</footer>
+
+<script>
+const translations = {
+
+  en: {
+    tagline:'ONE WORLD OF IDEAS',
+    home:'Home',
+    products:'Digital Products',
+    games:'Games',
+    creators:'Creators',
+    stories:'Stories/Blog',
+    eyebrow:'MEET OUR CREATIVE SPACES',
+    heading:'Create, share <em>& connect.</em>',
+    intro:'A home for the channels, stories and communities growing around Harry Digital Verse. Explore what we make, follow along and find the space that speaks to you.',
+    sectionTitle:'Find us across the platforms',
+    sectionCopy:'Different spaces, different stories — all connected by creativity.',
+    videoChannels:'VIDEO CHANNELS',
+    yenziDescription:'Video stories, short-form ideas and creative moments from the Yenzi285 world.',
+    youtube:'YouTube',
+    tiktok:'TikTok',
+    visualUpdates:'VISUAL UPDATES',
+    instagramDescription:'A visual space for digital projects, creative updates and behind-the-scenes moments.',
+    instagram:'Instagram',
+    facebookPage:'FACEBOOK PAGE',
+    mindsetDescription:'Gentle reminders, self-healing reflections and motivation for quiet personal growth.',
+    facebookLinkPending:'Facebook page link to be added',
+    senjaDescription:'True stories, mysteries, history and intriguing tales told with a little sunset atmosphere.',
+    nameMayChange:'Current page name · may be updated',
+    noteTitle:'A small note:',
+    noteText:'The YouTube, TikTok and Instagram buttons use the handles provided. Facebook page links can be connected once the exact page URLs are ready; the Senja Ada Cerita name can also be updated later.',
+    footerDescription:'Creative work, built one idea at a time.',
+    copyright:'© 2026 Harry Digital Verse. Built one idea at a time.'
+  },
+
+  ms: {
+    tagline:'SATU DUNIA IDEA',
+    home:'Utama',
+    products:'Produk Digital',
+    games:'Permainan',
+    creators:'Kreator',
+    stories:'Cerita/Blog',
+    eyebrow:'KENALI RUANG KREATIF KAMI',
+    heading:'Cipta, kongsi <em>& berhubung.</em>',
+    intro:'Ruang untuk channel, cerita dan komuniti yang berkembang bersama Harry Digital Verse. Terokai hasil kami, ikuti perkembangan dan cari ruang yang dekat dengan minat anda.',
+    sectionTitle:'Temui kami di platform pilihan',
+    sectionCopy:'Ruang berbeza, cerita berbeza — semuanya disatukan oleh kreativiti.',
+    videoChannels:'SALURAN VIDEO',
+    yenziDescription:'Cerita video, idea video pendek dan detik kreatif daripada dunia Yenzi285.',
+    youtube:'YouTube',
+    tiktok:'TikTok',
+    visualUpdates:'KEMAS KINI VISUAL',
+    instagramDescription:'Ruang visual untuk projek digital, perkembangan kreatif dan paparan di sebalik tabir.',
+    instagram:'Instagram',
+    facebookPage:'HALAMAN FACEBOOK',
+    mindsetDescription:'Kata-kata penguat semangat, refleksi pemulihan diri dan motivasi untuk perkembangan diri.',
+    facebookLinkPending:'Pautan halaman Facebook akan ditambah',
+    senjaDescription:'Kisah benar, misteri, sejarah dan cerita menarik dengan suasana senja.',
+    nameMayChange:'Nama halaman semasa · mungkin dikemas kini',
+    noteTitle:'Nota kecil:',
+    noteText:'Butang YouTube, TikTok dan Instagram menggunakan handle yang diberikan. Pautan Facebook akan disambungkan apabila URL halaman yang tepat tersedia; nama Senja Ada Cerita juga boleh dikemas kini kemudian.',
+    footerDescription:'Karya kreatif, dibina satu idea pada satu masa.',
+    copyright:'© 2026 Harry Digital Verse. Dibina satu idea pada satu masa.'
+  },
+
+  id: {
+    tagline:'SATU DUNIA IDE',
+    home:'Beranda',
+    products:'Produk Digital',
+    games:'Game',
+    creators:'Kreator',
+    stories:'Cerita/Blog',
+    eyebrow:'KENALI RUANG KREATIF KAMI',
+    heading:'Berkarya, berbagi <em>& terhubung.</em>',
+    intro:'Rumah bagi channel, cerita dan komunitas yang tumbuh bersama Harry Digital Verse. Jelajahi karya kami, ikuti perkembangannya dan temukan ruang yang sesuai dengan minatmu.',
+    sectionTitle:'Temukan kami di berbagai platform',
+    sectionCopy:'Ruang berbeda, cerita berbeda — semuanya terhubung oleh kreativitas.',
+    videoChannels:'CHANNEL VIDEO',
+    yenziDescription:'Cerita video, ide video pendek dan momen kreatif dari dunia Yenzi285.',
+    youtube:'YouTube',
+    tiktok:'TikTok',
+    visualUpdates:'PEMBARUAN VISUAL',
+    instagramDescription:'Ruang visual untuk proyek digital, kabar kreatif dan momen di balik layar.',
+    instagram:'Instagram',
+    facebookPage:'HALAMAN FACEBOOK',
+    mindsetDescription:'Pengingat lembut, refleksi pemulihan diri dan motivasi untuk bertumbuh dengan tenang.',
+    facebookLinkPending:'Tautan halaman Facebook akan ditambahkan',
+    senjaDescription:'Kisah nyata, misteri, sejarah dan cerita menarik dengan suasana senja.',
+    nameMayChange:'Nama halaman saat ini · dapat diperbarui',
+    noteTitle:'Catatan kecil:',
+    noteText:'Tombol YouTube, TikTok dan Instagram menggunakan handle yang diberikan. Tautan Facebook akan disambungkan setelah URL halaman yang tepat tersedia; nama Senja Ada Cerita juga bisa diperbarui nanti.',
+    footerDescription:'Karya kreatif, dibangun satu ide pada satu waktu.',
+    copyright:'© 2026 Harry Digital Verse. Dibangun satu ide pada satu waktu.'
+  },
+
+  es: {
+    tagline:'UN MUNDO DE IDEAS',
+    home:'Inicio',
+    products:'Productos Digitales',
+    games:'Juegos',
+    creators:'Creadores',
+    stories:'Historias/Blog',
+    eyebrow:'CONOCE NUESTROS ESPACIOS CREATIVOS',
+    heading:'Crear, compartir <em>y conectar.</em>',
+    intro:'Un hogar para los canales, las historias y las comunidades que crecen junto a Harry Digital Verse. Explora lo que hacemos, síguenos y encuentra el espacio que conecte contigo.',
+    sectionTitle:'Encuéntranos en las plataformas',
+    sectionCopy:'Espacios distintos, historias distintas — unidos por la creatividad.',
+    videoChannels:'CANALES DE VÍDEO',
+    yenziDescription:'Historias en vídeo, ideas breves y momentos creativos del mundo Yenzi285.',
+    youtube:'YouTube',
+    tiktok:'TikTok',
+    visualUpdates:'NOVEDADES VISUALES',
+    instagramDescription:'Un espacio visual para proyectos digitales, novedades creativas y momentos entre bastidores.',
+    instagram:'Instagram',
+    facebookPage:'PÁGINA DE FACEBOOK',
+    mindsetDescription:'Recordatorios amables, reflexiones de sanación personal y motivación para crecer con calma.',
+    facebookLinkPending:'Próximamente el enlace de Facebook',
+    senjaDescription:'Historias reales, misterios, historia y relatos fascinantes con ambiente de atardecer.',
+    nameMayChange:'Nombre actual de la página · puede actualizarse',
+    noteTitle:'Una pequeña nota:',
+    noteText:'Los botones de YouTube, TikTok e Instagram utilizan los nombres de usuario indicados. Los enlaces de Facebook se añadirán cuando tengamos las URL exactas; el nombre Senja Ada Cerita también podrá actualizarse más adelante.',
+    footerDescription:'Creatividad construida idea por idea.',
+    copyright:'© 2026 Harry Digital Verse. Construido idea por idea.'
+  }
+
+};
+
+function setLanguage(lang){
+
+  const dictionary = translations[lang] || translations.en;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+
+    if(dictionary[key] !== undefined){
+      el.innerHTML = dictionary[key];
+    }
+  });
+
+  localStorage.setItem('hdv-language',lang);
+
+  const select = document.getElementById('languageSelect');
+
+  if(select){
+    select.value = lang;
+  }
+}
+
+const languageSelect = document.getElementById('languageSelect');
+
+languageSelect.addEventListener('change',function(){
+  setLanguage(this.value);
+});
+
+setLanguage(localStorage.getItem('hdv-language') || 'en');
+</script>
+
+</body>
+</html>
