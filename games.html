@@ -1032,6 +1032,169 @@ body {
   }
 }
 
+/* ==================================
+   HARRY GAMES - NEW GAMING PALETTE
+================================== */
+
+:root {
+  --blue: #FF8736;
+  --blue2: #FFD447;
+  --purple: #8B5CF6;
+  --cyan: #FFD447;
+}
+
+/* Hero title: yellow-orange-purple */
+.hero h1 span {
+  background: linear-gradient(
+    100deg,
+    #FFD447 0%,
+    #FF8736 48%,
+    #A77BFF 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gaming sparkle */
+.hero::after {
+  color: rgba(255,212,71,.38);
+  text-shadow: 0 0 35px rgba(255,135,54,.5);
+}
+
+/* Hero panel */
+.hero-panel {
+  border-color: rgba(255,212,71,.22);
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(139,92,246,.30),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 10% 95%,
+      rgba(255,135,54,.15),
+      transparent 40%
+    ),
+    rgba(255,255,255,.07);
+}
+
+/* Statistics */
+.hero-stat strong {
+  color: #FFD447;
+}
+
+.hero-stat:hover {
+  border-color: rgba(255,212,71,.35);
+  background: rgba(255,135,54,.12);
+}
+
+/* Main action buttons */
+.button {
+  color: #18243a;
+  background: linear-gradient(
+    105deg,
+    #FFD447,
+    #FF8736 55%,
+    #A16CF5
+  );
+  box-shadow: 0 7px 20px rgba(255,135,54,.19);
+}
+
+.button:hover {
+  filter: brightness(1.08);
+}
+
+/* Outline button remains visible on dark background */
+.button-outline {
+  color: #fff;
+  border-color: rgba(255,212,71,.48);
+  background: rgba(255,255,255,.06);
+  box-shadow: none;
+}
+
+/* Game card identity */
+.game-card.rush {
+  border-top-color: #FF8736;
+}
+
+.game-card.relax {
+  border-top-color: #FFD447;
+}
+
+.game-card.edu {
+  border-top-color: #8B5CF6;
+}
+
+/* Game icons */
+.rush .game-icon {
+  background: #fff0df;
+}
+
+.relax .game-icon {
+  background: #fff7d9;
+}
+
+.edu .game-icon {
+  background: #efe6ff;
+}
+
+/* Game statuses */
+.status.playable {
+  color: #966200;
+  background: #fff3c4;
+}
+
+.status:not(.playable):not(.coming) {
+  color: #a94b17;
+  background: #ffeadb;
+}
+
+.status.coming {
+  color: #7040c4;
+  background: #eee5ff;
+}
+
+/* Playable game target */
+.tap-target {
+  background: linear-gradient(
+    145deg,
+    #FFD447,
+    #FF8736
+  );
+  border-color: rgba(255,255,255,.75);
+  color: #18243a;
+  box-shadow: 0 8px 25px rgba(255,135,54,.45);
+}
+
+/* Quick play button */
+.button-teal {
+  color: #18243a;
+  background: linear-gradient(105deg,#FFD447,#FF8736);
+}
+
+/* EDU identity */
+.subject-card {
+  border-color: rgba(139,92,246,.25);
+}
+
+.subject-card span {
+  filter: drop-shadow(0 3px 8px rgba(255,212,71,.2));
+}
+
+/* Roadmap accents */
+.roadmap-card:nth-child(1) > span {
+  color: #FF8736;
+}
+
+.roadmap-card:nth-child(2) > span {
+  color: #FFD447;
+}
+
+.roadmap-card:nth-child(3) > span {
+  color: #8B5CF6;
+}
+
 </style>
 </head>
 
