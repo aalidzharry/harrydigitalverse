@@ -467,6 +467,58 @@ h1 em{
 
   .creator-name{font-size:25px}
 }
+  /* YENZI285 TIKTOK EMBED */
+
+.tiktok-feature{
+  margin-top:45px;
+  padding:32px 24px;
+  background:#fffaf2;
+  border:1px solid #ded4c5;
+  border-radius:17px;
+  box-shadow:0 15px 35px rgba(72,53,34,.08);
+}
+
+.tiktok-feature-heading{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.tiktok-feature-heading h2{
+  margin:0;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:32px;
+  font-weight:normal;
+}
+
+.tiktok-feature-heading p:last-child{
+  color:#716d65;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.tiktok-profile-embed{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  overflow:hidden;
+}
+
+.tiktok-profile-embed .tiktok-embed{
+  margin:0 auto !important;
+  max-width:720px !important;
+  min-width:288px !important;
+}
+
+@media(max-width:480px){
+  .tiktok-feature{
+    padding:24px 10px;
+    margin-top:30px;
+  }
+
+  .tiktok-feature-heading h2{
+    font-size:27px;
+  }
+}
 </style>
 </head>
 
@@ -643,7 +695,35 @@ h1 em{
       </article>
 
     </div>
+<!-- YENZI285 TIKTOK EMBED -->
+<section class="tiktok-feature">
 
+  <div class="tiktok-feature-heading">
+    <p class="platform-label">YENZI285 · TIKTOK</p>
+    <h2>Latest from Yenzi285</h2>
+    <p>Explore our latest videos and stories directly from TikTok.</p>
+  </div>
+
+  <div class="tiktok-profile-embed">
+    <blockquote
+      class="tiktok-embed"
+      cite="https://www.tiktok.com/@yenzi285"
+      data-unique-id="yenzi285"
+      data-embed-type="creator"
+      style="max-width:720px; min-width:288px;">
+      <section>
+        <a
+          target="_blank"
+          href="https://www.tiktok.com/@yenzi285?refer=creator_embed">
+          @yenzi285
+        </a>
+      </section>
+    </blockquote>
+  </div>
+
+</section>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
     <div class="note-strip">
       <strong data-i18n="noteTitle">A small note:</strong>
 
