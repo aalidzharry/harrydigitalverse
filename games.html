@@ -4,6 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <meta name="description" content="Explore Harry Games and learning experiences from Harry Digital Verse.">
 <title>Games & Learning | Harry Digital Verse</title>
 
@@ -853,6 +857,181 @@ footer{
   .roadmap-grid{grid-template-columns:1fr}
   .footer-top{flex-direction:column;align-items:flex-start}
 }
+  
+/* ==================================
+   PLAYFUL GAMING TYPOGRAPHY
+================================== */
+
+/* More playful game typography */
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.hero h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.5rem, 7vw, 6.3rem);
+  letter-spacing: -1.8px;
+  line-height: .99;
+  text-shadow: 0 5px 28px rgba(39,134,255,.16);
+}
+
+.hero h1 span {
+  background: linear-gradient(
+    100deg,
+    #43c6ff 0%,
+    #668cff 48%,
+    #b084ff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2.4px;
+  color: #9ce2ff;
+}
+
+.hero-description {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.85;
+  color: #d2e4fa;
+}
+
+.hero-panel h2,
+.section-heading h2,
+.edu-heading h2,
+.play-heading h2 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  letter-spacing: -.6px;
+}
+
+.hero-stat strong {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 27px;
+}
+
+.hero-stat span {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.button {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  border-radius: 11px;
+  box-shadow: 0 7px 18px rgba(39,134,255,.16);
+}
+
+.game-card h3,
+.roadmap-card h3,
+.subject-card strong {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+}
+
+/* More colourful and playful hero panel */
+.hero-panel {
+  border: 1px solid rgba(126,190,255,.28);
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(130,71,245,.24),
+      transparent 40%
+    ),
+    rgba(255,255,255,.08);
+  box-shadow:
+    0 25px 65px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.hero-stat {
+  border: 1px solid rgba(135,190,255,.2);
+  background: rgba(4,17,42,.42);
+  transition: transform .2s, background .2s;
+}
+
+.hero-stat:hover {
+  transform: translateY(-3px);
+  background: rgba(39,134,255,.16);
+}
+
+/* Slightly more playful game cards */
+.game-card {
+  border-radius: 17px;
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+}
+
+.game-icon {
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(39,134,255,.08);
+}
+
+.game-meta,
+.game-card-description,
+.section-heading p,
+.edu-heading p {
+  font-family: 'Nunito', sans-serif;
+}
+
+.game-card-description {
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+/* Gaming sparkle in the hero background */
+.hero {
+  isolation: isolate;
+}
+
+.hero::after {
+  content: "✦";
+  position: absolute;
+  z-index: 0;
+  top: 35px;
+  right: 8%;
+  color: rgba(112,174,255,.24);
+  font-size: 85px;
+  text-shadow: 0 0 35px rgba(130,71,245,.45);
+  animation: gameSparkle 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gameSparkle {
+  0%,100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: .45;
+  }
+  50% {
+    transform: translateY(-12px) rotate(18deg) scale(1.12);
+    opacity: .9;
+  }
+}
+
+@media(max-width:620px) {
+  .hero h1 {
+    font-size: 3.6rem;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .hero::after {
+    font-size: 55px;
+  }
+}
+
 </style>
 </head>
 
