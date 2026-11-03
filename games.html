@@ -1,13 +1,1514 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harry Games</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore Harry Games and learning experiences from Harry Digital Verse.">
+<title>Games & Learning | Harry Digital Verse</title>
+
+<style>
+:root{
+  --navy:#061226;
+  --navy2:#0d1d38;
+  --navy3:#142b4d;
+  --blue:#2786ff;
+  --blue2:#50b5ff;
+  --purple:#8247f5;
+  --cyan:#45d4e8;
+  --ink:#17263a;
+  --muted:#aab8ca;
+  --surface:#f1f5fb;
+  --white:#ffffff;
+  --line:#dce5f0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--surface);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
+}
+a{color:inherit}
+button{font:inherit}
+
+/* HEADER */
+header.site-header{
+  min-height:74px;
+  padding:12px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:var(--navy);
+  text-decoration:none;
+  flex-shrink:0;
+}
+.brand-mark{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  color:white;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  border-radius:11px;
+  font-size:14px;
+  font-weight:900;
+}
+.brand-copy strong{
+  display:block;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:20px;
+  line-height:1.1;
+}
+.brand-copy small{
+  display:block;
+  margin-top:4px;
+  color:#718196;
+  font-size:8px;
+  letter-spacing:1.8px;
+}
+.main-nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:19px;
+  flex-wrap:wrap;
+}
+.main-nav a{
+  color:var(--ink);
+  font-size:11px;
+  font-weight:700;
+  text-decoration:none;
+}
+.main-nav a:hover,
+.main-nav a.active{color:var(--blue)}
+.language{
+  padding:9px 10px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  color:var(--navy);
+  background:white;
+  font-size:11px;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:82px 6% 76px;
+  color:white;
+  background:
+    radial-gradient(circle at 76% 25%,rgba(130,71,245,.38),transparent 29%),
+    radial-gradient(circle at 18% 85%,rgba(39,134,255,.30),transparent 33%),
+    linear-gradient(135deg,#061226,#0b2040 58%,#142c50);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:.13;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);
+  background-size:42px 42px;
+}
+.hero-inner{
+  position:relative;
+  z-index:1;
+  width:min(1120px,100%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  align-items:center;
+  gap:55px;
+}
+.eyebrow{
+  color:#83c6ff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
+}
+.hero h1{
+  max-width:700px;
+  margin:17px 0;
+  font-size:clamp(43px,6.3vw,76px);
+  line-height:.99;
+  letter-spacing:-3px;
+  font-weight:900;
+}
+.hero h1 span{
+  display:block;
+  background:linear-gradient(90deg,#4bb8ff,#a782ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero-description{
+  max-width:610px;
+  margin:20px 0 26px;
+  color:#c8d5e6;
+  font-size:14px;
+  line-height:1.85;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.button{
+  min-height:44px;
+  padding:12px 17px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  border:1px solid transparent;
+  border-radius:7px;
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  color:white;
+  font-size:11px;
+  font-weight:800;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .2s,filter .2s;
+}
+.button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.button-outline{
+  color:white;
+  border-color:rgba(255,255,255,.3);
+  background:rgba(255,255,255,.06);
+}
+.hero-panel{
+  padding:24px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:17px;
+  background:rgba(255,255,255,.07);
+  box-shadow:0 25px 65px rgba(0,0,0,.22);
+  backdrop-filter:blur(12px);
+}
+.hero-panel-label{
+  color:#8dc9ff;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+.hero-panel h2{
+  margin:10px 0 17px;
+  font-size:24px;
+  line-height:1.25;
+}
+.hero-stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.hero-stat{
+  padding:14px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;
+  background:rgba(3,14,33,.35);
+}
+.hero-stat strong{
+  display:block;
+  color:#8dc9ff;
+  font-size:24px;
+}
+.hero-stat span{
+  color:#b6c5d8;
+  font-size:10px;
+}
+
+/* GAME LIBRARY */
+.library-section{
+  padding:58px 6% 66px;
+}
+.container{
+  width:min(1120px,100%);
+  margin:auto;
+}
+.section-heading{
+  margin-bottom:27px;
+}
+.section-label{
+  color:var(--blue);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.section-heading h2{
+  margin:8px 0 7px;
+  color:var(--navy);
+  font-size:clamp(27px,3.7vw,39px);
+  font-weight:900;
+  letter-spacing:-1.3px;
+  line-height:1.15;
+}
+.section-heading p:last-child{
+  max-width:670px;
+  margin:0;
+  color:#708096;
+  font-size:13px;
+}
+.game-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.game-card{
+  min-height:350px;
+  padding:23px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  overflow:hidden;
+  position:relative;
+  border:1px solid #dce5f0;
+  border-radius:14px;
+  background:white;
+  box-shadow:0 10px 27px rgba(14,35,66,.055);
+  transition:transform .22s,box-shadow .22s;
+}
+.game-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 34px rgba(14,35,66,.11);
+}
+.game-card::after{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  right:-80px;
+  top:-80px;
+  border:1px solid rgba(39,134,255,.15);
+  border-radius:50%;
+  pointer-events:none;
+}
+.game-card.rush{
+  border-top:3px solid var(--blue);
+}
+.game-card.relax{
+  border-top:3px solid var(--cyan);
+}
+.game-card.edu{
+  border-top:3px solid var(--purple);
+  background:linear-gradient(145deg,#fff,#f5f2ff);
+}
+.game-card-top{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+.game-icon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  background:#e9f2fc;
+  font-size:26px;
+}
+.rush .game-icon{background:#e4f0ff}
+.relax .game-icon{background:#e2f7f6}
+.edu .game-icon{background:#eee8ff}
+.status{
+  padding:6px 9px;
+  border-radius:20px;
+  color:#1169be;
+  background:#e7f2ff;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+.status.playable{
+  color:#087d77;
+  background:#e2f7f3;
+}
+.status.coming{
+  color:#7042c1;
+  background:#eee8ff;
+}
+.game-meta{
+  margin:0 0 7px;
+  color:var(--blue);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.5px;
+}
+.game-card h3{
+  margin:0 0 9px;
+  color:var(--navy);
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:-.5px;
+}
+.game-card-description{
+  margin:0 0 19px;
+  color:#6c7b8f;
+  font-size:12px;
+  line-height:1.75;
+}
+.game-card-footer{
+  width:100%;
+  margin-top:auto;
+  padding-top:14px;
+  border-top:1px solid #e5ebf2;
+}
+.game-card-footer .button{
+  width:100%;
+}
+.button-teal{
+  background:linear-gradient(90deg,#087e91,#26b8b6);
+}
+.button-muted{
+  color:#6f61a0;
+  background:#eeeaff;
+  border-color:#e4dcff;
+  cursor:default;
+}
+.game-card-footer .button-muted:hover{
+  transform:none;
+  filter:none;
+}
+
+/* GAME EDU SUBJECTS */
+.edu-section{
+  padding:53px 6% 58px;
+  color:white;
+  background:
+    radial-gradient(circle at 85% 15%,rgba(130,71,245,.23),transparent 30%),
+    linear-gradient(135deg,#0a1730,#172448);
+}
+.edu-heading{
+  max-width:750px;
+  margin-bottom:24px;
+}
+.edu-heading .section-label{color:#b9a1ff}
+.edu-heading h2{
+  margin:8px 0;
+  font-size:clamp(27px,3.7vw,38px);
+  line-height:1.15;
+  font-weight:900;
+}
+.edu-heading p{
+  margin:0;
+  color:#becbe0;
+  font-size:13px;
+}
+.subject-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+.subject-card{
+  padding:19px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:11px;
+  background:rgba(255,255,255,.06);
+}
+.subject-card span{
+  display:block;
+  margin-bottom:13px;
+  font-size:25px;
+}
+.subject-card strong{
+  display:block;
+  font-size:13px;
+}
+.subject-card small{
+  display:block;
+  margin-top:5px;
+  color:#b4c0d6;
+  font-size:10px;
+}
+
+/* TAP TAP RELAX QUICK PLAY */
+.play-section{
+  padding:58px 6% 68px;
+  background:#eaf1f8;
+}
+.play-shell{
+  padding:27px;
+  border:1px solid #d9e4f0;
+  border-radius:16px;
+  background:white;
+  box-shadow:0 15px 35px rgba(12,34,65,.08);
+}
+.play-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  margin-bottom:20px;
+}
+.play-heading h2{
+  margin:6px 0 5px;
+  color:var(--navy);
+  font-size:27px;
+  font-weight:900;
+}
+.play-heading p:last-child{
+  margin:0;
+  color:#728197;
+  font-size:12px;
+}
+.round-label{
+  padding:7px 10px;
+  border-radius:20px;
+  background:#e2f7f3;
+  color:#087d77;
+  font-size:9px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.score-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-bottom:16px;
+}
+.score-box{
+  padding:13px;
+  border:1px solid #e1e9f1;
+  border-radius:9px;
+  background:#f6f9fc;
+  text-align:center;
+}
+.score-box span{
+  display:block;
+  color:#718196;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+}
+.score-box strong{
+  display:block;
+  margin-top:4px;
+  color:var(--navy);
+  font-size:22px;
+}
+.game-message{
+  min-height:47px;
+  margin-bottom:13px;
+  padding:12px;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  background:#edf4fb;
+  color:#33526e;
+  text-align:center;
+  font-size:12px;
+}
+.game-arena{
+  min-height:290px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid #25466c;
+  border-radius:12px;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(39,134,255,.23),transparent 45%),
+    linear-gradient(145deg,#07162d,#102d51);
+}
+.tap-target{
+  position:absolute;
+  width:62px;
+  height:62px;
+  display:grid;
+  place-items:center;
+  border:2px solid rgba(255,255,255,.55);
+  border-radius:50%;
+  color:white;
+  background:linear-gradient(145deg,#49bcff,#7952f5);
+  box-shadow:0 8px 24px rgba(53,135,255,.5);
+  font-size:25px;
+  cursor:pointer;
+  user-select:none;
+  touch-action:manipulation;
+  transition:transform .12s;
+}
+.tap-target:hover{transform:scale(1.07)}
+.tap-target[hidden]{display:none}
+.arena-hint{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  color:#b9cde5;
+  text-align:center;
+  font-size:12px;
+  pointer-events:none;
+}
+.play-controls{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:17px;
+}
+.play-controls .button{min-width:155px}
+.button-reset{
+  color:#304b68;
+  border:1px solid #cbd8e6;
+  background:white;
+}
+.save-note{
+  margin:12px 0 0;
+  color:#8090a3;
+  text-align:center;
+  font-size:10px;
+}
+
+/* ROADMAP */
+.roadmap-section{
+  padding:48px 6%;
+  background:white;
+}
+.roadmap-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+.roadmap-card{
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:#f8fafd;
+}
+.roadmap-card span{
+  color:var(--blue);
+  font-size:20px;
+}
+.roadmap-card h3{
+  margin:9px 0 6px;
+  color:var(--navy);
+  font-size:15px;
+}
+.roadmap-card p{
+  margin:0;
+  color:#738196;
+  font-size:11px;
+}
+
+/* FOOTER */
+footer{
+  padding:26px 5% 20px;
+  color:white;
+  background:#030b19;
+}
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:22px;
+  padding-bottom:17px;
+}
+.footer-brand{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:21px;
+  font-weight:bold;
+}
+.footer-tagline{
+  color:#90a9c7;
+  font-size:8px;
+  letter-spacing:2px;
+}
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.footer-links a{
+  color:#c5d3e4;
+  font-size:10px;
+  text-decoration:none;
+}
+.footer-links a:hover{color:#72bdff}
+.copyright{
+  padding-top:13px;
+  border-top:1px solid rgba(255,255,255,.15);
+  color:#8498b1;
+  font-size:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  header.site-header{flex-direction:column}
+  .main-nav{justify-content:center;gap:12px}
+  .hero-inner{grid-template-columns:1fr;gap:28px}
+  .hero-panel{max-width:530px}
+  .game-grid{grid-template-columns:1fr 1fr}
+  .subject-grid{grid-template-columns:1fr 1fr}
+  .roadmap-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  header.site-header{padding:15px 4%}
+  .main-nav{gap:10px 13px}
+  .main-nav a{font-size:10px}
+  .hero{padding:56px 6%}
+  .hero h1{font-size:46px;letter-spacing:-1.8px}
+  .hero-description{font-size:12px}
+  .hero-actions{flex-direction:column}
+  .hero-actions .button{width:100%}
+  .library-section{padding:42px 5% 48px}
+  .game-grid{grid-template-columns:1fr}
+  .game-card{min-height:310px}
+  .edu-section{padding:42px 5%}
+  .subject-grid{grid-template-columns:1fr 1fr}
+  .play-section{padding:42px 5%}
+  .play-shell{padding:17px}
+  .play-heading{flex-direction:column}
+  .score-grid{grid-template-columns:1fr 1fr}
+  .game-arena{min-height:280px}
+  .play-controls{flex-direction:column}
+  .play-controls .button{width:100%}
+  .roadmap-section{padding:40px 5%}
+  .roadmap-grid{grid-template-columns:1fr}
+  .footer-top{flex-direction:column;align-items:flex-start}
+}
+</style>
 </head>
+
 <body>
-  <h1>Harry Games</h1>
-  <p>Coming soon. We’re preparing the game experience.</p>
-  <p><a href="index.html">Back to Harry Digital Verse</a></p>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Back to Harry Digital Verse homepage">
+    <span class="brand-mark">HV</span>
+    <span class="brand-copy">
+      <strong>Harry Digital Verse</strong>
+      <small data-i18n="tagline">ONE WORLD OF IDEAS</small>
+    </span>
+  </a>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="/" data-i18n="home">Home</a>
+    <a href="/products/" data-i18n="products">Digital Products</a>
+    <a href="/games.html" class="active" data-i18n="games">Games</a>
+    <a href="/#creators" data-i18n="creators">Creators</a>
+    <a href="/yenzi285.html">Yenzi285</a>
+    <a href="/#stories" data-i18n="stories">Stories/Blog</a>
+
+    <select id="languageSelect" class="language" aria-label="Select language">
+      <option value="en">EN</option>
+      <option value="ms">MY</option>
+      <option value="id">ID</option>
+      <option value="es">ES</option>
+    </select>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <div>
+      <div class="eyebrow" data-i18n="heroLabel">HARRYVERSE GAME WORLD</div>
+
+      <h1>
+        <span data-i18n="heroLine1">Play. Learn.</span>
+        <span data-i18n="heroLine2">Explore.</span>
+      </h1>
+
+      <p class="hero-description" data-i18n="heroText">
+        Welcome to Harry Games — a growing collection of original
+        games and playful learning ideas. Take a break, test your
+        reflexes or discover new ways to learn.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button" href="#game-library" data-i18n="heroButton">
+          Explore Games ↓
+        </a>
+        <a class="button button-outline" href="#game-edu" data-i18n="eduButton">
+          Discover Game EDU
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-panel">
+      <div class="hero-panel-label" data-i18n="panelLabel">INSIDE HARRY GAMES</div>
+      <h2 data-i18n="panelTitle">A little play. A little challenge. A lot to discover.</h2>
+
+      <div class="hero-stat-grid">
+        <div class="hero-stat">
+          <strong>02</strong>
+          <span data-i18n="statGames">Original game projects</span>
+        </div>
+        <div class="hero-stat">
+          <strong>100</strong>
+          <span data-i18n="statLevels">Tap Tap Relax levels</span>
+        </div>
+        <div class="hero-stat">
+          <strong>04</strong>
+          <span data-i18n="statSubjects">Planned learning areas</span>
+        </div>
+        <div class="hero-stat">
+          <strong>∞</strong>
+          <span data-i18n="statIdeas">Ideas in progress</span>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- GAME LIBRARY -->
+<section class="library-section" id="game-library">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="section-label" data-i18n="libraryLabel">01 · GAME LIBRARY</div>
+      <h2 data-i18n="libraryTitle">Choose your next game.</h2>
+      <p data-i18n="libraryText">
+        Explore the current Harry Games collection and discover
+        what's coming next.
+      </p>
+    </div>
+
+    <div class="game-grid">
+
+      <!-- TAP TAP RELAX -->
+      <article class="game-card relax">
+        <div class="game-card-top">
+          <div class="game-icon">🎯</div>
+          <span class="status playable" data-i18n="statusPlayable">BROWSER DEMO</span>
+        </div>
+
+        <p class="game-meta">HARRY GAMES · RELAX MODE</p>
+        <h3>Tap Tap Relax</h3>
+        <p class="game-card-description" data-i18n="tapDescription">
+          Take a short break and test your focus. Tap the target,
+          reach your score goal and make your way through 100 levels.
+        </p>
+
+        <div class="game-card-footer">
+          <a class="button button-teal" href="#tap-tap-relax" data-i18n="tapButton">
+            Try Quick Play ↓
+          </a>
+        </div>
+      </article>
+
+      <!-- EMOJI RUSH -->
+      <article class="game-card rush">
+        <div class="game-card-top">
+          <div class="game-icon">⚡</div>
+          <span class="status" data-i18n="statusLive">AVAILABLE</span>
+        </div>
+
+        <p class="game-meta">HARRYVERSE GAMES</p>
+        <h3>Emoji Rush</h3>
+        <p class="game-card-description" data-i18n="rushDescription">
+          Train your focus, reaction speed and memory through
+          colourful emoji challenges and progressively harder levels.
+        </p>
+
+        <div class="game-card-footer">
+          <a class="button" href="https://playharryverse.itch.io/emoji-rush"
+             target="_blank" rel="noopener noreferrer" data-i18n="rushButton">
+            Play Emoji Rush ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- GAME EDU -->
+      <article class="game-card edu">
+        <div class="game-card-top">
+          <div class="game-icon">🎓</div>
+          <span class="status coming" data-i18n="statusComing">COMING SOON</span>
+        </div>
+
+        <p class="game-meta">HARRYVERSE LEARNING</p>
+        <h3 data-i18n="eduTitle">HarryVerse Game EDU</h3>
+        <p class="game-card-description" data-i18n="eduDescription">
+          Playful learning experiences for children, combining
+          practice, creativity and discovery.
+        </p>
+
+        <div class="game-card-footer">
+          <span class="button button-muted" data-i18n="comingSoon">
+            Coming Soon
+          </span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- GAME EDU -->
+<section class="edu-section" id="game-edu">
+  <div class="container">
+
+    <div class="edu-heading">
+      <div class="section-label" data-i18n="eduLabel">02 · LEARNING THROUGH PLAY</div>
+      <h2 data-i18n="eduHeading">A new way for children to discover and learn.</h2>
+      <p data-i18n="eduIntro">
+        HarryVerse Game EDU is a future collection of interactive
+        learning activities designed to make practice more enjoyable.
+      </p>
+    </div>
+
+    <div class="subject-grid">
+
+      <article class="subject-card">
+        <span>🔢</span>
+        <strong data-i18n="mathTitle">Math Adventures</strong>
+        <small data-i18n="mathText">Numbers, patterns and problem-solving</small>
+      </article>
+
+      <article class="subject-card">
+        <span>✍️</span>
+        <strong data-i18n="englishTitle">English Writing</strong>
+        <small data-i18n="englishText">Letters, words and simple sentences</small>
+      </article>
+
+      <article class="subject-card">
+        <span>✏️</span>
+        <strong data-i18n="drawingTitle">Drawing</strong>
+        <small data-i18n="drawingText">Create pictures and express ideas</small>
+      </article>
+
+      <article class="subject-card">
+        <span>🎨</span>
+        <strong data-i18n="colourTitle">Colouring</strong>
+        <small data-i18n="colourText">Explore colours and creativity</small>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- TAP TAP RELAX QUICK PLAY -->
+<section class="play-section" id="tap-tap-relax">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="section-label" data-i18n="quickPlayLabel">03 · TAP TAP RELAX</div>
+      <h2 data-i18n="quickPlayTitle">Take a moment. Tap and relax.</h2>
+      <p data-i18n="quickPlayText">
+        This is a simple browser quick-play demo. Complete each
+        round's target to unlock the next level.
+      </p>
+    </div>
+
+    <div class="play-shell">
+
+      <div class="play-heading">
+        <div>
+          <p class="section-label" data-i18n="relaxMode">RELAX MODE</p>
+          <h2>🎯 Tap Tap Relax</h2>
+          <p data-i18n="tapInstructions">
+            Press Start, then tap the glowing target as many times as you can.
+          </p>
+        </div>
+        <span class="round-label" data-i18n="savedProgress">PROGRESS SAVED</span>
+      </div>
+
+      <div class="score-grid">
+        <div class="score-box">
+          <span data-i18n="levelLabel">Level</span>
+          <strong id="tapLevel">1</strong>
+        </div>
+        <div class="score-box">
+          <span data-i18n="scoreLabel">Score</span>
+          <strong id="tapScore">0</strong>
+        </div>
+        <div class="score-box">
+          <span data-i18n="timeLabel">Time</span>
+          <strong id="tapTime">20</strong>
+        </div>
+        <div class="score-box">
+          <span data-i18n="targetLabel">Target</span>
+          <strong id="tapGoal">5</strong>
+        </div>
+      </div>
+
+      <div class="game-message" id="tapMessage" aria-live="polite">
+        Press Start when you are ready.
+      </div>
+
+      <div class="game-arena" id="tapArena">
+        <div class="arena-hint" id="arenaHint" data-i18n="arenaHint">
+          Your target will appear here. Get ready!
+        </div>
+        <button class="tap-target" id="tapTarget" type="button"
+                aria-label="Tap target" hidden>✦</button>
+      </div>
+
+      <div class="play-controls">
+        <button class="button" type="button" id="startTap">
+          <span data-i18n="startGame">Start Game</span>
+        </button>
+        <button class="button button-reset" type="button" id="resetTap">
+          <span data-i18n="resetProgress">Reset Progress</span>
+        </button>
+      </div>
+
+      <p class="save-note" data-i18n="saveNote">
+        This quick-play demo saves progress in this browser only.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="section-label" data-i18n="roadmapLabel">04 · WHAT'S NEXT</div>
+      <h2 data-i18n="roadmapTitle">More games. More ways to play and learn.</h2>
+      <p data-i18n="roadmapText">
+        Harry Games and HarryVerse Game EDU will continue to grow
+        as new experiences are developed.
+      </p>
+    </div>
+
+    <div class="roadmap-grid">
+      <article class="roadmap-card">
+        <span>🎯</span>
+        <h3>Tap Tap Relax</h3>
+        <p data-i18n="roadmapTap">Quick-play browser demo with a 100-level progression.</p>
+      </article>
+
+      <article class="roadmap-card">
+        <span>⚡</span>
+        <h3>Emoji Rush</h3>
+        <p data-i18n="roadmapRush">An original HarryVerse game available to explore.</p>
+      </article>
+
+      <article class="roadmap-card">
+        <span>🎓</span>
+        <h3>Game EDU</h3>
+        <p data-i18n="roadmapEdu">Educational games for children are in planning.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Harry Digital Verse</div>
+        <div class="footer-tagline" data-i18n="tagline">ONE WORLD OF IDEAS</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="/" data-i18n="home">Home</a>
+        <a href="/products/" data-i18n="products">Digital Products</a>
+        <a href="/games.html" data-i18n="games">Games</a>
+        <a href="/#creators" data-i18n="creators">Creators</a>
+        <a href="/yenzi285.html">Yenzi285</a>
+        <a href="/#stories" data-i18n="stories">Stories/Blog</a>
+      </div>
+    </div>
+
+    <div class="copyright" data-i18n="copyright">
+      © 2026 Harry Digital Verse. Built one idea at a time.
+    </div>
+  </div>
+</footer>
+
+<script>
+const translations = {
+  en:{
+    tagline:"ONE WORLD OF IDEAS",
+    home:"Home",products:"Digital Products",games:"Games",
+    creators:"Creators",stories:"Stories/Blog",
+    heroLabel:"HARRYVERSE GAME WORLD",
+    heroLine1:"Play. Learn.",
+    heroLine2:"Explore.",
+    heroText:"Welcome to Harry Games — a growing collection of original games and playful learning ideas. Take a break, test your reflexes or discover new ways to learn.",
+    heroButton:"Explore Games ↓",
+    eduButton:"Discover Game EDU",
+    panelLabel:"INSIDE HARRY GAMES",
+    panelTitle:"A little play. A little challenge. A lot to discover.",
+    statGames:"Original game projects",
+    statLevels:"Tap Tap Relax levels",
+    statSubjects:"Planned learning areas",
+    statIdeas:"Ideas in progress",
+    libraryLabel:"01 · GAME LIBRARY",
+    libraryTitle:"Choose your next game.",
+    libraryText:"Explore the current Harry Games collection and discover what's coming next.",
+    statusPlayable:"BROWSER DEMO",
+    statusLive:"AVAILABLE",
+    statusComing:"COMING SOON",
+    tapDescription:"Take a short break and test your focus. Tap the target, reach your score goal and make your way through 100 levels.",
+    tapButton:"Try Quick Play ↓",
+    rushDescription:"Train your focus, reaction speed and memory through colourful emoji challenges and progressively harder levels.",
+    rushButton:"Play Emoji Rush ↗",
+    eduTitle:"HarryVerse Game EDU",
+    eduDescription:"Playful learning experiences for children, combining practice, creativity and discovery.",
+    comingSoon:"Coming Soon",
+    eduLabel:"02 · LEARNING THROUGH PLAY",
+    eduHeading:"A new way for children to discover and learn.",
+    eduIntro:"HarryVerse Game EDU is a future collection of interactive learning activities designed to make practice more enjoyable.",
+    mathTitle:"Math Adventures",
+    mathText:"Numbers, patterns and problem-solving",
+    englishTitle:"English Writing",
+    englishText:"Letters, words and simple sentences",
+    drawingTitle:"Drawing",
+    drawingText:"Create pictures and express ideas",
+    colourTitle:"Colouring",
+    colourText:"Explore colours and creativity",
+    quickPlayLabel:"03 · TAP TAP RELAX",
+    quickPlayTitle:"Take a moment. Tap and relax.",
+    quickPlayText:"This is a simple browser quick-play demo. Complete each round's target to unlock the next level.",
+    relaxMode:"RELAX MODE",
+    tapInstructions:"Press Start, then tap the glowing target as many times as you can.",
+    savedProgress:"PROGRESS SAVED",
+    levelLabel:"Level",scoreLabel:"Score",timeLabel:"Time",targetLabel:"Target",
+    arenaHint:"Your target will appear here. Get ready!",
+    startGame:"Start Game",starting:"Playing…",playAgain:"Play Again",
+    resetProgress:"Reset Progress",
+    saveNote:"This quick-play demo saves progress in this browser only.",
+    messageReady:"Press Start when you are ready.",
+    messageGo:"Go! Tap the glowing target!",
+    messageSuccess:"Level complete! You unlocked the next level.",
+    messageFail:"Time is up! Try again to reach the target.",
+    messageFinished:"Amazing! You completed all 100 levels.",
+    messageReset:"Progress reset. Start again from Level 1.",
+    roadmapLabel:"04 · WHAT'S NEXT",
+    roadmapTitle:"More games. More ways to play and learn.",
+    roadmapText:"Harry Games and HarryVerse Game EDU will continue to grow as new experiences are developed.",
+    roadmapTap:"Quick-play browser demo with a 100-level progression.",
+    roadmapRush:"An original HarryVerse game available to explore.",
+    roadmapEdu:"Educational games for children are in planning.",
+    copyright:"© 2026 Harry Digital Verse. Built one idea at a time."
+  },
+
+  ms:{
+    tagline:"SATU DUNIA IDEA",
+    home:"Utama",products:"Produk Digital",games:"Permainan",
+    creators:"Kreator",stories:"Cerita/Blog",
+    heroLabel:"DUNIA PERMAINAN HARRYVERSE",
+    heroLine1:"Main. Belajar.",
+    heroLine2:"Terokai.",
+    heroText:"Selamat datang ke Harry Games — koleksi permainan asli dan idea pembelajaran yang menyeronokkan. Berehat seketika, uji refleks atau temui cara baharu untuk belajar.",
+    heroButton:"Terokai Permainan ↓",
+    eduButton:"Kenali Game EDU",
+    panelLabel:"DI DALAM HARRY GAMES",
+    panelTitle:"Sedikit permainan. Sedikit cabaran. Banyak perkara untuk diterokai.",
+    statGames:"Projek permainan asli",
+    statLevels:"Level Tap Tap Relax",
+    statSubjects:"Bidang pembelajaran dirancang",
+    statIdeas:"Idea sedang dibangunkan",
+    libraryLabel:"01 · PERPUSTAKAAN GAME",
+    libraryTitle:"Pilih permainan seterusnya.",
+    libraryText:"Terokai koleksi Harry Games dan lihat apa yang bakal tiba.",
+    statusPlayable:"DEMO BROWSER",
+    statusLive:"SEDIA DIMAINKAN",
+    statusComing:"AKAN DATANG",
+    tapDescription:"Berehat seketika dan uji fokus anda. Tekan sasaran, capai markah yang diperlukan dan lalui sehingga 100 level.",
+    tapButton:"Cuba Quick Play ↓",
+    rushDescription:"Latih fokus, kelajuan tindak balas dan ingatan melalui cabaran emoji berwarna-warni dengan tahap kesukaran yang meningkat.",
+    rushButton:"Main Emoji Rush ↗",
+    eduTitle:"HarryVerse Game EDU",
+    eduDescription:"Pengalaman pembelajaran menyeronokkan untuk kanak-kanak yang menggabungkan latihan, kreativiti dan penerokaan.",
+    comingSoon:"Akan Datang",
+    eduLabel:"02 · BELAJAR SAMBIL BERMAIN",
+    eduHeading:"Cara baharu untuk kanak-kanak meneroka dan belajar.",
+    eduIntro:"HarryVerse Game EDU ialah koleksi aktiviti pembelajaran interaktif yang akan dibangunkan untuk menjadikan latihan lebih menyeronokkan.",
+    mathTitle:"Pengembaraan Matematik",
+    mathText:"Nombor, corak dan penyelesaian masalah",
+    englishTitle:"Penulisan Bahasa Inggeris",
+    englishText:"Huruf, perkataan dan ayat mudah",
+    drawingTitle:"Melukis",
+    drawingText:"Cipta gambar dan luahkan idea",
+    colourTitle:"Mewarna",
+    colourText:"Terokai warna dan kreativiti",
+    quickPlayLabel:"03 · TAP TAP RELAX",
+    quickPlayTitle:"Berehat seketika. Tekan dan santai.",
+    quickPlayText:"Ini ialah demo quick-play ringkas dalam browser. Capai sasaran setiap pusingan untuk membuka level seterusnya.",
+    relaxMode:"MOD SANTAI",
+    tapInstructions:"Tekan Mula, kemudian tekan sasaran bercahaya sebanyak mungkin.",
+    savedProgress:"PROGRESS DISIMPAN",
+    levelLabel:"Level",scoreLabel:"Markah",timeLabel:"Masa",targetLabel:"Sasaran",
+    arenaHint:"Sasaran akan muncul di sini. Bersedia!",
+    startGame:"Mulakan Game",starting:"Sedang bermain…",playAgain:"Main Lagi",
+    resetProgress:"Reset Progress",
+    saveNote:"Demo quick-play ini menyimpan progress dalam browser ini sahaja.",
+    messageReady:"Tekan Mula apabila anda sudah bersedia.",
+    messageGo:"Mula! Tekan sasaran yang bercahaya!",
+    messageSuccess:"Level selesai! Anda telah membuka level seterusnya.",
+    messageFail:"Masa tamat! Cuba lagi untuk mencapai sasaran.",
+    messageFinished:"Hebat! Anda telah melengkapkan semua 100 level.",
+    messageReset:"Progress telah direset. Mulakan semula dari Level 1.",
+    roadmapLabel:"04 · APA SETERUSNYA",
+    roadmapTitle:"Lebih banyak game. Lebih banyak cara untuk bermain dan belajar.",
+    roadmapText:"Harry Games dan HarryVerse Game EDU akan terus berkembang apabila pengalaman baharu dibangunkan.",
+    roadmapTap:"Demo browser dengan kemajuan sehingga 100 level.",
+    roadmapRush:"Permainan asli HarryVerse yang boleh diterokai.",
+    roadmapEdu:"Game pendidikan untuk kanak-kanak sedang dirancang.",
+    copyright:"© 2026 Harry Digital Verse. Dibina satu idea pada satu masa."
+  },
+
+  id:{
+    tagline:"SATU DUNIA IDE",
+    home:"Beranda",products:"Produk Digital",games:"Game",
+    creators:"Kreator",stories:"Cerita/Blog",
+    heroLabel:"DUNIA GAME HARRYVERSE",
+    heroLine1:"Main. Belajar.",
+    heroLine2:"Jelajahi.",
+    heroText:"Selamat datang di Harry Games — koleksi game orisinal dan ide pembelajaran yang menyenangkan. Beristirahat sejenak, uji refleks atau temukan cara baru untuk belajar.",
+    heroButton:"Jelajahi Game ↓",
+    eduButton:"Temukan Game EDU",
+    panelLabel:"DI DALAM HARRY GAMES",
+    panelTitle:"Sedikit bermain. Sedikit tantangan. Banyak hal untuk dijelajahi.",
+    statGames:"Proyek game orisinal",
+    statLevels:"Level Tap Tap Relax",
+    statSubjects:"Bidang belajar yang direncanakan",
+    statIdeas:"Ide yang sedang dikembangkan",
+    libraryLabel:"01 · PERPUSTAKAAN GAME",
+    libraryTitle:"Pilih game berikutnya.",
+    libraryText:"Jelajahi koleksi Harry Games dan lihat apa yang akan hadir berikutnya.",
+    statusPlayable:"DEMO BROWSER",
+    statusLive:"TERSEDIA",
+    statusComing:"SEGERA HADIR",
+    tapDescription:"Beristirahat sejenak dan uji fokusmu. Ketuk target, capai skor yang dibutuhkan dan lalui hingga 100 level.",
+    tapButton:"Coba Quick Play ↓",
+    rushDescription:"Latih fokus, kecepatan reaksi dan ingatan melalui tantangan emoji berwarna-warni dengan tingkat kesulitan yang meningkat.",
+    rushButton:"Main Emoji Rush ↗",
+    eduTitle:"HarryVerse Game EDU",
+    eduDescription:"Pengalaman belajar yang menyenangkan untuk anak-anak, menggabungkan latihan, kreativitas dan eksplorasi.",
+    comingSoon:"Segera Hadir",
+    eduLabel:"02 · BELAJAR SAMBIL BERMAIN",
+    eduHeading:"Cara baru bagi anak-anak untuk menemukan dan belajar.",
+    eduIntro:"HarryVerse Game EDU adalah koleksi aktivitas belajar interaktif di masa mendatang yang dirancang agar latihan terasa lebih menyenangkan.",
+    mathTitle:"Petualangan Matematika",
+    mathText:"Angka, pola dan pemecahan masalah",
+    englishTitle:"Menulis Bahasa Inggris",
+    englishText:"Huruf, kata dan kalimat sederhana",
+    drawingTitle:"Menggambar",
+    drawingText:"Buat gambar dan ungkapkan ide",
+    colourTitle:"Mewarnai",
+    colourText:"Jelajahi warna dan kreativitas",
+    quickPlayLabel:"03 · TAP TAP RELAX",
+    quickPlayTitle:"Istirahat sejenak. Ketuk dan santai.",
+    quickPlayText:"Ini adalah demo quick-play sederhana di browser. Capai target setiap ronde untuk membuka level berikutnya.",
+    relaxMode:"MODE SANTAI",
+    tapInstructions:"Tekan Mulai, lalu ketuk target bercahaya sebanyak mungkin.",
+    savedProgress:"PROGRES TERSIMPAN",
+    levelLabel:"Level",scoreLabel:"Skor",timeLabel:"Waktu",targetLabel:"Target",
+    arenaHint:"Target akan muncul di sini. Bersiaplah!",
+    startGame:"Mulai Game",starting:"Sedang bermain…",playAgain:"Main Lagi",
+    resetProgress:"Reset Progres",
+    saveNote:"Demo quick-play ini hanya menyimpan progres di browser ini.",
+    messageReady:"Tekan Mulai saat kamu siap.",
+    messageGo:"Mulai! Ketuk target yang bercahaya!",
+    messageSuccess:"Level selesai! Kamu membuka level berikutnya.",
+    messageFail:"Waktu habis! Coba lagi untuk mencapai target.",
+    messageFinished:"Hebat! Kamu telah menyelesaikan semua 100 level.",
+    messageReset:"Progres direset. Mulai lagi dari Level 1.",
+    roadmapLabel:"04 · SELANJUTNYA",
+    roadmapTitle:"Lebih banyak game. Lebih banyak cara untuk bermain dan belajar.",
+    roadmapText:"Harry Games dan HarryVerse Game EDU akan terus berkembang saat pengalaman baru dibuat.",
+    roadmapTap:"Demo browser dengan progres hingga 100 level.",
+    roadmapRush:"Game orisinal HarryVerse yang tersedia untuk dijelajahi.",
+    roadmapEdu:"Game edukasi untuk anak-anak sedang direncanakan.",
+    copyright:"© 2026 Harry Digital Verse. Dibangun satu ide pada satu waktu."
+  },
+
+  es:{
+    tagline:"UN MUNDO DE IDEAS",
+    home:"Inicio",products:"Productos Digitales",games:"Juegos",
+    creators:"Creadores",stories:"Historias/Blog",
+    heroLabel:"EL MUNDO DE JUEGOS DE HARRYVERSE",
+    heroLine1:"Juega. Aprende.",
+    heroLine2:"Explora.",
+    heroText:"Bienvenido a Harry Games: una colección creciente de juegos originales e ideas de aprendizaje divertidas. Haz una pausa, pon a prueba tus reflejos o descubre nuevas formas de aprender.",
+    heroButton:"Explorar Juegos ↓",
+    eduButton:"Descubrir Game EDU",
+    panelLabel:"DENTRO DE HARRY GAMES",
+    panelTitle:"Un poco de juego. Un poco de desafío. Mucho por descubrir.",
+    statGames:"Proyectos de juegos originales",
+    statLevels:"Niveles de Tap Tap Relax",
+    statSubjects:"Áreas de aprendizaje previstas",
+    statIdeas:"Ideas en desarrollo",
+    libraryLabel:"01 · BIBLIOTECA DE JUEGOS",
+    libraryTitle:"Elige tu próximo juego.",
+    libraryText:"Explora la colección actual de Harry Games y descubre lo que viene.",
+    statusPlayable:"DEMO EN NAVEGADOR",
+    statusLive:"DISPONIBLE",
+    statusComing:"PRÓXIMAMENTE",
+    tapDescription:"Haz una pausa y pon a prueba tu concentración. Toca el objetivo, alcanza la puntuación requerida y avanza por 100 niveles.",
+    tapButton:"Probar Quick Play ↓",
+    rushDescription:"Entrena tu concentración, velocidad de reacción y memoria con desafíos de emojis cada vez más difíciles.",
+    rushButton:"Jugar Emoji Rush ↗",
+    eduTitle:"HarryVerse Game EDU",
+    eduDescription:"Experiencias de aprendizaje divertidas para niños que combinan práctica, creatividad y exploración.",
+    comingSoon:"Próximamente",
+    eduLabel:"02 · APRENDER JUGANDO",
+    eduHeading:"Una nueva forma de descubrir y aprender para los niños.",
+    eduIntro:"HarryVerse Game EDU será una colección de actividades interactivas diseñada para hacer que la práctica sea más divertida.",
+    mathTitle:"Aventuras Matemáticas",
+    mathText:"Números, patrones y resolución de problemas",
+    englishTitle:"Escritura en Inglés",
+    englishText:"Letras, palabras y frases sencillas",
+    drawingTitle:"Dibujo",
+    drawingText:"Crea imágenes y expresa ideas",
+    colourTitle:"Colorear",
+    colourText:"Explora colores y creatividad",
+    quickPlayLabel:"03 · TAP TAP RELAX",
+    quickPlayTitle:"Haz una pausa. Toca y relájate.",
+    quickPlayText:"Esta es una demo sencilla de juego en el navegador. Completa el objetivo de cada ronda para desbloquear el siguiente nivel.",
+    relaxMode:"MODO RELAJADO",
+    tapInstructions:"Pulsa Iniciar y toca el objetivo brillante tantas veces como puedas.",
+    savedProgress:"PROGRESO GUARDADO",
+    levelLabel:"Nivel",scoreLabel:"Puntos",timeLabel:"Tiempo",targetLabel:"Objetivo",
+    arenaHint:"Tu objetivo aparecerá aquí. ¡Prepárate!",
+    startGame:"Iniciar Juego",starting:"Jugando…",playAgain:"Jugar Otra Vez",
+    resetProgress:"Reiniciar Progreso",
+    saveNote:"Esta demo guarda el progreso solo en este navegador.",
+    messageReady:"Pulsa Iniciar cuando estés listo.",
+    messageGo:"¡Vamos! ¡Toca el objetivo brillante!",
+    messageSuccess:"¡Nivel completado! Has desbloqueado el siguiente nivel.",
+    messageFail:"¡Se acabó el tiempo! Inténtalo de nuevo para alcanzar el objetivo.",
+    messageFinished:"¡Increíble! Has completado los 100 niveles.",
+    messageReset:"Progreso reiniciado. Vuelve al Nivel 1.",
+    roadmapLabel:"04 · LO QUE VIENE",
+    roadmapTitle:"Más juegos. Más formas de jugar y aprender.",
+    roadmapText:"Harry Games y HarryVerse Game EDU seguirán creciendo con nuevas experiencias.",
+    roadmapTap:"Demo de navegador con progresión de 100 niveles.",
+    roadmapRush:"Un juego original de HarryVerse disponible para explorar.",
+    roadmapEdu:"Juegos educativos para niños en planificación.",
+    copyright:"© 2026 Harry Digital Verse. Construido idea por idea."
+  }
+};
+
+/* LANGUAGE */
+let currentLanguage = localStorage.getItem("hdv-language") || "en";
+if (!translations[currentLanguage]) currentLanguage = "en";
+
+function t(key){
+  return translations[currentLanguage][key] || translations.en[key] || key;
+}
+
+function applyLanguage(language){
+  currentLanguage = translations[language] ? language : "en";
+  document.documentElement.lang = currentLanguage;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    const value = t(key);
+    if (value !== undefined) element.textContent = value;
+  });
+
+  localStorage.setItem("hdv-language", currentLanguage);
+
+  const selector = document.getElementById("languageSelect");
+  if (selector) selector.value = currentLanguage;
+
+  if (!gameRunning) {
+    setMessage(t("messageReady"));
+    startButtonText();
+  }
+}
+
+const languageSelect = document.getElementById("languageSelect");
+languageSelect.addEventListener("change", () => {
+  applyLanguage(languageSelect.value);
+});
+
+/* TAP TAP RELAX QUICK PLAY */
+const PROGRESS_KEY = "hdv-tap-tap-relax-quickplay-v1";
+
+function readProgress(){
+  try{
+    const saved = JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}");
+    return {
+      level: Math.max(1, Math.min(100, Number(saved.level) || 1)),
+      best: Math.max(0, Number(saved.best) || 0)
+    };
+  }catch(error){
+    return {level:1,best:0};
+  }
+}
+
+let progress = readProgress();
+let level = progress.level;
+let score = 0;
+let timeLeft = 20;
+let gameRunning = false;
+let timerId = null;
+let gameStartTime = 0;
+
+const levelEl = document.getElementById("tapLevel");
+const scoreEl = document.getElementById("tapScore");
+const timeEl = document.getElementById("tapTime");
+const goalEl = document.getElementById("tapGoal");
+const messageEl = document.getElementById("tapMessage");
+const arena = document.getElementById("tapArena");
+const target = document.getElementById("tapTarget");
+const hint = document.getElementById("arenaHint");
+const startBtn = document.getElementById("startTap");
+const resetBtn = document.getElementById("resetTap");
+
+function goalForLevel(value){
+  return Math.min(5 + Math.floor((value - 1) / 5), 24);
+}
+
+function updateStats(){
+  levelEl.textContent = level;
+  scoreEl.textContent = score;
+  timeEl.textContent = timeLeft;
+  goalEl.textContent = goalForLevel(level);
+}
+
+function setMessage(message){
+  messageEl.textContent = message;
+}
+
+function startButtonText(){
+  startBtn.querySelector("span").textContent =
+    level > 1 ? t("playAgain") : t("startGame");
+}
+
+function saveProgress(){
+  progress = {
+    level: level,
+    best: Math.max(progress.best, score)
+  };
+  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+}
+
+function placeTarget(){
+  const arenaRect = arena.getBoundingClientRect();
+  const targetSize = target.offsetWidth || 62;
+  const maxX = Math.max(0, arenaRect.width - targetSize - 12);
+  const maxY = Math.max(0, arenaRect.height - targetSize - 12);
+  const x = 6 + Math.random() * Math.max(0, maxX - 6);
+  const y = 6 + Math.random() * Math.max(0, maxY - 6);
+
+  target.style.left = x + "px";
+  target.style.top = y + "px";
+}
+
+function finishRound(){
+  if (!gameRunning) return;
+
+  gameRunning = false;
+  clearInterval(timerId);
+  timerId = null;
+  target.hidden = true;
+  hint.hidden = false;
+
+  const success = score >= goalForLevel(level);
+
+  if (success) {
+    if (level >= 100) {
+      level = 100;
+      progress.level = 100;
+      saveProgress();
+      setMessage(t("messageFinished"));
+    } else {
+      level += 1;
+      progress.level = Math.max(progress.level, level);
+      saveProgress();
+      updateStats();
+      setMessage(t("messageSuccess"));
+    }
+  } else {
+    progress.best = Math.max(progress.best, score);
+    saveProgress();
+    setMessage(t("messageFail"));
+  }
+
+  updateStats();
+  startButtonText();
+}
+
+function startGame(){
+  if (gameRunning) return;
+
+  score = 0;
+  timeLeft = 20;
+  gameRunning = true;
+  gameStartTime = Date.now();
+
+  updateStats();
+  hint.hidden = true;
+  target.hidden = false;
+  placeTarget();
+  setMessage(t("messageGo"));
+  startBtn.querySelector("span").textContent = t("starting");
+
+  timerId = setInterval(() => {
+    const elapsed = Math.floor((Date.now() - gameStartTime) / 1000);
+    timeLeft = Math.max(0, 20 - elapsed);
+    timeEl.textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      finishRound();
+    }
+  }, 100);
+}
+
+target.addEventListener("click", () => {
+  if (!gameRunning) return;
+
+  score += 1;
+  progress.best = Math.max(progress.best, score);
+  scoreEl.textContent = score;
+  placeTarget();
+
+  if (score >= goalForLevel(level)) {
+    finishRound();
+  }
+});
+
+startBtn.addEventListener("click", startGame);
+
+resetBtn.addEventListener("click", () => {
+  if (gameRunning) {
+    gameRunning = false;
+    clearInterval(timerId);
+    timerId = null;
+  }
+
+  target.hidden = true;
+  hint.hidden = false;
+  level = 1;
+  score = 0;
+  timeLeft = 20;
+  progress = {level:1,best:0};
+
+  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+  updateStats();
+  setMessage(t("messageReset"));
+  startButtonText();
+});
+
+updateStats();
+setMessage(t("messageReady"));
+startButtonText();
+applyLanguage(currentLanguage);
+</script>
+
 </body>
 </html>
