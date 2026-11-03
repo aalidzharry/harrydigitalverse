@@ -35,9 +35,13 @@ header {
   border-bottom: 1px solid var(--line);
 }
 .brand {
+  display: block;
+  color: inherit;
+  text-decoration: none;
   font-size: 17px;
   font-weight: bold;
   letter-spacing: .5px;
+  cursor: pointer;
 }
 .brand span {
   display: block;
@@ -257,10 +261,11 @@ footer {
 <body>
 
 <header>
-  <div class="brand">
+  <a class="brand" href="/" aria-label="Back to Harry Digital Verse homepage">
     HARRY DIGITAL VERSE
     <span>TOOLS FOR EVERYDAY BUSINESS</span>
-  </div>
+  </a>
+
   <nav>
     <a href="#features">Features</a>
     <a href="#how">How It Works</a>
