@@ -462,6 +462,71 @@ footer {
   }
 }
 
+/* =====================================
+   FINAL HOMEPAGE CENTERED COMPOSITION
+===================================== */
+
+/* Center the entire hero composition */
+.hero {
+  padding-left: max(7%, calc((100% - 1200px) / 2));
+  padding-right: max(7%, calc((100% - 1200px) / 2));
+
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  gap: 24px;
+
+  text-align: left;
+}
+
+/* Actual left text column */
+.hero-content {
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
+}
+
+/* Keep selector cards in their current design */
+.hero-cards {
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tablet */
+@media(max-width:850px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 6%;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-cards {
+    transform: none;
+    max-width: 400px;
+    margin: 15px auto 0;
+  }
+}
+
+/* Phone */
+@media(max-width:480px) {
+  .hero {
+    padding: 35px 5% 40px;
+  }
+}
+
 </style>
 </head>
 
