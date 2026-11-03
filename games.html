@@ -231,6 +231,178 @@ header.site-header{
   font-size:10px;
 }
 
+/* =================================
+   FLOATING GAME WORLD DECORATIONS
+================================= */
+
+.hero-game-decor {
+  position: absolute;
+  z-index: 2;
+  right: -125px;
+  top: 95px;
+  width: 270px;
+  height: 290px;
+  pointer-events: none;
+}
+
+.game-float {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+
+  border: 1px solid rgba(255,255,255,.23);
+  border-radius: 17px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,.17),
+    rgba(255,255,255,.055)
+  );
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.15);
+
+  backdrop-filter: blur(10px);
+}
+
+.game-float small {
+  color: #a9d6ff;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.chess-float {
+  width: 85px;
+  height: 98px;
+  top: 5px;
+  left: 12px;
+  transform: rotate(-12deg);
+  animation: gameFloat 4s ease-in-out infinite;
+}
+
+.chess-piece {
+  color: #b7dfff;
+  font-family: Georgia, serif;
+  font-size: 55px;
+  line-height: 1;
+  text-shadow: 0 0 18px rgba(77,174,255,.65);
+}
+
+.cube-float {
+  width: 105px;
+  height: 105px;
+  top: 60px;
+  left: 132px;
+  transform: rotate(9deg);
+  animation: gameFloat 5s ease-in-out infinite .5s;
+}
+
+.rubik-cube {
+  width: 58px;
+  height: 58px;
+  padding: 4px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+
+  border: 2px solid #d8eaff;
+  border-radius: 7px;
+  background: #07182e;
+  transform: rotate(-12deg);
+  box-shadow: 0 0 22px rgba(64,153,255,.4);
+}
+
+.rubik-cube i {
+  border-radius: 2px;
+  background: #2786ff;
+}
+
+.rubik-cube i:nth-child(2),
+.rubik-cube i:nth-child(6) { background: #a16aff; }
+
+.rubik-cube i:nth-child(3),
+.rubik-cube i:nth-child(7) { background: #36d5df; }
+
+.rubik-cube i:nth-child(4),
+.rubik-cube i:nth-child(8) { background: #ffcf58; }
+
+.rubik-cube i:nth-child(5) { background: #f47b9b; }
+
+.blocks-float {
+  width: 118px;
+  height: 83px;
+  top: 155px;
+  left: 10px;
+  flex-direction: row;
+  gap: 5px;
+  transform: rotate(7deg);
+  animation: gameFloat 4.5s ease-in-out infinite 1s;
+}
+
+.letter-block {
+  width: 27px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  color: white;
+  background: linear-gradient(145deg,#2786ff,#7454ef);
+  font-size: 16px;
+  font-weight: 900;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+.letter-block:nth-child(2) {
+  background: linear-gradient(145deg,#38bfd4,#197cba);
+}
+
+.letter-block:nth-child(3) {
+  background: linear-gradient(145deg,#9965ee,#5837b8);
+}
+
+.blocks-float small {
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.controller-float {
+  width: 88px;
+  height: 77px;
+  top: 195px;
+  left: 150px;
+  transform: rotate(-7deg);
+  animation: gameFloat 5s ease-in-out infinite 1.5s;
+}
+
+.controller-float span {
+  font-size: 39px;
+  filter: drop-shadow(0 0 12px rgba(64,153,255,.55));
+}
+
+@keyframes gameFloat {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -11px;
+  }
+}
+
+/* Keep the hero uncluttered on smaller screens */
+@media(max-width:1500px) {
+  .hero-game-decor {
+    display: none;
+  }
+}
+
 /* GAME LIBRARY */
 .library-section{
   padding:58px 6% 66px;
@@ -766,6 +938,40 @@ footer{
         </div>
       </div>
     </aside>
+
+    <!-- FLOATING GAME DECORATIONS -->
+    <div class="hero-game-decor" aria-hidden="true">
+
+      <!-- CHESS -->
+      <div class="game-float chess-float">
+        <span class="chess-piece">♞</span>
+        <small>STRATEGY</small>
+      </div>
+
+      <!-- RUBIK CUBE -->
+      <div class="game-float cube-float">
+        <div class="rubik-cube">
+          <i></i><i></i><i></i>
+          <i></i><i></i><i></i>
+          <i></i><i></i><i></i>
+        </div>
+      </div>
+
+      <!-- KIDS LEARNING BLOCKS -->
+      <div class="game-float blocks-float">
+        <span class="letter-block">A</span>
+        <span class="letter-block">B</span>
+        <span class="letter-block">C</span>
+        <small>LEARNING</small>
+      </div>
+
+      <!-- GAME CONTROLLER -->
+      <div class="game-float controller-float">
+        <span>🎮</span>
+        <small>PLAY</small>
+      </div>
+
+    </div>
 
   </div>
 </section>
