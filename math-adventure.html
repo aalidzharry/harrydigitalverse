@@ -843,5 +843,373 @@ function resetProgress(){
 renderMap();
 </script>
 
+<script>
+/* ======================================
+   HARRYVERSE EDU - BILINGUAL SYSTEM
+   English + Bahasa Melayu
+====================================== */
+
+const msLevelNames = [
+  "Kiraan Kunang-kunang",
+  "Laluan Nombor",
+  "Susunan Biji Oak",
+  "Lebih atau Kurang",
+  "Puluh dan Sa"
+];
+
+const msQuestions = [
+  [
+    ["Kira kunang-kunang!","Berapa ekor kunang-kunang yang kamu nampak?","Kira setiap kunang-kunang satu demi satu."],
+    ["Kira bintang-bintang!","Ada berapa bintang?","Kira satu demi satu."],
+    ["Kira daun-daun!","Berapa helai daun yang kamu nampak?","Mulakan dari satu dan kira semuanya."],
+    ["Kira cendawan!","Ada berapa cendawan?","Setiap cendawan dikira satu."],
+    ["Kira rama-rama!","Ada berapa rama-rama yang sedang terbang?","Kira semua rama-rama."]
+  ],
+  [
+    ["Lengkapkan laluan nombor","Nombor apakah yang datang seterusnya?","Kira ke hadapan satu demi satu."],
+    ["Cari nombor yang hilang","Nombor manakah yang tiada?","Apakah nombor selepas enam?"],
+    ["Ikuti laluan nombor","Nombor manakah yang hilang?","Kira bermula dari lapan."],
+    ["Teruskan mengira","Apakah nombor selepas dua belas?","Nombor bertambah satu demi satu."],
+    ["Cari nombor yang hilang","Nombor manakah yang sesuai di sini?","Apakah nombor selepas empat belas?"]
+  ],
+  [
+    ["Cari nombor paling kecil","Nombor manakah yang paling kecil?","Paling kecil bermaksud nilai yang paling rendah."],
+    ["Cari nombor paling besar","Nombor manakah yang paling besar?","Paling besar bermaksud nilai yang paling tinggi."],
+    ["Susun nombor","Susunan manakah dari paling kecil ke paling besar?","Mulakan dengan nombor yang paling kecil."],
+    ["Cari nombor sebelum 12","Apakah nombor sebelum dua belas?","Kira ke belakang satu langkah."],
+    ["Cari nombor di tengah","Apakah nombor yang berada di tengah?","Kira dari enam hingga lapan."]
+  ],
+  [
+    ["Yang manakah lebih besar?","Pilih nombor yang lebih besar.","Lebih besar bermaksud nilainya lebih banyak."],
+    ["Berapakah 3 + 4?","Berapakah jumlah epal semuanya?","Mulakan dengan tiga, kemudian tambah empat."],
+    ["Apakah 2 kurang daripada 10?","Kira ke belakang dua langkah.","Sepuluh, sembilan, kemudian lapan."],
+    ["Apakah 1 lebih daripada 14?","Gerak satu langkah ke hadapan.","Apakah nombor selepas empat belas?"],
+    ["Yang manakah lebih kecil?","Pilih nombor yang lebih kecil.","Lebih kecil bermaksud nilainya lebih rendah."]
+  ],
+  [
+    ["Lihat nombor 14","Berapakah bilangan puluh dalam empat belas?","Empat belas mempunyai satu kumpulan sepuluh."],
+    ["Lihat nombor 14","Berapakah angka sa dalam empat belas?","Empat belas terdiri daripada sepuluh dan empat lagi."],
+    ["Bina nombor","Apakah nombor hasilnya?","Sepuluh tambah tiga."],
+    ["Kira nilai sa","Berapakah nilai sa untuk membentuk 17?","Tujuh belas terdiri daripada sepuluh dan tujuh."],
+    ["Bina nombor","Apakah nombor yang terbentuk?","Dua puluh tambah lima."]
+  ]
+];
+
+const gameText = {
+  en: {
+    forest:"NUMBER FOREST",
+    welcome:"Welcome, Explorer!",
+    intro:"Finn needs your help! Explore the magical forest, solve number puzzles and collect the lost stars.",
+    start:"Start Adventure ✨",
+    choose:"Choose Your Adventure",
+    world:"Number Forest",
+    worldDesc:"Learn numbers, patterns and place value.",
+    saved:"Your adventure progress is saved in this browser.",
+    reset:"Reset Progress",
+    challenge:"FINN'S CHALLENGE",
+    question:"Question",
+    of:"of",
+    correct:"⭐ Amazing! That's correct. Great job, Explorer!",
+    wrong:"Almost! Try another answer.",
+    nextQuestion:"Next Question →",
+    finish:"Finish Level 🏆",
+    nextLevel:"Next Level →",
+    map:"World Map",
+    complete:"Level Complete!",
+    forestComplete:"Number Forest Complete!",
+    result:"You finished",
+    earned:"You earned",
+    stars:"stars. Keep exploring and learning!",
+    continue:"Continue →",
+    replay:"Play Again ↻",
+    confirm:"Reset all Number Forest progress and stars?",
+    level:"Level",
+    topLabel:"WORLD 1 · NUMBER FOREST"
+  },
+  ms: {
+    forest:"HUTAN NOMBOR",
+    welcome:"Selamat Datang, Pengembara!",
+    intro:"Finn perlukan bantuan kamu! Terokai hutan ajaib, selesaikan teka-teki nombor dan kumpulkan bintang yang hilang.",
+    start:"Mulakan Pengembaraan ✨",
+    choose:"Pilih Pengembaraan Kamu",
+    world:"Hutan Nombor",
+    worldDesc:"Belajar nombor, corak dan nilai tempat.",
+    saved:"Kemajuan pengembaraan kamu disimpan dalam browser ini.",
+    reset:"Reset Kemajuan",
+    challenge:"CABARAN FINN",
+    question:"Soalan",
+    of:"daripada",
+    correct:"⭐ Hebat! Jawapan kamu betul. Syabas, Pengembara!",
+    wrong:"Belum tepat! Cuba jawapan yang lain.",
+    nextQuestion:"Soalan Seterusnya →",
+    finish:"Selesaikan Tahap 🏆",
+    nextLevel:"Tahap Seterusnya →",
+    map:"Peta Dunia",
+    complete:"Tahap Selesai!",
+    forestComplete:"Hutan Nombor Selesai!",
+    result:"Kamu telah menyelesaikan",
+    earned:"Kamu memperoleh",
+    stars:"bintang. Teruskan meneroka dan belajar!",
+    continue:"Teruskan →",
+    replay:"Main Semula ↻",
+    confirm:"Reset semua kemajuan dan bintang Hutan Nombor?",
+    level:"Tahap",
+    topLabel:"DUNIA 1 · HUTAN NOMBOR"
+  }
+};
+
+let gameLanguage = "en";
+
+try {
+  gameLanguage = localStorage.getItem("hvedu-language") || "en";
+} catch(error) {
+  gameLanguage = "en";
+}
+
+function word(key){
+  return gameText[gameLanguage][key];
+}
+
+/* Add language selector */
+const topbar = document.querySelector(".topbar");
+const statsBox = document.querySelector(".stats");
+
+const langSelect = document.createElement("select");
+
+langSelect.id = "gameLanguage";
+langSelect.className = "game-language";
+
+langSelect.innerHTML = `
+  <option value="en">🇬🇧 English</option>
+  <option value="ms">🇲🇾 Bahasa Melayu</option>
+`;
+
+if(topbar && statsBox){
+  topbar.insertBefore(langSelect,statsBox);
+}
+
+/* Language selector style */
+const languageStyle = document.createElement("style");
+
+languageStyle.textContent = `
+.game-language{
+  padding:9px 12px;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:10px;
+  background:#233d5a;
+  color:white;
+  font-family:Nunito,sans-serif;
+  font-size:12px;
+  font-weight:900;
+  cursor:pointer;
+}
+.game-language option{
+  background:white;
+  color:#10243c;
+}
+`;
+
+document.head.appendChild(languageStyle);
+
+/* Translate map screen */
+function applyMapLanguage(){
+
+  document.querySelector(".hero .eyebrow").textContent =
+    "WORLD 1 · " + word("forest");
+
+  document.querySelector(".hero h1").textContent =
+    word("welcome");
+
+  document.querySelector(".hero p").textContent =
+    word("intro");
+
+  document.querySelector(".hero .primary-btn").textContent =
+    word("start");
+
+  document.querySelector(".section-title").textContent =
+    word("choose");
+
+  document.querySelector(".world-card h2").textContent =
+    "🌲 " + word("world");
+
+  document.querySelector(".world-card p").textContent =
+    word("worldDesc");
+
+  document.querySelector(".stats .stat:nth-child(2)").textContent =
+    "🌲 " + word("forest");
+
+  document.querySelector(".footer-note").innerHTML = `
+    ${word("saved")}
+    <br><br>
+    <button class="secondary-btn" onclick="resetProgress()">
+      ${word("reset")}
+    </button>
+  `;
+}
+
+/* Translate current question */
+function applyQuestionLanguage(){
+
+  const q = levels[currentLevel].questions[questionIndex];
+
+  const levelName = gameLanguage === "ms"
+    ? msLevelNames[currentLevel]
+    : levels[currentLevel].name;
+
+  const translatedQuestion = gameLanguage === "ms"
+    ? msQuestions[currentLevel][questionIndex]
+    : [q[0],q[2],q[5]];
+
+  document.getElementById("levelName").textContent =
+    "🌲 " + word("level") + " " + (currentLevel+1) +
+    " — " + levelName;
+
+  document.getElementById("questionCount").textContent =
+    word("question") + " " + (questionIndex+1) +
+    " " + word("of") + " 5";
+
+  document.querySelector("#gameScreen .question-area .eyebrow").textContent =
+    word("challenge");
+
+  document.getElementById("questionText").textContent =
+    translatedQuestion[0];
+
+  document.getElementById("questionHint").textContent =
+    translatedQuestion[1];
+
+  const nextBtn = document.getElementById("nextBtn");
+
+  if(!nextBtn.hidden){
+    nextBtn.textContent =
+      questionIndex === 4 ? word("finish") : word("nextQuestion");
+  }
+
+  document.querySelector("#gameScreen .action-row .secondary-btn").textContent =
+    word("map");
+}
+
+/* Translate answer feedback */
+function applyFeedback(){
+
+  const feedback = document.getElementById("feedback");
+
+  if(feedback.classList.contains("good")){
+    feedback.textContent = word("correct");
+  }
+
+  if(feedback.classList.contains("try")){
+    const hint = gameLanguage === "ms"
+      ? msQuestions[currentLevel][questionIndex][2]
+      : levels[currentLevel].questions[questionIndex][5];
+
+    feedback.textContent = word("wrong") + " 💚 " + hint;
+  }
+}
+
+/* Translate result screen */
+function applyResultLanguage(){
+
+  const completed = currentLevel === 4;
+  const earned = state.stars[currentLevel+1] || 1;
+
+  document.getElementById("resultTitle").textContent =
+    completed ? word("forestComplete") : word("complete");
+
+  const name = gameLanguage === "ms"
+    ? msLevelNames[currentLevel]
+    : levels[currentLevel].name;
+
+  document.getElementById("resultText").textContent =
+    word("result") + " " + name + "! " +
+    word("earned") + " " + earned + " " + word("stars");
+
+  document.getElementById("continueBtn").textContent =
+    completed ? word("replay") : word("continue");
+
+  document.querySelector("#resultScreen .secondary-btn").textContent =
+    word("map");
+}
+
+/* Wrap original game functions */
+const originalRenderMap = renderMap;
+
+renderMap = function(){
+  originalRenderMap();
+  applyMapLanguage();
+};
+
+const originalRenderQuestion = renderQuestion;
+
+renderQuestion = function(){
+  originalRenderQuestion();
+  applyQuestionLanguage();
+};
+
+const originalCheckAnswer = checkAnswer;
+
+checkAnswer = function(button,choice,q){
+  originalCheckAnswer(button,choice,q);
+  applyFeedback();
+};
+
+const originalFinishLevel = finishLevel;
+
+finishLevel = function(){
+  originalFinishLevel();
+  applyResultLanguage();
+};
+
+const originalShowMap = showMap;
+
+showMap = function(){
+  originalShowMap();
+  applyMapLanguage();
+};
+
+/* Custom bilingual reset */
+resetProgress = function(){
+
+  if(!confirm(word("confirm")))return;
+
+  state = {unlocked:1,stars:{}};
+
+  saveProgress();
+  showMap();
+};
+
+/* Change language */
+function setGameLanguage(language){
+
+  gameLanguage = language === "ms" ? "ms" : "en";
+
+  try{
+    localStorage.setItem("hvedu-language",gameLanguage);
+  }catch(error){}
+
+  document.documentElement.lang = gameLanguage;
+  langSelect.value = gameLanguage;
+
+  if(document.getElementById("mapScreen").classList.contains("active")){
+    applyMapLanguage();
+  }
+
+  if(document.getElementById("gameScreen").classList.contains("active")){
+    applyQuestionLanguage();
+    applyFeedback();
+  }
+
+  if(document.getElementById("resultScreen").classList.contains("active")){
+    applyResultLanguage();
+  }
+}
+
+langSelect.addEventListener("change",function(){
+  setGameLanguage(this.value);
+});
+
+/* Restore saved language */
+setGameLanguage(gameLanguage);
+</script>
+
 </body>
 </html>
