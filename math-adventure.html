@@ -1145,12 +1145,24 @@ renderQuestion = function(){
   applyQuestionLanguage();
 };
 
+
 const originalCheckAnswer = checkAnswer;
 
 checkAnswer = function(button,choice,q){
   originalCheckAnswer(button,choice,q);
+
   applyFeedback();
+
+  const nextBtn = document.getElementById("nextBtn");
+
+  if(nextBtn && !nextBtn.hidden){
+    nextBtn.textContent =
+      questionIndex === 4
+        ? word("finish")
+        : word("nextQuestion");
+  }
 };
+
 
 const originalFinishLevel = finishLevel;
 
