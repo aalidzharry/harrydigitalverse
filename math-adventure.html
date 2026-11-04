@@ -1076,6 +1076,20 @@ function applyQuestionLanguage(){
 
   document.getElementById("questionHint").textContent =
     translatedQuestion[1];
+  
+  // Translate Level 5 mathematical visuals
+  const visual = document.getElementById("questionVisual");
+
+  if(gameLanguage === "ms" && currentLevel === 4){
+    if(questionIndex === 3){
+      visual.textContent = "1 puluh + ? sa = 17";
+    }else if(questionIndex === 4){
+      visual.textContent = "2 puluh + 5 sa";
+    }
+  }else{
+    visual.textContent = q[1];
+  }
+
 
   const nextBtn = document.getElementById("nextBtn");
 
