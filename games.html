@@ -586,10 +586,22 @@ header.site-header{
   color:#becbe0;
   font-size:13px;
 }
+
 .subject-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:13px;
+  max-width:990px;
+  width:100%;
+  margin:0 auto;
+  box-sizing:border-box;
+}
+
+@media (max-width:700px){
+  .subject-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
 .subject-card{
   padding:19px;
