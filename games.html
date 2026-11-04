@@ -613,6 +613,37 @@ header.site-header{
   font-size:10px;
 }
 
+.subject-card .math-game {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subject-card .math-game span {
+    display: inline;
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.subject-card .math-game small {
+    color: #b4c4d6;
+    font-size: 10px;
+}
+
+.subject-card .math-play-btn {
+    display: inline-block;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #FFD447, #FF8736);
+    color: #10243D;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
 /* TAP TAP RELAX QUICK PLAY */
 .play-section{
   padding:58px 6% 68px;
@@ -1405,19 +1436,22 @@ body {
 <div class="subject-grid">
 
   <!-- MATH ADVENTURES -->
-  <article class="subject-card">
+
+<article class="subject-card">
     <span>🔢</span>
     <strong data-i18n="mathTitle">Math Adventures</strong>
     <small data-i18n="mathText">Numbers, patterns and problem-solving</small>
 
-    <p>🌲 Number Forest</p>
-    <small>HarryVerse EDU — English + Bahasa Melayu</small>
+    <div class="math-game">
+        <span>🌲 Number Forest</span>
+        <small>English + Bahasa Melayu</small>
+        <a href="https://www.harrydigitalverse.com/math-adventure.html"
+           target="_blank" class="math-play-btn">
+           🎮 Play Now →
+        </a>
+    </div>
+</article>
 
-    <a href="https://www.harrydigitalverse.com/math-adventure.html"
-       target="_blank">
-       🎮 Play Math Adventure →
-    </a>
-  </article>
 
   <!-- ENGLISH WRITING -->
   <article class="subject-card">
