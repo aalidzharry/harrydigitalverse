@@ -1,0 +1,847 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math Adventure | HarryVerse EDU</title>
+<meta name="description" content="Explore Number Forest and learn maths through a magical adventure.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root{
+  --navy:#10243c;
+  --navy2:#193653;
+  --green:#2c805b;
+  --green2:#55a976;
+  --yellow:#ffd447;
+  --orange:#ff8736;
+  --purple:#8b5cf6;
+  --cream:#fff8e9;
+  --ink:#243047;
+  --muted:#657186;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height:100vh;
+  padding:20px;
+  color:var(--ink);
+  font-family:'Nunito',sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%,#284d63 0,transparent 30%),
+    radial-gradient(circle at 90% 80%,#315a59 0,transparent 30%),
+    var(--navy);
+}
+
+button{font:inherit;cursor:pointer}
+
+.game-shell{
+  width:min(100%,1050px);
+  margin:auto;
+  overflow:hidden;
+  border:4px solid rgba(255,255,255,.13);
+  border-radius:25px;
+  background:var(--cream);
+  box-shadow:0 25px 70px rgba(0,0,0,.28);
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:17px 25px;
+  color:white;
+  background:var(--navy);
+}
+
+.brand{
+  font-family:'Fredoka',sans-serif;
+  font-size:21px;
+  font-weight:600;
+}
+
+.brand small{
+  display:block;
+  margin-top:2px;
+  color:#b9cadb;
+  font:700 9px 'Nunito',sans-serif;
+  letter-spacing:2px;
+}
+
+.stats{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.stat{
+  padding:8px 12px;
+  border-radius:12px;
+  background:#233d5a;
+  color:white;
+  font-size:12px;
+  font-weight:900;
+}
+
+.game-main{padding:30px}
+
+.screen{display:none}
+.screen.active{display:block}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:35px 25px;
+  border-radius:21px;
+  color:white;
+  text-align:center;
+  background:
+    radial-gradient(circle at 15% 15%,#8ed08e 0 5%,transparent 6%),
+    radial-gradient(circle at 85% 20%,#b3d982 0 4%,transparent 5%),
+    linear-gradient(145deg,#286d53,#174b43 65%,#123b3e);
+}
+
+.hero:before,
+.hero:after{
+  content:'';
+  position:absolute;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  background:rgba(167,220,135,.13);
+}
+
+.hero:before{left:-100px;bottom:-125px}
+.hero:after{right:-100px;top:-120px}
+
+.hero-art{
+  position:relative;
+  z-index:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:17px;
+  margin-bottom:12px;
+  font-size:43px;
+}
+
+.fox{
+  display:grid;
+  place-items:center;
+  width:94px;
+  height:94px;
+  border:4px solid rgba(255,255,255,.3);
+  border-radius:28px;
+  background:#fff1cf;
+  font-size:59px;
+  transform:rotate(-5deg);
+  box-shadow:0 8px 0 rgba(0,0,0,.12);
+}
+
+.hero h1{
+  position:relative;
+  z-index:1;
+  margin:8px 0;
+  font:700 clamp(32px,6vw,54px)/1.05 'Fredoka',sans-serif;
+}
+
+.hero p{
+  position:relative;
+  z-index:1;
+  max-width:570px;
+  margin:12px auto 20px;
+  color:#e5f4e8;
+  line-height:1.7;
+}
+
+.eyebrow{
+  position:relative;
+  z-index:1;
+  color:var(--yellow);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:2.5px;
+}
+
+.primary-btn,
+.secondary-btn{
+  border:0;
+  border-radius:13px;
+  padding:13px 22px;
+  font-family:'Fredoka',sans-serif;
+  font-size:16px;
+  font-weight:600;
+  transition:.18s;
+}
+
+.primary-btn{
+  color:#382c0a;
+  background:var(--yellow);
+  box-shadow:0 5px 0 #d7a92c;
+}
+
+.primary-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 7px 0 #d7a92c;
+}
+
+.secondary-btn{
+  color:var(--navy);
+  background:#e6edf2;
+}
+
+.section-title{
+  margin:27px 0 15px;
+  font:600 23px 'Fredoka',sans-serif;
+}
+
+.world-card{
+  padding:20px;
+  border-radius:17px;
+  color:white;
+  background:linear-gradient(110deg,#286f50,#459b68);
+}
+
+.world-card h2{
+  margin:0;
+  font:600 22px 'Fredoka',sans-serif;
+}
+
+.world-card p{
+  margin:6px 0 0;
+  color:#e1f4e5;
+  font-size:12px;
+}
+
+.level-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+  margin-top:17px;
+}
+
+.level-btn{
+  min-height:112px;
+  padding:12px 5px;
+  border:2px solid #e4ddcd;
+  border-radius:15px;
+  background:#fffdf6;
+  color:var(--ink);
+  text-align:center;
+}
+
+.level-btn:hover:not(:disabled){
+  border-color:var(--green2);
+  transform:translateY(-3px);
+}
+
+.level-btn:disabled{
+  opacity:.43;
+  cursor:not-allowed;
+}
+
+.level-number{
+  display:block;
+  font:700 24px 'Fredoka',sans-serif;
+}
+
+.level-icon{
+  display:block;
+  margin:4px 0;
+  font-size:23px;
+}
+
+.level-stars{
+  color:#d59a15;
+  font-size:12px;
+  font-weight:900;
+}
+
+.footer-note{
+  margin-top:24px;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.game-panel{
+  padding:25px;
+  border:2px solid #e9e0cf;
+  border-radius:20px;
+  background:white;
+}
+
+.game-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.world-label{
+  color:var(--green);
+  font:600 15px 'Fredoka',sans-serif;
+}
+
+.progress-text{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:900;
+}
+
+.progress-track{
+  height:10px;
+  margin:14px 0 23px;
+  overflow:hidden;
+  border-radius:20px;
+  background:#e8ebea;
+}
+
+.progress-fill{
+  width:0;
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(90deg,#55a976,#b1d94e);
+  transition:width .3s;
+}
+
+.question-area{text-align:center}
+
+.question-area h2{
+  margin:10px 0;
+  font:600 clamp(23px,4vw,34px) 'Fredoka',sans-serif;
+}
+
+.question-hint{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  min-height:95px;
+  margin:20px 0;
+  padding:17px;
+  border-radius:16px;
+  background:#edf5e9;
+  font-size:34px;
+  letter-spacing:5px;
+  line-height:1.7;
+}
+
+.answer-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  max-width:570px;
+  margin:0 auto;
+}
+
+.answer-btn{
+  min-height:64px;
+  padding:13px;
+  border:2px solid #dfe6df;
+  border-radius:13px;
+  background:#fffdf7;
+  color:var(--navy);
+  font:600 22px 'Fredoka',sans-serif;
+  transition:.15s;
+}
+
+.answer-btn:hover:not(:disabled){
+  border-color:var(--green);
+  background:#eaf5e8;
+}
+
+.answer-btn.correct{
+  border-color:#359b64;
+  background:#dff5e4;
+  color:#17633c;
+}
+
+.answer-btn.wrong{
+  border-color:#dc795d;
+  background:#ffebe5;
+  color:#9c402b;
+}
+
+.feedback{
+  min-height:54px;
+  margin:17px auto 0;
+  text-align:center;
+  font-size:14px;
+  font-weight:900;
+}
+
+.feedback.good{color:#27804e}
+.feedback.try{color:#bd6834}
+
+.action-row{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.result{
+  padding:35px 20px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#eaf5e8,#fff5d9);
+  text-align:center;
+}
+
+.result .big-stars{
+  margin:12px;
+  color:#d59a15;
+  font-size:42px;
+}
+
+.result h2{
+  margin:5px;
+  font:700 34px 'Fredoka',sans-serif;
+}
+
+.result p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.bottom-brand{
+  padding:17px;
+  background:#edf0e8;
+  color:#73806f;
+  text-align:center;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+@media(max-width:650px){
+  body{padding:8px}
+  .topbar{padding:14px;align-items:flex-start;flex-direction:column}
+  .game-main{padding:15px}
+  .level-grid{grid-template-columns:repeat(2,1fr)}
+  .level-btn:last-child{grid-column:1/-1}
+  .hero{padding:28px 15px}
+  .game-panel{padding:16px}
+  .visual{font-size:28px}
+}
+
+@media(max-width:370px){
+  .answer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="game-shell">
+
+<header class="topbar">
+  <div class="brand">
+    HARRYVERSE EDU
+    <small>EXPLORE · SOLVE · DISCOVER</small>
+  </div>
+
+  <div class="stats">
+    <div class="stat">⭐ <span id="totalStars">0</span></div>
+    <div class="stat">🌲 NUMBER FOREST</div>
+  </div>
+</header>
+
+<main class="game-main">
+
+<section class="screen active" id="mapScreen">
+
+  <div class="hero">
+    <div class="hero-art">
+      <span>🌳</span>
+      <div class="fox">🦊</div>
+      <span>✨</span>
+    </div>
+
+    <div class="eyebrow">WORLD 1 · NUMBER FOREST</div>
+    <h1>Welcome, Explorer!</h1>
+
+    <p>
+      Finn needs your help! Explore the magical forest,
+      solve number puzzles and collect the lost stars.
+    </p>
+
+    <button class="primary-btn" onclick="startLevel(state.unlocked)">
+      Start Adventure ✨
+    </button>
+  </div>
+
+  <h2 class="section-title">Choose Your Adventure</h2>
+
+  <div class="world-card">
+    <h2>🌲 Number Forest</h2>
+    <p>Learn numbers, patterns and place value.</p>
+  </div>
+
+  <div class="level-grid" id="levelGrid"></div>
+
+  <div class="footer-note">
+    Your adventure progress is saved in this browser.
+    <br><br>
+    <button class="secondary-btn" onclick="resetProgress()">Reset Progress</button>
+  </div>
+
+</section>
+
+<section class="screen" id="gameScreen">
+
+  <div class="game-panel">
+
+    <div class="game-top">
+      <div class="world-label" id="levelName">Level 1</div>
+      <div class="progress-text" id="questionCount">Question 1 of 5</div>
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="question-area">
+      <div class="eyebrow" style="color:#43845c">FINN'S CHALLENGE</div>
+      <h2 id="questionText"></h2>
+      <p class="question-hint" id="questionHint"></p>
+    </div>
+
+    <div class="visual" id="questionVisual"></div>
+
+    <div class="answer-grid" id="answerGrid"></div>
+
+    <div class="feedback" id="feedback" aria-live="polite"></div>
+
+    <div class="action-row">
+      <button class="primary-btn" id="nextBtn" hidden onclick="nextQuestion()">
+        Next →
+      </button>
+      <button class="secondary-btn" onclick="showMap()">World Map</button>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="screen" id="resultScreen">
+  <div class="result">
+    <div style="font-size:55px">🏆</div>
+    <div class="big-stars" id="earnedStars"></div>
+    <h2 id="resultTitle">Level Complete!</h2>
+    <p id="resultText"></p>
+
+    <div class="action-row">
+      <button class="primary-btn" id="continueBtn" onclick="continueAdventure()">
+        Continue →
+      </button>
+      <button class="secondary-btn" onclick="showMap()">World Map</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="bottom-brand">
+  A HARRYVERSE EDU ORIGINAL · LEARN THROUGH ADVENTURE
+</div>
+
+</div>
+
+<script>
+const levels = [
+
+{
+  name:"Firefly Counting",
+  icon:"✨",
+  questions:[
+    ["Count the fireflies!","✨ ✨ ✨","How many fireflies can you see?","3",["2","3","4","5"],"Count each firefly one by one."],
+    ["Count the stars!","⭐ ⭐ ⭐ ⭐ ⭐","How many stars are there?","5",["4","5","6","7"],"Point to each star as you count."],
+    ["Count the leaves!","🍃 🍃 🍃 🍃 🍃 🍃","How many leaves can you see?","6",["5","6","7","8"],"Try counting slowly from one."],
+    ["Count the mushrooms!","🍄 🍄 🍄 🍄","How many mushrooms are there?","4",["3","4","5","6"],"Each mushroom counts as one."],
+    ["Count the butterflies!","🦋 🦋 🦋 🦋 🦋 🦋 🦋","How many butterflies are flying?","7",["5","6","7","8"],"Count all the butterflies."]
+  ]
+},
+
+{
+  name:"Number Trail",
+  icon:"🔢",
+  questions:[
+    ["Complete the number trail","2  ·  3  ·  ?  ·  5","Which number comes next?","4",["3","4","5","6"],"Count forward by one."],
+    ["Find the missing number","5  ·  6  ·  ?  ·  8","Which number is missing?","7",["6","7","8","9"],"What comes after six?"],
+    ["Follow the trail","8  ·  9  ·  ?  ·  11","Which number is missing?","10",["9","10","11","12"],"Count from eight."],
+    ["Keep counting","11  ·  12  ·  ?  ·  14","What comes after twelve?","13",["11","12","13","15"],"The numbers get bigger by one."],
+    ["Find the missing number","14  ·  ?  ·  16  ·  17","Which number belongs here?","15",["13","14","15","18"],"What number comes after fourteen?"]
+  ]
+},
+
+{
+  name:"Acorn Ordering",
+  icon:"🌰",
+  questions:[
+    ["Find the smallest number","3  ·  8  ·  5","Which number is the smallest?","3",["3","5","8","9"],"Smallest means the least value."],
+    ["Find the biggest number","4  ·  9  ·  6","Which number is the greatest?","9",["4","6","8","9"],"Greatest means the largest value."],
+    ["Put them in order","2  ·  7  ·  5","Which order goes from smallest to greatest?","2, 5, 7",["2, 5, 7","5, 2, 7","7, 5, 2","2, 7, 5"],"Start with the smallest number."],
+    ["Find the number before 12","?  ·  12","Which number comes before twelve?","11",["10","11","12","13"],"Count backwards one step."],
+    ["Find the number between","6  ·  ?  ·  8","Which number is in the middle?","7",["5","6","7","9"],"Count from six to eight."]
+  ]
+},
+
+{
+  name:"More or Less",
+  icon:"⚖️",
+  questions:[
+    ["Which number is greater?","9  or  6","Choose the bigger number.","9",["6","7","8","9"],"Greater means more."],
+    ["What is 3 + 4?","🍎 + 🍎 🍎 🍎 🍎","How many apples altogether?","7",["6","7","8","9"],"Start with three and count four more."],
+    ["What is 2 less than 10?","10  →  ?","Count backwards two steps.","8",["6","7","8","9"],"Ten, nine, then eight."],
+    ["What is 1 more than 14?","14  →  ?","Move one step forward.","15",["13","14","15","16"],"The next number after fourteen."],
+    ["Which number is smaller?","12  or  17","Choose the smaller number.","12",["12","14","17","19"],"Smaller means less."]
+  ]
+},
+
+{
+  name:"Tens & Ones",
+  icon:"🧮",
+  questions:[
+    ["Look at the number 14","14","How many tens are in fourteen?","1",["1","2","4","14"],"Fourteen has one group of ten."],
+    ["Look at the number 14","14","How many ones are in fourteen?","4",["1","2","4","10"],"Fourteen is ten and four more."],
+    ["Build the number","10  +  3","What number do you get?","13",["12","13","14","15"],"Ten plus three more."],
+    ["Count the ones","1 ten + ? ones = 17","How many ones make seventeen?","7",["5","6","7","8"],"Seventeen is ten and seven."],
+    ["Build the number","2 tens + 5 ones","Which number is correct?","25",["15","20","25","52"],"Two tens are twenty. Add five."]
+  ]
+}
+
+];
+
+const STORAGE_KEY = "hvedu-number-forest-v1";
+
+function loadProgress(){
+  try{
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if(saved && typeof saved.unlocked === "number"){
+      return {
+        unlocked:Math.min(5,Math.max(1,saved.unlocked)),
+        stars:saved.stars || {}
+      };
+    }
+  }catch(e){}
+  return {unlocked:1,stars:{}};
+}
+
+let state = loadProgress();
+let currentLevel = 0;
+let questionIndex = 0;
+let mistakes = 0;
+let answered = false;
+
+function saveProgress(){
+  try{
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+  }catch(e){}
+}
+
+function totalStars(){
+  return Object.values(state.stars).reduce((sum,n)=>sum+n,0);
+}
+
+function updateStars(){
+  document.getElementById("totalStars").textContent=totalStars();
+}
+
+function showScreen(id){
+  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+function renderMap(){
+  const grid=document.getElementById("levelGrid");
+  grid.innerHTML="";
+
+  levels.forEach((level,index)=>{
+    const unlocked=index<state.unlocked;
+    const earned=state.stars[index+1] || 0;
+
+    const button=document.createElement("button");
+    button.className="level-btn";
+    button.disabled=!unlocked;
+
+    button.innerHTML=`
+      <span class="level-number">${unlocked ? index+1 : "🔒"}</span>
+      <span class="level-icon">${level.icon}</span>
+      <span class="level-stars">${earned ? "⭐".repeat(earned) : "☆☆☆"}</span>
+    `;
+
+    if(unlocked){
+      button.addEventListener("click",()=>startLevel(index+1));
+    }
+
+    grid.appendChild(button);
+  });
+
+  updateStars();
+}
+
+function showMap(){
+  renderMap();
+  showScreen("mapScreen");
+}
+
+function startLevel(levelNumber){
+  if(levelNumber<1 || levelNumber>state.unlocked)return;
+
+  currentLevel=levelNumber-1;
+  questionIndex=0;
+  mistakes=0;
+  answered=false;
+
+  document.getElementById("levelName").textContent=
+    "🌲 Level "+levelNumber+" — "+levels[currentLevel].name;
+
+  showScreen("gameScreen");
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const q=levels[currentLevel].questions[questionIndex];
+
+  answered=false;
+
+  document.getElementById("questionCount").textContent=
+    "Question "+(questionIndex+1)+" of 5";
+
+  document.getElementById("progressFill").style.width=
+    (questionIndex/5*100)+"%";
+
+  document.getElementById("questionText").textContent=q[0];
+  document.getElementById("questionVisual").textContent=q[1];
+  document.getElementById("questionHint").textContent=q[2];
+
+  const grid=document.getElementById("answerGrid");
+  grid.innerHTML="";
+
+  document.getElementById("feedback").textContent="";
+  document.getElementById("feedback").className="feedback";
+
+  document.getElementById("nextBtn").hidden=true;
+
+  q[4].forEach(option=>{
+    const button=document.createElement("button");
+    button.className="answer-btn";
+    button.textContent=option;
+
+    button.addEventListener("click",()=>checkAnswer(button,option,q));
+
+    grid.appendChild(button);
+  });
+}
+
+function checkAnswer(button,choice,q){
+  if(answered)return;
+
+  if(choice===q[3]){
+    answered=true;
+    button.classList.add("correct");
+
+    document.getElementById("feedback").textContent=
+      "⭐ Amazing! That's correct. Great job, Explorer!";
+
+    document.getElementById("feedback").className="feedback good";
+
+    document.querySelectorAll(".answer-btn").forEach(b=>b.disabled=true);
+
+    const next=document.getElementById("nextBtn");
+    next.hidden=false;
+
+    next.textContent=questionIndex===4 ? "Finish Level 🏆" : "Next Question →";
+
+  }else{
+    mistakes++;
+    button.classList.add("wrong");
+    button.disabled=true;
+
+    document.getElementById("feedback").textContent=
+      "Almost! Try another answer. 💚 "+q[5];
+
+    document.getElementById("feedback").className="feedback try";
+  }
+}
+
+function nextQuestion(){
+  if(!answered)return;
+
+  if(questionIndex<4){
+    questionIndex++;
+    renderQuestion();
+  }else{
+    finishLevel();
+  }
+}
+
+function finishLevel(){
+  let earned=mistakes===0 ? 3 : mistakes<=2 ? 2 : 1;
+
+  const levelNumber=currentLevel+1;
+  const previous=state.stars[levelNumber] || 0;
+
+  if(earned>previous){
+    state.stars[levelNumber]=earned;
+  }
+
+  state.unlocked=Math.max(state.unlocked,Math.min(5,levelNumber+1));
+
+  saveProgress();
+  updateStars();
+
+  document.getElementById("progressFill").style.width="100%";
+
+  document.getElementById("earnedStars").textContent=
+    "⭐".repeat(earned)+"☆".repeat(3-earned);
+
+  document.getElementById("resultTitle").textContent=
+    levelNumber===5 ? "Number Forest Complete!" : "Level Complete!";
+
+  document.getElementById("resultText").textContent=
+    "You finished "+levels[currentLevel].name+
+    "! You earned "+earned+" stars. Keep exploring and learning!";
+
+  document.getElementById("continueBtn").textContent=
+    levelNumber===5 ? "Play Again ↻" : "Next Level →";
+
+  showScreen("resultScreen");
+}
+
+function continueAdventure(){
+  if(currentLevel<4){
+    startLevel(currentLevel+2);
+  }else{
+    showMap();
+  }
+}
+
+function resetProgress(){
+  const ok=confirm("Reset all Number Forest progress and stars?");
+  if(!ok)return;
+
+  state={unlocked:1,stars:{}};
+  saveProgress();
+  showMap();
+}
+
+renderMap();
+</script>
+
+</body>
+</html>
