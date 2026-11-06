@@ -2,935 +2,845 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Digital Products | Harry Digital Verse</title>
-<meta name="description" content="Explore digital products, business services and creative portfolio projects from Harry Digital Verse.">
-
-<style>
-:root {
-  --navy: #183650;
-  --blue: #28658e;
-  --blue-light: #dcebf5;
-  --blue-pale: #edf4f8;
-  --sky: #78afd0;
-  --ink: #243541;
-  --muted: #687987;
-  --paper: #ffffff;
-  --page: #f2f6f9;
-  --line: #d6e2ea;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 25px;
-}
-
-body {
-  margin: 0;
-  background: var(--page);
-  color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-}
-
-a {
-  color: inherit;
-}
-
-/* HEADER */
-
-header {
-  min-height: 72px;
-  padding: 12px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
-}
-
-.logo {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  color: var(--navy);
-}
-
-.logo strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 23px;
-  line-height: 1.1;
-}
-
-.logo small {
-  margin-top: 4px;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 17px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: var(--ink);
-  font-size: 11px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color .2s;
-}
-
-nav a:hover,
-nav a.active {
-  color: var(--blue);
-}
-
-.language {
-  padding: 8px 10px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  color: var(--navy);
-  background: white;
-  cursor: pointer;
-}
-
-/* CATEGORY SELECTORS */
-
-.selector-section {
-  padding: 27px 6% 30px;
-  background: linear-gradient(135deg, #e6f0f6, #f5f8fb);
-  border-bottom: 1px solid var(--line);
-}
-
-.selector-container {
-  width: min(1080px, 100%);
-  margin: auto;
-}
-
-.selector-label {
-  margin: 0 0 15px;
-  color: var(--blue);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.selector-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 17px;
-}
-
-.choice-card {
-  min-height: 145px;
-  padding: 22px 25px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 11px;
-  background: var(--navy);
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(24, 54, 80, .10);
-  transition: transform .2s, box-shadow .2s;
-}
-
-.choice-card:nth-child(2) {
-  background: var(--blue);
-}
-
-.choice-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 13px 25px rgba(24, 54, 80, .17);
-}
-
-.choice-card::after {
-  content: "";
-  position: absolute;
-  width: 170px;
-  height: 170px;
-  right: -48px;
-  bottom: -105px;
-  border: 1px solid rgba(255,255,255,.19);
-  border-radius: 50%;
-}
-
-.choice-number {
-  color: #a9d1e9;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.choice-bottom {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.choice-title {
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(20px, 2.5vw, 27px);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -.6px;
-}
-
-.choice-description {
-  display: block;
-  margin-top: 6px;
-  color: #d5e7f2;
-  font-size: 11px;
-}
-
-.choice-arrow {
-  font-size: 25px;
-  color: #c5e2f4;
-  flex-shrink: 0;
-}
-
-/* SHARED SECTIONS */
-
-.container {
-  width: min(1080px, 100%);
-  margin: auto;
-}
-
-.content-section {
-  padding: 38px 6% 42px;
-}
-
-.content-section.digital {
-  background: #e8f0f5;
-}
-
-.section-heading {
-  margin-bottom: 21px;
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 25px;
-}
-
-.eyebrow {
-  color: var(--blue);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.section-heading h2 {
-  margin: 6px 0 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(24px, 3vw, 34px);
-  line-height: 1.15;
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-.section-heading p {
-  max-width: 440px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-/* CONTENT CARDS */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 17px;
-}
-
-.card {
-  min-height: 205px;
-  padding: 23px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(24, 54, 80, .045);
-  transition: transform .2s, box-shadow .2s;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 23px rgba(24, 54, 80, .08);
-}
-
-.card-icon {
-  width: 41px;
-  height: 41px;
-  display: grid;
-  place-items: center;
-  border-radius: 9px;
-  background: var(--blue-pale);
-  color: var(--blue);
-  font-size: 20px;
-}
-
-.card-meta {
-  margin: 15px 0 5px;
-  color: var(--blue);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
-
-.card h3 {
-  margin: 4px 0 7px;
-  color: var(--navy);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 21px;
-  line-height: 1.25;
-  font-weight: 800;
-}
-
-.card p {
-  margin: 5px 0 16px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-.card .link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  padding-top: 9px;
-  color: var(--blue);
-  font-size: 11px;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.card .link:hover {
-  text-decoration: underline;
-}
-
-/* PORTFOLIO AND SERVICE CARDS */
-
-.card.portfolio {
-  background: #e7f0f5;
-}
-
-.card.service {
-  background: #e4edf3;
-}
-
-/* DIGITAL PRODUCT CARDS */
-
-.product-grid .card {
-  border-top: 3px solid var(--blue);
-}
-
-.product-grid .card:first-child .card-icon {
-  background: #e4edf5;
-}
-
-.product-grid .card:last-child .card-icon {
-  background: #dcecf3;
-}
-
-/* FOOTER */
-
-footer {
-  padding: 24px 5% 18px;
-  background: var(--navy);
-  color: white;
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 22px;
-  padding-bottom: 16px;
-}
-
-.footer-brand {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 21px;
-}
-
-.footer-tagline {
-  color: #b9d2e1;
-  font-size: 9px;
-  letter-spacing: 2px;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-links a {
-  color: #e4eff5;
-  font-size: 10px;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: #9fd0ed;
-}
-
-.copyright {
-  padding-top: 13px;
-  border-top: 1px solid rgba(255,255,255,.2);
-  color: #c8d9e3;
-  font-size: 10px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:850px) {
-  header {
-    flex-direction: column;
-  }
-
-  nav {
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .footer-top {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-@media(max-width:650px) {
-  .selector-section {
-    padding: 22px 5% 24px;
-  }
-
-  .selector-grid,
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .choice-card {
-    min-height: 125px;
-    padding: 19px;
-  }
-
-  .content-section {
-    padding: 30px 5% 34px;
-  }
-
-  .section-heading {
-    display: block;
-    margin-bottom: 17px;
-  }
-
-  .section-heading p {
-    margin-top: 9px;
-  }
-
-  .card {
-    min-height: 180px;
-    padding: 20px;
-  }
-}
-
-@media(max-width:420px) {
-  nav {
-    gap: 10px;
-  }
-
-  nav a {
-    font-size: 10px;
-  }
-
-  .choice-title {
-    font-size: 21px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Products | Harry Digital Verse</title>
+  <meta name="description" content="Thoughtful digital tools, templates and printable art by Harry Digital Verse.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fffdf8;
+      --paper: #f7f2e8;
+      --navy: #172b4d;
+      --blue: #315b83;
+      --orange: #e88a45;
+      --green: #637b68;
+      --text: #293342;
+      --muted: #737b83;
+      --line: #e8e1d6;
+      --white: #ffffff;
+      --shadow: 0 14px 40px rgba(23, 43, 77, .08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      margin: 10px 0 14px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      background: transparent;
+      color: var(--navy);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--navy);
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 253, 248, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--navy);
+      color: white;
+      font-size: 20px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 82px 0 90px;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(232, 138, 69, .12), transparent 28%),
+        radial-gradient(circle at 10% 90%, rgba(49, 91, 131, .08), transparent 30%),
+        var(--paper);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      margin: 16px 0 22px;
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-text {
+      max-width: 530px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 350px;
+      display: grid;
+      place-items: center;
+    }
+
+    .art-circle {
+      width: min(330px, 100%);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #e7d9c5;
+      font-size: 100px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 0;
+      bottom: 12px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      background: var(--navy);
+      color: white;
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      font-weight: 700;
+      transform: rotate(-4deg);
+    }
+
+    /* STORE INTRO */
+    .store-intro {
+      padding: 75px 0 35px;
+      text-align: center;
+    }
+
+    .store-intro .section-copy {
+      margin: 0 auto;
+    }
+
+    /* CATEGORY CARDS */
+    .categories {
+      padding: 25px 0 70px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .category-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      transition: .2s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .category-card h3 {
+      margin: 8px 0;
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+    }
+
+    .category-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .category-icon {
+      flex-shrink: 0;
+      width: 76px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      background: var(--paper);
+      font-size: 36px;
+    }
+
+    /* PRODUCT SECTIONS */
+    .product-section {
+      padding: 65px 0;
+    }
+
+    .product-section.alt {
+      background: var(--paper);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: white;
+      transition: .2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-visual {
+      min-height: 190px;
+      display: grid;
+      place-items: center;
+      background: #eee7da;
+      font-size: 62px;
+    }
+
+    .product-visual.blue {
+      background: #e3ebf1;
+    }
+
+    .product-visual.green {
+      background: #e6ebe2;
+    }
+
+    .product-visual.orange {
+      background: #f5e5d6;
+    }
+
+    .product-info {
+      padding: 22px;
+    }
+
+    .product-tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-info h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 18px;
+    }
+
+    .product-info p {
+      min-height: 48px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .coming-soon {
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f5eee2;
+      color: #8a633b;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* TRUST / ABOUT */
+    .trust-section {
+      padding: 75px 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .trust-item {
+      padding: 25px;
+      border-radius: 18px;
+      background: var(--paper);
+    }
+
+    .trust-item .icon {
+      margin-bottom: 12px;
+      font-size: 28px;
+    }
+
+    .trust-item h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .trust-item p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 65px 0;
+    }
+
+    .cta-box {
+      padding: 55px 30px;
+      border-radius: 28px;
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      margin-bottom: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 4vw, 42px);
+    }
+
+    .cta-box p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: rgba(255, 255, 255, .75);
+    }
+
+    .cta-box .btn {
+      background: var(--orange);
+      color: white;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: var(--navy);
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero-art {
+        min-height: 280px;
+      }
+
+      .art-circle {
+        width: 260px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 11px;
+      }
+
+      .category-grid,
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .navbar {
+        min-height: 66px;
+        flex-wrap: wrap;
+        padding: 10px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .category-grid,
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        padding: 22px;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
-<header>
-  <a class="logo" href="/">
-    <strong>Harry Digital Verse</strong>
-    <small data-i18n="tagline">ONE WORLD OF IDEAS</small>
-  </a>
-
-  <nav aria-label="Main navigation">
-    <a href="/" data-i18n="home">Home</a>
-    <a href="/products/" class="active" data-i18n="products">Digital Products</a>
-    <a href="/games.html" data-i18n="games">Games</a>
-    <a href="/#creators" data-i18n="creators">Creators</a>
-    <a href="/yenzi285.html">Yenzi285</a>
-    <a href="/#stories" data-i18n="stories">Stories/Blog</a>
-
-    <select id="languageSelect" class="language" aria-label="Select language">
-      <option value="en">EN</option>
-      <option value="ms">MY</option>
-      <option value="id">ID</option>
-      <option value="es">ES</option>
-    </select>
-  </nav>
-</header>
-
-<main>
-
-<!-- TWO MAIN CATEGORY CHOICES -->
-
-<section class="selector-section">
-  <div class="selector-container">
-
-    <p class="selector-label" data-i18n="selectorLabel">
-      CHOOSE A CATEGORY
-    </p>
-
-    <div class="selector-grid">
-
-      <a class="choice-card" href="#portfolio-services">
-        <span class="choice-number" data-i18n="choice01">
-          01 · PORTFOLIO & SERVICES
-        </span>
-
-        <span class="choice-bottom">
-          <span>
-            <span class="choice-title" data-i18n="choice01Title">
-              Portfolio & Services
-            </span>
-            <span class="choice-description" data-i18n="choice01Text">
-              Explore our work and business services
-            </span>
-          </span>
-          <span class="choice-arrow">↘</span>
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="../">
+        <span class="brand-mark">H</span>
+        <span>
+          HARRY DIGITAL VERSE
+          <small>CREATIVE DIGITAL STUDIO</small>
         </span>
       </a>
 
-      <a class="choice-card" href="#digital-downloads">
-        <span class="choice-number" data-i18n="choice02">
-          02 · DIGITAL DOWNLOADS
-        </span>
+      <nav class="nav-links">
+        <a href="../">Home</a>
+        <a href="../games/">Games</a>
+        <a href="#business-tools">Business Tools</a>
+        <a href="#printable-art">Printable Art</a>
+      </nav>
+    </div>
+  </header>
 
-        <span class="choice-bottom">
-          <span>
-            <span class="choice-title" data-i18n="choice02Title">
-              Digital Downloads
-            </span>
-            <span class="choice-description" data-i18n="choice02Text">
-              Practical tools for everyday use
-            </span>
-          </span>
-          <span class="choice-arrow">↘</span>
-        </span>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">The Digital Product Store</p>
+        <h1>Small tools.<br><span>Big possibilities.</span></h1>
+        <p class="hero-text">
+          Practical digital resources and thoughtful creative designs
+          to help you work smarter, plan better and live more creatively.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#business-tools">
+            Explore Products →
+          </a>
+          <a class="btn btn-outline" href="#printable-art">
+            Discover Printable Art
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="art-circle">✦</div>
+        <div class="hero-note">Made for everyday inspiration</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE INTRO -->
+  <section class="store-intro">
+    <div class="container">
+      <p class="eyebrow">Explore Our Collection</p>
+      <h2 class="section-title">Designed to make life a little easier.</h2>
+      <p class="section-copy">
+        Discover useful digital tools for your business and beautiful
+        printable artwork for your personal space.
+      </p>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="container category-grid">
+
+      <a class="category-card" href="#business-tools">
+        <div>
+          <p class="eyebrow">For Work & Business</p>
+          <h3>Business Tools</h3>
+          <p>Simple templates to organize your work and finances.</p>
+        </div>
+        <div class="category-icon">📊</div>
+      </a>
+
+      <a class="category-card" href="#printable-art">
+        <div>
+          <p class="eyebrow">For Your Space</p>
+          <h3>Printable Art</h3>
+          <p>Minimal artwork inspired by nature and everyday moments.</p>
+        </div>
+        <div class="category-icon">🌿</div>
       </a>
 
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 01 PORTFOLIO & SERVICES -->
-
-<section class="content-section" id="portfolio-services">
-  <div class="container">
-
-    <div class="section-heading">
-      <div>
-        <div class="eyebrow" data-i18n="workLabel">
-          01 · PORTFOLIO & SERVICES
-        </div>
-        <h2 data-i18n="workTitle">
-          Explore our work and services.
-        </h2>
-      </div>
-
-      <p data-i18n="workText">
-        From creative landing page concepts to practical
-        online services for small businesses.
-      </p>
-    </div>
-
-    <div class="grid">
-
-      <article class="card portfolio">
-        <div class="card-icon">▧</div>
-
-        <div class="card-meta" data-i18n="portfolioMeta">
-          SELECTED CONCEPTS
-        </div>
-
-        <h3 data-i18n="portfolioTitle">Portfolio</h3>
-
-        <p data-i18n="portfolioText">
-          Explore three landing page concepts for home services,
-          food businesses and digital products.
-        </p>
-
-        <a class="link" href="/portfolio/" data-i18n="portfolioLink">
-          Explore Portfolio ↗
-        </a>
-      </article>
-
-      <article class="card service">
-        <div class="card-icon">✳</div>
-
-        <div class="card-meta" data-i18n="serviceMeta">
-          FOR SMALL BUSINESSES
-        </div>
-
-        <h3 data-i18n="serviceTitle">Landing Page Service</h3>
-
-        <p data-i18n="serviceText">
-          Simple, mobile-friendly landing pages with clear information
-          and contact options for your business.
-        </p>
-
-        <a class="link" href="/landing-page-service/" data-i18n="serviceLink">
-          Explore Landing Page Service ↗
-        </a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- 02 DIGITAL DOWNLOADS -->
-
-<section class="content-section digital" id="digital-downloads">
-  <div class="container">
-
-    <div class="section-heading">
-      <div>
-        <div class="eyebrow" data-i18n="productsLabel">
-          02 · DIGITAL DOWNLOADS
-        </div>
-
-        <h2 data-i18n="productsTitle">
-          Tools for everyday life and business.
-        </h2>
-      </div>
-
-      <p data-i18n="productsText">
-        Practical spreadsheet tools designed to help you organise
-        your finances and make clearer decisions.
-      </p>
-    </div>
-
-    <div class="grid product-grid">
-
-      <article class="card">
-        <div class="card-icon">▤</div>
-
-        <div class="card-meta" data-i18n="paycheckMeta">
-          PERSONAL FINANCE · EXCEL
-        </div>
-
-        <h3>Paycheck-to-Paycheck Tracker</h3>
-
-        <p data-i18n="paycheckText">
-          Organise your paychecks, plan expenses and keep a clearer
-          view of your personal money.
-        </p>
-
-        <a class="link"
-           href="/products/paycheck-to-paycheck-tracker/"
-           data-i18n="viewProduct">
-          View Product ↗
-        </a>
-      </article>
-
-      <article class="card">
-        <div class="card-icon">▥</div>
-
-        <div class="card-meta" data-i18n="businessMeta">
-          SMALL BUSINESS · EXCEL
-        </div>
-
-        <h3>Small Business Finance Tracker</h3>
-
-        <p data-i18n="businessText">
-          Track sales, expenses, invoices and monthly profit
-          in one organised workbook.
-        </p>
-
-        <a class="link"
-           href="/products/small-business-finance-tracker/"
-           data-i18n="viewProduct">
-          View Product ↗
-        </a>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-  <div class="container">
-
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand">Harry Digital Verse</div>
-        <div class="footer-tagline" data-i18n="tagline">
-          ONE WORLD OF IDEAS
+  <!-- BUSINESS TOOLS -->
+  <section class="product-section" id="business-tools">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Work Smarter</p>
+          <h2 class="section-title">Business Tools</h2>
+          <p class="section-copy">
+            Simple, practical resources for small businesses,
+            freelancers and everyday planning.
+          </p>
         </div>
       </div>
+
+      <div class="product-grid">
+
+        <article class="product-card">
+          <div class="product-visual blue">📈</div>
+          <div class="product-info">
+            <span class="product-tag">Finance & Planning</span>
+            <h3>Personal Finance Tracker</h3>
+            <p>Track income, expenses, savings and monthly budgets in one place.</p>
+            <div class="product-bottom">
+              <span class="coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual green">🧾</div>
+          <div class="product-info">
+            <span class="product-tag">Small Business</span>
+            <h3>Invoice & Quotation Template</h3>
+            <p>Create professional invoices and quotations with ease.</p>
+            <div class="product-bottom">
+              <span class="coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual orange">📦</div>
+          <div class="product-info">
+            <span class="product-tag">Business Management</span>
+            <h3>Inventory Tracker</h3>
+            <p>Keep track of stock, quantities and inventory movement.</p>
+            <div class="product-bottom">
+              <span class="coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINTABLE ART -->
+  <section class="product-section alt" id="printable-art">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Create Your Space</p>
+          <h2 class="section-title">Printable Art</h2>
+          <p class="section-copy">
+            Calm, minimal artwork inspired by nature, sunsets and mindful living.
+          </p>
+        </div>
+      </div>
+
+      <div class="product-grid">
+
+        <article class="product-card">
+          <div class="product-visual orange">🌅</div>
+          <div class="product-info">
+            <span class="product-tag">Sunset Collection</span>
+            <h3>Golden Hour Prints</h3>
+            <p>Warm sunset-inspired artwork for a peaceful and cozy space.</p>
+            <div class="product-bottom">
+              <span class="coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual green">🌿</div>
+          <div class="product-info">
+            <span class="product-tag">Botanical Collection</span>
+            <h3>Botanical Minimal Prints</h3>
+            <p>Simple botanical designs inspired by the beauty of nature.</p>
+            <div class="product-bottom">
+              <span class="coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-visual blue">☁️</div>
+          <div class="product-info">
+            <span class="product-tag">Mindful Living</span>
+            <h3>Quiet Moments Collection</h3>
+            <p>Gentle visual reminders to slow down and breathe.</p>
+            <div class="product-bottom">
+              <span class="coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY HARRY DIGITAL VERSE -->
+  <section class="trust-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <p class="eyebrow">A Little About Us</p>
+        <h2 class="section-title">Thoughtfully made. Simply useful.</h2>
+        <p class="section-copy" style="margin:0 auto;">
+          We believe digital products should be practical, accessible
+          and designed to make everyday life feel a little lighter.
+        </p>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="icon">✨</div>
+          <h3>Simple & Practical</h3>
+          <p>Easy-to-use resources designed with everyday needs in mind.</p>
+        </div>
+
+        <div class="trust-item">
+          <div class="icon">🌱</div>
+          <h3>Creative & Thoughtful</h3>
+          <p>Inspired by creativity, nature and meaningful little moments.</p>
+        </div>
+
+        <div class="trust-item">
+          <div class="icon">💻</div>
+          <h3>Digital Convenience</h3>
+          <p>Digital products designed to be accessible and convenient.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Something lovely is on its way.</h2>
+        <p>
+          We’re preparing a collection of useful tools and creative
+          resources. Check back soon for new releases.
+        </p>
+        <a class="btn" href="../">Explore Harry Digital Verse</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Harry Digital Verse. All rights reserved.</p>
 
       <div class="footer-links">
-        <a href="/" data-i18n="home">Home</a>
-        <a href="/products/" data-i18n="products">Digital Products</a>
-        <a href="/portfolio/" data-i18n="portfolio">Portfolio</a>
-        <a href="/landing-page-service/" data-i18n="serviceNav">Services</a>
+        <a href="../">Home</a>
+        <a href="../games/">Games</a>
+        <a href="#business-tools">Business Tools</a>
+        <a href="#printable-art">Printable Art</a>
       </div>
     </div>
+  </footer>
 
-    <div class="copyright" data-i18n="copyright">
-      © 2026 Harry Digital Verse. Built one idea at a time.
-    </div>
-
-  </div>
-</footer>
-
-<script>
-const translations = {
-
-  en: {
-    tagline: "ONE WORLD OF IDEAS",
-    home: "Home",
-    products: "Digital Products",
-    games: "Games",
-    creators: "Creators",
-    stories: "Stories/Blog",
-
-    selectorLabel: "CHOOSE A CATEGORY",
-    choice01: "01 · PORTFOLIO & SERVICES",
-    choice01Title: "Portfolio & Services",
-    choice01Text: "Explore our work and business services",
-    choice02: "02 · DIGITAL DOWNLOADS",
-    choice02Title: "Digital Downloads",
-    choice02Text: "Practical tools for everyday use",
-
-    workLabel: "01 · PORTFOLIO & SERVICES",
-    workTitle: "Explore our work and services.",
-    workText: "From creative landing page concepts to practical online services for small businesses.",
-
-    portfolioMeta: "SELECTED CONCEPTS",
-    portfolioTitle: "Portfolio",
-    portfolioText: "Explore three landing page concepts for home services, food businesses and digital products.",
-    portfolioLink: "Explore Portfolio ↗",
-
-    serviceMeta: "FOR SMALL BUSINESSES",
-    serviceTitle: "Landing Page Service",
-    serviceText: "Simple, mobile-friendly landing pages with clear information and contact options for your business.",
-    serviceLink: "Explore Landing Page Service ↗",
-
-    productsLabel: "02 · DIGITAL DOWNLOADS",
-    productsTitle: "Tools for everyday life and business.",
-    productsText: "Practical spreadsheet tools designed to help you organise your finances and make clearer decisions.",
-
-    paycheckMeta: "PERSONAL FINANCE · EXCEL",
-    paycheckText: "Organise your paychecks, plan expenses and keep a clearer view of your personal money.",
-
-    businessMeta: "SMALL BUSINESS · EXCEL",
-    businessText: "Track sales, expenses, invoices and monthly profit in one organised workbook.",
-
-    viewProduct: "View Product ↗",
-    serviceNav: "Services",
-    copyright: "© 2026 Harry Digital Verse. Built one idea at a time."
-  },
-
-  ms: {
-    tagline: "SATU DUNIA IDEA",
-    home: "Utama",
-    products: "Produk Digital",
-    games: "Permainan",
-    creators: "Kreator",
-    stories: "Cerita/Blog",
-
-    selectorLabel: "PILIH KATEGORI",
-    choice01: "01 · PORTFOLIO & SERVIS",
-    choice01Title: "Portfolio & Servis",
-    choice01Text: "Terokai hasil kerja dan servis perniagaan kami",
-    choice02: "02 · MUAT TURUN DIGITAL",
-    choice02Title: "Muat Turun Digital",
-    choice02Text: "Alat praktikal untuk kegunaan harian",
-
-    workLabel: "01 · PORTFOLIO & SERVIS",
-    workTitle: "Terokai hasil kerja dan servis kami.",
-    workText: "Daripada konsep landing page kreatif kepada servis dalam talian untuk perniagaan kecil.",
-
-    portfolioMeta: "KONSEP PILIHAN",
-    portfolioTitle: "Portfolio",
-    portfolioText: "Terokai tiga konsep landing page untuk servis rumah, perniagaan makanan dan produk digital.",
-    portfolioLink: "Terokai Portfolio ↗",
-
-    serviceMeta: "UNTUK PERNIAGAAN KECIL",
-    serviceTitle: "Servis Landing Page",
-    serviceText: "Landing page ringkas dan mesra telefon dengan maklumat jelas serta pilihan hubungan untuk perniagaan anda.",
-    serviceLink: "Terokai Servis Landing Page ↗",
-
-    productsLabel: "02 · MUAT TURUN DIGITAL",
-    productsTitle: "Alat untuk kehidupan dan perniagaan.",
-    productsText: "Alat spreadsheet praktikal untuk membantu menyusun kewangan dan membuat keputusan dengan lebih jelas.",
-
-    paycheckMeta: "KEWANGAN PERIBADI · EXCEL",
-    paycheckText: "Susun gaji, rancang perbelanjaan dan lihat kedudukan kewangan peribadi dengan lebih jelas.",
-
-    businessMeta: "PERNIAGAAN KECIL · EXCEL",
-    businessText: "Rekod jualan, perbelanjaan, invois dan keuntungan bulanan dalam satu workbook yang tersusun.",
-
-    viewProduct: "Lihat Produk ↗",
-    serviceNav: "Servis",
-    copyright: "© 2026 Harry Digital Verse. Dibina satu idea pada satu masa."
-  },
-
-  id: {
-    tagline: "SATU DUNIA IDE",
-    home: "Beranda",
-    products: "Produk Digital",
-    games: "Game",
-    creators: "Kreator",
-    stories: "Cerita/Blog",
-
-    selectorLabel: "PILIH KATEGORI",
-    choice01: "01 · PORTOFOLIO & LAYANAN",
-    choice01Title: "Portofolio & Layanan",
-    choice01Text: "Jelajahi karya dan layanan bisnis kami",
-    choice02: "02 · UNDUHAN DIGITAL",
-    choice02Title: "Unduhan Digital",
-    choice02Text: "Alat praktis untuk kebutuhan sehari-hari",
-
-    workLabel: "01 · PORTOFOLIO & LAYANAN",
-    workTitle: "Jelajahi karya dan layanan kami.",
-    workText: "Dari konsep landing page kreatif hingga layanan online praktis untuk bisnis kecil.",
-
-    portfolioMeta: "KONSEP PILIHAN",
-    portfolioTitle: "Portofolio",
-    portfolioText: "Jelajahi tiga konsep landing page untuk layanan rumah, bisnis makanan dan produk digital.",
-    portfolioLink: "Jelajahi Portofolio ↗",
-
-    serviceMeta: "UNTUK BISNIS KECIL",
-    serviceTitle: "Layanan Landing Page",
-    serviceText: "Landing page sederhana dan ramah ponsel dengan informasi jelas serta pilihan kontak untuk bisnis Anda.",
-    serviceLink: "Jelajahi Layanan Landing Page ↗",
-
-    productsLabel: "02 · UNDUHAN DIGITAL",
-    productsTitle: "Alat untuk kehidupan dan bisnis.",
-    productsText: "Alat spreadsheet praktis untuk membantu mengatur keuangan dan mengambil keputusan dengan lebih jelas.",
-
-    paycheckMeta: "KEUANGAN PRIBADI · EXCEL",
-    paycheckText: "Atur gaji, rencanakan pengeluaran dan pantau keuangan pribadi dengan lebih jelas.",
-
-    businessMeta: "BISNIS KECIL · EXCEL",
-    businessText: "Catat penjualan, pengeluaran, invoice dan keuntungan bulanan dalam satu workbook terorganisir.",
-
-    viewProduct: "Lihat Produk ↗",
-    serviceNav: "Layanan",
-    copyright: "© 2026 Harry Digital Verse. Dibangun satu ide pada satu waktu."
-  },
-
-  es: {
-    tagline: "UN MUNDO DE IDEAS",
-    home: "Inicio",
-    products: "Productos Digitales",
-    games: "Juegos",
-    creators: "Creadores",
-    stories: "Historias/Blog",
-
-    selectorLabel: "ELIGE UNA CATEGORÍA",
-    choice01: "01 · PORTAFOLIO Y SERVICIOS",
-    choice01Title: "Portafolio y Servicios",
-    choice01Text: "Explora nuestros trabajos y servicios",
-    choice02: "02 · DESCARGAS DIGITALES",
-    choice02Title: "Descargas Digitales",
-    choice02Text: "Herramientas prácticas para cada día",
-
-    workLabel: "01 · PORTAFOLIO Y SERVICIOS",
-    workTitle: "Explora nuestros trabajos y servicios.",
-    workText: "Desde conceptos creativos de landing pages hasta servicios online prácticos para pequeñas empresas.",
-
-    portfolioMeta: "CONCEPTOS SELECCIONADOS",
-    portfolioTitle: "Portafolio",
-    portfolioText: "Explora tres conceptos de landing pages para servicios del hogar, negocios de comida y productos digitales.",
-    portfolioLink: "Explorar Portafolio ↗",
-
-    serviceMeta: "PARA PEQUEÑAS EMPRESAS",
-    serviceTitle: "Servicio de Landing Page",
-    serviceText: "Páginas sencillas y adaptables a móviles, con información clara y opciones de contacto para tu negocio.",
-    serviceLink: "Explorar Servicio de Landing Page ↗",
-
-    productsLabel: "02 · DESCARGAS DIGITALES",
-    productsTitle: "Herramientas para la vida y los negocios.",
-    productsText: "Herramientas prácticas de hojas de cálculo para organizar tus finanzas y tomar decisiones con mayor claridad.",
-
-    paycheckMeta: "FINANZAS PERSONALES · EXCEL",
-    paycheckText: "Organiza tus ingresos, planifica gastos y mantén una visión más clara de tus finanzas personales.",
-
-    businessMeta: "PEQUEÑAS EMPRESAS · EXCEL",
-    businessText: "Registra ventas, gastos, facturas y beneficios mensuales en un solo archivo organizado.",
-
-    viewProduct: "Ver Producto ↗",
-    serviceNav: "Servicios",
-    copyright: "© 2026 Harry Digital Verse. Construido idea por idea."
-  }
-};
-
-function applyLanguage(language) {
-  const dictionary = translations[language] || translations.en;
-
-  document.documentElement.lang = language;
-
-  document.querySelectorAll("[data-i18n]").forEach(element => {
-    const key = element.dataset.i18n;
-
-    if (dictionary[key] !== undefined) {
-      element.textContent = dictionary[key];
-    }
-  });
-
-  localStorage.setItem("hdv-language", language);
-
-  const selector = document.getElementById("languageSelect");
-  if (selector) selector.value = language;
-}
-
-const languageSelect = document.getElementById("languageSelect");
-
-languageSelect.addEventListener("change", function() {
-  applyLanguage(this.value);
-});
-
-applyLanguage(localStorage.getItem("hdv-language") || "en");
-</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
+
