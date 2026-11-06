@@ -545,7 +545,7 @@ const languageSelect = document.getElementById("languageSelect");
 const languageStorageKey = "hdv-language-v2";
 
 function setLanguage(language) {
-  const selected = translations[language] ? language : "ms";
+  const selected = translations[language] ? language : "en";
   const dictionary = translations[selected];
 
   document.documentElement.lang = selected;
@@ -578,9 +578,9 @@ languageSelect.addEventListener("change", function() {
 });
 
 // Read the visitor's saved language, otherwise use Malay.
-let savedLanguage = "ms";
+let savedLanguage = "en";
 try {
-  savedLanguage = localStorage.getItem(languageStorageKey) || "ms";
+ savedLanguage = localStorage.getItem(languageStorageKey) || "en";
 } catch (error) {}
 
 setLanguage(savedLanguage);
