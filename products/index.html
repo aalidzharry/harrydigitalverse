@@ -506,6 +506,21 @@
   object-fit: cover;
   object-position: center;
 }
+    /* PRINTABLE ART IMAGES */
+.printable-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #f3eadf;
+}
+
+.printable-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
     .coming-soon {
       padding: 7px 12px;
       border-radius: 999px;
@@ -888,7 +903,10 @@
 
       <!-- ANIMAL ART -->
       <article class="product-card">
-        <div class="product-visual orange">🐈</div>
+     <div class="printable-image">
+  <img src="../assets/animal-art-cat-watercolor.png"
+       alt="Watercolor cat printable artwork">
+</div>
         <div class="product-info">
           <span class="product-tag">Animal Collection</span>
           <h3>Animal Art</h3>
@@ -901,7 +919,10 @@
 
       <!-- PLANT & BOTANICAL ART -->
       <article class="product-card">
-        <div class="product-visual green">🌿</div>
+       <div class="printable-image">
+  <img src="../assets/plant-botanical-hibiscus-watercolor.png"
+       alt="Watercolor botanical printable artwork">
+</div>
         <div class="product-info">
           <span class="product-tag">Botanical Collection</span>
           <h3>Plant &amp; Botanical Art</h3>
@@ -914,7 +935,10 @@
 
       <!-- NATURE & LANDSCAPE ART -->
       <article class="product-card">
-        <div class="product-visual blue">🌅</div>
+        <div class="printable-image">
+  <img src="../assets/nature-sunset-watercolor.png"
+       alt="Watercolor sunset landscape printable artwork">
+</div>
         <div class="product-info">
           <span class="product-tag">Nature Collection</span>
           <h3>Nature &amp; Landscape Art</h3>
