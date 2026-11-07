@@ -476,7 +476,21 @@
       gap: 12px;
       margin-top: 18px;
     }
+/* DIGITAL PLANNER MOCKUP IMAGES */
+.planner-card .planner-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #f3eadf;
+}
 
+.planner-card .planner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
     .coming-soon {
       padding: 7px 12px;
       border-radius: 999px;
@@ -657,6 +671,7 @@
   0%, 100% { transform: translateY(0) rotate(-4deg); }
   50% { transform: translateY(-7px) rotate(-2deg); }
 }
+    
   </style>
 </head>
 
@@ -894,48 +909,60 @@
     </div>
   </section>
 
-  <!-- DIGITAL PLANNERS -->
-  <section class="product-section" id="digital-planners">
-    <div class="container">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Plan Your Days</p>
-          <h2 class="section-title">Digital Planners</h2>
-          <p class="section-copy">
-            Thoughtfully designed planners to organise your days,
-            manage your goals and create a little more balance.
-          </p>
-        </div>
-        <span class="coming-soon">Coming Soon</span>
-      </div>
 
-      <div class="product-grid">
-        <article class="product-card">
-          <div class="product-visual blue">📅</div>
-          <div class="product-info">
-            <span class="product-tag">Planning Collection</span>
-            <h3>Daily & Weekly Planners</h3>
-            <p>Plan your schedule, priorities and everyday tasks.</p>
-            <div class="product-bottom">
-              <span class="coming-soon">Coming Soon</span>
-            </div>
-          </div>
-        </article>
+<!-- DIGITAL PLANNERS -->
+<section class="product-section" id="digital-planners">
+  <div class="container">
 
-        <article class="product-card">
-          <div class="product-visual green">🎯</div>
-          <div class="product-info">
-            <span class="product-tag">Goal Setting</span>
-            <h3>Monthly Goal Planner</h3>
-            <p>Keep your goals, habits and progress organised.</p>
-            <div class="product-bottom">
-              <span class="coming-soon">Coming Soon</span>
-            </div>
-          </div>
-        </article>
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Plan Your Days</p>
+        <h2 class="section-title">Digital Planners</h2>
+        <p class="section-copy">
+          Thoughtfully designed planners to organise your days,
+          manage your goals and create a little more balance.
+        </p>
       </div>
+      <span class="coming-soon">Coming Soon</span>
     </div>
-  </section>
+
+    <div class="product-grid">
+
+      <article class="product-card planner-card">
+        <div class="planner-image">
+          <img src="../assets/digital-planner-weekly.png"
+               alt="Daily and Weekly Digital Planner mockup">
+        </div>
+
+        <div class="product-info">
+          <span class="product-tag">Planning Collection</span>
+          <h3>Daily &amp; Weekly Planners</h3>
+          <p>Plan your schedule, priorities and everyday tasks.</p>
+          <div class="product-bottom">
+            <span class="coming-soon">Coming Soon</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card planner-card">
+        <div class="planner-image">
+          <img src="../assets/digital-planner-goals.png"
+               alt="Monthly Goal Digital Planner mockup">
+        </div>
+
+        <div class="product-info">
+          <span class="product-tag">Goal Setting</span>
+          <h3>Monthly Goal Planner</h3>
+          <p>Keep your goals, habits and progress organised.</p>
+          <div class="product-bottom">
+            <span class="coming-soon">Coming Soon</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 
   <!-- JOURNALS & E-BOOKS -->
   <section class="product-section alt" id="journals-ebooks">
