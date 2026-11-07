@@ -217,13 +217,53 @@
       gap: 12px;
     }
 
-    .hero-art {
-      position: relative;
-      min-height: 350px;
-      display: grid;
-      place-items: center;
-    }
+  .hero-art {
+  position: relative;
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+}
+.floating-card {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(255, 253, 248, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  animation: float 5s ease-in-out infinite;
+}
 
+.floating-card strong {
+  display: block;
+  color: var(--navy);
+  font-size: 14px;
+}
+
+.floating-card small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.card-icon {
+  font-size: 28px;
+}
+
+.business-card {
+  top: 35px;
+  left: 0;
+}
+
+.art-card {
+  right: 0;
+  bottom: 55px;
+  animation-delay: 1.5s;
+}
     .art-circle {
       width: min(330px, 100%);
       aspect-ratio: 1;
@@ -638,9 +678,26 @@
       </div>
 
       <div class="hero-art">
-        <div class="art-circle">✦</div>
-        <div class="hero-note">Made for everyday inspiration</div>
-      </div>
+    <div class="art-circle">✦</div>
+
+    <div class="floating-card business-card">
+        <span class="card-icon">📊</span>
+        <div>
+            <strong>Business Tools</strong>
+            <small>Plan smarter. Work better.</small>
+        </div>
+    </div>
+
+    <div class="floating-card art-card">
+        <span class="card-icon">🌿</span>
+        <div>
+            <strong>Printable Art</strong>
+            <small>Bring calm into your space.</small>
+        </div>
+    </div>
+
+    <div class="hero-note">Made for everyday inspiration</div>
+</div>
     </div>
   </section>
 
