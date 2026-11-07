@@ -233,6 +233,7 @@
       background: #e7d9c5;
       font-size: 100px;
       box-shadow: var(--shadow);
+      animation: float 5s ease-in-out infinite;
     }
 
     .hero-note {
@@ -247,8 +248,16 @@
       font-size: 13px;
       font-weight: 700;
       transform: rotate(-4deg);
+      animation: float-note 6s ease-in-out infinite;
     }
-
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-4deg);
+  }
+}
     /* STORE INTRO */
     .store-intro {
       padding: 75px 0 35px;
@@ -574,6 +583,15 @@
         text-align: center;
       }
     }
+    @keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes float-note {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-7px) rotate(-2deg); }
+}
   </style>
 </head>
 
