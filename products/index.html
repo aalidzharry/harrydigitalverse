@@ -537,20 +537,51 @@
   object-fit: cover;
   object-position: center;
 }
-    /* PRINTABLE ART IMAGES */
+
+/* PRINTABLE ART FRAME MOCKUP */
 .printable-image {
   width: 100%;
-  height: 240px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  background: #f3eadf;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 20% 20%, #f6e8dc, transparent 45%),
+    #e9e1d5;
 }
 
-.printable-image img {
+.printable-frame {
+  height: 100%;
+  max-width: 210px;
+  padding: 9px;
+  background: #fffdf8;
+  border: 1px solid #d6c7b4;
+  box-shadow:
+    0 5px 8px rgba(0,0,0,.12),
+    0 18px 30px rgba(0,0,0,.14);
+  transition: transform .3s ease;
+}
+
+.product-card:hover .printable-frame {
+  transform: translateY(-5px) rotate(-1deg);
+}
+
+.printable-frame img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+}
+    /* BOTANICAL & LANDSCAPE ART IMAGES */
+.printable-image > img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
     .coming-soon {
       padding: 7px 12px;
@@ -892,21 +923,34 @@
 
     <div class="product-grid">
 
-      <!-- ANIMAL ART -->
-      <article class="product-card">
-     <div class="printable-image">
-  <img src="../assets/animal-art-cat-watercolor.png"
-       alt="Watercolor cat printable artwork">
-</div>
-        <div class="product-info">
-          <span class="product-tag">Animal Collection</span>
-          <h3>Animal Art</h3>
-          <p>Charming artwork inspired by cats, birds, butterflies and wildlife.</p>
-          <div class="product-bottom">
-            <span class="coming-soon">Coming Soon</span>
-          </div>
-        </div>
-      </article>
+ <!-- ANIMAL ART -->
+<a href="animal-art.html"
+   class="product-card"
+   style="display:block; text-decoration:none; color:inherit;">
+
+  <div class="printable-image">
+    <div class="printable-frame">
+      <img src="../assets/HDV-WA-001-The-Cat.png"
+           alt="The Cat watercolor artwork">
+    </div>
+  </div>
+
+  <div class="product-info">
+    <span class="product-tag">Animal Collection</span>
+
+    <h3>Animal Art</h3>
+
+    <p>
+      Discover beautiful watercolor artwork inspired
+      by cats, birds, wildlife and other animals.
+    </p>
+
+    <div class="product-bottom">
+      <span class="btn btn-primary">Explore Animal Art →</span>
+    </div>
+  </div>
+
+</a>
 
       <!-- PLANT & BOTANICAL ART -->
       <article class="product-card">
