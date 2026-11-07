@@ -223,12 +223,27 @@
   display: grid;
   place-items: center;
 }
-    .hero-image {
-  width: min(420px, 100%);
+
+.floating-product {
+  position: absolute;
   height: auto;
   object-fit: contain;
-  border-radius: 24px;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(23, 43, 77, 0.15);
   animation: float 5s ease-in-out infinite;
+}
+
+.product-showcase {
+  width: 320px;
+  top: 20px;
+  left: 20px;
+}
+
+.product-art {
+  width: 250px;
+  right: 0;
+  bottom: 20px;
+  animation-delay: 1.5s;
 }
 .floating-card {
   position: absolute;
