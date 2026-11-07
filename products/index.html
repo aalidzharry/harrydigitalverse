@@ -442,7 +442,22 @@
     .product-visual.orange {
       background: #f5e5d6;
     }
+    /* BUSINESS TOOLS PRODUCT IMAGES */
+    .product-visual.product-image {
+    min-height: 0;
+    height: 240px;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0;
+    }
 
+    .product-visual.product-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    }
     .product-info {
       padding: 22px;
     }
@@ -838,7 +853,10 @@
 
       
 <article class="product-card">
-  <div class="product-visual blue">📈</div>
+ <div class="product-visual product-image">
+  <img src="../assets/paycheck-tracker.png"
+       alt="Paycheck-to-Paycheck Tracker">
+</div>
   <div class="product-info">
     <span class="product-tag">Finance & Planning</span>
     <h3>Paycheck-to-Paycheck Tracker</h3>
@@ -853,7 +871,10 @@
 </article>
 
 <article class="product-card">
-  <div class="product-visual green">💼</div>
+  <div class="product-visual product-image">
+  <img src="../assets/Small Business Finance Tracker Growth.png"
+       alt="Small Business Finance Tracker">
+</div>
   <div class="product-info">
     <span class="product-tag">Small Business</span>
     <h3>Small Business Finance Tracker</h3>
@@ -869,7 +890,10 @@
 
 
         <article class="product-card">
-          <div class="product-visual orange">📦</div>
+         <div class="product-visual product-image">
+  <img src="../assets/Inventory Tracker Warehouse Dashboard.png"
+       alt="Inventory Tracker">
+</div>
           <div class="product-info">
             <span class="product-tag">Business Management</span>
             <h3>Inventory Tracker</h3>
