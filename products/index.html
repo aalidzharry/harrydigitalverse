@@ -335,51 +335,57 @@
       padding: 25px 0 70px;
     }
 
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
 
-    .category-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: white;
-      transition: .2s ease;
-    }
+.category-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: white;
+  text-decoration: none;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
 
-    .category-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(25, 45, 80, 0.10);
+}
 
-    .category-card h3 {
-      margin: 8px 0;
-      color: var(--navy);
-      font-family: "Playfair Display", serif;
-      font-size: 25px;
-    }
+.category-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
 
-    .category-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
+.category-card:hover img {
+  transform: scale(1.04);
+}
 
-    .category-icon {
-      flex-shrink: 0;
-      width: 76px;
-      height: 76px;
-      display: grid;
-      place-items: center;
-      border-radius: 20px;
-      background: var(--paper);
-      font-size: 36px;
-    }
+.category-info {
+  padding: 22px 24px 25px;
+}
+
+.category-card h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+}
+
+.category-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
 
     /* PRODUCT SECTIONS */
     .product-section {
@@ -631,9 +637,6 @@
         grid-template-columns: 1fr;
       }
 
-      .category-card {
-        padding: 22px;
-      }
 
       .section-heading {
         align-items: start;
@@ -728,31 +731,49 @@
       </p>
     </div>
   </section>
+ 
+<!-- CATEGORIES -->
+<section class="categories">
+  <div class="container category-grid">
 
-  <!-- CATEGORIES -->
-  <section class="categories">
-    <div class="container category-grid">
+    <a class="category-card" href="#business-tools">
+      <img src="../assets/business-tools-category.png"
+           alt="Business Tools and Finance">
+      <div class="category-info">
+        <h3>Business Tools</h3>
+        <p>Trackers, invoices, planners and business resources.</p>
+      </div>
+    </a>
 
-      <a class="category-card" href="#business-tools">
-        <div>
-          <p class="eyebrow">For Work & Business</p>
-          <h3>Business Tools</h3>
-          <p>Simple templates to organize your work and finances.</p>
-        </div>
-        <div class="category-icon">📊</div>
-      </a>
+    <a class="category-card" href="#printable-art">
+      <img src="../assets/printable-art-category.png"
+           alt="Printable Art Collection">
+      <div class="category-info">
+        <h3>Printable Art</h3>
+        <p>Botanical, sunset, ocean and mindful art.</p>
+      </div>
+    </a>
 
-      <a class="category-card" href="#printable-art">
-        <div>
-          <p class="eyebrow">For Your Space</p>
-          <h3>Printable Art</h3>
-          <p>Minimal artwork inspired by nature and everyday moments.</p>
-        </div>
-        <div class="category-icon">🌿</div>
-      </a>
+    <a class="category-card" href="#digital-planners">
+      <img src="../assets/digital-planners-category.png"
+           alt="Digital Planners">
+      <div class="category-info">
+        <h3>Digital Planners</h3>
+        <p>Daily, weekly and monthly planners.</p>
+      </div>
+    </a>
 
-    </div>
-  </section>
+    <a class="category-card" href="#journals-ebooks">
+      <img src="../assets/journals-ebooks-category.png"
+           alt="Journals and E-books">
+      <div class="category-info">
+        <h3>Journals &amp; E-books</h3>
+        <p>Guides, journals and thoughtful worksheets.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
 
   <!-- BUSINESS TOOLS -->
   <section class="product-section" id="business-tools">
@@ -778,9 +799,11 @@
     <h3>Paycheck-to-Paycheck Tracker</h3>
     <p>Manage your paycheck, expenses, bills and savings with a simple personal finance tracker.</p>
     <div class="product-bottom">
-      <strong>$5.99 USD</strong>
-      <span>Available Now</span>
-    </div>
+  <strong>$5.99 USD</strong>
+  <a href="paycheck-to-paycheck-tracker/" class="btn btn-primary">
+    View Product →
+  </a>
+</div>
   </div>
 </article>
 
@@ -791,9 +814,11 @@
     <h3>Small Business Finance Tracker</h3>
     <p>Track business income, expenses and financial performance in one organized spreadsheet.</p>
     <div class="product-bottom">
-      <strong>$9.99 USD</strong>
-      <span>Available Now</span>
-    </div>
+  <strong>$9.99 USD</strong>
+  <a href="small-business-finance-tracker/" class="btn btn-primary">
+    View Product →
+  </a>
+</div>
   </div>
 </article>
 
