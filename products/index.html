@@ -245,6 +245,22 @@
   bottom: 20px;
   animation-delay: 1.5s;
 }
+    .hero-single-image {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(23, 43, 77, 0.15);
+  animation: float 5s ease-in-out infinite;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero-single-image:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 25px 55px rgba(23, 43, 77, 0.2);
+}
 .floating-card {
   position: absolute;
   z-index: 2;
@@ -764,20 +780,12 @@
         </div>
       </div>
 
-    <div class="hero-art">
-
+<div class="hero-art">
   <img
-    class="floating-product product-showcase"
-    src="../assets/Digital%20Products%20Desk%20Showcase.png"
-    alt="Digital Products Desk Showcase"
+    class="hero-single-image"
+    src="../assets/Digital%20Products%20Categories.png"
+    alt="Harry Digital Verse Digital Products collection"
   />
-
-  <img
-    class="floating-product product-art"
-    src="../assets/Watercolour%20Printable%20Art%20Postcard%20Collage.png"
-    alt="Watercolour Printable Art Collection"
-  />
-
 </div>
     </div>
   </section>
@@ -794,49 +802,6 @@
     </div>
   </section>
  
-<!-- CATEGORIES -->
-<section class="categories">
-  <div class="container category-grid">
-
-    <a class="category-card" href="#business-tools">
-      <img src="../assets/business-tools-category.png"
-           alt="Business Tools and Finance">
-      <div class="category-info">
-        <h3>Business Tools</h3>
-        <p>Trackers, invoices, planners and business resources.</p>
-      </div>
-    </a>
-
-    <a class="category-card" href="#printable-art">
-      <img src="../assets/printable-art-category.png"
-           alt="Printable Art Collection">
-      <div class="category-info">
-        <h3>Printable Art</h3>
-        <p>Botanical, sunset, ocean and mindful art.</p>
-      </div>
-    </a>
-
-    <a class="category-card" href="#digital-planners">
-      <img src="../assets/digital-planners-category.png"
-           alt="Digital Planners">
-      <div class="category-info">
-        <h3>Digital Planners</h3>
-        <p>Daily, weekly and monthly planners.</p>
-      </div>
-    </a>
-
-    <a class="category-card" href="#journals-ebooks">
-      <img src="../assets/journals-ebooks-category.png"
-           alt="Journals and E-books">
-      <div class="category-info">
-        <h3>Journals &amp; E-books</h3>
-        <p>Guides, journals and thoughtful worksheets.</p>
-      </div>
-    </a>
-
-  </div>
-</section>
-
   <!-- BUSINESS TOOLS -->
   <section class="product-section" id="business-tools">
     <div class="container">
