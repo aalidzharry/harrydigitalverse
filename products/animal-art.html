@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Animal Art Collection | Harry Digital Verse</title>
+
+  <meta name="description" content="Discover peaceful watercolor animal artwork by Harry Digital Verse.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fffdf8;
+      --paper: #f7f2e8;
+      --navy: #172b4d;
+      --blue: #315b83;
+      --orange: #e88a45;
+      --green: #637b68;
+      --text: #293342;
+      --muted: #737b83;
+      --line: #e8e1d6;
+      --white: #ffffff;
+      --shadow: 0 14px 40px rgba(23, 43, 77, .08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 253, 248, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--navy);
+      color: white;
+      font-size: 20px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-disabled {
+      background: #e8e1d6;
+      color: #737b83;
+      cursor: not-allowed;
+    }
+
+    /* BREADCRUMB */
+
+    .breadcrumb {
+      padding: 24px 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--orange);
+    }
+
+    /* PRODUCT */
+
+    .product-section {
+      padding: 35px 0 90px;
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    /* ARTWORK FRAME */
+
+    .artwork-stage {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 45px;
+      background:
+        radial-gradient(circle at 20% 20%, #f6e8dc, transparent 45%),
+        #e9e1d5;
+      border-radius: 24px;
+    }
+
+    .artwork-frame {
+      width: 100%;
+      max-width: 390px;
+      padding: 16px;
+      background: #fffdf8;
+      border: 1px solid #d6c7b4;
+      box-shadow:
+        0 5px 8px rgba(0,0,0,.12),
+        0 25px 45px rgba(0,0,0,.16);
+      transition: transform .3s ease;
+    }
+
+    .artwork-frame:hover {
+      transform: translateY(-5px) rotate(-1deg);
+    }
+
+    .artwork-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* PRODUCT DETAILS */
+
+    .product-tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .product-info h1 {
+      margin-bottom: 18px;
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.15;
+    }
+
+    .product-description {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .product-price {
+      margin-bottom: 22px;
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .product-divider {
+      height: 1px;
+      margin: 25px 0;
+      background: var(--line);
+    }
+
+    .product-details h2 {
+      margin-bottom: 12px;
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .product-details ul {
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .product-details li {
+      margin-bottom: 8px;
+    }
+
+    .product-note {
+      margin-top: 22px;
+      padding: 15px 18px;
+      border-radius: 14px;
+      background: var(--paper);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: var(--navy);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .product-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .artwork-stage {
+        min-height: 400px;
+      }
+
+      .artwork-frame {
+        max-width: 320px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .navbar {
+        min-height: 66px;
+        flex-wrap: wrap;
+        padding: 10px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .artwork-stage {
+        min-height: 320px;
+        padding: 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container navbar">
+
+      <a class="brand" href="../">
+        <span class="brand-mark">H</span>
+
+        <span>
+          HARRY DIGITAL VERSE
+          <small>CREATIVE DIGITAL STUDIO</small>
+        </span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../">Home</a>
+        <a href="index.html">Digital Products</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+
+  <div class="container breadcrumb">
+    <a href="../">Home</a> /
+    <a href="index.html">Digital Products</a> /
+    Animal Art
+  </div>
+
+  <!-- PRODUCT -->
+
+  <section class="product-section">
+
+    <div class="container product-layout">
+
+      <!-- ARTWORK -->
+
+      <div class="artwork-stage">
+
+        <div class="artwork-frame">
+
+          <img
+            src="../assets/HDV-WA-001-The-Cat.png"
+            alt="The Cat - Watercolor Animal Artwork"
+          >
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT INFORMATION -->
+
+      <div class="product-info">
+
+        <span class="product-tag">
+          Animal Collection · HDV-WA-001
+        </span>
+
+        <h1>The Cat</h1>
+
+        <p class="product-description">
+          A gentle watercolor artwork inspired by the quiet
+          companionship and peaceful presence of a cat.
+
+          Bring a little warmth, softness and calm into your
+          personal space with this timeless animal illustration.
+        </p>
+
+        <div class="product-price">
+          Price Coming Soon
+        </div>
+
+        <span class="btn btn-disabled">
+          Buy Now · Coming Soon
+        </span>
+
+        <div class="product-divider"></div>
+
+        <div class="product-details">
+
+          <h2>About This Artwork</h2>
+
+          <ul>
+            <li>Original Harry Digital Verse artwork</li>
+            <li>Watercolor-inspired animal illustration</li>
+            <li>Designed for peaceful and cozy spaces</li>
+            <li>Suitable for home, bedroom or creative workspace</li>
+            <li>Digital printable artwork — product specifications coming soon</li>
+          </ul>
+
+        </div>
+
+        <div class="product-note">
+          This artwork is part of our Animal Art Collection.
+          More animal illustrations are coming soon.
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <p>
+        © <span id="year"></span>
+        Harry Digital Verse. All rights reserved.
+      </p>
+
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="index.html">Digital Products</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
