@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Animal Art Collection | Harry Digital Verse</title>
+  <meta name="description" content="Explore unique printable animal artwork by Harry Digital Verse.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #fffdf8;
+      --paper: #f7f2e8;
+      --navy: #172b4d;
+      --blue: #315b83;
+      --orange: #e88a45;
+      --green: #637b68;
+      --text: #293342;
+      --muted: #737b83;
+      --line: #e8e1d6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: rgba(255, 253, 248, .96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .breadcrumb {
+      padding: 24px 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 35px 0 45px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 12px 0;
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 5vw, 56px);
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .collection {
+      padding: 20px 0 90px;
+    }
+
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .art-card {
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .art-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 40px rgba(23, 43, 77, .08);
+    }
+
+    .art-image {
+      min-height: 420px;
+      padding: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 20% 20%, #f6e8dc, transparent 45%),
+        #e9e1d5;
+    }
+
+    .art-image img {
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      max-height: 360px;
+      object-fit: contain;
+      background: #fffdf8;
+      padding: 10px;
+      border: 1px solid #d6c7b4;
+      box-shadow: 0 15px 30px rgba(0,0,0,.15);
+    }
+
+    .art-info {
+      padding: 28px;
+    }
+
+    .art-tag {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .art-info h2 {
+      margin: 10px 0;
+      color: var(--navy);
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+    }
+
+    .art-info p {
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .price {
+      margin-bottom: 20px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      background: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .art-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .art-image {
+        min-height: 350px;
+      }
+
+      .art-image img {
+        max-height: 300px;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container navbar">
+
+      <a class="brand" href="../">
+        HARRY DIGITAL VERSE
+        <small>CREATIVE DIGITAL STUDIO</small>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../">Home</a>
+        <a href="index.html">Digital Products</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="breadcrumb">
+      <a href="../">Home</a> /
+      <a href="index.html">Digital Products</a> /
+      Animal Art
+    </div>
+
+    <section class="hero">
+      <span class="eyebrow">The Animal Collection</span>
+
+      <h1>Art Inspired by Nature</h1>
+
+      <p>
+        Discover distinctive animal artwork created to bring
+        warmth, character and a little nature into your space.
+      </p>
+    </section>
+
+    <section class="collection">
+
+      <div class="art-grid">
+
+        <!-- THE CAT -->
+
+        <article class="art-card">
+
+          <a href="animal-art.html">
+
+            <div class="art-image">
+              <img
+                src="../assets/HDV-WA-001-The-Cat.png"
+                alt="The Cat watercolor printable artwork"
+              >
+            </div>
+
+          </a>
+
+          <div class="art-info">
+
+            <span class="art-tag">Watercolor · HDV-WA-001</span>
+
+            <h2>The Cat</h2>
+
+            <p>
+              A gentle watercolor illustration celebrating
+              the quiet companionship and peaceful presence
+              of a cat.
+            </p>
+
+            <div class="price">$4.99 USD</div>
+
+            <a class="btn" href="animal-art.html">
+              View Artwork →
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- THE DEER -->
+
+        <article class="art-card">
+
+          <a href="deer-art.html">
+
+            <div class="art-image">
+              <img
+                src="../assets/HDV-WA-002-The-Deer.png"
+                alt="The Deer string and rope printable artwork"
+              >
+            </div>
+
+          </a>
+
+          <div class="art-info">
+
+            <span class="art-tag">String & Rope · HDV-WA-002</span>
+
+            <h2>The Deer</h2>
+
+            <p>
+              A distinctive deer artwork featuring natural
+              rope textures and warm earthy tones.
+            </p>
+
+            <div class="price">$4.99 USD</div>
+
+            <a class="btn" href="deer-art.html">
+              View Artwork →
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Harry Digital Verse. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
