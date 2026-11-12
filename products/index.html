@@ -763,7 +763,109 @@
   0%, 100% { transform: translateY(0) rotate(-4deg); }
   50% { transform: translateY(-7px) rotate(-2deg); }
 }
-    
+   
+/* PRINTABLE ART - SINGLE EXPLORE CARD */
+.art-explore-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 35px;
+  padding: 35px;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 15% 20%, #f8e9da, transparent 45%),
+    #e9e1d5;
+  overflow: hidden;
+  transition: .3s ease;
+}
+
+.art-explore-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.art-explore-content {
+  padding: 15px;
+}
+
+.art-explore-content h3 {
+  margin: 12px 0;
+  color: var(--navy);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+}
+
+.art-explore-content p {
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.art-explore-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.art-explore-images img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  padding: 8px;
+  background: #fffdf8;
+  border: 1px solid #ded4c5;
+  box-shadow: 0 12px 25px rgba(0,0,0,.12);
+  border-radius: 5px;
+}
+
+.art-explore-images img:nth-child(2) {
+  transform: translateY(-15px) rotate(3deg);
+}
+
+.art-explore-images img:nth-child(1) {
+  transform: rotate(-4deg);
+}
+
+.art-explore-images img:nth-child(3) {
+  transform: rotate(4deg);
+}
+
+/* MOBILE */
+@media(max-width:800px) {
+  .art-explore-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .art-explore-content {
+    padding: 5px;
+  }
+
+  .art-explore-images img {
+    height: 180px;
+  }
+}
+
+@media(max-width:480px) {
+  .art-explore-card {
+    padding: 16px;
+  }
+
+  .art-explore-images {
+    gap: 7px;
+  }
+
+  .art-explore-images img {
+    height: 135px;
+    padding: 4px;
+  }
+}
+ 
   </style>
 </head>
 
@@ -906,6 +1008,7 @@
     </div>
   </section>
   
+
 <!-- PRINTABLE ART -->
 <section class="product-section alt" id="printable-art">
   <div class="container">
@@ -915,76 +1018,48 @@
         <p class="eyebrow">Create Your Space</p>
         <h2 class="section-title">Printable Art</h2>
         <p class="section-copy">
-          Discover printable artwork inspired by animals, botanical beauty
-          and the natural world.
+          Discover printable artwork inspired by animals,
+          botanical beauty and the natural world.
         </p>
       </div>
     </div>
 
-    <div class="product-grid">
+    <!-- EXPLORE ALL ART -->
+    <a href="animal-collection.html" class="art-explore-card">
 
- <!-- ANIMAL ART -->
-<a href="animal-collection.html"
-   class="product-card"
-   style="display:block; text-decoration:none; color:inherit;">
+      <div class="art-explore-content">
 
-  <div class="printable-image">
-    <div class="printable-frame">
-      <img src="../assets/HDV-WA-001-The-Cat.png"
-           alt="The Cat watercolor artwork">
-    </div>
-  </div>
+        <span class="product-tag">DIGITAL ART COLLECTION</span>
 
-  <div class="product-info">
-    <span class="product-tag">Animal Collection</span>
+        <h3>Explore Art</h3>
 
-    <h3>Animal Art</h3>
+        <p>
+          A complete collection of printable art
+          featuring animals, plants & botanicals,
+          and nature & landscapes.
+        </p>
 
-    <p>
-      Discover beautiful watercolor artwork inspired
-      by cats, birds, wildlife and other animals.
-    </p>
+        <span class="btn btn-primary">
+          Explore Art →
+        </span>
 
-    <div class="product-bottom">
-      <span class="btn btn-primary">Explore Animal Art →</span>
-    </div>
-  </div>
+      </div>
 
-</a>
+      <div class="art-explore-images">
 
-      <!-- PLANT & BOTANICAL ART -->
-      <article class="product-card">
-       <div class="printable-image">
-  <img src="../assets/plant-botanical-hibiscus-watercolor.png"
-       alt="Watercolor botanical printable artwork">
-</div>
-        <div class="product-info">
-          <span class="product-tag">Botanical Collection</span>
-          <h3>Plant &amp; Botanical Art</h3>
-          <p>Minimal artwork featuring flowers, leaves and beautiful plants.</p>
-          <div class="product-bottom">
-            <span class="coming-soon">Coming Soon</span>
-          </div>
-        </div>
-      </article>
+        <img src="../assets/HDV-WA-001-The-Cat.png"
+             alt="Animal watercolor artwork">
 
-      <!-- NATURE & LANDSCAPE ART -->
-      <article class="product-card">
-        <div class="printable-image">
-  <img src="../assets/nature-sunset-watercolor.png"
-       alt="Watercolor sunset landscape printable artwork">
-</div>
-        <div class="product-info">
-          <span class="product-tag">Nature Collection</span>
-          <h3>Nature &amp; Landscape Art</h3>
-          <p>Peaceful landscapes, sunsets, oceans and moments in nature.</p>
-          <div class="product-bottom">
-            <span class="coming-soon">Coming Soon</span>
-          </div>
-        </div>
-      </article>
+        <img src="../assets/plant-botanical-hibiscus-watercolor.png"
+             alt="Botanical watercolor artwork">
 
-    </div>
+        <img src="../assets/nature-sunset-watercolor.png"
+             alt="Nature landscape artwork">
+
+      </div>
+
+    </a>
+
   </div>
 </section>
 
