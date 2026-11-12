@@ -146,7 +146,25 @@
       color: #737b83;
       cursor: not-allowed;
     }
+.btn-back-collection {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 25px;
+  padding: 10px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--navy);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  transition: .2s ease;
+}
 
+.btn-back-collection:hover {
+  background: var(--paper);
+  transform: translateX(-3px);
+}
     /* BREADCRUMB */
 
     .breadcrumb {
@@ -383,6 +401,15 @@
   </div>
 
   <!-- PRODUCT -->
+<!-- BACK TO ART COLLECTION -->
+
+<div class="container">
+  <a href="animal-collection.html" class="btn-back-collection">
+    ← Back to Art Collection
+  </a>
+</div>
+
+<!-- PRODUCT -->
 
   <section class="product-section">
 
