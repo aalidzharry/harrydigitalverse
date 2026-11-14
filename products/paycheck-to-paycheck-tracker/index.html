@@ -2,449 +2,409 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="Stop guessing where your paycheck goes. Organise your income, track expenses, plan bills and manage every pay period with this practical Excel budgeting tracker.">
-
-  <meta name="keywords" content="paycheck tracker, paycheck budget planner, personal finance spreadsheet, budgeting Excel template">
-
-  <title>Paycheck-to-Paycheck Tracker | Harry Digital Verse</title>
-
-  <style>
-    :root {
-      --cream: #f7f3eb;
-      --paper: #fffdf8;
-      --ink: #292c27;
-      --muted: #77776e;
-      --green: #526b57;
-      --line: #e5dfd3;
-      --gold: #b28b52;
-      --soft-green: #edf1eb;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.65;
-    }
-
-    a { color: inherit; }
-
-    .topbar {
-      padding: 20px 7%;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      font-family: Arial, sans-serif;
-    }
-
-    .brand {
-      font-size: 15px;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      text-decoration: none;
-    }
-
-    .back {
-      color: var(--muted);
-      font-size: 13px;
-      text-decoration: none;
-    }
-
-    .container {
-      max-width: 1080px;
-      margin: auto;
-      padding: 65px 24px 80px;
-    }
-
-    .eyebrow {
-      color: var(--green);
-      font: bold 11px Arial, sans-serif;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: clamp(38px, 5vw, 58px);
-      line-height: 1.08;
-      font-weight: normal;
-      margin: 18px 0;
-    }
-
-    h2 {
-      font-size: 32px;
-      font-weight: normal;
-      line-height: 1.2;
-      margin: 0 0 18px;
-    }
-
-    h3 {
-      font-weight: normal;
-    }
-
-    .intro {
-      color: var(--muted);
-      font: 16px/1.8 Arial, sans-serif;
-      max-width: 510px;
-    }
-
-    .price {
-      font-size: 32px;
-      margin: 24px 0 5px;
-    }
-
-    .price-note {
-      color: var(--muted);
-      font: 12px Arial, sans-serif;
-    }
-
-    .buy-button {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 15px 28px;
-      background: var(--green);
-      color: white;
-      text-decoration: none;
-      font: bold 13px Arial, sans-serif;
-      letter-spacing: .5px;
-      border-radius: 3px;
-      transition: background .2s;
-    }
-
-    .buy-button:hover {
-      background: #3e5543;
-    }
-
-    .mockup {
-      background: #e8e1d4;
-      padding: 35px;
-      border-radius: 5px;
-      box-shadow: 0 15px 40px #39352b18;
-    }
-
-    .sheet {
-      background: white;
-      padding: 25px;
-      min-height: 310px;
-      box-shadow: 0 5px 15px #00000010;
-      transform: rotate(1deg);
-      font-family: Arial, sans-serif;
-    }
-
-    .sheet-title {
-      font-family: Georgia, serif;
-      font-size: 21px;
-      margin-bottom: 5px;
-    }
-
-    .sheet-sub {
-      font-size: 10px;
-      color: #777;
-      margin-bottom: 22px;
-    }
-
-    .metric-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .metric {
-      background: #f1f4ef;
-      padding: 13px;
-      font-size: 10px;
-      color: #667267;
-    }
-
-    .metric strong {
-      display: block;
-      color: #344a38;
-      font-size: 19px;
-      margin-top: 5px;
-    }
-
-    .fake-table {
-      margin-top: 18px;
-      border-top: 1px solid #ddd;
-      font-size: 10px;
-    }
-
-    .fake-table div {
-      display: flex;
-      justify-content: space-between;
-      padding: 9px 2px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .section {
-      margin-top: 85px;
-      border-top: 1px solid var(--line);
-      padding-top: 42px;
-    }
-
-    .description {
-      font: 15px/1.9 Arial, sans-serif;
-      color: var(--muted);
-      max-width: 760px;
-    }
-
-    .problem-grid,
-    .features,
-    .tabs-grid,
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .problem,
-    .feature,
-    .tab-card,
-    .audience-card {
-      background: var(--paper);
-      padding: 24px;
-      border: 1px solid var(--line);
-    }
-
-    .problem h3,
-    .feature h3,
-    .tab-card h3,
-    .audience-card h3 {
-      font-size: 19px;
-      margin: 0 0 8px;
-    }
-
-    .problem p,
-    .feature p,
-    .tab-card p,
-    .audience-card p {
-      color: var(--muted);
-      font: 13px/1.8 Arial, sans-serif;
-      margin: 0;
-    }
-
-    .number {
-      color: var(--gold);
-      font: bold 11px Arial, sans-serif;
-      letter-spacing: 1px;
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .solution {
-      background: var(--soft-green);
-      padding: 32px;
-      margin-top: 30px;
-      border-left: 3px solid var(--green);
-    }
-
-    .solution p {
-      font: 14px/1.9 Arial, sans-serif;
-      color: #626c61;
-      margin: 0;
-    }
-
-    .tabs-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .tab-card {
-      padding: 21px;
-    }
-
-    .tab-card h3 {
-      font-size: 17px;
-    }
-
-    .tab-card p {
-      font-size: 12px;
-    }
-
-    .step-list {
-      display: grid;
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 45px 1fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .step-number {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--green);
-      color: white;
-      display: grid;
-      place-items: center;
-      font: bold 13px Arial, sans-serif;
-    }
-
-    .step h3 {
-      font-size: 19px;
-      margin: 0 0 5px;
-    }
-
-    .step p {
-      color: var(--muted);
-      font: 13px/1.8 Arial, sans-serif;
-      margin: 0;
-    }
-
-    .offer {
-      background: #ede8dc;
-      padding: 40px 30px;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .offer-price {
-      font-size: 38px;
-      margin: 12px 0 3px;
-    }
-
-    .offer p {
-      color: var(--muted);
-      font: 13px/1.8 Arial, sans-serif;
-    }
-
-    .check-list {
-      list-style: none;
-      padding: 0;
-      margin: 22px auto;
-      max-width: 390px;
-      text-align: left;
-      font: 13px/2 Arial, sans-serif;
-    }
-
-    .check-list li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: bold;
-      margin-right: 12px;
-    }
-
-    .faq {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .faq details {
-      padding: 19px 0;
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-size: 17px;
-    }
-
-    .faq p {
-      color: var(--muted);
-      font: 13px/1.9 Arial, sans-serif;
-      max-width: 760px;
-      margin-bottom: 0;
-    }
-
-    .note {
-      margin-top: 35px;
-      padding: 22px;
-      background: #eee9dd;
-      font: 13px/1.8 Arial, sans-serif;
-      color: #66665d;
-    }
-
-    .closing {
-      text-align: center;
-      padding: 45px 20px;
-      background: var(--soft-green);
-      margin-top: 35px;
-    }
-
-    .closing h2 {
-      max-width: 620px;
-      margin: 12px auto;
-    }
-
-    .closing p {
-      font: 14px/1.8 Arial, sans-serif;
-      color: var(--muted);
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 20px;
-      text-align: center;
-      color: var(--muted);
-      font: 12px Arial, sans-serif;
-    }
-
-    @media (max-width: 720px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .container {
-        padding: 42px 20px 60px;
-      }
-
-      .features,
-      .problem-grid,
-      .audience-grid,
-      .tabs-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .mockup {
-        padding: 20px;
-      }
-
-      .section {
-        margin-top: 60px;
-        padding-top: 32px;
-      }
-
-      h2 {
-        font-size: 27px;
-      }
-
-      .topbar {
-        padding: 17px 5%;
-      }
-
-      .brand {
-        font-size: 12px;
-      }
-
-      .back {
-        font-size: 11px;
-      }
-
-      .offer {
-        padding: 30px 18px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Struggling to make every paycheck last? Organise your income, track expenses and plan upcoming bills with the Paycheck-to-Paycheck Excel Tracker.">
+<title>Paycheck Tracker | Harry Digital Verse</title>
+
+<style>
+:root {
+  --cream:#f7f3eb;
+  --paper:#fffdf8;
+  --ink:#292c27;
+  --muted:#77776e;
+  --green:#526b57;
+  --line:#e5dfd3;
+  --red:#c0392b;
+  --gold:#b28b52;
+}
+
+* {box-sizing:border-box;}
+
+html {scroll-behavior:smooth;}
+
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+  line-height:1.75;
+}
+
+a {color:inherit;}
+
+.topbar {
+  padding:20px 7%;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  font-family:Arial,sans-serif;
+}
+
+.brand {
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  text-decoration:none;
+}
+
+.back {
+  font-size:12px;
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.container {
+  max-width:1000px;
+  margin:auto;
+  padding:55px 25px 80px;
+}
+
+.eyebrow {
+  color:var(--green);
+  font:bold 11px Arial,sans-serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.hero {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:center;
+  padding:25px 0 65px;
+}
+
+h1 {
+  font-size:clamp(40px,5.5vw,65px);
+  font-weight:normal;
+  line-height:1.08;
+  margin:18px 0;
+}
+
+h2 {
+  font-size:clamp(29px,4vw,39px);
+  line-height:1.2;
+  font-weight:normal;
+  margin:12px 0 22px;
+}
+
+h3 {
+  font-size:22px;
+  font-weight:normal;
+  line-height:1.35;
+}
+
+.red {color:var(--red);}
+.green {color:var(--green);}
+
+.intro {
+  font:16px/1.9 Arial,sans-serif;
+  color:var(--muted);
+}
+
+.price {
+  font-size:34px;
+  margin-top:25px;
+}
+
+.price-note {
+  color:var(--muted);
+  font:12px Arial,sans-serif;
+}
+
+.buy-button {
+  display:inline-block;
+  background:var(--green);
+  color:white;
+  padding:16px 29px;
+  margin-top:23px;
+  text-decoration:none;
+  font:bold 13px Arial,sans-serif;
+  letter-spacing:.4px;
+  border-radius:3px;
+  transition:.2s;
+}
+
+.buy-button:hover {background:#3e5543;}
+
+.mockup {
+  background:#e8e1d4;
+  padding:30px;
+  border-radius:5px;
+  box-shadow:0 15px 40px #39352b18;
+}
+
+.sheet {
+  background:white;
+  padding:25px;
+  transform:rotate(1deg);
+  box-shadow:0 5px 15px #00000010;
+  font-family:Arial,sans-serif;
+}
+
+.sheet-title {
+  font:22px Georgia,serif;
+}
+
+.sheet-sub {
+  font-size:10px;
+  color:#777;
+  margin:8px 0 20px;
+}
+
+.metric-row {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.metric {
+  background:#f1f4ef;
+  padding:12px;
+  font-size:10px;
+  color:#667267;
+}
+
+.metric strong {
+  display:block;
+  font-size:18px;
+  color:#344a38;
+  margin-top:5px;
+}
+
+.fake-table {
+  margin-top:18px;
+  font-size:10px;
+  border-top:1px solid #ddd;
+}
+
+.fake-table div {
+  display:flex;
+  justify-content:space-between;
+  padding:9px 2px;
+  border-bottom:1px solid #eee;
+}
+
+.sales-section {
+  border-top:1px solid var(--line);
+  padding:55px 0;
+}
+
+.copy {
+  max-width:790px;
+}
+
+.copy p {
+  color:#55574f;
+  font:15px/2 Arial,sans-serif;
+  margin:17px 0;
+}
+
+.copy strong {color:var(--ink);}
+
+.big-quote {
+  font-size:clamp(25px,3.5vw,34px);
+  line-height:1.45;
+  margin:25px 0;
+}
+
+.highlight {
+  color:var(--red);
+  font-weight:bold;
+}
+
+.problem-list {
+  padding-left:22px;
+  font:14px/2.1 Arial,sans-serif;
+  color:#55574f;
+}
+
+.problem-list li {padding-left:5px;margin-bottom:8px;}
+
+.callout {
+  border-left:4px solid var(--green);
+  background:#edf1eb;
+  padding:25px 28px;
+  margin:30px 0;
+}
+
+.callout h3 {margin:0 0 10px;}
+
+.callout p {
+  margin:0;
+  font:14px/1.9 Arial,sans-serif;
+  color:#626c61;
+}
+
+.feature-line {
+  padding:19px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.feature-line h3 {
+  margin:0 0 5px;
+}
+
+.feature-line p {
+  margin:0;
+  font:14px/1.8 Arial,sans-serif;
+  color:var(--muted);
+}
+
+.tabs-list {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0 35px;
+  margin-top:20px;
+}
+
+.tab {
+  padding:17px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.tab strong {
+  display:block;
+  font-size:17px;
+  font-weight:normal;
+}
+
+.tab p {
+  margin:5px 0 0;
+  font:13px/1.7 Arial,sans-serif;
+  color:var(--muted);
+}
+
+.steps {
+  margin-top:25px;
+}
+
+.step {
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:16px;
+  margin:23px 0;
+}
+
+.step-number {
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:var(--green);
+  color:white;
+  display:grid;
+  place-items:center;
+  font:bold 13px Arial,sans-serif;
+}
+
+.step h3 {
+  margin:0 0 4px;
+  font-size:19px;
+}
+
+.step p {
+  margin:0;
+  font:13px/1.8 Arial,sans-serif;
+  color:var(--muted);
+}
+
+.audience {
+  background:var(--paper);
+  border:1px solid var(--line);
+  padding:23px;
+  margin-top:22px;
+}
+
+.audience p {
+  margin:5px 0 0;
+  font:13px/1.8 Arial,sans-serif;
+  color:var(--muted);
+}
+
+.offer {
+  background:#eee9dd;
+  padding:40px 25px;
+  text-align:center;
+  margin-top:25px;
+}
+
+.offer-price {
+  font-size:43px;
+  margin:10px 0;
+}
+
+.offer-list {
+  display:inline-block;
+  text-align:left;
+  font:13px/2.2 Arial,sans-serif;
+  color:#55574f;
+  padding-left:20px;
+}
+
+.offer .buy-button {margin-top:20px;}
+
+.faq {
+  border-bottom:1px solid var(--line);
+}
+
+.faq details {padding:18px 0;}
+
+.faq summary {
+  cursor:pointer;
+  font-size:17px;
+}
+
+.faq p {
+  font:13px/1.9 Arial,sans-serif;
+  color:var(--muted);
+  max-width:750px;
+}
+
+.final-cta {
+  text-align:center;
+  background:#edf1eb;
+  padding:55px 25px;
+  margin-top:35px;
+}
+
+.final-cta h2 {max-width:650px;margin:15px auto;}
+
+.final-cta p {
+  font:14px/1.9 Arial,sans-serif;
+  color:var(--muted);
+}
+
+.note {
+  background:#eee9dd;
+  padding:20px;
+  margin-top:30px;
+  font:12px/1.8 Arial,sans-serif;
+  color:#66665d;
+}
+
+footer {
+  text-align:center;
+  padding:28px 15px;
+  border-top:1px solid var(--line);
+  font:12px Arial,sans-serif;
+  color:var(--muted);
+}
+
+@media(max-width:720px) {
+  .container {padding:35px 20px 55px;}
+  .hero {grid-template-columns:1fr;gap:35px;}
+  .tabs-list {grid-template-columns:1fr;}
+  .mockup {padding:19px;}
+  .sales-section {padding:40px 0;}
+  .topbar {padding:17px 5%;}
+  .brand {font-size:11px;}
+  .back {font-size:10px;}
+  .offer {padding:30px 18px;}
+}
+</style>
 </head>
 
 <body>
@@ -456,314 +416,275 @@
 
 <main class="container">
 
-  <!-- HERO SECTION -->
+<!-- HERO -->
 
-  <section class="hero">
+<section class="hero">
+  <div>
+    <div class="eyebrow">Personal Finance · Excel Template</div>
 
-    <div>
-      <div class="eyebrow">Personal Finance · Excel Template</div>
+    <h1>
+      Your Paycheck Is Gone.
+      <span class="red">Again?</span>
+    </h1>
 
-      <h1>Stop Wondering Where Your Paycheck Goes.</h1>
-
-      <p class="intro">
-        Tired of watching your salary disappear before the next payday?
-        Take a clearer approach to managing your money with a practical
-        paycheck budgeting spreadsheet designed to help you organise
-        income, track expenses and plan upcoming bills.
-      </p>
-
-      <div class="price">US$5.99</div>
-
-      <div class="price-note">
-        One-time purchase · Digital Excel product
-      </div>
-
-      <a class="buy-button"
-         href="https://payhip.com/b/qjczb"
-         target="_blank"
-         rel="noopener">
-        GET YOUR TRACKER NOW →
-      </a>
-    </div>
-
-    <div class="mockup">
-      <div class="sheet">
-
-        <div class="sheet-title">Paycheck Tracker</div>
-        <div class="sheet-sub">YOUR PERSONAL MONEY PLANNER</div>
-
-        <div class="metric-row">
-          <div class="metric">
-            TOTAL INCOME
-            <strong>$0.00</strong>
-          </div>
-
-          <div class="metric">
-            TOTAL EXPENSES
-            <strong>$0.00</strong>
-          </div>
-
-          <div class="metric">
-            BILLS
-            <strong>$0.00</strong>
-          </div>
-
-          <div class="metric">
-            REMAINING
-            <strong>$0.00</strong>
-          </div>
-        </div>
-
-        <div class="fake-table">
-          <div>
-            <strong>PAYCHECK OVERVIEW</strong>
-            <strong>AMOUNT</strong>
-          </div>
-          <div><span>Income</span><span>—</span></div>
-          <div><span>Expenses</span><span>—</span></div>
-          <div><span>Bills</span><span>—</span></div>
-          <div><span>Available Balance</span><span>—</span></div>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
-
-  <!-- PROBLEM SECTION -->
-
-  <section class="section">
-
-    <div class="eyebrow">Does this sound familiar?</div>
-
-    <h2>Getting paid should feel good. So why does your money disappear so quickly?</h2>
-
-    <p class="description">
-      Between monthly bills, groceries, everyday spending and unexpected
-      expenses, keeping track of your money can become overwhelming.
-      Sometimes, the hardest part isn't earning money. It's knowing
-      how to organise what you already have.
+    <p class="intro">
+      You work hard for your money. You wait for payday.
+      But somehow, the bills, groceries and everyday expenses
+      seem to take over before you know it.
     </p>
 
-    <div class="problem-grid">
+    <p class="intro">
+      What if you could see where your money goes,
+      organise your upcoming bills and plan each paycheck
+      in one simple place?
+    </p>
 
-      <div class="problem">
-        <span class="number">01 · THE PAYDAY PROBLEM</span>
-        <h3>Your salary arrives, but where does it go?</h3>
-        <p>
-          You receive your paycheck, pay a few bills and make everyday
-          purchases. Before you realise it, much of your money is gone.
-        </p>
+    <div class="price">US$5.99</div>
+    <div class="price-note">One-time purchase · Digital Excel workbook</div>
+
+    <a class="buy-button" href="https://payhip.com/b/qjczb"
+       target="_blank" rel="noopener">
+       YES, I WANT TO GET ORGANised →
+    </a>
+  </div>
+
+  <div class="mockup">
+    <div class="sheet">
+      <div class="sheet-title">Paycheck Tracker</div>
+      <div class="sheet-sub">YOUR PERSONAL MONEY PLANNER</div>
+
+      <div class="metric-row">
+        <div class="metric">TOTAL INCOME<strong>$0.00</strong></div>
+        <div class="metric">TOTAL EXPENSES<strong>$0.00</strong></div>
+        <div class="metric">BILLS<strong>$0.00</strong></div>
+        <div class="metric">REMAINING<strong>$0.00</strong></div>
       </div>
 
-      <div class="problem">
-        <span class="number">02 · THE EXPENSE PROBLEM</span>
-        <h3>Small expenses add up.</h3>
-        <p>
-          Groceries, transport, subscriptions and daily purchases
-          can make it difficult to understand your actual spending.
-        </p>
+      <div class="fake-table">
+        <div><strong>PAYCHECK OVERVIEW</strong><strong>AMOUNT</strong></div>
+        <div><span>Income</span><span>—</span></div>
+        <div><span>Expenses</span><span>—</span></div>
+        <div><span>Bills</span><span>—</span></div>
+        <div><span>Available Balance</span><span>—</span></div>
       </div>
-
-      <div class="problem">
-        <span class="number">03 · THE BILL PROBLEM</span>
-        <h3>Upcoming payments are easy to overlook.</h3>
-        <p>
-          When several bills have different due dates, keeping
-          everything organised can feel like another full-time job.
-        </p>
-      </div>
-
-      <div class="problem">
-        <span class="number">04 · THE CLARITY PROBLEM</span>
-        <h3>You want to feel more in control.</h3>
-        <p>
-          You don't necessarily need a complicated financial system.
-          You need a clearer picture of your income, expenses and commitments.
-        </p>
-      </div>
-
     </div>
+  </div>
+</section>
 
-    <div class="solution">
-      <h3>What if everything was organised in one place?</h3>
+
+<!-- PROBLEM -->
+
+<section class="sales-section">
+  <div class="copy">
+    <div class="eyebrow">Let's be honest</div>
+
+    <h2>
+      Does this sound a little too
+      <span class="red">familiar?</span>
+    </h2>
+
+    <p>
+      Payday arrives. For a moment, everything feels manageable.
+      You think about the things you need to pay, the things
+      you've been putting off and maybe even something nice
+      you want to buy.
+    </p>
+
+    <p>
+      Then reality kicks in.
+    </p>
+
+    <ul class="problem-list">
+      <li>Your salary arrives, but you aren't quite sure where it all goes.</li>
+      <li>Monthly bills seem to arrive one after another.</li>
+      <li>Small everyday purchases quietly add up.</li>
+      <li>You try to keep track of expenses, but your notes are everywhere.</li>
+      <li>When the next payday feels far away, you start wondering how much is left.</li>
+    </ul>
+
+    <p class="big-quote">
+      <strong>
+        The problem isn't always how much you earn.
+        Sometimes, it's how difficult it is to
+        <span class="red">see the full picture.</span>
+      </strong>
+    </p>
+
+    <p>
+      And when your income, expenses and bills are scattered
+      across different places, getting organised becomes
+      another task you don't have time for.
+    </p>
+  </div>
+</section>
+
+
+<!-- SOLUTION -->
+
+<section class="sales-section">
+  <div class="copy">
+    <div class="eyebrow">Here's a simpler way</div>
+
+    <h2>
+      What if your next paycheck came with
+      <span class="green">a plan?</span>
+    </h2>
+
+    <p>
+      Imagine opening one workbook and being able to see
+      your planned income, recorded expenses, upcoming bills
+      and financial overview.
+    </p>
+
+    <p>
+      No searching through different notes.
+      No trying to remember every little purchase.
+      Just one organised place to keep your financial records.
+    </p>
+
+    <div class="callout">
+      <h3>Meet the Paycheck-to-Paycheck Tracker.</h3>
       <p>
-        That's exactly why we created the Paycheck-to-Paycheck Tracker.
-        A practical spreadsheet that gives you a dedicated place to
-        plan each pay period, record transactions and organise upcoming bills.
+        A practical Excel budgeting workbook designed to help
+        you plan each pay period, record transactions,
+        manage bills and review your financial position.
       </p>
     </div>
 
-  </section>
-
-
-  <!-- PRODUCT INTRODUCTION -->
-
-  <section class="section">
-
-    <div class="eyebrow">Introducing your financial tool</div>
-
-    <h2>Meet the Paycheck-to-Paycheck Tracker.</h2>
-
-    <p class="description">
-      A practical Excel budgeting workbook designed for people who want
-      to organise their money around their actual pay schedule.
-      Whether you receive your income weekly, biweekly or monthly,
-      you can use the tracker to plan your pay periods and review
-      your financial commitments.
+    <p>
+      It's not about promising that a spreadsheet will magically
+      fix your finances. It's about giving yourself a clearer,
+      more organised way to manage the money you already have.
     </p>
+  </div>
+</section>
 
-    <div class="features">
 
-      <div class="feature">
-        <span class="number">01</span>
-        <h3>Paycheck Planning</h3>
-        <p>
-          Organise expected income and other planned income
-          by individual pay periods.
-        </p>
-      </div>
+<!-- BENEFITS -->
 
-      <div class="feature">
-        <span class="number">02</span>
-        <h3>Expense Tracking</h3>
-        <p>
-          Record everyday income and expenses with transaction
-          categories and payment information.
-        </p>
-      </div>
+<section class="sales-section">
+  <div class="copy">
+    <div class="eyebrow">What can you do with it?</div>
 
-      <div class="feature">
-        <span class="number">03</span>
-        <h3>Bill Management</h3>
-        <p>
-          Keep bill names, due dates, amounts and payment
-          status organised.
-        </p>
-      </div>
+    <h2>
+      Everything you need to organise your
+      <span class="red">paycheck routine.</span>
+    </h2>
 
-      <div class="feature">
-        <span class="number">04</span>
-        <h3>Financial Dashboard</h3>
-        <p>
-          Review your planned income, expenses, bills
-          and available balance in one place.
-        </p>
-      </div>
-
+    <div class="feature-line">
+      <h3>01. Plan Each Paycheck</h3>
+      <p>
+        Record payday, next payday, expected take-home pay
+        and other planned income for each pay period.
+      </p>
     </div>
 
-  </section>
-
-
-  <!-- WHAT'S INCLUDED -->
-
-  <section class="section">
-
-    <div class="eyebrow">Inside your workbook</div>
-
-    <h2>Everything organised in one workbook.</h2>
-
-    <p class="description">
-      Your purchase includes seven organised workbook tabs,
-      each designed to support a different part of your
-      paycheck budgeting routine.
-    </p>
-
-    <div class="tabs-grid">
-
-      <div class="tab-card">
-        <span class="number">01</span>
-        <h3>User Guide</h3>
-        <p>
-          Step-by-step instructions to help you understand
-          and use your tracker.
-        </p>
-      </div>
-
-      <div class="tab-card">
-        <span class="number">02</span>
-        <h3>Start Here</h3>
-        <p>
-          A simple starting routine to help you set up
-          your first pay period.
-        </p>
-      </div>
-
-      <div class="tab-card">
-        <span class="number">03</span>
-        <h3>Dashboard</h3>
-        <p>
-          Review your selected pay period and financial
-          overview in one place.
-        </p>
-      </div>
-
-      <div class="tab-card">
-        <span class="number">04</span>
-        <h3>Pay Periods</h3>
-        <p>
-          Record payday, next payday, expected take-home pay
-          and other income.
-        </p>
-      </div>
-
-      <div class="tab-card">
-        <span class="number">05</span>
-        <h3>Transactions</h3>
-        <p>
-          Organise your income and expenses with dates,
-          categories and payment methods.
-        </p>
-      </div>
-
-      <div class="tab-card">
-        <span class="number">06</span>
-        <h3>Bills</h3>
-        <p>
-          Record bill names, due dates, amounts,
-          frequency and payment status.
-        </p>
-      </div>
-
-      <div class="tab-card">
-        <span class="number">07</span>
-        <h3>Lists</h3>
-        <p>
-          Manage available transaction types, categories,
-          payment methods and currency options.
-        </p>
-      </div>
-
+    <div class="feature-line">
+      <h3>02. Keep Track of Transactions</h3>
+      <p>
+        Record your income and expenses with dates,
+        categories, descriptions and payment methods.
+      </p>
     </div>
 
-  </section>
+    <div class="feature-line">
+      <h3>03. Organise Your Bills</h3>
+      <p>
+        Keep bill names, due dates, amounts, frequency
+        and payment status together.
+      </p>
+    </div>
+
+    <div class="feature-line">
+      <h3>04. See Your Financial Overview</h3>
+      <p>
+        Use the dashboard to review planned income,
+        actual income, expenses and available balance
+        for your selected pay period.
+      </p>
+    </div>
+  </div>
+</section>
 
 
-  <!-- HOW IT WORKS -->
+<!-- WORKBOOK CONTENT -->
 
-  <section class="section">
+<section class="sales-section">
+  <div class="copy">
+    <div class="eyebrow">Take a look inside</div>
 
-    <div class="eyebrow">Simple to get started</div>
+    <h2>
+      Not just another empty spreadsheet.
+      <span class="green">A complete workbook.</span>
+    </h2>
 
-    <h2>How to use your paycheck tracker.</h2>
-
-    <p class="description">
-      No complicated financial system required.
-      Follow a simple routine to start organising your money.
+    <p>
+      Your purchase includes seven organised tabs,
+      each with a specific purpose to help you manage
+      your paycheck budgeting routine.
     </p>
 
-    <div class="step-list">
+    <div class="tabs-list">
+      <div class="tab">
+        <strong>01 · User Guide</strong>
+        <p>Step-by-step instructions to help you use the workbook.</p>
+      </div>
 
+      <div class="tab">
+        <strong>02 · Start Here</strong>
+        <p>A simple four-step starting routine.</p>
+      </div>
+
+      <div class="tab">
+        <strong>03 · Dashboard</strong>
+        <p>Review your selected pay period and financial figures.</p>
+      </div>
+
+      <div class="tab">
+        <strong>04 · Pay Periods</strong>
+        <p>Enter payday, next payday and planned income.</p>
+      </div>
+
+      <div class="tab">
+        <strong>05 · Transactions</strong>
+        <p>Record income and expenses with transaction details.</p>
+      </div>
+
+      <div class="tab">
+        <strong>06 · Bills</strong>
+        <p>Organise bills, due dates and payment status.</p>
+      </div>
+
+      <div class="tab">
+        <strong>07 · Lists</strong>
+        <p>Manage categories, payment methods and currency options.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW TO USE -->
+
+<section class="sales-section">
+  <div class="copy">
+    <div class="eyebrow">Getting started</div>
+
+    <h2>
+      You don't need to be a budgeting expert.
+    </h2>
+
+    <p>
+      The workbook includes a User Guide and a Start Here tab
+      to help you establish a simple routine.
+    </p>
+
+    <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
         <div>
           <h3>Set up your pay periods</h3>
-          <p>
-            Enter your payday, next payday and expected
-            take-home pay.
-          </p>
+          <p>Enter your payday, next payday and expected income.</p>
         </div>
       </div>
 
@@ -771,10 +692,7 @@
         <div class="step-number">2</div>
         <div>
           <h3>Add your upcoming bills</h3>
-          <p>
-            Record the bills you expect to pay during
-            each pay period.
-          </p>
+          <p>Record the bills you expect to pay during that period.</p>
         </div>
       </div>
 
@@ -782,10 +700,7 @@
         <div class="step-number">3</div>
         <div>
           <h3>Record your transactions</h3>
-          <p>
-            Add income and expenses as you receive
-            and spend money.
-          </p>
+          <p>Add income received and expenses paid.</p>
         </div>
       </div>
 
@@ -793,258 +708,218 @@
         <div class="step-number">4</div>
         <div>
           <h3>Review your dashboard</h3>
-          <p>
-            Use your dashboard to review your selected
-            pay period and financial overview.
-          </p>
+          <p>Select your pay period and currency, then review your figures.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
+
+<!-- AUDIENCE -->
+
+<section class="sales-section">
+  <div class="copy">
+    <div class="eyebrow">Who is this for?</div>
+
+    <h2>
+      If you want to organise your money,
+      this could be a good place to start.
+    </h2>
+
+    <div class="audience">
+      <h3>Employees & Salary Earners</h3>
+      <p>Organise your salary, everyday expenses and upcoming bills.</p>
     </div>
 
-  </section>
-
-
-  <!-- TARGET AUDIENCE -->
-
-  <section class="section">
-
-    <div class="eyebrow">Is this for you?</div>
-
-    <h2>Designed for everyday money management.</h2>
-
-    <div class="audience-grid">
-
-      <div class="audience-card">
-        <h3>Employees</h3>
-        <p>
-          Organise your salary, recurring expenses
-          and upcoming bills.
-        </p>
-      </div>
-
-      <div class="audience-card">
-        <h3>Young Adults</h3>
-        <p>
-          Build a more organised approach to
-          managing your first paychecks.
-        </p>
-      </div>
-
-      <div class="audience-card">
-        <h3>Individuals & Families</h3>
-        <p>
-          Keep personal financial records
-          and everyday commitments together.
-        </p>
-      </div>
-
-      <div class="audience-card">
-        <h3>Budgeting Beginners</h3>
-        <p>
-          Start organising your finances
-          with a practical spreadsheet.
-        </p>
-      </div>
-
+    <div class="audience">
+      <h3>Young Adults</h3>
+      <p>Build an organised routine for managing your income.</p>
     </div>
 
-  </section>
+    <div class="audience">
+      <h3>Individuals & Families</h3>
+      <p>Keep personal financial records and commitments together.</p>
+    </div>
+
+    <div class="audience">
+      <h3>Budgeting Beginners</h3>
+      <p>Start with a practical spreadsheet and a simple routine.</p>
+    </div>
+  </div>
+</section>
 
 
-  <!-- VALUE PROPOSITION -->
+<!-- VALUE -->
 
-  <section class="section">
+<section class="sales-section">
+  <div class="copy">
+    <div class="eyebrow">A practical choice</div>
 
-    <div class="eyebrow">Why choose a spreadsheet?</div>
+    <h2>
+      You don't need another monthly subscription
+      just to organise your money.
+    </h2>
 
-    <h2>A practical tool without another monthly subscription.</h2>
-
-    <p class="description">
-      You don't always need expensive software to start organising
-      your personal finances. A structured spreadsheet can be a
-      practical place to record your income, expenses and bills.
+    <p>
+      Sometimes, a simple spreadsheet is all you need
+      to get your financial records organised.
     </p>
 
-    <div class="solution">
-      <h3>One purchase. A reusable budgeting workbook.</h3>
-      <p>
-        Purchase the tracker once and use the workbook to organise
-        your pay periods and financial records over time.
-        No recurring subscription is required for this product.
-      </p>
-    </div>
+    <p>
+      Purchase the workbook once and reuse it to organise
+      your pay periods and financial records over time.
+    </p>
 
-  </section>
+    <p class="big-quote">
+      <strong>
+        One workbook.
+        One organised place.
+        A clearer picture of your money.
+      </strong>
+    </p>
+  </div>
+</section>
 
 
-  <!-- PRODUCT OFFER -->
+<!-- OFFER -->
 
-  <section class="section" id="offer">
+<section class="sales-section" id="offer">
+  <div class="copy">
+    <div class="eyebrow">Your special offer</div>
 
-    <div class="eyebrow">Get your digital product</div>
+    <h2>
+      Ready to give your next paycheck
+      a <span class="red">better plan?</span>
+    </h2>
 
-    <h2>Your next paycheck deserves a better plan.</h2>
-
-    <p class="description">
-      Start organising your income, tracking expenses
-      and planning your upcoming bills with one practical workbook.
+    <p>
+      Get the complete Paycheck-to-Paycheck Tracker
+      and start organising your financial records today.
     </p>
 
     <div class="offer">
-
       <div class="eyebrow">Paycheck-to-Paycheck Tracker</div>
 
       <div class="offer-price">US$5.99</div>
 
-      <p>One-time purchase · Instant digital download after payment</p>
+      <p>One-time purchase · Digital download</p>
 
-      <ul class="check-list">
+      <ul class="offer-list">
         <li>Complete Excel workbook</li>
         <li>7 organised workbook tabs</li>
         <li>Paycheck planning</li>
         <li>Income and expense tracking</li>
         <li>Bill management</li>
         <li>Financial dashboard</li>
-        <li>User guide and setup instructions</li>
+        <li>User Guide and Start Here instructions</li>
         <li>No recurring subscription</li>
       </ul>
 
+      <br>
+
       <a class="buy-button"
          href="https://payhip.com/b/qjczb"
-         target="_blank"
-         rel="noopener">
-        BUY NOW — US$5.99 →
+         target="_blank" rel="noopener">
+        YES! GET MY TRACKER — US$5.99 →
       </a>
 
       <p>
         Secure checkout through Payhip.
-        Your digital product will be available after payment.
+        Digital download after successful payment.
       </p>
-
     </div>
+  </div>
+</section>
 
-  </section>
 
+<!-- FAQ -->
 
-  <!-- FAQ -->
+<section class="sales-section">
+  <div class="copy">
+    <div class="eyebrow">Before you buy</div>
 
-  <section class="section">
-
-    <div class="eyebrow">Frequently asked questions</div>
-
-    <h2>Before you get started.</h2>
+    <h2>Frequently asked questions.</h2>
 
     <div class="faq">
-
       <details>
         <summary>Is this a physical product?</summary>
-        <p>
-          No. This is a digital Excel workbook.
-          No physical item will be shipped.
-        </p>
+        <p>No. This is a digital Excel workbook. No physical item will be shipped.</p>
       </details>
 
       <details>
         <summary>What software do I need?</summary>
-        <p>
-          You will need Microsoft Excel or a compatible
-          spreadsheet application. Some formulas or formatting
-          may behave differently in other applications.
-        </p>
+        <p>You need Microsoft Excel or a compatible spreadsheet application. Some formatting or formulas may behave differently in other applications.</p>
       </details>
 
       <details>
-        <summary>Is this suitable for beginners?</summary>
-        <p>
-          Yes. The workbook includes a Start Here tab
-          and a User Guide to help you get started.
-        </p>
+        <summary>Is it suitable for beginners?</summary>
+        <p>Yes. It includes a User Guide and a Start Here tab to help you get started.</p>
       </details>
 
       <details>
         <summary>Can I use different currencies?</summary>
-        <p>
-          The workbook includes several currency options.
-          Selecting a currency does not automatically convert
-          amounts between different currencies.
-        </p>
+        <p>The workbook includes currency options. Changing the currency display does not automatically convert amounts between currencies.</p>
       </details>
 
       <details>
-        <summary>Does this tracker connect to my bank account?</summary>
-        <p>
-          No. Transactions and financial information
-          must be entered manually.
-        </p>
+        <summary>Does it connect to my bank account?</summary>
+        <p>No. Transactions and financial information must be entered manually.</p>
       </details>
 
       <details>
-        <summary>Will I receive the product immediately?</summary>
-        <p>
-          Your digital download will be made available
-          through Payhip after successful payment.
-        </p>
+        <summary>Will I receive the product after payment?</summary>
+        <p>Your digital download will be made available through Payhip after successful payment.</p>
       </details>
 
       <details>
-        <summary>Does this product provide financial advice?</summary>
-        <p>
-          No. This is a budgeting and financial organisation tool.
-          It does not provide professional financial advice.
-        </p>
+        <summary>Does this provide financial advice?</summary>
+        <p>No. This is a budgeting and financial organisation tool, not professional financial advice.</p>
       </details>
-
     </div>
-
-  </section>
-
-
-  <!-- FINAL CTA -->
-
-  <section class="closing">
-
-    <div class="eyebrow">A better start begins with a clearer plan</div>
-
-    <h2>Stop Guessing. Start Organising Your Money.</h2>
-
-    <p>
-      Take the first step towards a more organised
-      paycheck budgeting routine.
-    </p>
-
-    <div class="offer-price">US$5.99</div>
-
-    <a class="buy-button"
-       href="https://payhip.com/b/qjczb"
-       target="_blank"
-       rel="noopener">
-      GET YOUR TRACKER TODAY →
-    </a>
-
-    <p>
-      Digital download · One-time purchase
-    </p>
-
-  </section>
-
-
-  <!-- PRODUCT NOTE -->
-
-  <div class="note">
-    <strong>PLEASE NOTE</strong><br>
-    This is a digital product. No physical item will be shipped.
-    You will need Microsoft Excel or a compatible spreadsheet
-    application. This tracker requires manual data entry,
-    does not connect to bank accounts, and does not provide
-    financial advice.
   </div>
+</section>
+
+
+<!-- FINAL CTA -->
+
+<section class="final-cta">
+  <div class="eyebrow">Your money. Your plan. Your next step.</div>
+
+  <h2>
+    Stop wondering where your paycheck goes.
+    <span class="red">Start getting organised.</span>
+  </h2>
+
+  <p>
+    A simple place to start building a clearer
+    paycheck budgeting routine.
+  </p>
+
+  <div class="offer-price">US$5.99</div>
+
+  <a class="buy-button"
+     href="https://payhip.com/b/qjczb"
+     target="_blank" rel="noopener">
+     GET YOUR TRACKER TODAY →
+  </a>
+
+  <p>One-time purchase · Digital download</p>
+</section>
+
+
+<div class="note">
+  <strong>PLEASE NOTE</strong><br>
+  This is a digital product. No physical item will be shipped.
+  Microsoft Excel or a compatible spreadsheet application is required.
+  Transactions must be entered manually. The tracker does not connect
+  to bank accounts and does not provide financial advice.
+</div>
 
 </main>
 
-
 <footer>
-  © 2026 Harry Digital Verse · Digital tools for everyday life.
+© 2026 Harry Digital Verse · Digital tools for everyday life.
 </footer>
 
 </body>
