@@ -4,19 +4,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="0; url=https://www.harrydigitalverse.com/products/">
 
-<title>Landing Page Service | Harry Digital</title>
-<meta name="description" content="Professional, mobile-friendly landing page design for small businesses worldwide. Starting at $199 USD.">
 
-<meta property="og:title" content="Landing Page Service | Harry Digital">
-<meta property="og:description" content="Professional landing page design for small businesses worldwide. Starting at $199 USD.">
+
+<title>Landing Page Design Service | Harry Digital Verse</title>
+<meta name="description" content="Affordable, professional one-page landing page design for small businesses. Introductory package at $79 USD.">
+
+<meta property="og:title" content="Landing Page Design Service | Harry Digital Verse">
+<meta property="og:description" content="Professional one-page landing page design for small businesses. Introductory package at $79 USD.">
 <meta property="og:url" content="https://www.harrydigitalverse.com/landing-page-service/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.harrydigitalverse.com/harry-digital-preview.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Landing Page Service | Harry Digital">
-<meta name="twitter:description" content="Professional landing page design for small businesses worldwide. Starting at $199 USD.">
+<meta name="twitter:title" content="Landing Page Design Service | Harry Digital Verse">
+<meta name="twitter:description" content="Professional one-page landing page design for small businesses. Introductory package at $79 USD.">
+<meta name="twitter:image" content="https://www.harrydigitalverse.com/harry-digital-preview.png">
 <meta name="twitter:image" content="https://www.harrydigitalverse.com/harry-digital-preview.png">
 
 <style>
@@ -116,6 +118,43 @@ footer{padding:32px 0;text-align:center;font-size:.9rem;color:var(--muted)}
 .hero-buttons a{text-align:center}
 .price-card{padding:28px 22px}
 }
+  
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+  margin: 30px auto 0;
+  text-align: left;
+}
+
+.contact-form label {
+  color: white;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #dfe5ec;
+  border-radius: 10px;
+  font: inherit;
+  background: white;
+  color: #172033;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
 </style>
 </head>
 
@@ -123,14 +162,9 @@ footer{padding:32px 0;text-align:center;font-size:.9rem;color:var(--muted)}
 
 <nav class="navbar">
   <div class="container nav-inner">
-    <a class="brand" href="https://www.harrydigitalverse.com/">Harry Digital</a>
+    <a class="brand" href="https://www.harrydigitalverse.com/">Harry Digital Verse</a>
     <div class="nav-right">
-      <select class="language-select" id="languageSelect" aria-label="Select language">
-        <option value="en">English</option>
-        <option value="ms">Bahasa Melayu</option>
-        <option value="id">Bahasa Indonesia</option>
-        <option value="es">Español</option>
-      </select>
+
       <a class="nav-cta" href="#contact" data-i18n="navCta">Tanya Sekarang</a>
     </div>
   </div>
@@ -173,7 +207,7 @@ footer{padding:32px 0;text-align:center;font-size:.9rem;color:var(--muted)}
       STARTER PACKAGE
     </span>
 
-    <h2>$199 <span>USD</span></h2>
+    <h2>$79 <span>USD</span></h2>
 
     <p data-i18n="priceIntro">
       Professional one-page landing page.
@@ -303,288 +337,109 @@ footer{padding:32px 0;text-align:center;font-size:.9rem;color:var(--muted)}
     <div class="cta-box">
       <h2 data-i18n="ctaTitle">Nak saya bina landing page untuk bisnes anda?</h2>
       <p data-i18n="ctaText">Hantar jenis bisnes atau produk anda. Saya akan lihat sama ada pakej RM150 sesuai untuk keperluan tersebut.</p>
-      <a class="primary-btn" id="whatsappButton"
-         href="https://wa.me/60182695452?text=Hi%20Harry%20Digital%2C%20saya%20berminat%20dengan%20Landing%20Page%20RM150.%20Bisnes%20saya%20ialah%20..."
-         target="_blank" rel="noopener noreferrer" data-i18n="whatsappButton">WhatsApp Harry Digital</a>
+     
+<form action="https://formspree.io/f/xzerrzpd" method="POST" class="contact-form">
+
+  <label for="customerName">Your Name</label>
+  <input type="text" id="customerName" name="name" placeholder="Your name" required>
+
+  <label for="customerEmail">Your Email</label>
+  <input type="email" id="customerEmail" name="email" placeholder="you@example.com" required>
+
+  <label for="businessType">Business / Project</label>
+  <input type="text" id="businessType" name="business" placeholder="Tell us about your business">
+
+  <label for="projectMessage">Tell Us About Your Project</label>
+  <textarea id="projectMessage" name="message" rows="5" placeholder="What kind of landing page do you need?" required></textarea>
+
+  <button type="submit" class="primary-btn">Send Enquiry</button>
+
+
+</form>
+
     </div>
   </div>
 </section>
+
 
 <footer>
   <div class="container">© 2026 Harry Digital • Explore. Build. Play. Grow.</div>
 </footer>
 
+
 <script>
-const translations = {
-  en: {
- 
-navCta: "Contact Now",
-eyebrow: "LANDING PAGE DESIGN • FOR SMALL BUSINESSES",
-heroTitle: "Turn Your Visitors Into Customers.",
-heroText: "We design clean, professional, mobile-friendly landing pages that help small businesses showcase their services, build trust, and generate enquiries.",
-heroButton1: "View Our Work",
-heroButton2: "Get Started",
-priceLabel: "STARTER PACKAGE",
-perPage: "/ landing page",
-priceIntro: "Professional one-page landing page.",
-feature1: "One-page landing page",
-feature2: "Mobile-responsive design",
-feature3: "Design tailored to your brand",
-feature4: "Content arrangement",
-feature5: "WhatsApp / booking / enquiry CTA",
-feature6: "One revision",
-feature7: "Estimated delivery in 3–5 days",
-interestButton: "Start Your Project",
-    benefitEyebrow:"WHAT YOU GET",
-    benefitTitle:"Simple, organised and focused on customer action",
-    benefitIntro:"A landing page does not need to be complicated. Visitors should understand who you are, what you offer and what to do next.",
-    benefit1Title:"Mobile Friendly",
-    benefit1Text:"A layout designed to be easy to read on phones and desktop screens.",
-    benefit2Title:"Clear CTA",
-    benefit2Text:"Customers can WhatsApp you, make a booking or visit your main link directly.",
-    benefit3Title:"Content Arrangement",
-    benefit3Text:"Your information is organised into sections that are easier to understand.",
-    portfolioEyebrow:"PORTFOLIO DEMO",
-    portfolioTitle:"Choose an example for your business type",
-    portfolioIntro:"These examples are portfolio concepts that demonstrate the landing page styles we can create.",
-    foodTitle:"Food Business",
-    foodText:"Suitable for home-based food businesses, cafes, catering or delivery menus.",
-    foodLink:"View Food Demo →",
-    serviceTitle:"Service Business",
-    serviceText:"Suitable for air-conditioning, repairs, cleaning, printing or local services.",
-    serviceLink:"View Service Demo →",
-    digitalTitle:"Digital Product",
-    digitalText:"Suitable for ebooks, courses, coaching or affiliate bridge pages.",
-    digitalLink:"View Digital Demo →",
-    processEyebrow:"HOW IT WORKS",
-    processTitle:"From idea to landing page",
-    step1Title:"Share Your Requirements",
-    step1Text:"Tell me your business type, product or service and the purpose of the landing page.",
-    step2Title:"Send Your Content",
-    step2Text:"Provide your logo, images, prices and the information you want included.",
-    step3Title:"I Build Your Page",
-    step3Text:"Your content is organised and the landing page is built around your basic requirements.",
-    step4Title:"Review & Completion",
-    step4Text:"You can request one revision before the final version is completed.",
-    noteLabel:"Note:",
-    noteText:"The $199 USD Starter Package includes a simple one-page landing page. Domain, paid hosting, checkout systems, custom backends, advanced forms, databases and complex functionality are not included and may be quoted separately.",
-    ctaTitle:"Ready to build your business landing page?",
-    ctaText:"Tell us about your business and goals. We'll help determine whether the $199 USD Starter Package is right for you.",
-    whatsappButton:"WhatsApp Harry Digital"
-  },
+const englishCopy = {
+  navCta: "Contact Us",
+  eyebrow: "LANDING PAGE DESIGN • FOR SMALL BUSINESSES",
+  heroTitle: "Turn Your Visitors Into Customers.",
+  heroText: "We design clean, professional, mobile-friendly landing pages that help small businesses showcase their services, build trust, and generate enquiries.",
+  heroButton1: "View Our Work",
+  heroButton2: "Get Started",
 
-  ms: {
-    navCta:"Tanya Sekarang",
-    eyebrow:"LANDING PAGE SERVICE • INTRO PRICE",
-    heroTitle:"Bisnes anda perlukan satu page yang lebih jelas?",
-    heroText:"Saya membantu bisnes kecil, servis, personal brand dan digital product membina simple landing page yang mobile-friendly dengan CTA yang jelas.",
-    heroButton1:"Lihat Contoh Landing Page",
-    heroButton2:"Tanya Tentang Slot",
-    priceLabel:"INTRO PACKAGE",
-    perPage:"/ landing page",
-    priceIntro:"Untuk simple 1-page website.",
-    feature1:"1-page landing page",
-    feature2:"Mobile responsive",
-    feature3:"Basic design ikut brand",
-    feature4:"Susunan content",
-    feature5:"CTA WhatsApp / booking / link",
-    feature6:"1 revision",
-    feature7:"Anggaran siap 2–3 hari",
-    interestButton:"Saya Berminat",
-    benefitEyebrow:"APA YANG ANDA DAPAT",
-    benefitTitle:"Simple, kemas dan fokus pada tindakan customer",
-    benefitIntro:"Landing page tidak perlu terlalu rumit. Yang penting visitor faham siapa anda, apa yang anda tawarkan dan apa langkah seterusnya.",
-    benefit1Title:"Mobile Friendly",
-    benefit1Text:"Layout direka supaya senang dibaca melalui telefon dan desktop.",
-    benefit2Title:"Clear CTA",
-    benefit2Text:"Customer boleh terus WhatsApp, booking atau pergi ke link utama.",
-    benefit3Title:"Content Arrangement",
-    benefit3Text:"Maklumat anda disusun menjadi section yang lebih mudah difahami.",
-    portfolioEyebrow:"PORTFOLIO DEMO",
-    portfolioTitle:"Pilih contoh mengikut jenis bisnes",
-    portfolioIntro:"Semua contoh di bawah ialah portfolio concept untuk menunjukkan gaya landing page yang boleh dibina.",
-    foodTitle:"Food Business",
-    foodText:"Sesuai untuk home-based food, cafe, catering atau menu delivery.",
-    foodLink:"Lihat Demo Food →",
-    serviceTitle:"Service Business",
-    serviceText:"Sesuai untuk aircond, repair, cleaning, printing atau servis tempatan.",
-    serviceLink:"Lihat Demo Service →",
-    digitalTitle:"Digital Product",
-    digitalText:"Sesuai untuk ebook, course, coaching atau affiliate bridge page.",
-    digitalLink:"Lihat Demo Digital →",
-    processEyebrow:"PROSES KERJA",
-    processTitle:"Dari idea kepada landing page",
-    step1Title:"Beritahu Keperluan",
-    step1Text:"Hantar jenis bisnes, produk atau servis dan tujuan landing page.",
-    step2Title:"Hantar Content",
-    step2Text:"Berikan logo, gambar, harga dan maklumat yang anda mahu masukkan.",
-    step3Title:"Saya Bina Page",
-    step3Text:"Content disusun dan landing page dibina mengikut keperluan asas anda.",
-    step4Title:"Review & Siap",
-    step4Text:"Anda boleh minta satu revision sebelum versi akhir disiapkan.",
-    noteLabel:"Nota:",
-    noteText:"Harga RM150 ialah intro price untuk simple 1-page landing page. Domain, hosting berbayar, sistem checkout, custom backend, advanced form/database atau fungsi kompleks tidak termasuk dan akan dibincangkan secara berasingan jika diperlukan.",
-    ctaTitle:"Nak saya bina landing page untuk bisnes anda?",
-    ctaText:"Hantar jenis bisnes atau produk anda. Saya akan lihat sama ada pakej RM150 sesuai untuk keperluan tersebut.",
-    whatsappButton:"WhatsApp Harry Digital"
-  },
+  priceLabel: "STARTER PACKAGE",
+  priceIntro: "A professional one-page landing page.",
+  feature1: "One-page landing page",
+  feature2: "Mobile-responsive design",
+  feature3: "Design tailored to your brand",
+  feature4: "Content arrangement",
+  feature5: "Contact, booking or enquiry button",
+  feature6: "One revision",
+  feature7: "Estimated delivery in 3–5 business days",
+  interestButton: "Start Your Project",
 
-  id: {
-    navCta:"Hubungi Sekarang",
-    eyebrow:"LAYANAN LANDING PAGE • HARGA PERKENALAN",
-    heroTitle:"Apakah bisnis Anda membutuhkan halaman online yang lebih jelas?",
-    heroText:"Saya membantu bisnis kecil, penyedia jasa, personal brand, dan pemilik produk digital membuat landing page sederhana yang ramah untuk ponsel dengan tombol ajakan bertindak yang jelas.",
-    heroButton1:"Lihat Contoh Landing Page",
-    heroButton2:"Tanyakan Ketersediaan",
-    priceLabel:"PAKET PERKENALAN",
-    perPage:"/ landing page",
-    priceIntro:"Untuk website sederhana satu halaman.",
-    feature1:"Landing page satu halaman",
-    feature2:"Responsif untuk perangkat mobile",
-    feature3:"Desain dasar sesuai brand",
-    feature4:"Penataan konten",
-    feature5:"Tombol WhatsApp / booking / tautan",
-    feature6:"1 kali revisi",
-    feature7:"Estimasi selesai 2–3 hari",
-    interestButton:"Saya Berminat",
-    benefitEyebrow:"YANG ANDA DAPATKAN",
-    benefitTitle:"Sederhana, rapi, dan fokus pada tindakan pelanggan",
-    benefitIntro:"Landing page tidak perlu rumit. Pengunjung perlu memahami siapa Anda, apa yang Anda tawarkan, dan langkah selanjutnya.",
-    benefit1Title:"Ramah Mobile",
-    benefit1Text:"Tampilan dirancang agar mudah dibaca melalui ponsel maupun desktop.",
-    benefit2Title:"CTA yang Jelas",
-    benefit2Text:"Pelanggan dapat langsung menghubungi WhatsApp, melakukan booking, atau membuka tautan utama.",
-    benefit3Title:"Penataan Konten",
-    benefit3Text:"Informasi Anda disusun menjadi beberapa bagian yang lebih mudah dipahami.",
-    portfolioEyebrow:"CONTOH PORTOFOLIO",
-    portfolioTitle:"Pilih contoh sesuai jenis bisnis Anda",
-    portfolioIntro:"Semua contoh di bawah merupakan konsep portofolio untuk menunjukkan gaya landing page yang dapat dibuat.",
-    foodTitle:"Bisnis Makanan",
-    foodText:"Cocok untuk usaha makanan rumahan, kafe, katering, atau menu pesan antar.",
-    foodLink:"Lihat Demo Food →",
-    serviceTitle:"Bisnis Jasa",
-    serviceText:"Cocok untuk AC, perbaikan, kebersihan, percetakan, atau jasa lokal.",
-    serviceLink:"Lihat Demo Jasa →",
-    digitalTitle:"Produk Digital",
-    digitalText:"Cocok untuk ebook, kursus, coaching, atau halaman penghubung affiliate.",
-    digitalLink:"Lihat Demo Digital →",
-    processEyebrow:"PROSES KERJA",
-    processTitle:"Dari ide menjadi landing page",
-    step1Title:"Sampaikan Kebutuhan",
-    step1Text:"Kirimkan jenis bisnis, produk atau jasa, serta tujuan landing page.",
-    step2Title:"Kirim Konten",
-    step2Text:"Berikan logo, gambar, harga, dan informasi yang ingin dimasukkan.",
-    step3Title:"Saya Membuat Halaman",
-    step3Text:"Konten akan disusun dan landing page dibuat sesuai kebutuhan dasar Anda.",
-    step4Title:"Review & Selesai",
-    step4Text:"Anda dapat meminta satu kali revisi sebelum versi akhir diselesaikan.",
-    noteLabel:"Catatan:",
-    noteText:"Harga RM150 adalah harga perkenalan untuk landing page sederhana satu halaman. Domain, hosting berbayar, sistem checkout, backend khusus, formulir/database tingkat lanjut, atau fungsi kompleks tidak termasuk dan akan dibahas secara terpisah jika diperlukan.",
-    ctaTitle:"Ingin saya membuat landing page untuk bisnis Anda?",
-    ctaText:"Kirimkan jenis bisnis atau produk Anda. Saya akan menilai apakah paket RM150 sesuai dengan kebutuhan tersebut.",
-    whatsappButton:"WhatsApp Harry Digital"
-  },
+  benefitEyebrow: "WHAT YOU GET",
+  benefitTitle: "Simple, organised and focused on customer action",
+  benefitIntro: "A landing page does not need to be complicated. Visitors should understand who you are, what you offer and what to do next.",
+  benefit1Title: "Mobile Friendly",
+  benefit1Text: "A layout designed to be easy to read on phones and desktop screens.",
+  benefit2Title: "Clear Call to Action",
+  benefit2Text: "Customers can contact you, make a booking or visit your main link directly.",
+  benefit3Title: "Content Arrangement",
+  benefit3Text: "Your information is organised into sections that are easier to understand.",
 
-  es: {
-    navCta:"Contactar ahora",
-    eyebrow:"SERVICIO DE LANDING PAGE • PRECIO DE INTRODUCCIÓN",
-    heroTitle:"¿Tu negocio necesita una página online más clara?",
-    heroText:"Ayudo a pequeños negocios, proveedores de servicios, marcas personales y creadores de productos digitales a crear landing pages sencillas, adaptadas a móviles y con llamadas a la acción claras.",
-    heroButton1:"Ver ejemplos de landing pages",
-    heroButton2:"Consultar disponibilidad",
-    priceLabel:"PAQUETE DE INTRODUCCIÓN",
-    perPage:"/ landing page",
-    priceIntro:"Para un sitio web sencillo de una sola página.",
-    feature1:"Landing page de una página",
-    feature2:"Diseño adaptable a móviles",
-    feature3:"Diseño básico adaptado a tu marca",
-    feature4:"Organización del contenido",
-    feature5:"Botón de WhatsApp / reserva / enlace",
-    feature6:"1 revisión",
-    feature7:"Entrega estimada en 2–3 días",
-    interestButton:"Me interesa",
-    benefitEyebrow:"QUÉ RECIBES",
-    benefitTitle:"Sencillo, organizado y enfocado en la acción del cliente",
-    benefitIntro:"Una landing page no tiene que ser complicada. Los visitantes deben entender quién eres, qué ofreces y cuál es el siguiente paso.",
-    benefit1Title:"Adaptado a móviles",
-    benefit1Text:"Un diseño fácil de leer tanto en teléfonos como en ordenadores.",
-    benefit2Title:"CTA claro",
-    benefit2Text:"Los clientes pueden escribirte por WhatsApp, reservar o visitar tu enlace principal.",
-    benefit3Title:"Organización del contenido",
-    benefit3Text:"Tu información se organiza en secciones más fáciles de entender.",
-    portfolioEyebrow:"EJEMPLOS DE PORTAFOLIO",
-    portfolioTitle:"Elige un ejemplo según tu tipo de negocio",
-    portfolioIntro:"Los siguientes ejemplos son conceptos de portafolio que muestran los estilos de landing page que podemos crear.",
-    foodTitle:"Negocio de comida",
-    foodText:"Ideal para comida casera, cafeterías, catering o menús de entrega.",
-    foodLink:"Ver demo de comida →",
-    serviceTitle:"Negocio de servicios",
-    serviceText:"Ideal para aire acondicionado, reparaciones, limpieza, impresión o servicios locales.",
-    serviceLink:"Ver demo de servicios →",
-    digitalTitle:"Producto digital",
-    digitalText:"Ideal para ebooks, cursos, coaching o páginas puente de afiliados.",
-    digitalLink:"Ver demo digital →",
-    processEyebrow:"PROCESO DE TRABAJO",
-    processTitle:"De la idea a tu landing page",
-    step1Title:"Cuéntame tus necesidades",
-    step1Text:"Indica el tipo de negocio, producto o servicio y el objetivo de la landing page.",
-    step2Title:"Envía el contenido",
-    step2Text:"Comparte tu logotipo, imágenes, precios y la información que deseas incluir.",
-    step3Title:"Creo tu página",
-    step3Text:"Organizo el contenido y creo la landing page según tus necesidades básicas.",
-    step4Title:"Revisión y entrega",
-    step4Text:"Puedes solicitar una revisión antes de preparar la versión final.",
-    noteLabel:"Nota:",
-    noteText:"El precio de RM150 es una tarifa introductoria para una landing page sencilla de una sola página. El dominio, alojamiento de pago, sistemas de pago, backend personalizado, formularios o bases de datos avanzados y funciones complejas no están incluidos y se cotizarán por separado si se necesitan.",
-    ctaTitle:"¿Quieres que cree una landing page para tu negocio?",
-    ctaText:"Envíame información sobre tu negocio o producto. Evaluaré si el paquete de RM150 se adapta a tus necesidades.",
-    whatsappButton:"WhatsApp Harry Digital"
-  }
+  portfolioEyebrow: "PORTFOLIO DEMO",
+  portfolioTitle: "Choose an Example for Your Business",
+  portfolioIntro: "These examples are portfolio concepts that demonstrate the landing page styles we can create.",
+  demoBadge: "SAMPLE WEBSITE · PORTFOLIO CONCEPT",
+  foodTitle: "Food Business",
+  foodText: "Suitable for home-based food businesses, cafes, catering or delivery menus.",
+  foodLink: "View Food Demo →",
+  serviceTitle: "Service Business",
+  serviceText: "Suitable for air-conditioning, repairs, cleaning, printing or local services.",
+  serviceLink: "View Service Demo →",
+  digitalTitle: "Digital Product",
+  digitalText: "Suitable for ebooks, courses, coaching or affiliate bridge pages.",
+  digitalLink: "View Digital Demo →",
+
+  processEyebrow: "HOW IT WORKS",
+  processTitle: "From Idea to Landing Page",
+  step1Title: "Share Your Requirements",
+  step1Text: "Tell us your business type, product or service and the purpose of the landing page.",
+  step2Title: "Send Your Content",
+  step2Text: "Provide your logo, images, prices and the information you want included.",
+  step3Title: "We Build Your Page",
+  step3Text: "Your content is organised and the landing page is built around your requirements.",
+  step4Title: "Review & Completion",
+  step4Text: "You can request one revision before the final version is completed.",
+
+  noteLabel: "Note:",
+  noteText: "The $79 USD Starter Package includes a simple one-page landing page. Domain, paid hosting, checkout systems, custom backends, advanced forms, databases and complex functionality are not included and may be quoted separately.",
+
+  ctaTitle: "Ready to Build Your Business Landing Page?",
+  ctaText: "Tell us about your business and goals. We will help determine whether the $79 USD Starter Package is right for you.",
+  whatsappButton: "Contact Harry Digital Verse"
 };
 
-const languageSelect = document.getElementById("languageSelect");
-const languageStorageKey = "hdv-language-v2";
+document.documentElement.lang = "en";
+document.title = "Landing Page Service | Harry Digital Verse";
 
-function setLanguage(language) {
-  const selected = translations[language] ? language : "en";
-  const dictionary = translations[selected];
+document.querySelectorAll("[data-i18n]").forEach(element => {
+  const key = element.getAttribute("data-i18n");
 
-  document.documentElement.lang = selected;
-
-  document.querySelectorAll("[data-i18n]").forEach(element => {
-    const key = element.getAttribute("data-i18n");
-    if (dictionary[key]) element.textContent = dictionary[key];
-  });
-
-  languageSelect.value = selected;
-
-  const titles = {
-    en: "Landing Page Service | Harry Digital",
-    ms: "Servis Landing Page | Harry Digital",
-    id: "Layanan Landing Page | Harry Digital",
-    es: "Servicio de Landing Page | Harry Digital"
-  };
-
-  document.title = titles[selected];
-
-  try {
-    localStorage.setItem(languageStorageKey, selected);
-  } catch (error) {
-    // The page still works if browser storage is unavailable.
+  if (englishCopy[key]) {
+    element.textContent = englishCopy[key];
   }
-}
-
-languageSelect.addEventListener("change", function() {
-  setLanguage(this.value);
 });
-
-// Read the visitor's saved language, otherwise use Malay.
-let savedLanguage = "en";
-try {
- savedLanguage = localStorage.getItem(languageStorageKey) || "en";
-} catch (error) {}
-
-setLanguage(savedLanguage);
 </script>
 
 </body>
