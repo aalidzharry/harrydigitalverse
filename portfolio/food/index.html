@@ -1,160 +1,275 @@
+
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f3ec">
+  <title>Sunday Hearth Kitchen | Homemade Comfort, Made Fresh</title>
+  <meta name="description" content="Discover comforting, home-style meals made fresh with care. Explore family dinners, lunch favorites, and catering from Sunday Hearth Kitchen.">
+  <meta property="og:title" content="Sunday Hearth Kitchen | Homemade Comfort, Made Fresh">
+  <meta property="og:description" content="Fresh, comforting meals for everyday moments and family gatherings.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=85">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sunday Hearth Kitchen">
+  <meta name="twitter:description" content="Homemade comfort, made fresh.">
 
-  <title>Dapur Senja | Homemade Food & Delivery</title>
-
-  <meta
-    name="description"
-    content="Dapur Senja menyediakan hidangan homemade, set lunch dan tempahan makanan untuk delivery dan pickup."
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --cream: #f7f3ec;
+      --paper: #fffdf9;
+      --ink: #29271f;
+      --muted: #716d62;
+      --olive: #596447;
+      --olive-dark: #3f4a34;
+      --rust: #ad6548;
+      --line: #e8e0d4;
+      --sand: #eee5d8;
+      --shadow: 0 22px 60px rgba(54, 46, 33, .10);
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fffaf5;
-      color: #2d241f;
-      line-height: 1.6;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+    }
+    img { display: block; width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1160px, 90%); margin: 0 auto; }
+
+    .announcement {
+      background: var(--olive-dark);
+      color: #fff;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: .78rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
     }
 
-    a {
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    .navbar {
-      background: #ffffff;
-      border-bottom: 1px solid #eee2d8;
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 20;
+      background: rgba(247,243,236,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(90,80,60,.12);
     }
 
-    .nav-inner {
-      min-height: 72px;
+    .nav {
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
     }
 
-    .brand {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: #7a3f22;
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--olive);
+      border-radius: 50%;
+      color: var(--olive);
+      font-family: "Playfair Display", serif;
+      font-size: 1.25rem;
     }
-
-    .nav-cta {
-      background: #7a3f22;
-      color: white;
-      padding: 11px 18px;
-      border-radius: 999px;
+    .brand-name {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 1.12rem;
       font-weight: 700;
+      line-height: 1.1;
+    }
+    .brand-tag {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .65rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
 
-    .hero {
-      min-height: 78vh;
+    .nav-links {
       display: flex;
       align-items: center;
-      padding: 70px 0;
-      background:
-        linear-gradient(
-          rgba(255, 250, 245, 0.88),
-          rgba(255, 250, 245, 0.94)
-        ),
-        url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
+      gap: 30px;
+      color: #514e44;
+      font-size: .88rem;
+      font-weight: 600;
     }
+    .nav-links a:hover { color: var(--rust); }
 
-    .hero-content {
-      max-width: 700px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 16px;
-      padding: 8px 14px;
+    .nav-cta, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 999px;
-      background: #f2ddcc;
-      color: #7a3f22;
-      font-size: 0.9rem;
-      font-weight: 700;
+      padding: 13px 22px;
+      font: 700 .88rem "DM Sans", sans-serif;
+      transition: .2s ease;
     }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4.7rem);
-      line-height: 1.05;
-      margin-bottom: 20px;
-      color: #3c2519;
-    }
-
-    .hero h1 span {
-      color: #a95d32;
-    }
-
-    .hero p {
-      max-width: 620px;
-      font-size: 1.08rem;
-      margin-bottom: 28px;
-      color: #5d4a3f;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .primary-btn,
-    .secondary-btn {
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: 700;
-      display: inline-block;
-    }
-
-    .primary-btn {
-      background: #7a3f22;
+    .nav-cta, .button-primary {
+      background: var(--olive);
       color: white;
     }
-
-    .secondary-btn {
-      border: 1px solid #7a3f22;
-      color: #7a3f22;
+    .nav-cta:hover, .button-primary:hover {
+      background: var(--olive-dark);
+      transform: translateY(-2px);
+    }
+    .button-outline {
+      border: 1px solid rgba(63,74,52,.45);
+      color: var(--olive-dark);
+      background: rgba(255,255,255,.45);
+    }
+    .button-outline:hover {
       background: white;
+      transform: translateY(-2px);
     }
 
-    section {
-      padding: 80px 0;
+    .hero { padding: 72px 0 86px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.02fr;
+      align-items: center;
+      gap: 66px;
+    }
+    .eyebrow {
+      color: var(--rust);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+    }
+    h1 {
+      max-width: 610px;
+      margin: 18px 0 22px;
+      font-size: clamp(3.2rem, 6.2vw, 5.8rem);
+      line-height: .99;
+      letter-spacing: -.045em;
+    }
+    h1 em { color: var(--olive); font-weight: 500; }
+    .hero-copy {
+      max-width: 500px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+    .hero-note:before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--rust);
+    }
+    .hero-visual { position: relative; min-height: 540px; }
+    .hero-photo {
+      position: absolute;
+      inset: 0 28px 28px 0;
+      height: calc(100% - 28px);
+      object-fit: cover;
+      border-radius: 48% 48% 12px 12px;
+      box-shadow: var(--shadow);
+    }
+    .photo-stamp {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 156px;
+      height: 156px;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      border-radius: 50%;
+      background: var(--rust);
+      color: white;
+      text-align: center;
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      line-height: 1.2;
+      transform: rotate(8deg);
+      border: 7px solid var(--cream);
+    }
+    .photo-caption {
+      position: absolute;
+      left: -22px;
+      bottom: 72px;
+      padding: 13px 18px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(54,46,33,.08);
+      color: var(--muted);
+      font-size: .75rem;
+      letter-spacing: .04em;
     }
 
-    .section-heading {
-      max-width: 700px;
+    .intro-strip {
+      padding: 25px 0;
+      background: var(--sand);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .strip-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--olive-dark);
+      font-family: "Playfair Display", serif;
+      font-size: 1.12rem;
+    }
+    .strip-inner span:before {
+      content: "✳";
+      margin-right: 12px;
+      color: var(--rust);
+      font-family: sans-serif;
+    }
+
+    section.content-section { padding: 94px 0; }
+    .section-top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
       margin-bottom: 38px;
     }
-
-    .section-heading span {
-      color: #a95d32;
-      font-weight: 700;
-      font-size: 0.9rem;
+    .section-title { max-width: 610px; }
+    .section-title h2 {
+      margin-top: 10px;
+      font-size: clamp(2.4rem, 4vw, 3.7rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
     }
-
-    .section-heading h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-top: 8px;
-      margin-bottom: 12px;
+    .section-title p {
+      max-width: 530px;
+      margin-top: 14px;
+      color: var(--muted);
     }
 
     .menu-grid {
@@ -162,386 +277,418 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
-
     .menu-card {
-      background: white;
-      border-radius: 20px;
       overflow: hidden;
-      border: 1px solid #eee2d8;
-      box-shadow: 0 10px 28px rgba(89, 54, 35, 0.06);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      transition: .25s ease;
     }
-
-    .menu-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
     }
-
-    .menu-card-content {
-      padding: 22px;
+    .menu-image { height: 245px; object-fit: cover; }
+    .menu-body { padding: 23px; }
+    .menu-category {
+      color: var(--rust);
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
     }
-
-    .menu-card h3 {
-      margin-bottom: 8px;
-      font-size: 1.35rem;
+    .menu-body h3 { margin: 8px 0; font-size: 1.55rem; }
+    .menu-body p {
+      min-height: 52px;
+      color: var(--muted);
+      font-size: .9rem;
     }
-
-    .price {
-      color: #a95d32;
-      font-weight: 800;
-      margin-top: 12px;
-      display: block;
+    .menu-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 19px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
     }
+    .price { color: var(--olive-dark); font-weight: 700; }
+    .menu-link { color: var(--rust); font-size: .82rem; font-weight: 700; }
 
-    .why-us {
-      background: #f8eee7;
-    }
-
-    .feature-grid {
+    .story { background: #eae8dc; }
+    .story-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: .95fr 1.05fr;
+      align-items: center;
+      gap: 70px;
+    }
+    .story-image {
+      height: 500px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+    .story-copy h2 {
+      margin: 12px 0 20px;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1.05;
+    }
+    .story-copy p { margin-bottom: 16px; color: #666457; }
+    .story-signature {
+      margin-top: 28px;
+      color: var(--olive);
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-style: italic;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
+      margin-top: 42px;
     }
-
-    .feature-card {
-      background: white;
-      padding: 24px;
-      border-radius: 18px;
+    .value-card {
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
     }
-
-    .feature-icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
+    .value-icon {
       display: block;
+      margin-bottom: 17px;
+      color: var(--rust);
+      font-size: 1.6rem;
     }
+    .value-card h3 { margin-bottom: 8px; font-size: 1.35rem; }
+    .value-card p { color: var(--muted); font-size: .9rem; }
 
-    .feature-card h3 {
-      margin-bottom: 7px;
-    }
-
-    .order-section {
-      text-align: center;
-    }
-
-    .order-box {
-      max-width: 820px;
-      margin: auto;
-      padding: 55px 28px;
-      border-radius: 24px;
-      background: #3c2519;
+    .catering {
+      padding: 88px 0;
+      background: var(--olive-dark);
       color: white;
     }
-
-    .order-box h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 14px;
+    .catering-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 50px;
+    }
+    .catering .eyebrow { color: #e4b49b; }
+    .catering h2 {
+      max-width: 650px;
+      margin: 12px 0 18px;
+      font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+      line-height: 1.05;
+    }
+    .catering p { max-width: 590px; color: rgba(255,255,255,.76); }
+    .catering-panel {
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 14px;
+      background: rgba(255,255,255,.07);
+    }
+    .catering-panel h3 { margin-bottom: 12px; font-size: 1.55rem; }
+    .catering-panel ul {
+      padding-left: 19px;
+      color: rgba(255,255,255,.8);
+      font-size: .9rem;
+    }
+    .catering-panel li { margin: 8px 0; }
+    .catering-panel .button {
+      margin-top: 22px;
+      background: var(--cream);
+      color: var(--olive-dark);
+    }
+    .catering-panel .button:hover {
+      background: white;
+      transform: translateY(-2px);
     }
 
-    .order-box p {
-      margin-bottom: 26px;
-      color: #f1dfd2;
+    .visit { padding: 78px 0; text-align: center; }
+    .visit h2 {
+      margin: 10px auto 14px;
+      max-width: 700px;
+      font-size: clamp(2.4rem, 4vw, 3.7rem);
+      line-height: 1.08;
+    }
+    .visit p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+    .visit .button { margin-top: 25px; }
+
+    footer { padding: 30px 0; border-top: 1px solid var(--line); }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .78rem;
+    }
+    .footer-brand {
+      color: var(--ink);
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
     }
 
-    .order-box .primary-btn {
-      background: #ffffff;
-      color: #3c2519;
-    }
-
-    footer {
-      padding: 28px 0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #7d6d64;
-    }
-
-    @media (max-width: 850px) {
-      .menu-grid,
-      .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .nav-inner {
-        min-height: 64px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 60px 0;
-      }
-
-      .menu-grid,
-      .feature-grid {
+    @media (max-width: 900px) {
+      .hero-grid, .story-grid, .catering-grid {
         grid-template-columns: 1fr;
+        gap: 42px;
       }
+      .hero-visual { min-height: 470px; }
+      .story-image { height: 390px; }
+      .menu-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-top { align-items: start; flex-direction: column; }
+    }
 
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons a {
-        text-align: center;
-      }
+    @media (max-width: 620px) {
+      .announcement { font-size: .65rem; }
+      .nav { min-height: 72px; }
+      .nav-links { display: none; }
+      .nav-cta { padding: 10px 15px; font-size: .78rem; }
+      .brand-name { font-size: .98rem; }
+      .brand-tag { font-size: .57rem; }
+      .hero { padding: 52px 0 65px; }
+      h1 { font-size: clamp(3rem, 15vw, 4.4rem); }
+      .hero-visual { min-height: 390px; }
+      .hero-photo { inset: 0 18px 22px 0; height: calc(100% - 22px); }
+      .photo-stamp { width: 122px; height: 122px; font-size: .85rem; }
+      .photo-caption { left: -8px; bottom: 55px; font-size: .66rem; }
+      .strip-inner { font-size: .95rem; }
+      section.content-section { padding: 68px 0; }
+      .menu-grid, .values-grid { grid-template-columns: 1fr; }
+      .menu-image { height: 230px; }
+      .story-image { height: 310px; }
+      .catering { padding: 68px 0; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 
 <body>
+  <div class="announcement">
+    Freshly prepared comfort food · Made with care · Served with heart
+  </div>
 
-  <nav class="navbar">
-    <div class="container nav-inner">
-      <a class="brand" href="#home">
-        Dapur Senja
-      </a>
-
-      <a
-        class="nav-cta"
-        href="https://wa.me/60123456789"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Order WhatsApp
-      </a>
-    </div>
-  </nav>
-
-
-  <header class="hero" id="home">
-    <div class="container">
-
-      <div class="hero-content">
-
-        <span class="eyebrow">
-          Homemade • Fresh • Made With Care
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Sunday Hearth Kitchen home">
+        <span class="brand-mark">SH</span>
+        <span>
+          <span class="brand-name">Sunday Hearth Kitchen</span>
+          <span class="brand-tag">Homemade comfort, made fresh</span>
         </span>
+      </a>
 
-        <h1>
-          Makanan homemade
-          <span>yang rasa macam rumah.</span>
-        </h1>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#menu">Our Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#catering">Catering</a>
+      </nav>
 
-        <p>
-          Nikmati hidangan homemade yang dimasak segar untuk lunch,
-          dinner atau tempahan kecil. Sesuai untuk pickup, delivery
-          dan tempahan berkumpulan.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a
-            class="primary-btn"
-            href="https://wa.me/60123456789?text=Hi%20Dapur%20Senja%2C%20saya%20nak%20buat%20tempahan."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Order Sekarang
-          </a>
-
-          <a
-            class="secondary-btn"
-            href="#menu"
-          >
-            Lihat Menu
-          </a>
-
-        </div>
-
-      </div>
-
+      <a class="nav-cta" href="#contact">Get in Touch</a>
     </div>
   </header>
 
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">A little comfort, served fresh</span>
+          <h1>Good food.<br><em>Feels like home.</em></h1>
+          <p class="hero-copy">
+            From cozy weeknight dinners to slow Sunday gatherings, enjoy thoughtfully prepared comfort food made with familiar ingredients and a whole lot of care.
+          </p>
 
-  <section id="menu">
-    <div class="container">
+          <div class="hero-actions">
+            <a class="button button-primary" href="#menu">Explore the Menu</a>
+            <a class="button button-outline" href="#catering">Ask About Catering</a>
+          </div>
 
-      <div class="section-heading">
-        <span>MENU PILIHAN</span>
+          <div class="hero-note">
+            Made fresh for the moments that bring us together.
+          </div>
+        </div>
 
-        <h2>
-          Antara kegemaran pelanggan
-        </h2>
-
-        <p>
-          Contoh menu ini boleh ditukar mengikut menu sebenar
-          customer bila landing page dibina.
-        </p>
+        <div class="hero-visual">
+          <img class="hero-photo"
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=85"
+            alt="A colorful table of freshly prepared home-style food">
+          <div class="photo-caption">Gather around something good.</div>
+          <div class="photo-stamp">Made with<br>care &<br>comfort</div>
+        </div>
       </div>
+    </section>
 
-
-      <div class="menu-grid">
-
-        <article class="menu-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80"
-            alt="Nasi ayam homemade"
-          >
-
-          <div class="menu-card-content">
-            <h3>Nasi Ayam Homemade</h3>
-
-            <p>
-              Ayam berempah, nasi wangi, sambal dan sup.
-            </p>
-
-            <span class="price">
-              Dari RM10
-            </span>
-          </div>
-
-        </article>
-
-
-        <article class="menu-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=900&q=80"
-            alt="Set lunch"
-          >
-
-          <div class="menu-card-content">
-            <h3>Set Lunch Harian</h3>
-
-            <p>
-              Menu berlainan setiap hari untuk lunch yang mudah dan sedap.
-            </p>
-
-            <span class="price">
-              Dari RM12
-            </span>
-          </div>
-
-        </article>
-
-
-        <article class="menu-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
-            alt="Tempahan berkumpulan"
-          >
-
-          <div class="menu-card-content">
-            <h3>Tempahan Berkumpulan</h3>
-
-            <p>
-              Sesuai untuk office lunch, meeting kecil dan event keluarga.
-            </p>
-
-            <span class="price">
-              Hubungi untuk quotation
-            </span>
-          </div>
-
-        </article>
-
+    <div class="intro-strip">
+      <div class="container strip-inner">
+        <span>Comfort-food favorites</span>
+        <span>Freshly prepared</span>
+        <span>Made for sharing</span>
       </div>
-
     </div>
-  </section>
 
+    <section class="content-section" id="menu">
+      <div class="container">
+        <div class="section-top">
+          <div class="section-title">
+            <span class="eyebrow">From our kitchen</span>
+            <h2>Favorites worth<br>coming home to.</h2>
+            <p>
+              A sample of the hearty, feel-good dishes on our menu. Seasonal offerings and daily specials can bring something new to the table.
+            </p>
+          </div>
+          <a class="button button-outline" href="#contact">Ask About Today's Menu</a>
+        </div>
 
-  <section class="why-us">
-    <div class="container">
+        <div class="menu-grid">
+          <article class="menu-card">
+            <img class="menu-image"
+              src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=1000&q=85"
+              alt="Roasted chicken dinner with vegetables">
+            <div class="menu-body">
+              <span class="menu-category">Dinner favorite</span>
+              <h3>Sunday Roast Chicken</h3>
+              <p>Herb-roasted chicken served with seasonal vegetables and homestyle sides.</p>
+              <div class="menu-bottom">
+                <span class="price">From $16.00</span>
+                <a class="menu-link" href="#contact">Ask about it ↗</a>
+              </div>
+            </div>
+          </article>
 
-      <div class="section-heading">
+          <article class="menu-card">
+            <img class="menu-image"
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+              alt="Fresh lunch bowl with vegetables and grains">
+            <div class="menu-body">
+              <span class="menu-category">Lunch favorite</span>
+              <h3>Harvest Lunch Bowl</h3>
+              <p>A satisfying bowl of grains, fresh vegetables and a house-made dressing.</p>
+              <div class="menu-bottom">
+                <span class="price">From $12.00</span>
+                <a class="menu-link" href="#contact">Ask about it ↗</a>
+              </div>
+            </div>
+          </article>
 
-        <span>KENAPA PILIH KAMI</span>
-
-        <h2>
-          Simple, fresh dan senang order
-        </h2>
-
+          <article class="menu-card">
+            <img class="menu-image"
+              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=85"
+              alt="A family-style spread of grilled food">
+            <div class="menu-body">
+              <span class="menu-category">Made for sharing</span>
+              <h3>Family Table Package</h3>
+              <p>A generous, shareable meal for family dinners and relaxed get-togethers.</p>
+              <div class="menu-bottom">
+                <span class="price">From $42.00</span>
+                <a class="menu-link" href="#contact">Ask about it ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
+    <section class="content-section story" id="story">
+      <div class="container story-grid">
+        <img class="story-image"
+          src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85"
+          alt="Warm, welcoming home kitchen prepared for cooking">
 
-      <div class="feature-grid">
-
-        <article class="feature-card">
-          <span class="feature-icon">🍳</span>
-
-          <h3>Freshly Cooked</h3>
-
+        <div class="story-copy">
+          <span class="eyebrow">A seat at our table</span>
+          <h2>Inspired by the simple joy of eating together.</h2>
           <p>
-            Hidangan disediakan segar untuk tempahan.
+            At Sunday Hearth Kitchen, we believe the best meals do more than fill a plate. They make room for conversation, bring people together and turn an ordinary day into something worth remembering.
           </p>
-        </article>
-
-
-        <article class="feature-card">
-          <span class="feature-icon">💬</span>
-
-          <h3>Easy Ordering</h3>
-
           <p>
-            Terus klik WhatsApp untuk buat pertanyaan atau order.
+            Our kitchen is guided by a love of familiar flavors, thoughtful preparation and the kind of hospitality that makes everyone feel welcome.
           </p>
-        </article>
-
-
-        <article class="feature-card">
-          <span class="feature-icon">🚗</span>
-
-          <h3>Pickup & Delivery</h3>
-
-          <p>
-            Pilihan pickup atau delivery mengikut kawasan.
-          </p>
-        </article>
-
-
-        <article class="feature-card">
-          <span class="feature-icon">❤️</span>
-
-          <h3>Homemade Taste</h3>
-
-          <p>
-            Rasa yang simple, comforting dan sesuai dinikmati bersama.
-          </p>
-        </article>
-
+          <div class="story-signature">
+            Pull up a chair. You're welcome here.
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="content-section">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">The Sunday Hearth way</span>
+          <h2>Thoughtful food.<br>Warm hospitality.</h2>
+        </div>
 
+        <div class="values-grid">
+          <article class="value-card">
+            <span class="value-icon">✳</span>
+            <h3>Prepared with Care</h3>
+            <p>Every dish is thoughtfully prepared, with attention to the details that make a meal feel special.</p>
+          </article>
 
-  <section class="order-section">
-    <div class="container">
+          <article class="value-card">
+            <span class="value-icon">⌂</span>
+            <h3>Comfort in Every Bite</h3>
+            <p>Familiar, satisfying flavors inspired by the meals we love sharing at home.</p>
+          </article>
 
-      <div class="order-box">
+          <article class="value-card">
+            <span class="value-icon">♡</span>
+            <h3>Made for Gathering</h3>
+            <p>From everyday lunches to family celebrations, there's always room for one more at the table.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <h2>
-          Nak order untuk hari ini?
-        </h2>
+    <section class="catering" id="catering">
+      <div class="container catering-grid">
+        <div>
+          <span class="eyebrow">Gather a little closer</span>
+          <h2>Good food makes every gathering better.</h2>
+          <p>
+            Planning a family celebration, office lunch or small get-together? Ask us about meal packages designed to make hosting feel a little easier.
+          </p>
+        </div>
 
+        <div class="catering-panel">
+          <h3>Let us help with the table.</h3>
+          <ul>
+            <li>Family-style meal packages</li>
+            <li>Small event and celebration catering</li>
+            <li>Office lunches and group orders</li>
+            <li>Menu options tailored to your gathering</li>
+          </ul>
+          <a class="button" href="#contact">Ask About Catering</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="contact">
+      <div class="container">
+        <span class="eyebrow">Come hungry, leave happy</span>
+        <h2>Let's make your next meal feel special.</h2>
         <p>
-          Klik WhatsApp dan beritahu menu,
-          jumlah order serta lokasi anda.
+          Have a question about the menu, a family meal or a catering request? Get in touch and tell us what you're planning.
         </p>
-
-        <a
-          class="primary-btn"
-          href="https://wa.me/60123456789?text=Hi%20Dapur%20Senja%2C%20saya%20nak%20tanya%20tentang%20menu%20dan%20tempahan."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          WhatsApp Dapur Senja
+        <a class="button button-primary"
+          href="mailto:hello@harrydigitalverse.com?subject=Sunday%20Hearth%20Kitchen%20Demo%20Inquiry">
+          Send Us an Email
         </a>
-
       </div>
-
-    </div>
-  </section>
-
+    </section>
+  </main>
 
   <footer>
-    <div class="container">
-      Demo landing page by Harry Digital • Portfolio Concept
+    <div class="container footer-inner">
+      <span class="footer-brand">Sunday Hearth Kitchen</span>
+      <span>Homemade comfort, made fresh.</span>
+      <span>© 2026 Sunday Hearth Kitchen · Portfolio concept by Harry Digital Verse</span>
     </div>
   </footer>
-
 </body>
 </html>
