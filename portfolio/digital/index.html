@@ -1,50 +1,89 @@
+
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f0e8">
 
-  <title>Creator Launch Kit | Digital Product Demo</title>
+  <title>The Creator Edit | Build Your Digital Product</title>
+  <meta name="description" content="A practical digital product starter guide for turning creative ideas into clear, organized offers. Explore the Creator Edit digital product concept.">
 
-  <meta
-    name="description"
-    content="Contoh landing page digital product untuk ebook, course, coaching atau affiliate offer."
-  >
+  <meta property="og:title" content="The Creator Edit">
+  <meta property="og:description" content="Turn your ideas into digital products.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1500&q=85">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --cream: #f4f0e8;
+      --paper: #fffdf8;
+      --ink: #282821;
+      --muted: #777469;
+      --rust: #b76548;
+      --rust-dark: #914a35;
+      --olive: #626b52;
+      --line: #e5ded1;
+      --dark: #292c25;
+      --soft: #eae5da;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f7ff;
-      color: #23213a;
-      line-height: 1.6;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
     }
 
     a {
+      color: inherit;
       text-decoration: none;
     }
 
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
+    img {
+      display: block;
+      width: 100%;
     }
 
-    .navbar {
-      background: rgba(255, 255, 255, 0.94);
-      border-bottom: 1px solid #e6e2f5;
+    .container {
+      width: min(1160px, 90%);
+      margin: 0 auto;
+    }
+
+    .announcement {
+      padding: 9px 15px;
+      background: var(--dark);
+      color: #f5eee3;
+      text-align: center;
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    header {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(8px);
+      z-index: 20;
+      background: rgba(244,240,232,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
     }
 
-    .nav-inner {
-      min-height: 72px;
+    .nav {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -52,628 +91,824 @@
     }
 
     .brand {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #5a45b8;
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
     }
 
-    .nav-cta {
-      background: #5a45b8;
-      color: white;
-      padding: 11px 18px;
-      border-radius: 999px;
+    .brand span { color: var(--rust); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 29px;
+      font-size: .84rem;
+      font-weight: 600;
+      color: #57564e;
+    }
+
+    .nav-links a:hover { color: var(--rust); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      font-size: .85rem;
       font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .button-dark {
+      background: var(--ink);
+      color: white;
+    }
+
+    .button-dark:hover {
+      background: var(--rust-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      border: 1px solid var(--ink);
+      color: var(--ink);
+    }
+
+    .button-outline:hover {
+      background: var(--ink);
+      color: white;
     }
 
     .hero {
-      padding: 90px 0 80px;
-      background:
-        radial-gradient(circle at top right, #ded7ff 0, transparent 34%),
-        radial-gradient(circle at bottom left, #e8f0ff 0, transparent 32%),
-        #f8f7ff;
+      padding: 80px 0 95px;
+      overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
+      grid-template-columns: 1.05fr .95fr;
       align-items: center;
+      gap: 65px;
     }
 
     .eyebrow {
-      display: inline-block;
-      margin-bottom: 16px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #e9e4ff;
-      color: #5a45b8;
-      font-size: 0.9rem;
+      color: var(--rust);
+      font-size: .7rem;
       font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
     }
 
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4.8rem);
-      line-height: 1.05;
-      margin-bottom: 20px;
-      color: #26213f;
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
     }
 
-    .hero h1 span {
-      color: #6a52d6;
+    h1 {
+      max-width: 650px;
+      margin: 20px 0;
+      font-size: clamp(3.5rem, 6.3vw, 6rem);
+      line-height: .99;
+      letter-spacing: -.055em;
     }
 
-    .hero p {
-      max-width: 640px;
-      font-size: 1.08rem;
-      color: #5f5a72;
-      margin-bottom: 28px;
+    h1 em {
+      color: var(--rust);
+      font-weight: 500;
     }
 
-    .hero-buttons {
+    .hero-copy {
+      max-width: 510px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .hero-actions {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
     }
 
-    .primary-btn,
-    .secondary-btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: 700;
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: .78rem;
     }
 
-    .primary-btn {
-      background: #5a45b8;
-      color: white;
+    .hero-note::before {
+      content: "";
+      width: 35px;
+      height: 1px;
+      background: var(--rust);
     }
 
-    .secondary-btn {
-      background: white;
-      border: 1px solid #5a45b8;
-      color: #5a45b8;
+    .product-stage {
+      position: relative;
+      min-height: 510px;
+      display: grid;
+      place-items: center;
+      background: #e9e1d4;
+      overflow: hidden;
     }
 
-    .product-card {
-      background: white;
-      border: 1px solid #e6e2f5;
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: 0 20px 50px rgba(68, 51, 143, 0.10);
+    .stage-circle {
+      position: absolute;
+      width: 410px;
+      height: 410px;
+      border: 1px solid rgba(100,91,74,.25);
+      border-radius: 50%;
     }
 
-    .product-badge {
-      display: inline-block;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: #eeeaff;
-      color: #5a45b8;
-      font-size: 0.8rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .mock-cover {
-      min-height: 280px;
-      border-radius: 20px;
-      padding: 30px;
+    .book {
+      position: relative;
+      z-index: 2;
+      width: 270px;
+      min-height: 365px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      background:
-        linear-gradient(145deg, #4c3ca5, #7a62df);
+      justify-content: space-between;
+      background: var(--dark);
       color: white;
-      margin-bottom: 22px;
+      box-shadow: 20px 24px 45px rgba(38,35,29,.24);
+      transform: rotate(-5deg);
+      border-left: 9px solid #191b17;
     }
 
-    .mock-cover small {
-      opacity: 0.85;
-      margin-bottom: 8px;
+    .book-top {
+      color: #d8a185;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .18em;
     }
 
-    .mock-cover h2 {
-      font-size: 2rem;
-      line-height: 1.1;
+    .book-title {
+      font-family: "Playfair Display", serif;
+      font-size: 2.55rem;
+      line-height: .98;
+      letter-spacing: -.04em;
     }
 
-    .product-card p {
-      color: #625d72;
+    .book-title span { color: #d58a69; }
+
+    .book-bottom {
+      color: #d7d0c4;
+      font-size: .66rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
-    .price {
-      display: block;
-      margin-top: 16px;
-      font-weight: 800;
-      font-size: 1.4rem;
-      color: #5a45b8;
+    .stage-caption {
+      position: absolute;
+      right: 15px;
+      bottom: 35px;
+      padding: 16px 20px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      box-shadow: 0 10px 30px rgba(40,40,33,.1);
     }
 
-    section {
-      padding: 80px 0;
+    .intro-strip {
+      padding: 24px 0;
+      background: var(--dark);
+      color: white;
     }
+
+    .strip-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .strip-inner span::before {
+      content: "✳";
+      margin-right: 10px;
+      color: #d58a69;
+    }
+
+    section { padding: 90px 0; }
 
     .section-heading {
-      max-width: 720px;
-      margin-bottom: 38px;
-    }
-
-    .section-heading span {
-      color: #6a52d6;
-      font-weight: 700;
-      font-size: 0.9rem;
+      max-width: 700px;
+      margin-bottom: 42px;
     }
 
     .section-heading h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-top: 8px;
-      margin-bottom: 12px;
+      margin: 12px 0;
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+    }
+
+    .section-heading p {
+      max-width: 600px;
+      color: var(--muted);
     }
 
     .benefit-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 18px;
     }
 
     .benefit-card {
-      background: white;
-      border: 1px solid #e6e2f5;
-      border-radius: 20px;
-      padding: 26px;
-      box-shadow: 0 10px 28px rgba(68, 51, 143, 0.06);
+      padding: 30px;
+      background: var(--paper);
+      border: 1px solid var(--line);
     }
 
-    .benefit-icon {
-      font-size: 2rem;
-      margin-bottom: 14px;
+    .benefit-number {
       display: block;
+      margin-bottom: 27px;
+      color: var(--rust);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .15em;
     }
 
     .benefit-card h3 {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .benefit-card p {
+      color: var(--muted);
+      font-size: .9rem;
     }
 
     .inside {
-      background: #eeeaff;
+      background: var(--soft);
     }
 
     .inside-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: 22px;
     }
 
     .inside-card {
-      background: white;
-      padding: 28px;
-      border-radius: 20px;
+      padding: 32px;
+      background: var(--paper);
+    }
+
+    .inside-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.65rem;
     }
 
     .inside-card ul {
-      margin-top: 14px;
       padding-left: 20px;
+      color: #5f5e55;
     }
 
     .inside-card li {
-      margin-bottom: 8px;
+      margin: 12px 0;
+      padding-left: 5px;
     }
 
-    .who-grid {
+    .audience-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      gap: 15px;
     }
 
-    .who-card {
-      background: white;
-      border: 1px solid #e6e2f5;
-      border-radius: 18px;
+    .audience-card {
+      min-height: 180px;
       padding: 24px;
+      background: var(--paper);
+      border: 1px solid var(--line);
     }
 
-    .who-card h3 {
-      margin-bottom: 8px;
+    .audience-symbol {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--rust);
+      font-size: 1.6rem;
     }
+
+    .audience-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    .audience-card p {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .feature {
+      background: var(--dark);
+      color: white;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .feature-visual {
+      min-height: 410px;
+      display: grid;
+      place-items: center;
+      background: #494a3d;
+      padding: 35px;
+    }
+
+    .feature-paper {
+      width: 80%;
+      padding: 35px;
+      background: #f4f0e8;
+      color: var(--ink);
+      transform: rotate(3deg);
+      box-shadow: 15px 20px 40px rgba(0,0,0,.2);
+    }
+
+    .feature-paper small {
+      color: var(--rust);
+      font-weight: 700;
+      letter-spacing: .14em;
+      font-size: .65rem;
+    }
+
+    .feature-paper h3 {
+      margin: 14px 0;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    .feature-paper p {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .feature-copy h2 {
+      margin: 12px 0 20px;
+      font-size: clamp(2.5rem, 4vw, 3.7rem);
+      line-height: 1.08;
+    }
+
+    .feature-copy p {
+      margin-bottom: 16px;
+      color: #c9c8bc;
+    }
+
+    .feature-copy .button {
+      margin-top: 15px;
+      background: var(--rust);
+      color: white;
+    }
+
+    .offer {
+      background: var(--paper);
+    }
+
+    .offer-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 35px;
+      padding: 45px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+    }
+
+    .offer-box h2 {
+      margin: 10px 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+    }
+
+    .offer-box p {
+      max-width: 600px;
+      color: var(--muted);
+    }
+
+    .offer-price {
+      text-align: center;
+      min-width: 170px;
+    }
+
+    .offer-price small {
+      display: block;
+      color: var(--muted);
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .offer-price strong {
+      display: block;
+      margin: 5px 0 15px;
+      color: var(--rust);
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+    }
+
+    .offer-price .button { width: 100%; }
 
     .cta-section {
+      padding: 90px 0;
       text-align: center;
     }
 
     .cta-box {
-      max-width: 850px;
-      margin: auto;
-      padding: 58px 30px;
-      border-radius: 28px;
-      background: #27213f;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 65px 35px;
+      background: var(--rust);
       color: white;
     }
 
     .cta-box h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 14px;
+      max-width: 680px;
+      margin: 12px auto;
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      line-height: 1.06;
     }
 
     .cta-box p {
-      color: #ddd7ef;
-      margin-bottom: 26px;
+      max-width: 570px;
+      margin: 0 auto;
+      color: #f6e6dc;
     }
 
-    .cta-box .primary-btn {
-      background: white;
-      color: #27213f;
+    .cta-box .button {
+      margin-top: 28px;
+      background: var(--dark);
+      color: white;
     }
 
     .disclaimer {
-      max-width: 850px;
+      max-width: 800px;
       margin: 24px auto 0;
-      font-size: 0.85rem;
-      color: #77718a;
+      color: var(--muted);
+      font-size: .76rem;
     }
 
     footer {
-      padding: 28px 0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #77718a;
+      padding: 30px 0;
+      background: var(--dark);
+      color: #c9c8bc;
+      font-size: .76rem;
     }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-brand {
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+    }
+
+    footer a { color: #d58a69; }
 
     @media (max-width: 900px) {
-      .hero-grid,
-      .inside-grid {
+      .hero-grid, .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .product-stage { min-height: 460px; }
+
+      .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .offer-box {
         grid-template-columns: 1fr;
       }
 
-      .benefit-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .offer-price {
+        text-align: left;
       }
 
-      .who-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .offer-price .button { width: auto; }
     }
 
-    @media (max-width: 600px) {
-      .nav-inner {
-        min-height: 64px;
-      }
+    @media (max-width: 620px) {
+      .nav { min-height: 70px; }
+      .nav-links { display: none; }
+      .nav .button { padding: 10px 13px; font-size: .75rem; }
+      .brand { font-size: 1.12rem; }
 
-      .hero {
-        padding: 60px 0;
-      }
+      .hero { padding: 55px 0 65px; }
+      h1 { font-size: clamp(3.1rem, 14vw, 4.4rem); }
+      .product-stage { min-height: 390px; }
+      .book { width: 225px; min-height: 310px; }
+      .book-title { font-size: 2.15rem; }
+      .stage-circle { width: 300px; height: 300px; }
+      .stage-caption { right: 5px; bottom: 20px; }
+
+      .strip-inner { flex-direction: column; gap: 12px; }
+
+      section { padding: 68px 0; }
 
       .benefit-grid,
-      .who-grid {
+      .inside-grid,
+      .audience-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .hero-buttons a {
-        text-align: center;
-      }
+      .feature-visual { min-height: 320px; }
+      .feature-paper { padding: 24px; }
+      .offer-box { padding: 28px; }
+      .cta-box { padding: 50px 22px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="container nav-inner">
+  <div class="announcement">
+    A practical starting point for your next creative idea
+  </div>
 
-      <a class="brand" href="#home">
-        Creator Launch Kit
-      </a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">The Creator <span>Edit.</span></a>
 
-      <a
-        class="nav-cta"
-        href="#offer"
-      >
-        Lihat Offer
-      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#benefits">The Benefits</a>
+        <a href="#inside">What's Inside</a>
+        <a href="#audience">Who It's For</a>
+      </nav>
 
-    </div>
-  </nav>
-
-
-  <header class="hero" id="home">
-    <div class="container">
-
-      <div class="hero-grid">
-
-        <div>
-
-          <span class="eyebrow">
-            DIGITAL PRODUCT • BEGINNER FRIENDLY
-          </span>
-
-          <h1>
-            Dari idea kepada
-            <span>produk digital yang lebih tersusun.</span>
-          </h1>
-
-          <p>
-            Contoh landing page untuk ebook, mini course, coaching
-            atau affiliate offer. Fokus pada mesej yang jelas,
-            manfaat produk dan satu CTA utama.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a
-              class="primary-btn"
-              href="#offer"
-            >
-              Lihat Apa Yang Anda Dapat
-            </a>
-
-            <a
-              class="secondary-btn"
-              href="#inside"
-            >
-              Kandungan Program
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <aside class="product-card">
-
-          <span class="product-badge">
-            DEMO DIGITAL OFFER
-          </span>
-
-          <div class="mock-cover">
-
-            <small>
-              CREATOR LAUNCH KIT
-            </small>
-
-            <h2>
-              Build. Package. Launch.
-            </h2>
-
-          </div>
-
-          <p>
-            Panduan contoh untuk membantu beginner menyusun idea,
-            membina offer dan menyediakan langkah pertama untuk launch.
-          </p>
-
-          <span class="price">
-            Contoh Harga: RM49
-          </span>
-
-        </aside>
-
-      </div>
-
+      <a class="button button-dark" href="#offer">Explore the Guide</a>
     </div>
   </header>
 
+  <main>
 
-  <section id="offer">
-    <div class="container">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
 
-      <div class="section-heading">
+        <div>
+          <span class="eyebrow">The digital product starter guide</span>
 
-        <span>APA YANG OFFER INI BANTU</span>
+          <h1>
+            Your idea
+            deserves to
+            <em>become more.</em>
+          </h1>
 
-        <h2>
-          Bukan sekadar cantik — landing page perlu menjawab soalan pembeli
-        </h2>
+          <p class="hero-copy">
+            Turn the ideas in your head into a digital product with a clearer plan, a stronger offer and a practical starting point. Less guesswork. More direction.
+          </p>
 
-        <p>
-          Contoh struktur ini menunjukkan bagaimana digital product
-          boleh diterangkan dengan lebih jelas sebelum visitor
-          membuat keputusan.
+          <div class="hero-actions">
+            <a class="button button-dark" href="#offer">Discover the Guide</a>
+            <a class="button button-outline" href="#inside">See What's Inside</a>
+          </div>
+
+          <div class="hero-note">
+            A practical concept for aspiring digital creators.
+          </div>
+        </div>
+
+        <div class="product-stage">
+          <div class="stage-circle"></div>
+
+          <div class="book">
+            <span class="book-top">THE CREATOR EDIT · VOL. 01</span>
+            <div class="book-title">
+              Build.<br>
+              Package.<br>
+              <span>Launch.</span>
+            </div>
+            <span class="book-bottom">A digital product starter guide</span>
+          </div>
+
+          <div class="stage-caption">Start with one good idea.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="intro-strip">
+      <div class="container strip-inner">
+        <span>Find your idea</span>
+        <span>Shape your offer</span>
+        <span>Plan your launch</span>
+      </div>
+    </div>
+
+    <section id="benefits">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">A clearer way forward</span>
+          <h2>Good ideas need a little structure.</h2>
+          <p>
+            Creating a digital product can feel overwhelming when every step seems unfamiliar. This guide concept helps break the process into smaller, more manageable parts.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+
+          <article class="benefit-card">
+            <span class="benefit-number">01 / CLARITY</span>
+            <h3>Find Your Direction</h3>
+            <p>Explore your idea, identify a potential audience and understand the problem your product is designed to address.</p>
+          </article>
+
+          <article class="benefit-card">
+            <span class="benefit-number">02 / STRUCTURE</span>
+            <h3>Build Your Offer</h3>
+            <p>Organize your product, outline its contents and communicate its value in a way people can understand.</p>
+          </article>
+
+          <article class="benefit-card">
+            <span class="benefit-number">03 / ACTION</span>
+            <h3>Plan Your First Launch</h3>
+            <p>Map out a simple launch approach, prepare your sales message and identify the next steps to take.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="inside" id="inside">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Inside the guide</span>
+          <h2>A practical framework, one step at a time.</h2>
+          <p>
+            The example offer is organized into learning sections and useful companion resources.
+          </p>
+        </div>
+
+        <div class="inside-grid">
+
+          <article class="inside-card">
+            <h3>What You'll Explore</h3>
+            <ul>
+              <li>Choosing an idea and identifying an audience</li>
+              <li>Understanding customer needs and problems</li>
+              <li>Structuring a digital product offer</li>
+              <li>Writing a clear product description</li>
+              <li>Planning a simple launch journey</li>
+            </ul>
+          </article>
+
+          <article class="inside-card">
+            <h3>Included Resources</h3>
+            <ul>
+              <li>Digital product planning worksheet</li>
+              <li>Simple content planning template</li>
+              <li>Landing page checklist</li>
+              <li>Sales message writing prompts</li>
+              <li>Basic launch planning tracker</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="audience">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Made for creative beginnings</span>
+          <h2>Who might find this useful?</h2>
+          <p>
+            A flexible example of a digital product offer that can speak to different types of creators and online businesses.
+          </p>
+        </div>
+
+        <div class="audience-grid">
+
+          <article class="audience-card">
+            <span class="audience-symbol">✳</span>
+            <h3>First-Time Creators</h3>
+            <p>People exploring their first digital product idea.</p>
+          </article>
+
+          <article class="audience-card">
+            <span class="audience-symbol">▤</span>
+            <h3>Ebook Authors</h3>
+            <p>Creators planning guides, workbooks and downloadable resources.</p>
+          </article>
+
+          <article class="audience-card">
+            <span class="audience-symbol">◈</span>
+            <h3>Course Creators</h3>
+            <p>People organizing online lessons, workshops and learning materials.</p>
+          </article>
+
+          <article class="audience-card">
+            <span class="audience-symbol">↗</span>
+            <h3>Online Entrepreneurs</h3>
+            <p>People exploring digital offers and simple sales funnels.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="container feature-grid">
+
+        <div class="feature-visual">
+          <div class="feature-paper">
+            <small>YOUR NEXT CHAPTER</small>
+            <h3>One idea.<br>A clearer plan.</h3>
+            <p>
+              Give your creativity a structure. Make the next step easier to see.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-copy">
+          <span class="eyebrow">Start with the essentials</span>
+          <h2>Make progress without making it complicated.</h2>
+          <p>
+            You don't need to have every detail figured out before you begin. Start by understanding what you want to create, who it could help and how to explain its value.
+          </p>
+          <p>
+            The Creator Edit is a sample digital guide concept designed to demonstrate how an educational product can be presented through a focused sales page.
+          </p>
+          <a class="button" href="#offer">View the Sample Offer</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="offer" id="offer">
+      <div class="container">
+
+        <div class="offer-box">
+          <div>
+            <span class="eyebrow">The Creator Edit · Digital Guide</span>
+            <h2>Ready to give your idea some direction?</h2>
+            <p>
+              Explore the sample digital product offer, designed to help organize an idea, shape a product and plan a first launch.
+            </p>
+          </div>
+
+          <div class="offer-price">
+            <small>Sample concept price</small>
+            <strong>$29</strong>
+            <a class="button button-dark" href="#contact">Explore the Offer</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+      <div class="container">
+
+        <div class="cta-box">
+          <span class="eyebrow" style="color:#f5d5c5;">Your idea starts here</span>
+
+          <h2>Every great project begins with a first step.</h2>
+
+          <p>
+            Have a question about this sample digital product concept? Get in touch to learn more about the demonstration.
+          </p>
+
+          <a class="button" href="mailto:hello@harrydigitalverse.com?subject=The%20Creator%20Edit%20Demo%20Inquiry">
+            Get in Touch
+          </a>
+        </div>
+
+        <p class="disclaimer">
+          Portfolio demonstration only. The Creator Edit, its contents and the $29 sample price are illustrative concepts, not an active product listing or a promise of results.
         </p>
 
       </div>
+    </section>
 
-
-      <div class="benefit-grid">
-
-        <article class="benefit-card">
-
-          <span class="benefit-icon">
-            💡
-          </span>
-
-          <h3>
-            Clarify Your Idea
-          </h3>
-
-          <p>
-            Bantu pembeli faham masalah apa yang produk cuba selesaikan.
-          </p>
-
-        </article>
-
-
-        <article class="benefit-card">
-
-          <span class="benefit-icon">
-            📦
-          </span>
-
-          <h3>
-            Package The Offer
-          </h3>
-
-          <p>
-            Terangkan apa yang termasuk dalam produk atau program.
-          </p>
-
-        </article>
-
-
-        <article class="benefit-card">
-
-          <span class="benefit-icon">
-            🚀
-          </span>
-
-          <h3>
-            Clear Next Step
-          </h3>
-
-          <p>
-            Berikan satu CTA yang jelas supaya visitor tahu apa perlu dibuat.
-          </p>
-
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="inside" id="inside">
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>CONTOH KANDUNGAN</span>
-
-        <h2>
-          Apa yang boleh dimasukkan dalam digital offer
-        </h2>
-
-      </div>
-
-
-      <div class="inside-grid">
-
-        <article class="inside-card">
-
-          <h3>
-            Modul / Kandungan
-          </h3>
-
-          <ul>
-            <li>Kenal pasti idea dan target audience</li>
-            <li>Susun offer dan value proposition</li>
-            <li>Bina simple sales message</li>
-            <li>Sediakan CTA dan customer journey</li>
-            <li>Checklist sebelum launch</li>
-          </ul>
-
-        </article>
-
-
-        <article class="inside-card">
-
-          <h3>
-            Bonus Contoh
-          </h3>
-
-          <ul>
-            <li>Simple content planner</li>
-            <li>Landing page checklist</li>
-            <li>CTA writing prompts</li>
-            <li>Basic launch tracker</li>
-            <li>Quick-start guide</li>
-          </ul>
-
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <section>
-    <div class="container">
-
-      <div class="section-heading">
-
-        <span>SIAPA YANG SESUAI</span>
-
-        <h2>
-          Satu template boleh disesuaikan untuk pelbagai offer
-        </h2>
-
-      </div>
-
-
-      <div class="who-grid">
-
-        <article class="who-card">
-          <h3>📘 Ebook Seller</h3>
-          <p>
-            Untuk menjual ebook atau panduan digital.
-          </p>
-        </article>
-
-        <article class="who-card">
-          <h3>🎓 Course Creator</h3>
-          <p>
-            Untuk mini course, kelas online atau workshop.
-          </p>
-        </article>
-
-        <article class="who-card">
-          <h3>💬 Coach / Consultant</h3>
-          <p>
-            Untuk memperkenalkan servis coaching atau consultation.
-          </p>
-        </article>
-
-        <article class="who-card">
-          <h3>🔗 Affiliate Marketer</h3>
-          <p>
-            Untuk bridge page sebelum visitor dibawa ke offer utama.
-          </p>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <section class="cta-section">
-    <div class="container">
-
-      <div class="cta-box">
-
-        <h2>
-          Ready untuk lihat offer penuh?
-        </h2>
-
-        <p>
-          Untuk customer sebenar, button ini boleh disambungkan
-          ke checkout, WhatsApp, booking page atau affiliate link.
-        </p>
-
-        <a
-          class="primary-btn"
-          href="#home"
-        >
-          View The Offer
-        </a>
-
-      </div>
-
-      <p class="disclaimer">
-        Demo ini ialah portfolio concept sahaja.
-        Nama produk, harga dan kandungan adalah contoh dan bukan
-        representasi produk atau pendapatan sebenar.
-      </p>
-
-    </div>
-  </section>
-
+  </main>
 
   <footer>
-    <div class="container">
-      Demo landing page by Harry Digital • Portfolio Concept
+    <div class="container footer-inner">
+      <span class="footer-brand">The Creator Edit.</span>
+      <span>Ideas deserve room to grow.</span>
+      <span>© 2026 · Portfolio concept by <a href="/">Harry Digital Verse</a></span>
     </div>
   </footer>
 
