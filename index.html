@@ -231,6 +231,25 @@ h1 em{
   font-size:12px;
   line-height:1.6;
 }
+  
+.project-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button.service-button {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+@media (max-width: 850px) {
+  .project-cta-buttons {
+    width: 100%;
+  }
+}
+
 footer{
   padding:25px 4.5% 20px;
   background:var(--green);
@@ -677,6 +696,7 @@ footer {
   </div>
 </section>
 
+
 <section class="project-cta" id="creators">
   <div>
     <div class="eyebrow" data-i18n="projectEyebrow">
@@ -692,9 +712,15 @@ footer {
     </p>
   </div>
 
-  <a class="button" href="products/" data-i18n="projectButton">
-    ▤ Explore Digital Products ↗
-  </a>
+  <div class="project-cta-buttons">
+    <a class="button" href="products/" data-i18n="projectButton">
+      ▤ Explore Digital Products ↗
+    </a>
+
+    <a class="button service-button" href="landing-page-service/">
+      ✦ Landing Page Service ↗
+    </a>
+  </div>
 </section>
 </main>
 
